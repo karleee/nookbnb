@@ -8,11 +8,7 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-router.get("/test", (req, res) => {
-  return res.json({ msg: "This is the users route" });
-});
-	
-
+// Route for registering a user
 router.post("/register", (req, res) => {
 	const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -20,6 +16,7 @@ router.post("/register", (req, res) => {
 		return res.status(400).json(errors);
 	}
 
+	// Checks if user already exists in database and saves if it's a new user
 	User.findOne({ email: req.body.email }).then(user => {
 		if (user) {
 			errors.email = "User already exists";
@@ -30,6 +27,7 @@ router.post("/register", (req, res) => {
 				password: req.body.password
 			});
 
+			// Salting and hashing user password before database storage
 			bcrypt.genSalt(10, (err, salt) => {
 				bcrypt.hash(newUser.password, salt, (err, hash) => {
 					if (err) throw err;
@@ -53,6 +51,7 @@ router.post("/register", (req, res) => {
 	});
 });
 
+// Route for logging in a user
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body)
 
@@ -69,6 +68,7 @@ router.post('/login', (req, res) => {
       return res.status(400).json(errors)
     }
 
+		// Returns a signed web token with each login/register for use in frontend
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         const payload = { id: user.id, email: user.email }
@@ -92,7 +92,8 @@ router.post('/login', (req, res) => {
   })
 })
 
-// Private auth route
+// Private auth routes
+// Gets the current user
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
 	res.json({
 		id: req.user.id,
@@ -101,4 +102,3 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 module.exports = router;
-
