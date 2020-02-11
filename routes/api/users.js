@@ -8,9 +8,13 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+router.get("/test", (req, res) => {
+  return res.json({ msg: "This is the users route" });
+});
+	
 
 router.post("/register", (req, res) => {
+	console.log('test');
 	const { errors, isValid } = validateRegisterInput(req.body);
 
 	if (!isValid) {
