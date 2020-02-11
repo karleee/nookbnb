@@ -7,12 +7,7 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
-
-router.get("/test", (req, res) => {
-  return res.json({ msg: "This is the users route" });
-});
 	
-
 router.post("/register", (req, res) => {
 	const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -101,4 +96,3 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 module.exports = router;
-

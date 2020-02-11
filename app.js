@@ -22,6 +22,8 @@ mongoose
 
 app.use("/api/users", users);
 	
+// Using the correct port in development and production
 const port = process.env.PORT || 5000;
 
+// Listening on port
 app.listen(port, () => console.log(`Server is running on port ${port}`));
