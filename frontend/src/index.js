@@ -17,6 +17,10 @@ import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
+	// TESTING START
+	window.env = process.env
+	// TESTING END
+
 	let store;
 
 	// If a returning user has a session token stored in localStorage
