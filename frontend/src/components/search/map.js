@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './search.css';
 import GoogleMapReact from 'google-map-react';
+import MarkerManager from '../../util/marker_manager';
 
 const mapOptions = {
   center: {
@@ -12,7 +13,12 @@ const mapOptions = {
 
 export default class Map extends Component {
   componentDidMount() {
-  
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers();
+  }
+
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers();
   }
   render() {
     debugger;
