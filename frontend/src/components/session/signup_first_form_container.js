@@ -3,27 +3,30 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { login } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import LoginForm from "./login_form";
+import SignupFirstForm from "./signup_first_form";
 
-// ED: added formType
 const mapStateToProps = state => {
 	return {
+		// signedIn: state.session.isSignedIn,
 		errors: state.errors.session,
-		formType: "login"
+		formType: "signupFirst"
 	};
 };
 
-// ED: added openOpen, closeModal, signup, loginDemo
 const mapDispatchToProps = dispatch => {
 	return {
-		login: user => dispatch(login(user)),
-		signup: (
-			<button onClick={() => dispatch(openModal("signupFirst"))}>Sign up</button>
-		),
 		demoLogin: user => dispatch(login(user)),
+		signupSecond: (
+			<button onClick={() => dispatch(openModal("signupSecond"))}>
+				Continue with email
+			</button>
+		),
 		openModal: formType => dispatch(openModal(formType)),
 		closeModal: () => dispatch(closeModal()),
+		login: (
+			<button onClick={() => dispatch(openModal("login"))}>Log in</button>
+		),
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupFirstForm);

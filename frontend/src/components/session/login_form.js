@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
+		this.handleDemo = this.handleDemo.bind(this);
 	}
 
 	// Once the user has been authenticated, redirect to the Tweets page
@@ -23,6 +24,17 @@ class LoginForm extends React.Component {
 
 		// Set or clear errors
 		this.setState({ errors: nextProps.errors });
+	}
+
+	// Render the session errors if there are any
+	renderErrors() {
+		return (
+			<ul>
+				{Object.keys(this.state.errors).map((error, i) => (
+					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				))}
+			</ul>
+		);
 	}
 
 	// Handle field updates (called in the render method)
@@ -42,17 +54,15 @@ class LoginForm extends React.Component {
 			password: this.state.password
 		};
 
-		this.props.login(user);
+		this.props.login(user).then(this.props.closeModal);
 	}
 
-	// Render the session errors if there are any
-	renderErrors() {
-		return (
-			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
-				))}
-			</ul>
+	handleDemo(e) {
+		e.preventDefault();
+		const user = { email: "user1@gmail.com", password: "user1password" };
+		this.props.demoLogin(user).then(
+			// this.props.history.push("/"),
+			this.props.closeModal
 		);
 	}
 
@@ -61,11 +71,14 @@ class LoginForm extends React.Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<div>
+						<h3>Sign up</h3>
+						<button onClick={this.handleDemo}>Log in with DemoUser</button>
+						<br /> or <br />
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
-							placeholder="Email"
+							placeholder="Email address"
 						/>
 						<br />
 						<input
@@ -75,8 +88,12 @@ class LoginForm extends React.Component {
 							placeholder="Password"
 						/>
 						<br />
-						<input type="submit" value="Submit" />
-						{this.renderErrors()}
+						<div>{this.renderErrors()}</div>
+						<input type="submit" value="Log in" />
+						<br />
+						<a href="#">Forgot password?</a>
+						<br />
+						Don't have an account? {this.props.signup}
 					</div>
 				</form>
 			</div>
