@@ -8,11 +8,11 @@ class SpotDetail extends React.Component {
 
   // Rendering component
   render() {
-    const { spot } = this.props;
+    const { spotId } = this.props;
 
     return (
       <div className="spot-index-item-detail-wrapper">
-        <h1>{spot.name}</h1>
+        <h1>{spotId}</h1>
       </div>
     );
   }

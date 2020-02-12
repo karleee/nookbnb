@@ -7,7 +7,7 @@ export const receiveAllSpots = spots => ({
   spots
 });
 
-export const fetchSpots = () => dispatch => (
+export const fetchSpots = () => dispatch => ( 
   getSpots()
     .then(spots => dispatch(receiveAllSpots(spots)))
     .catch(err => console.log(err))
