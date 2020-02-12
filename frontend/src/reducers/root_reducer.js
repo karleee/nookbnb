@@ -4,7 +4,7 @@ import errors from "./errors_reducer";
 import modal from "./modal_reducer";
 import entities from './entities_reducer';
 
-// ED: added modal
+// Root reducer
 const RootReducer = combineReducers({
 	session,
 	errors,

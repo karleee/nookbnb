@@ -6,6 +6,6 @@ export const getSpots = () => {
 };
 
 // Backend route for retrieving a specific spot
-export const getSpot = id => {
-  return axios.get('/api/spots/:spotId');
+export const getSpot = spotId => {
+  return axios.get(`/api/spots/${spotId}`);
 };

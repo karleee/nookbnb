@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_SPOTS } from '../actions/spot_actions';
 
+// Spots reducer
 export default function(state = {}, action) {
   Object.freeze(state);
 
