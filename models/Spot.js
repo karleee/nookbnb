@@ -63,7 +63,7 @@ const SpotSchema = new Schema({
   }
 })
 
-SpotSchema.query.inBounds = function (bounds) {
+SpotSchema.statics.inBounds = function (bounds) {
   return this
     .where('latitude')
     .lt(bounds.northEast.lat)

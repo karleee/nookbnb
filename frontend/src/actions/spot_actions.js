@@ -22,8 +22,8 @@ export const fetchSpots = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchFilteredSpots = bounds => dispatch => (
-  getFilteredSpots(bounds)
+export const fetchFilteredSpots = bounds => dispatch => {
+  return getFilteredSpots(bounds)
     .then(spots => dispatch(receiveSpots(spots)))
     .catch(err => console.log(err))
-);
+};

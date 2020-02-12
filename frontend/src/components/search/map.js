@@ -47,7 +47,8 @@ export default class Map extends Component {
       // eventually we will invoke this.props.updateFilter('bounds', bounds);
       // and dispatch an action here to fetch the appropriate spots
       // and update the ui state to reflect the bounds
-    }, { passive: true });
+      this.props.requestUpdateBounds(bounds);
+    });
   }
 
   render() {
