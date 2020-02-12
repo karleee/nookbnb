@@ -20,18 +20,34 @@ export default class Map extends Component {
     super(props);
     this.apiIsLoaded = this.apiIsLoaded.bind(this);
   }
-  componentDidMount() {
-    // this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers();
-  }
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(spots);
   }
 
+  // This callback is invoked when the google maps api becomes available to use
+  // It is used similarly to componentDidMount
   apiIsLoaded(map, maps) {
+    this.map = map;
+    this.maps = maps;
     this.MarkerManager = new MarkerManager(map, maps);
     this.MarkerManager.updateMarkers(spots);
+    this.registerMapListeners();
+  }
+
+  registerMapListeners() {
+    this.map.addListener('idle', () => {
+      this.maps.event.addListener(this.map, 'idle', () => {
+        const { north, south, east, west } = this.map.getBounds().toJSON();
+        const bounds = {
+          northEast: { lat: north, lng: east },
+          southWest: { lat: south, lng: west }
+        };
+        // eventually we will invoke this.props.updateFilter('bounds', bounds);
+        // and dispatch an action here to fetch the appropriate spots
+        // and update the ui state to reflect the bounds
+      }, { passive: true });
+    });
   }
 
   render() {
