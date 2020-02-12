@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-class SignupForm extends React.Component {
+class SignupSecondForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -15,8 +15,9 @@ class SignupForm extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.signedIn === true) {
-			this.props.history.push("/login");
+		// if (nextProps.signedIn === true) {
+		if (nextProps.currentUser === true) {
+			this.props.history.push("/");
 		}
 
 		this.setState({ errors: nextProps.errors });
@@ -36,7 +37,9 @@ class SignupForm extends React.Component {
 			password: this.state.password,
 		};
 
-		this.props.signup(user, this.props.history);
+		this.props.signup(user, this.props.history)
+			.then(this.props.history.push("./"), 
+			this.props.closeModal());
 	}
 
 	renderErrors() {
@@ -53,14 +56,42 @@ class SignupForm extends React.Component {
 		return (
 			<div className="signup-form-container">
 				<form onSubmit={this.handleSubmit}>
+					<h3>Finish signing up</h3>
 					<div className="signup-form">
+						<br />
+						<input
+							type="text"
+							value={this.state.fname}
+							onChange={this.update("fname")}
+							placeholder="First name"
+						/>
+						<br />
+						<input
+							type="text"
+							value={this.state.lname}
+							onChange={this.update("lname")}
+							placeholder="Last name"
+						/>
+						<br />
+						Make sure it matches the name on your government ID.
+						<br />
+						<input
+							type="text"
+							value={this.state.email}
+							onChange={this.update("birthdate")}
+							placeholder="Birthdate (mm/dd/yyyy)"
+						/>
+						<br/>
+						To sign up, you need to be at least 18. Your birthday won't be shared with other people who use Airbnb.
 						<br />
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
-							placeholder="Email"
+							placeholder="Email address"
 						/>
+						<br/>
+						We'll email you trip confirmation and receipts.
 						<br />
 						<input
 							type="password"
@@ -69,8 +100,9 @@ class SignupForm extends React.Component {
 							placeholder="Password"
 						/>
 						<br />
-						<input type="submit" value="Submit" />
+						<input type="submit" value="Sign up" />
 						{this.renderErrors()}
+						Already have an Airbnb account? {this.props.login}
 					</div>
 				</form>
 			</div>
@@ -78,4 +110,4 @@ class SignupForm extends React.Component {
 	}
 }
 
-export default withRouter(SignupForm);
+export default withRouter(SignupSecondForm);
