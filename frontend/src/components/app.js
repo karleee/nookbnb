@@ -1,11 +1,14 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
 import NavBarContainer from "./nav/navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupSecondFormContainer from "./session/signup_second_form_container";
 import SignupFirstForm from "./session/signup_first_form";
 import Modal from "./modal/modal";
+import { Route, Switch } from 'react-router-dom';
+import SpotIndex from './spots/spot_index_container';
+import SpotDetail from './spots/spot_detail_container';
+import Search from './search/search';
 
 const App = () => (
 	<div>
@@ -13,11 +16,12 @@ const App = () => (
 		<NavBarContainer />
 		{/* <SignupSecondFormContainer /> */}
 		<Switch>
-			{/* <AuthRoute exact path="/" component={} /> */}
+			<Route exact path="/" component={SpotIndex} />
+			<Route exact path="/spots/:spotId" component={SpotDetail} />
 			{/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
-			{/* <AuthRoute exact path="/signup_login" component={SignupFirstForm} /> */}
-		</Switch>
-		<h1>hello world</h1>
+			{/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */} */}
+			<Route path="/search" component={Search} />
+		</Switch> 
 	</div>
 );
 
