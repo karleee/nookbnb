@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
@@ -9,7 +9,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 
 // Route for registering a user
-router.post("/register", (req, res) => {
+router.post('/register', (req, res) => {
 	const { errors, isValid } = validateRegisterInput(req.body);
 
 	if (!isValid) {
@@ -19,7 +19,7 @@ router.post("/register", (req, res) => {
 	// Checks if user already exists in database and saves if it's a new user
 	User.findOne({ email: req.body.email }).then(user => {
 		if (user) {
-			errors.email = "User already exists";
+			errors.email = 'User already exists';
 			return res.status(400).json(errors);
 		} else {
 			const newUser = new User({
@@ -40,7 +40,7 @@ router.post("/register", (req, res) => {
 							jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
 								res.json({
 									success: true,
-									token: "Bearer " + token
+									token: 'Bearer ' + token
 								});
 							});
 						})

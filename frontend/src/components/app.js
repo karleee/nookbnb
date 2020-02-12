@@ -1,21 +1,23 @@
-import React from "react";
-import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
-import NavBarContainer from "./nav/navbar_container";
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
-import Search from "./search/search";
+import React from 'react';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Route, Switch } from 'react-router-dom';
+import NavBarContainer from './nav/navbar_container';
+import SpotIndex from './spots/spot_index_container';
+import SpotDetail from './spots/spot_detail_container';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
+import Search from './search/search';
 
 const App = () => (
 	<div>
 		<NavBarContainer />
 		<Switch>
-			{/* <AuthRoute exact path="/" component={} /> */}
-			<AuthRoute exact path="/login" component={LoginFormContainer} />
-			<AuthRoute exact path="/signup" component={SignupFormContainer} />
-			<ProtectedRoute path="/search" component={Search} />
+			<Route exact path="/" component={SpotIndex} />
+			<Route exact path="/spots/:spotId" component={SpotDetail} />
+			{/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+			{/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */} */}
+			<Route path="/search" component={Search} />
 		</Switch> 
-    <h1>hello world</h1>
 	</div>
 );
 
