@@ -17,4 +17,13 @@ router.get('/:spotId', (req, res) => {
     );
 });
 
+// Adding an additional route for displaying spots in a certain area
+// Used on location based search as well as moving around on the map
+router.get('/search', (req, res) => {
+  debugger;
+  Spot.inBounds(req.query.bounds)
+    .then(spots => res.json(spots))
+    .catch(err => res.status(404).json({ nospotsfound: 'No spots found' }));
+});
+
 module.exports = router;

@@ -17,9 +17,13 @@ import { setAuthToken } from "./util/session_api_util";
 // We have not created this action yet, but will do so in the next step
 import { logout } from "./actions/session_actions";
 
+// TESTING START
+import { getFilteredSpots } from './util/spots_api_util';
+// TESTING END
+
 document.addEventListener("DOMContentLoaded", () => {
 	// TESTING START
-	window.env = process.env
+	window.getSpots = getFilteredSpots;
 	// TESTING END
 
 	let store;
