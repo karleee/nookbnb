@@ -67,4 +67,14 @@ const SpotSchema = new Schema({
   }
 })
 
+SpotSchema.statics.inBounds = function (bounds) {
+  return this
+    .where('latitude')
+    .lt(bounds.northEast.lat)
+    .gt(bounds.southWest.lat)
+    .where('longitude')
+    .gt(bounds.southWest.lng)
+    .lt(bounds.northEast.lng);
+}
+
 module.exports = Spot = mongoose.model('Spot', SpotSchema);
