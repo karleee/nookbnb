@@ -10,8 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 // Mapping thunk action to props
 const mapDispatchToProps = dispatch => ({
-  fetchSpot: id => dispatch(fetchSpot(id)),
-  // fetchUser: id => dispatch(fetchUser(id))
+  fetchSpot: id => dispatch(fetchSpot(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SpotDetail);
