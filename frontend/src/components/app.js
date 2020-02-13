@@ -14,13 +14,10 @@ const App = () => (
 	<div>
 		<Modal />
 		<NavBarContainer />
-		{/* <SignupSecondFormContainer /> */}
 		<Switch>
 			<Route exact path="/" component={SpotIndex} />
 			<Route exact path="/spots/:spotId" component={SpotDetail} />
-			{/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
-			{/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */} */}
-			<Route path="/search" component={Search} />
+			<Route exact path="/search" component={Search} />
 		</Switch> 
 	</div>
 );

@@ -3,10 +3,10 @@ const router = express.Router();
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
+const User = require('../../models/User');
 
 // Route for registering a user
 router.post('/register', (req, res) => {
@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
 								});
 							});
 						})
-						.catch(err => console.log(err));
+						.catch(err => console.log(err)); 
 				});
 			});
 		}
@@ -92,8 +92,7 @@ router.post('/login', (req, res) => {
   })
 })
 
-// Private auth routes
-// Gets the current user
+// Route for getting the current user
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
 	res.json({
 		id: req.user.id,
