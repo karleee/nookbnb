@@ -68,7 +68,7 @@ class SpotDetail extends React.Component {
               <p>Recent guests said this place was sparkling clean.</p>
             </div>
 
-            <div className="superhost-perk-wrapper">
+            <div className="superhost-perk-wrapper"> 
               <i className="badge-icon"></i>
               <h3>{usernameCapitalized} is a Superhost</h3>
               <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>

@@ -14,6 +14,6 @@ export default function (state = _initialState, action) {
       let finalState = Object.assign({}, nextState, { user: action.user });
       return finalState;
     default:
-      return state;
+      return state; 
   }
 }
