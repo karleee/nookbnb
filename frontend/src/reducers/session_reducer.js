@@ -3,17 +3,16 @@ import {
 	RECEIVE_USER_LOGOUT,
 	RECEIVE_USER_SIGN_IN
 } from "../actions/session_actions";
-import { RECEIVE_SINGLE_SPOT } from "../actions/spot_actions";
 
 // Initial state
-const initialState = {
+const _initialState = {
 	isAuthenticated: false,
 	user: {},
-	currentSpot: {}
+	// currentSpot: {}
 };
 
 // Session reducer
-export default function(state = initialState, action) {
+export default function(state = _initialState, action) {
 	switch (action.type) {
 		case RECEIVE_CURRENT_USER:
 			return {
@@ -31,8 +30,6 @@ export default function(state = initialState, action) {
 				...state,
 				isSignedIn: true
 			};
-		case RECEIVE_SINGLE_SPOT:
-		  return Object.assign({}, state, { currentSpot: action.spot.data });
 		default:
 			return state;
 	}

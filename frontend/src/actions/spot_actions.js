@@ -3,6 +3,7 @@ import { getSpots, getSpot } from '../util/spots_api_util';
 // Action constants
 export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
 export const RECEIVE_SINGLE_SPOT = 'RECEIVE_SINGLE_SPOT';
+export const RECEIVE_NAME = 'RECEIVE_NAME';
 
 // Action creators
 export const receiveAllSpots = spots => ({
@@ -10,9 +11,10 @@ export const receiveAllSpots = spots => ({
   spots
 });
 
-export const receiveSingleSpot = spot => ({
+export const receiveSingleSpot = payload => ({
   type: RECEIVE_SINGLE_SPOT,
-  spot
+  user: payload.data.user,
+  spot: payload.data.spot
 });
 
 // Thunk actions

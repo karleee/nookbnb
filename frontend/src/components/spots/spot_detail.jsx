@@ -6,20 +6,18 @@ class SpotDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSpot: { 
-        user: '',
-        name: '',
-        city: '',
-        state: '',
-        country: '',
-        occupancy: 0,
-        bedrooms: 0,
-        beds: 0,
-        baths: 0,
-        description: '',
-        amenities: []
-      } 
-    }
+      user: { email: '' },
+      name: '',
+      city: '',
+      state: '',
+      country: '',
+      occupancy: 0,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      description: '',
+      amenities: []
+    } 
   }
 
   // Runs once component is mounted
@@ -35,12 +33,16 @@ class SpotDetail extends React.Component {
   // Rendering component
   render() {
     const { currentSpot } = this.props;
+    let spot = currentSpot['spot'];
+    let userEmail = currentSpot['user'].email;
+    let username = userEmail.substr(0, userEmail.indexOf('@')); 
+    let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
     return (
       <div className="spot-index-item-detail-wrapper">
         <div className="spot-index-item-detail-header">
-          <h1>{currentSpot.name}</h1> 
-          <p>{currentSpot.city}, {currentSpot.state}, {currentSpot.country}</p>
+          <h1>{spot.name}</h1> 
+          <p>{spot.city}, {spot.state}, {spot.country}</p>
         </div>
 
         <div className="spot-index-item-detail-photos">
@@ -49,8 +51,8 @@ class SpotDetail extends React.Component {
 
         <div className="spot-index-item-detail-description">
           <div className="spot-index-item-detail-description-header">
-            <h2>Entire house hosted by {currentSpot.user}</h2>
-            <p>{currentSpot.occupancy} guests • {currentSpot.bedrooms} bedrooms • {currentSpot.beds} beds • {currentSpot.baths} baths</p>
+            <h2>Entire house hosted by {usernameCapitalized}</h2>
+            <p>{spot.occupancy} guests • {spot.bedrooms} bedrooms • {spot.beds} beds • {spot.baths} baths</p>
           </div>
 
           <div className="spot-index-item-detail-description-perks">
@@ -68,7 +70,7 @@ class SpotDetail extends React.Component {
 
             <div className="superhost-perk-wrapper">
               <i className="badge-icon"></i>
-              <h3>{currentSpot.user} is a Superhost</h3>
+              <h3>{usernameCapitalized} is a Superhost</h3>
               <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
             </div>
 
@@ -80,46 +82,46 @@ class SpotDetail extends React.Component {
           </div>
 
           <div className="spot-index-item-detail-description-main">
-            <p>{currentSpot.description}</p>
+            <p>{spot.description}</p>
           </div>
 
           <div className="spot-index-item-detail-description-amenities">
-            {currentSpot.amenities && currentSpot.amenities[0].wifi ? 
+            {spot.amenities && spot.amenities[0].wifi ? 
               <div className="wifi-wrapper">
                 <i className="wifi-icon"></i>
                 <p>Wifi</p> 
               </div> : ""
             }
 
-            {currentSpot.amenities && currentSpot.amenities[0].kitchen ?
+            {spot.amenities && spot.amenities[0].kitchen ?
               <div className="kitchen-wrapper">
                 <i className="kitchen-icon"></i>
                 <p>Kitchen</p>
               </div> : ""
             }
 
-            {currentSpot.amenities && currentSpot.amenities[0].breakfast ?
+            {spot.amenities && spot.amenities[0].breakfast ?
               <div className="breakfast-wrapper">
                 <i className="breakfast-icon"></i>
                 <p>Breakfast</p>
               </div> : ""
             }
 
-            {currentSpot.amenities && currentSpot.amenities[0].parking ?
+            {spot.amenities && spot.amenities[0].parking ?
               <div className="parking-wrapper">
                 <i className="parking-icon"></i>
                 <p>Free parking on premises</p>
               </div> : ""
             }
 
-            {currentSpot.amenities && currentSpot.amenities[0].pool ?
+            {spot.amenities && spot.amenities[0].pool ?
               <div className="pool-wrapper">
                 <i className="pool-icon"></i>
                 <p>Pool</p>
               </div> : ""
             }
 
-            {currentSpot.amenities && currentSpot.amenities[0].essentials ?
+            {spot.amenities && spot.amenities[0].essentials ?
               <div className="essentials-wrapper">
                 <i className="essentials-icon"></i>
                 <p>Essentials</p>
