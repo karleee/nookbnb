@@ -129,6 +129,10 @@ class SpotDetail extends React.Component {
             }
           </div>
         </div>
+
+        <div className="spot-index-detail-booking-form">
+
+        </div>
       </div>
     );
   }
