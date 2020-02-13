@@ -8,7 +8,7 @@ import Modal from "./modal/modal";
 import { Route, Switch } from 'react-router-dom';
 import SpotIndex from './spots/spot_index_container';
 import SpotDetail from './spots/spot_detail_container';
-import Search from './search/search';
+import SearchContainer from './search/search_container';
 
 const App = () => (
 	<div>
@@ -17,7 +17,7 @@ const App = () => (
 		<Switch>
 			<Route exact path="/" component={SpotIndex} />
 			<Route exact path="/spots/:spotId" component={SpotDetail} />
-			<Route exact path="/search" component={Search} />
+			<Route exact path="/search" component={SearchContainer} />
 		</Switch> 
 	</div>
 );
