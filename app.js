@@ -3,10 +3,10 @@ const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
-const users = require('./routes/api/users');
-const spots = require('./routes/api/spots');
 const passport = require('passport');
 const path = require('path');
+const users = require('./routes/api/users');
+const spots = require('./routes/api/spots');
 
 // Using mongoose to connect to Mongo database with success and error messages
 mongoose

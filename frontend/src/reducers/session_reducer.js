@@ -4,12 +4,15 @@ import {
 	RECEIVE_USER_SIGN_IN
 } from "../actions/session_actions";
 
-const initialState = {
+// Initial state
+const _initialState = {
 	isAuthenticated: false,
-	user: {}
+	user: {},
+	// currentSpot: {}
 };
 
-export default function(state = initialState, action) {
+// Session reducer
+export default function(state = _initialState, action) {
 	switch (action.type) {
 		case RECEIVE_CURRENT_USER:
 			return {
