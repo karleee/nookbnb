@@ -14,7 +14,7 @@ const _amenities = new Schema({
 const SpotSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'users'
+    ref: 'User'
   },
   name: {
     type: String,
@@ -49,6 +49,10 @@ const SpotSchema = new Schema({
     required: true
   },
   bedrooms: {
+    type: Number,
+    required: true
+  },
+  beds: {
     type: Number,
     required: true
   },

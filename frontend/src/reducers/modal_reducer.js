@@ -1,13 +1,17 @@
 // ED: added modal reducer file
 import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
-export default function modalReducer(state = null, action) {
+const modalReducer = (state = null, action) => {
 	switch (action.type) {
 		case OPEN_MODAL:
-			return action.modal;
+			return {
+				formType: action.formType
+			};
 		case CLOSE_MODAL:
 			return null;
 		default:
 			return state;
 	}
 }
+
+export default modalReducer;

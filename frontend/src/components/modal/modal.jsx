@@ -8,23 +8,36 @@ import SignupSecondFormContainer from "../session/signup_second_form_container";
 import SignupFirstFormContainer from "../session/signup_first_form_container";
 import "./modal.css"
 
-function Modal({ modal, closeModal }) {
-	if (!modal) {
-		return null;
-	}
+const Modal = ({ modal, closeModal }) => {
+	if (!modal) return null;
+	let { formType } = modal;
+
 	let component;
-	switch (modal) {
-		case "login":
-			component = <LoginFormContainer />;
-			break;
-		case "signupFirst":
-			component = <SignupFirstFormContainer />;
-			break;
-		case "signupSecond":
+	if (formType === "login") {
+			component = <LoginFormContainer />
+	} else if (formType === "signupFirst") {
+			component = <SignupFirstFormContainer />
+	} else if (formType === "signupSecond") {
 			component = <SignupSecondFormContainer />;
-		default:
-			return null;
 	}
+	
+	// if (!modal) {
+	// 	return null;
+	// }
+	// let component;
+	// switch (modal) {
+	// 	case "login":
+	// 		component = <LoginFormContainer />;
+	// 		break;
+	// 	case "signupFirst":
+	// 		component = <SignupFirstFormContainer />;
+	// 		break;
+	// 	case "signupSecond":
+	// 		component = <SignupSecondFormContainer />;
+	// 	default:
+	// 		return null;
+	// }
+
 	return (
 		<div className="modal-background" onClick={closeModal}>
 			<div className="modal-child" onClick={e => e.stopPropagation()}>
