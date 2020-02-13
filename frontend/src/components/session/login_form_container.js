@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		login: user => dispatch(login(user)),
-		signup: (
+		signupFirst: (
 			<button onClick={() => dispatch(openModal("signupFirst"))}>Sign up</button>
 		),
 		demoLogin: user => dispatch(login(user)),

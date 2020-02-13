@@ -23,8 +23,13 @@ export default class Map extends Component {
 
   componentDidUpdate() {
     if (this.MarkerManager) {
+<<<<<<< HEAD
+			this.MarkerManager.updateMarkers(spots);
+		}
+=======
       this.MarkerManager.updateMarkers(spots);
     }
+>>>>>>> master
   }
 
   // This callback is invoked when the google maps api becomes available to use

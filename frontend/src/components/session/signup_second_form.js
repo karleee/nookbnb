@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "./session_forms.css"
 
 class SignupSecondForm extends React.Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class SignupSecondForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.renderErrors = this.renderErrors.bind(this);
 		this.clearedErrors = false;
 	}
 
@@ -39,7 +41,7 @@ class SignupSecondForm extends React.Component {
 
 		this.props.signup(user, this.props.history)
 			.then(this.props.history.push("./"), 
-			this.props.closeModal());
+			() => this.props.closeModal());
 	}
 
 	renderErrors() {
@@ -53,10 +55,26 @@ class SignupSecondForm extends React.Component {
 	}
 
 	render() {
+		let errors;
+		if (this.props.errors) {
+			errors = this.props.errors;
+		} else {
+			errors = {};
+		}
+		let emailErrors = errors.email ? <div>{errors.email}.</div> : <></>;
+		let passwordErrors = errors.password ? (
+			<div>{errors.password}.</div>
+		) : (
+			<></>
+		);
+
 		return (
-			<div className="signup-form-container">
-				<form onSubmit={this.handleSubmit}>
-					<h3>Finish signing up</h3>
+			<div className="session-form-container">
+				<form onSubmit={this.handleSubmit} className="session-form">
+					<div onClick={this.props.closeModal} className="close-x">
+						X
+					</div>
+					<p className="session-header">Finish signing up</p>
 					<div className="signup-form">
 						<br />
 						<input
@@ -64,6 +82,7 @@ class SignupSecondForm extends React.Component {
 							value={this.state.fname}
 							onChange={this.update("fname")}
 							placeholder="First name"
+							className="session-input-fname"
 						/>
 						<br />
 						<input
@@ -71,38 +90,52 @@ class SignupSecondForm extends React.Component {
 							value={this.state.lname}
 							onChange={this.update("lname")}
 							placeholder="Last name"
+							className="session-input-lname"
 						/>
 						<br />
-						Make sure it matches the name on your government ID.
+						<p className="session-instruct">
+							Make sure it matches the name on your government ID.
+						</p>
 						<br />
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("birthdate")}
 							placeholder="Birthdate (mm/dd/yyyy)"
+							className="session-input-birthdate"
 						/>
-						<br/>
-						To sign up, you need to be at least 18. Your birthday won't be shared with other people who use Airbnb.
+						<br />
+						<p className="session-instruct">
+							To sign up, you need to be at least 18. Your birthday won't be
+							shared with other people who use Airbnb.
+						</p>
 						<br />
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
 							placeholder="Email address"
+							className="session-input-email"
 						/>
-						<br/>
-						We'll email you trip confirmation and receipts.
+						<div className="session-errors">{emailErrors}</div>
+						<br />
+						<p className="session-instruct">We'll email you trip confirmation and receipts.</p>
 						<br />
 						<input
 							type="password"
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
+							className="session-input-password"
 						/>
+						<div className="session-errors">{passwordErrors}</div>
 						<br />
-						<input type="submit" value="Sign up" />
-						{this.renderErrors()}
-						Already have an Airbnb account? {this.props.login}
+						<input type="submit" value="Sign up" className="session-submit" />
+						{/* {this.renderErrors()} */}
+						<br />
+						<p className="session-text">
+							Already have an Airbnb account? {this.props.login}
+						</p>
 					</div>
 				</form>
 			</div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "./session_forms.css"
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -37,6 +38,16 @@ class LoginForm extends React.Component {
 		);
 	}
 
+	// renderErrors() {
+	// 	return (
+	// 		<ul>
+	// 			{this.props.errors.map((error, i) => (
+	// 				<li key={`error-${i}`}>{error}</li>
+	// 			))}
+	// 		</ul>
+	// 	);
+	// }
+
 	// Handle field updates (called in the render method)
 	update(field) {
 		return e =>
@@ -48,52 +59,82 @@ class LoginForm extends React.Component {
 	// Handle form submission
 	handleSubmit(e) {
 		e.preventDefault();
-
 		let user = {
 			email: this.state.email,
 			password: this.state.password
 		};
-
-		this.props.login(user).then(this.props.closeModal);
+		this.props.login(user)
+			.then(this.props.history.push("/"), () => this.props.closeModal());
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
 		const user = { email: "user1@gmail.com", password: "user1password" };
-		this.props.demoLogin(user).then(
-			// this.props.history.push("/"),
-			this.props.closeModal
-		);
+		this.props
+			.demoLogin(user)
+			.then(this.props.history.push("/"), this.props.closeModal());
 	}
 
 	render() {
+		let errors;
+		if (this.props.errors) {
+			errors = this.props.errors;
+		// } else {
+		// 	errors = {};
+		}
+		let emailErrors = errors.email ? <div>{errors.email}</div> : <></>;
+		let passwordErrors = errors.password ? (
+			<div>{errors.password}</div>
+		) : (
+			<></>
+		);
+
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<div>
-						<h3>Sign up</h3>
-						<button onClick={this.handleDemo}>Log in with DemoUser</button>
+			<div className="session-form-container">
+				<form onSubmit={this.handleSubmit} className="session-form-box">
+					<div onClick={this.props.closeModal} className="close-x">
+						X
+					</div>
+					<div className="session-form">
+						<p className="session-form-header">Log in</p>
+						<button onClick={this.handleDemo} className="session-submit">
+							Log in with DemoUser
+						</button>
 						<br /> or <br />
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
 							placeholder="Email address"
+							className="session-input-email"
 						/>
+						<div className="session-errors">{emailErrors}</div>
 						<br />
 						<input
 							type="password"
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
+							className="session-input-password"
 						/>
+						<div className="session-errors">{passwordErrors}</div>
 						<br />
-						<div>{this.renderErrors()}</div>
-						<input type="submit" value="Log in" />
+						{/* <div className="modalError">{this.renderErrors()}</div> */}
+						<input type="submit" value="Log in" className="session-submit" />
 						<br />
-						<a href="#">Forgot password?</a>
+						<a href="#" className="session-text">
+							Forgot password?
+						</a>
 						<br />
-						Don't have an account? {this.props.signup}
+						<div className="session-text">
+							Don't have an account?
+							<span
+								onClick={() => this.props.openModal("signupFirst")}
+								className="session-link"
+							>
+								Sign up
+							</span>
+						</div>
 					</div>
 				</form>
 			</div>

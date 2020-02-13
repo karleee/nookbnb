@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./navbar.css"
 import Dropdown from "./dropdown";
+import SearchBar from "./search_bar";
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -61,9 +62,9 @@ class NavBar extends React.Component {
 		if (this.props.loggedIn) {
 			return (
 				<div>
-					<i></i>
+					<i className="fas fa-glass"></i>
 					<form onSubmit={this.props.handleSearchSubmit}>
-						<div>
+						<div className="search-bar-input">
 							<input
 								type="text"
 								placeholder="Search"
@@ -85,56 +86,126 @@ class NavBar extends React.Component {
 		const { logout, currentUser } = this.props;
 		if (this.props.loggedIn) {
 			return (
-				<div>
-					<div>
-						<Link to={"/"}>Logo</Link>
-					</div>
-					<div>{this.navbarSearch()}</div>
-					<div>
-						<Link to={"/"}>Become a host</Link>
-					</div>
-					<div>
-						<Link to={"/wishlists"}>Saved</Link>
-					</div>
-					<div>
-						<Link to={"/trips"}>Trips</Link>
-					</div>
-					<div>
-						<Link to={"/"}>Messages</Link>
-					</div>
-					<div>
-						<Link to={"/"}>Help</Link>
-					</div>
-					<div>
-						<Dropdown currentUser={currentUser} logout={logout} />
-						{/* <Link to={"/"}>Profile</Link> */}
+				<div className="navbar">
+					<ul className="nav-left">
+						<div className="logo">
+							<Link to={"/"} img="" className="">Logo</Link>
+						</div>
+
+						<div className="nav-mid">
+							<div className="search-bar">{this.navbarSearch()}</div>
+						</div>
+					</ul>
+
+					<div className="nav-main">
+						<ul className="nav-main-list">
+							<li>
+								<div>
+									<Link to={"/"} className="nav-link">
+										Become a host
+									</Link>
+								</div>
+							</li>
+							<li>
+								<div>
+									<Link to={"/wishlists"} className="nav-link">
+										Saved
+									</Link>
+								</div>
+							</li>
+							<li>
+								<div>
+									<Link to={"/trips"} className="nav-link">
+										Trips
+									</Link>
+								</div>
+							</li>
+							<li>
+								<div>
+									<Link to={"/"} className="nav-link">
+										Messages
+									</Link>
+								</div>
+							</li>
+							<li>
+								<div>
+									<Link to={"/"} className="nav-link">
+										Help
+									</Link>
+								</div>
+							</li>
+							<li>
+								<div className="nav-link">
+									{/* <Link className="nav-link"> */}
+									<Dropdown className="" currentUser={currentUser} logout={logout} />
+									{/* </Link> */}
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			);
 		} else {
 			return (
-				<div>
-					{/* <Link to={"/signup"}>Signup</Link> */}
-					{/* <Link to={"/login"}>Login</Link> */}
+				<div className="navbar">
 
 					{/* <NotLoggedInNavBar /> */}
-					<div>
-						<Link to={"/"}>Logo</Link>
+					<ul>
+						<div className="logo">
+							<Link to={"/"}>Logo</Link>
+						</div>
+					</ul>
+
+					<div className="search-bar">
+						{this.props.location.pathname !== "/" || this.props.currentUser ? (
+							<SearchBar />
+						) : null}
 					</div>
-					<div>
-						<Link to={"/host/homes"}>Host a home</Link>
-					</div>
-					<div>
-						<Link to={"/host/experiences"}>Host an experience</Link>
-					</div>
-					<div>
-						<Link to={"/"}>Help</Link>
-					</div>
-					<div>
-						<button onClick={this.handleSignup}>Sign up</button>
-					</div>
-					<div>
-						<button onClick={this.handleLogin}>Log in</button>
+
+					<div className="nav-main">
+						<ul className="nav-main-list">
+							<li>
+								<div>
+									<button
+										type="button"
+										className="nav-link"
+									><Link to={"/"}>
+										Host a home</Link>
+									</button>
+								</div>
+							</li>
+							<li>
+								<div>
+									<button
+										type="button"
+										className="nav-link"
+									><Link to={"/"}>
+										Host an experience</Link>
+									</button>
+								</div>
+							</li>
+							<li>
+								<div className="help-link">
+									<Link to={"/"}><button type="button" className="nav-link">
+										Help
+									</button></Link>
+								</div>
+							</li>
+							<li>
+								<div className="signup-link">
+									<button onClick={this.handleSignup} className="nav-link">
+										Sign up
+									</button>
+								</div>
+							</li>
+							<li>
+								<div className="login-link">
+									<button onClick={this.handleLogin} className="nav-link">
+										Log in
+									</button>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			);
