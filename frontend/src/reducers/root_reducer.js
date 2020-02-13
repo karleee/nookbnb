@@ -10,7 +10,7 @@ import errors from './errors_reducer';
 const RootReducer = combineReducers({
 	session,
 	entities,
-	ui
+	ui,
 	currentSpot,
 	modal,
 	errors

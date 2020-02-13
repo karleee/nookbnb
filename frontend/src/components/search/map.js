@@ -25,7 +25,7 @@ export default class Map extends Component {
     if (this.MarkerManager) {
       this.MarkerManager.updateMarkers(spots);
     }
-
+  }
   // This callback is invoked when the google maps api becomes available to use
   // It is used similarly to componentDidMount
   apiIsLoaded(map, maps) {

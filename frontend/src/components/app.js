@@ -17,7 +17,7 @@ const App = () => (
 		<Switch>
 			<Route exact path="/" component={SpotIndex} />
 			<Route exact path="/spots/:spotId" component={SpotDetail} />
-			<Route exact path="/search" component={Search} />
+			<Route exact path="/search" component={SearchContainer} />
 		</Switch> 
 	</div>
 );
