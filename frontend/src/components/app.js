@@ -14,10 +14,6 @@ const App = () => (
 	<div>
 		<Modal />
 		<NavBarContainer />
-<<<<<<< HEAD
-		
-=======
->>>>>>> master
 		<Switch>
 			<Route exact path="/" component={SpotIndex} />
 			<Route exact path="/spots/:spotId" component={SpotDetail} />
