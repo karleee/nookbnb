@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./dropdown.css";
+import "./dropdown.css";
 
 class Dropdown extends React.Component {
 	constructor(props) {
@@ -38,40 +38,40 @@ class Dropdown extends React.Component {
 	render() {
 		const { currentUser, logout } = this.props;
 		const menu = this.state.showMenu ? (
-			<div className="menu">
-				<div className="profile-info">
-					<div className="avatar">
-						<span className="fas fa-user-alt" />
+			<div className="">
+				<div className="">
+					<div className="">
+						<span className="" />
 					</div>
-					<div className="additional-profile-info">
-						<Link to={`/users/${currentUser.id}`} className="profile-link">
+					<div className="">
+						<Link to={`/users/${currentUser.id}`} className="">
 							{" "}
-							<p className="view-profile">
+							<p className="">
 								 Profile
-								<span className="fas fa-chevron-right" />
+								<span className="" />
 							</p>
 						</Link>
 					</div>
 				</div>
 				<div className="item-separator" />
-				<Link to="/">Account</Link>
+				<Link to="/" className="">Account</Link>
 				<div className="item-separator" />
-				<button onClick={e => logout()} className="link menu-item">
+				<button onClick={e => logout()} className="">
 					Logout
 				</button>
 			</div>
 		) : null;
 		return (
 			<div>
-				<button onClick={this.showMenu} className="drop-down-open">
+				<button type="button" onClick={this.showMenu} className="">
 					<div
-						className="avatar"
+						className=""
 						ref={el => {
 							this.dropdownElement = el;
 						}}
 					>
-						<span className="fas fa-user-alt"></span>
-						<p>You</p>
+						<span className=""></span>
+						<p>Profile</p>
 					</div>
 				</button>
 

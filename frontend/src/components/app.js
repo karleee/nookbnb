@@ -14,7 +14,7 @@ const App = () => (
 	<div>
 		<Modal />
 		<NavBarContainer />
-		{/* <SignupSecondFormContainer /> */}
+		
 		<Switch>
 			<Route exact path="/" component={SpotIndex} />
 			<Route exact path="/spots/:spotId" component={SpotDetail} />
