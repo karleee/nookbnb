@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 
 import { requestUpdateBounds } from "../../actions/filter_actions";
-import { selectAllSpots } from '../../reducers/selectors';
+import { selectSpotsInBounds } from '../../reducers/selectors';
 import Search from "./search";
 
 const mapStateToProps = state => ({
-  spots: selectAllSpots(state)
+  spots: selectSpotsInBounds(state)
 });
 
 const mapDispatchToProps = dispatch => ({

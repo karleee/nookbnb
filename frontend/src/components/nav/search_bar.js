@@ -68,7 +68,7 @@ class SearchBar extends React.Component {
 		return (
 			<div className={className} onSubmit={this.handleSubmitSearch}>
 				<div className="search-bar">
-					<i class="fas fa-search"></i>
+					<i className="fas fa-search"></i>
 				</div>
 				<input
 					id="searchInput"
