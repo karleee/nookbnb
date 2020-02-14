@@ -1,7 +1,7 @@
 import { 
   getSpots,
-  getFilteredSpots,
-  getSpot 
+  getSpot,
+  getFilteredSpots
 } from '../util/spots_api_util';
 
 // Action constants
@@ -33,13 +33,14 @@ export const fetchSpots = () => dispatch => (
     .catch(err => console.log(err)) 
 );
 
+export const fetchSpot = id => dispatch => (
+  getSpot(id)
+    .then(spot => dispatch(receiveSingleSpot(spot)))
+    .catch(err => console.log(err))
+); 
+
 export const fetchFilteredSpots = bounds => dispatch => {
   return getFilteredSpots(bounds)
     .then(spots => dispatch(receiveSpots(spots)))
     .catch(err => console.log(err))
-};
-export const fetchSpot = id => dispatch => (
-  getSpot(id)
-    .then(spot => dispatch(receiveSingleSpot(spot))) 
-    .catch(err => console.log(err))
-);  
+}; 

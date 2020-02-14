@@ -16,18 +16,6 @@ class SearchBar extends React.Component {
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	const map = this.refs.maps;
-	// 	this.map = new this.maps.Map(map, mapOptions);
-	// 	this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-	// 	if (this.props.singleSpot) {
-	// 		this.props.fetchSpot(this.props.spotId);
-	// 	} else {
-	// 		this.registerListeners();
-	// 		this.MarkerManager.updateMarkers(this.props.spots);
-	// 	}
-	// }
-
 	handleUpdate() {
 		return e => {
 			this.setState({ searchInput: e.target.value });
@@ -68,7 +56,7 @@ class SearchBar extends React.Component {
 		return (
 			<div className={className} onSubmit={this.handleSubmitSearch}>
 				<div className="search-bar">
-					<i class="fas fa-search"></i>
+					<i className="fas fa-search"></i>
 				</div>
 				<input
 					id="searchInput"

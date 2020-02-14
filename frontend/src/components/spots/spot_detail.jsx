@@ -1,11 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import Datepicker from '../datepicker2/datepicker';
+import Datepicker from '../datepicker/datepicker';
 
 class SpotDetail extends React.Component {
   // Constructor for SpotDetail component
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       user: { email: '' },
       name: '',
       city: '',
@@ -86,6 +88,7 @@ class SpotDetail extends React.Component {
           </div>
 
           <div className="spot-index-item-detail-description-amenities">
+            <h2>Amenities</h2>
             {spot.amenities && spot.amenities[0].wifi ? 
               <div className="wifi-wrapper">
                 <i className="wifi-icon"></i>
@@ -131,7 +134,8 @@ class SpotDetail extends React.Component {
         </div>
 
         <div className="spot-index-detail-booking-form">
-
+          <h2>Select dates</h2>
+          <Datepicker />
         </div>
       </div>
     );
