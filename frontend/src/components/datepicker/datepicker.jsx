@@ -10,6 +10,7 @@ class Datepicker extends React.Component {
     const monthsLength = 12;
   
     this.state= {
+      currentDate,
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
@@ -18,6 +19,8 @@ class Datepicker extends React.Component {
       selectedStartDay: '',
       selectedEndMonth: '',
       selectedEndDay: '',
+      selectedYr: '',
+      direction: '',
       clicks: 0
     }
 
@@ -38,8 +41,9 @@ class Datepicker extends React.Component {
 
     let newCurrentMonth = (this.state.currentMonth + 1) % monthsLength;
     let newNextMonth = (this.state.nextMonth + 1) % monthsLength;
-    this.setState({currentMonth: newCurrentMonth});
-    this.setState({nextMonth: newNextMonth});
+    this.setState({ currentMonth: newCurrentMonth });
+    this.setState({ nextMonth: newNextMonth });
+    this.setState({ direction: 'forward' });
   }
 
   // Goes to previous month
@@ -55,12 +59,14 @@ class Datepicker extends React.Component {
     let newNextMonth = ((this.state.nextMonth - 1) + monthsLength) % monthsLength;
     this.setState({ currentMonth: newCurrentMonth });
     this.setState({ nextMonth: newNextMonth });
+    this.setState({ direction: 'back' });
   }
 
   // Handles auto fill in dates for check-in and checkout
   handleClick(day, monthNum) {
     let newClicks = this.state.clicks + 1;
     let realMonthNum = monthNum + 1;
+
     this.setState({ clicks: newClicks });
  
     if (newClicks % 2 !== 0) {
@@ -88,6 +94,7 @@ class Datepicker extends React.Component {
       formatDay = day;
     }
 
+    // need to figure out how to keep yr static
     return formatMonth + '/' + formatDay + '/' + this.state.currentYr;
   }
 
@@ -98,6 +105,9 @@ class Datepicker extends React.Component {
     let selectedStartDay = this.state.selectedStartDay;
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
+    let currentDate = this.state.currentDate;
+    let currentYr = this.state.currentYr;
+    let direction = this.state.direction;
 
     return (
       <div className="datepicker-wrapper">
@@ -107,7 +117,14 @@ class Datepicker extends React.Component {
           </div>
           
           <div className="months-wrapper">
-            <Month monthNum={startMnthNum} type="start" handleClick={this.handleClick} />
+            <Month 
+              currentDate={currentDate} 
+              monthNum={startMnthNum} 
+              currentYr={currentYr}
+              type="start" 
+              direction={direction}
+              handleClick={this.handleClick} 
+            />
 
             <Month monthNum={endMnthNum} type="end" handleClick={this.handleClick} />
           </div>

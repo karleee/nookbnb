@@ -42,9 +42,15 @@ class Month extends React.Component {
     this.setState({days: newDays});
   }
 
+  // getSelectedYr(monthNum, currentYr, direction) {
+  //   if (direction === 'forward' && monthNum === 0) {
+    
+  //   }
+  // }
+
   // Renders the Month component
   render() {
-    const { monthNum, type } = this.props;
+    const { currentDate, monthNum, type, direction } = this.props;
     const months = [
       'January',
       'February',
@@ -60,6 +66,8 @@ class Month extends React.Component {
       'December'
     ]
     let selectedMonth = months[monthNum];
+    let selectedYr;
+
 
     return (
       <div className={`${type}-month`}>
