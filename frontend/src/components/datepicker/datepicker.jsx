@@ -57,7 +57,7 @@ class Datepicker extends React.Component {
     this.setState({ nextMonth: newNextMonth });
   }
 
-  // Handles dates when the user clicks on a date from the calendar
+  // Handles auto fill in dates for check-in and checkout
   handleClick(day, monthNum) {
     let newClicks = this.state.clicks + 1;
     this.setState({ clicks: newClicks });
