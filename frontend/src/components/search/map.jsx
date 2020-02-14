@@ -18,7 +18,10 @@ const spots = [{ id: 1, lat: 37.773972, lng: -122.431297 }]
 export default class Map extends Component {
   constructor(props) {
     super(props);
+    this.state = { address: '' }
     this.apiIsLoaded = this.apiIsLoaded.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidUpdate() {
@@ -44,16 +47,36 @@ export default class Map extends Component {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
-      // eventually we will invoke this.props.updateFilter('bounds', bounds);
-      // and dispatch an action here to fetch the appropriate spots
-      // and update the ui state to reflect the bounds
       this.props.requestUpdateBounds(bounds);
     });
+    this.geocoder = new this.maps.Geocoder();
+  }
+
+  handleChange(e) {
+    this.setState({ address: e.currentTarget.value })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.geocoder.geocode({ address: this.state.address }, (results, status) => {
+      if (status == 'OK') {
+        this.map.setCenter(results[0].geometry.location);
+      } else {
+        console.log(status);
+      }
+    })
   }
 
   render() {
     return (
       <div id='map-container'>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+            type="text" 
+            value={this.state.address} 
+            onChange={this.handleChange} />
+        </form>
+
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}
