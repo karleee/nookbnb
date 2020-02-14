@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { updateFilter } from "../../actions/filter_actions";
 import { withRouter } from "react-router";
-import "./search_bar.css"
+import "../../stylesheets/search_bar.css";
 
 class SearchBar extends React.Component {
 	constructor(props) {

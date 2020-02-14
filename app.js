@@ -37,5 +37,5 @@ require('./config/passport')(passport);
 
 // Route for serving static assets
 // Makes content under the public directory accessible
-// i.e. In components, <img src='/calendar/splash.jpg' />
-app.use('/calendar', express.static(path.join(__dirname, 'public')))
+// i.e. In components, <img src='/images/splash.jpg' />
+app.use('/images', express.static(path.join(__dirname, 'public')))
