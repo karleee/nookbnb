@@ -55,11 +55,22 @@ class Datepicker extends React.Component {
     this.setState({ nextMonth: newNextMonth });
   }
 
-  handleClick(day, month) {
-    let monthNum = month + 1;
-    this.setState({ selectedMonth: monthNum });
+  // Handles dates when the user clicks on a date from the calendar
+  handleClick(day, monthNum) {
+    let realMonthNum = monthNum + 1;
+    let newYr;
+
+    if (this.state.currentMonth === 11 && monthNum === 0) {
+      newYr = this.state.currentYr + 1;
+    } else if (this.state.currentMonth === 11 && monthNum === 11) {
+      newYr = this.state.currentYr - 1;
+    } else {
+      newYr = this.state.currentYr;
+    }
+
+    this.setState({ selectedMonth: realMonthNum });
     this.setState({ selectedDay: day });
-    // this.formatDate();
+    this.setState({ currentYr: newYr });
   }
 
   formatDate(month, day) {

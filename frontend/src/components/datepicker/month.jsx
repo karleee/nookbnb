@@ -59,10 +59,11 @@ class Month extends React.Component {
       'November',
       'December'
     ]
+    let selectedMonth = months[monthNum];
 
     return (
       <div className={`${type}-month`}>
-        <div id={`${type}-month-header`}>{months[monthNum]}</div>
+        <div id={`${type}-month-header`}>{selectedMonth}</div>
 
         <div className="days">
           <div className="weekday-header">
