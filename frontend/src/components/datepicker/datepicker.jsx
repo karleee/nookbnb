@@ -8,7 +8,6 @@ class Datepicker extends React.Component {
     super(props);
     let currentDate = new Date();
     const monthsLength = 12;
-  
     this.state= {
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth(),
@@ -16,15 +15,16 @@ class Datepicker extends React.Component {
       currentYr: currentDate.getFullYear(),
       selectedStartMonth: '',
       selectedStartDay: '',
+      selectedStartYr: '',
       selectedEndMonth: '',
       selectedEndDay: '',
-      //testing
-      selectedStartYr: '',
+      selectedEndYr: '',
       clicks: 0
     }
 
     this.nextMonth = this.nextMonth.bind(this);
     this.previousMonth = this.previousMonth.bind(this);
+    this.resetEndDate = this.resetEndDate.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.formatDate = this.formatDate.bind(this);
   }
@@ -59,6 +59,13 @@ class Datepicker extends React.Component {
     this.setState({ nextMonth: newNextMonth });
   }
 
+  // Resets the end date
+  resetEndDate() {
+    this.setState({ selectedEndMonth: '' });
+    this.setState({ selectedEndDay: '' });
+    this.setState({ selectedEndYr: '' });
+  }
+
   // Handles auto fill in dates for check-in and checkout
   handleClick(month, day, yr) {
     let newClicks = this.state.clicks + 1;
@@ -69,12 +76,15 @@ class Datepicker extends React.Component {
     if (newClicks % 2 !== 0) {
       this.setState({ selectedStartMonth: realMonthNum });
       this.setState({ selectedStartDay: day });
+      this.setState({ selectedStartYr: yr });
+      this.resetEndDate();
     } else {
       this.setState({ selectedEndMonth: realMonthNum });
       this.setState({ selectedEndDay: day });
+      this.setState({ selectedEndYr: yr });
     }
 
-    this.setState({ selectedStartYr: yr });
+    // console.log(this.state);
   }
 
   formatDate(month, day) {
@@ -98,7 +108,6 @@ class Datepicker extends React.Component {
   }
 
   render() {
-    let currentDay = this.state.currentDay;
     let currentMonth = this.state.currentMonth;
     let currentYr = this.state.currentYr;
     let nextMonth = this.state.nextMonth;
@@ -107,8 +116,8 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
 
-    // console.log(currentMonth);
-    // console.log(nextMonth);
+    // console.log('Curr: ' + currentMonth);
+    // console.log('Next: ' + nextMonth);
 
     return (
       <div className="datepicker-wrapper">

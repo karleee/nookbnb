@@ -1,0 +1,10 @@
+@import 'variables.css';
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header h1 {
+  font-family: 'cerealMedium';
+  font-size: 26px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header p {
+  margin-top: 16px;
+}
