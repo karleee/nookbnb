@@ -14,8 +14,11 @@ class Datepicker extends React.Component {
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
       currentYr: currentDate.getFullYear(),
-      selectedMonth: '',
-      selectedDay: ''
+      selectedStartMonth: '',
+      selectedStartDay: '',
+      selectedEndMonth: '',
+      selectedEndDay: '',
+      clicks: 0
     }
 
     this.nextMonth = this.nextMonth.bind(this);
@@ -56,6 +59,9 @@ class Datepicker extends React.Component {
 
   // Handles dates when the user clicks on a date from the calendar
   handleClick(day, monthNum) {
+    let newClicks = this.state.clicks + 1;
+    this.setState({ clicks: newClicks });
+
     let realMonthNum = monthNum + 1;
     let newYr;
 
@@ -66,10 +72,16 @@ class Datepicker extends React.Component {
     } else {
       newYr = this.state.currentYr;
     }
-
-    this.setState({ selectedMonth: realMonthNum });
-    this.setState({ selectedDay: day });
-    this.setState({ currentYr: newYr });
+ 
+    if (newClicks % 2 !== 0) {
+      this.setState({ selectedStartMonth: realMonthNum });
+      this.setState({ selectedStartDay: day });
+      this.setState({ currentYr: newYr });
+    } else {
+      this.setState({ selectedEndMonth: realMonthNum });
+      this.setState({ selectedEndDay: day });
+      this.setState({ currentYr: newYr });
+    }
   }
 
   formatDate(month, day) {
@@ -94,8 +106,10 @@ class Datepicker extends React.Component {
   render() {
     let startMnthNum = this.state.currentMonth;
     let endMnthNum = this.state.nextMonth;
-    let month = this.state.selectedMonth;
-    let day = this.state.selectedDay;
+    let selectedStartMonth = this.state.selectedStartMonth;
+    let selectedStartDay = this.state.selectedStartDay;
+    let selectedEndMonth = this.state.selectedEndMonth;
+    let selectedEndDay = this.state.selectedEndDay;
 
     return (
       <div className="datepicker-wrapper">
@@ -119,7 +133,7 @@ class Datepicker extends React.Component {
           <div className="check-in-date">
             <input
               type="text"
-              value={this.formatDate(month, day)}
+              value={this.formatDate(selectedStartMonth, selectedStartDay)}
               placeholder="Check-in"
             />
           </div>
@@ -127,6 +141,7 @@ class Datepicker extends React.Component {
           <div className="checkout-date">
             <input
               type="text"
+              value={this.formatDate(selectedEndMonth, selectedEndDay)}
               placeholder="Checkout"
             />
           </div>
