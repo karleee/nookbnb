@@ -14,12 +14,10 @@ class Datepicker extends React.Component {
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
       currentYr: currentDate.getFullYear(),
-      selectedStartMonth: currentDate.getMonth(),
-      selectedStartDay: currentDate.getDate(),
-      // selectedStartYr: currentDate.getFullYear(),
-      selectedEndMonth: currentDate.getMonth(),
-      selectedEndDay: currentDate.getDate(),
-      // selectedEndYr: currentDate.getFullYear(),
+      selectedStartMonth: '',
+      selectedStartDay: '',
+      selectedEndMonth: '',
+      selectedEndDay: '',
       clicks: 0
     }
 
@@ -103,7 +101,8 @@ class Datepicker extends React.Component {
     let selectedStartDay = this.state.selectedStartDay;
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
-    // let currentYr = this.state.currentYr;
+
+    console.log(this.state);
 
     return (
       <div className="datepicker-wrapper">
@@ -135,7 +134,7 @@ class Datepicker extends React.Component {
           <div className="check-in-date">
             <input
               type="text"
-              value={selectedStartMonth === currentMonth && selectedStartDay === currentDay ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
+              value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
               placeholder="Check-in"
             />
           </div>
@@ -143,7 +142,7 @@ class Datepicker extends React.Component {
           <div className="checkout-date">
             <input
               type="text"
-              value={selectedEndMonth === currentMonth && selectedEndDay === currentDay ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
+              value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
               placeholder="Checkout"
             />
           </div>
