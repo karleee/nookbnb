@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "./navbar.css"
+import "../../stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
 
@@ -87,15 +87,13 @@ class NavBar extends React.Component {
 		if (this.props.loggedIn) {
 			return (
 				<div className="navbar">
-					<ul className="nav-left">
-						<div className="logo">
-							<Link to={"/"} img="" className="">Logo</Link>
-						</div>
+					<div className="logo">
+						<Link to={"/"} img="" className="">Logo</Link>
+					</div>
 
-						<div className="nav-mid">
-							<div className="search-bar">{this.navbarSearch()}</div>
-						</div>
-					</ul>
+					<div className="nav-mid">
+						<div className="search-bar">{this.navbarSearch()}</div>
+					</div>
 
 					<div className="nav-main">
 						<ul className="nav-main-list">
@@ -136,9 +134,7 @@ class NavBar extends React.Component {
 							</li>
 							<li>
 								<div className="nav-link">
-									{/* <Link className="nav-link"> */}
 									<Dropdown className="" currentUser={currentUser} logout={logout} />
-									{/* </Link> */}
 								</div>
 							</li>
 						</ul>
@@ -148,13 +144,9 @@ class NavBar extends React.Component {
 		} else {
 			return (
 				<div className="navbar">
-
-					{/* <NotLoggedInNavBar /> */}
-					<ul>
-						<div className="logo">
-							<Link to={"/"}>Logo</Link>
-						</div>
-					</ul>
+					<div className="logo">
+						<Link to={"/"}>Logo</Link>
+					</div>
 
 					<div className="search-bar">
 						{this.props.location.pathname !== "/" || this.props.currentUser ? (
@@ -215,11 +207,6 @@ class NavBar extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>
-					<h1>
-						<Link to="/">AirBnB</Link>
-					</h1>
-				</div>
 				{this.getLinks()}
 			</div>
 		);

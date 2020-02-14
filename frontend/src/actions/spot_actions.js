@@ -1,14 +1,13 @@
 import { 
   getSpots,
-  getFilteredSpots,
-  getSpot 
+  getSpot,
+  getFilteredSpots
 } from '../util/spots_api_util';
 
 // Action constants
 export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
 export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SINGLE_SPOT = 'RECEIVE_SINGLE_SPOT';
-export const RECEIVE_NAME = 'RECEIVE_NAME';
 
 // Action creators
 export const receiveAllSpots = spots => ({
@@ -31,16 +30,17 @@ export const receiveSingleSpot = payload => ({
 export const fetchSpots = () => dispatch => ( 
   getSpots()
     .then(spots => dispatch(receiveAllSpots(spots)))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err)) 
 );
+
+export const fetchSpot = id => dispatch => (
+  getSpot(id)
+    .then(spot => dispatch(receiveSingleSpot(spot)))
+    .catch(err => console.log(err))
+); 
 
 export const fetchFilteredSpots = bounds => dispatch => {
   return getFilteredSpots(bounds)
     .then(spots => dispatch(receiveSpots(spots)))
     .catch(err => console.log(err))
-};
-export const fetchSpot = id => dispatch => (
-  getSpot(id)
-    .then(spot => dispatch(receiveSingleSpot(spot))) 
-    .catch(err => console.log(err))
-);  
+}; 
