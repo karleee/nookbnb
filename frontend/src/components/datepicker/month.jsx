@@ -11,20 +11,19 @@ class Month extends React.Component {
   
   // Runs once component has mounted
   componentDidMount() {
-    const { month } = this.props;
-    this.populateDays(month);
+    const { currentMonth } = this.props;
+    this.populateDays(currentMonth);
   }
 
   // Runs when component receives new props
   componentWillReceiveProps(newState) {
-    this.populateDays(newState.month);
+    this.populateDays(newState.currentMonth);
   }
 
   // Popoulates months with correct amount of days
   populateDays(month) {
     let totalDays;
     let newDays = [];
-    let splitDays = [];
 
     if (month === 'February') {
       totalDays = 28;
@@ -42,15 +41,9 @@ class Month extends React.Component {
     this.setState({days: newDays});
   }
 
-  // getSelectedYr(monthNum, currentYr, direction) {
-  //   if (direction === 'forward' && monthNum === 0) {
-    
-  //   }
-  // }
-
   // Renders the Month component
   render() {
-    const { currentDate, monthNum, type, direction } = this.props;
+    const { currentMonth, type } = this.props;
     const months = [
       'January',
       'February',
@@ -65,13 +58,11 @@ class Month extends React.Component {
       'November',
       'December'
     ]
-    let selectedMonth = months[monthNum];
-    let selectedYr;
-
+    let month = months[currentMonth];
 
     return (
       <div className={`${type}-month`}>
-        <div id={`${type}-month-header`}>{selectedMonth}</div>
+        <div id={`${type}-month-header`}>{month}</div>
 
         <div className="days">
           <div className="weekday-header">
@@ -85,7 +76,7 @@ class Month extends React.Component {
           </div>
           
           <div className="number-days">
-            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(day, monthNum)}>{day}</div>)}
+            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(currentMonth, day)}>{day}</div>)}
           </div>
         </div>
       </div>

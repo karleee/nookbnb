@@ -10,17 +10,16 @@ class Datepicker extends React.Component {
     const monthsLength = 12;
   
     this.state= {
-      currentDate,
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
       currentYr: currentDate.getFullYear(),
-      selectedStartMonth: '',
-      selectedStartDay: '',
-      selectedEndMonth: '',
-      selectedEndDay: '',
-      selectedYr: '',
-      direction: '',
+      selectedStartMonth: currentDate.getMonth(),
+      selectedStartDay: currentDate.getDate(),
+      // selectedStartYr: currentDate.getFullYear(),
+      selectedEndMonth: currentDate.getMonth(),
+      selectedEndDay: currentDate.getDate(),
+      // selectedEndYr: currentDate.getFullYear(),
       clicks: 0
     }
 
@@ -43,7 +42,6 @@ class Datepicker extends React.Component {
     let newNextMonth = (this.state.nextMonth + 1) % monthsLength;
     this.setState({ currentMonth: newCurrentMonth });
     this.setState({ nextMonth: newNextMonth });
-    this.setState({ direction: 'forward' });
   }
 
   // Goes to previous month
@@ -59,13 +57,12 @@ class Datepicker extends React.Component {
     let newNextMonth = ((this.state.nextMonth - 1) + monthsLength) % monthsLength;
     this.setState({ currentMonth: newCurrentMonth });
     this.setState({ nextMonth: newNextMonth });
-    this.setState({ direction: 'back' });
   }
 
   // Handles auto fill in dates for check-in and checkout
-  handleClick(day, monthNum) {
+  handleClick(month, day) {
     let newClicks = this.state.clicks + 1;
-    let realMonthNum = monthNum + 1;
+    let realMonthNum = month + 1;
 
     this.setState({ clicks: newClicks });
  
@@ -99,15 +96,14 @@ class Datepicker extends React.Component {
   }
 
   render() {
-    let startMnthNum = this.state.currentMonth;
-    let endMnthNum = this.state.nextMonth;
+    let currentDay = this.state.currentDay;
+    let currentMonth = this.state.currentMonth;
+    let nextMonth = this.state.nextMonth;
     let selectedStartMonth = this.state.selectedStartMonth;
     let selectedStartDay = this.state.selectedStartDay;
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
-    let currentDate = this.state.currentDate;
-    let currentYr = this.state.currentYr;
-    let direction = this.state.direction;
+    // let currentYr = this.state.currentYr;
 
     return (
       <div className="datepicker-wrapper">
@@ -118,15 +114,16 @@ class Datepicker extends React.Component {
           
           <div className="months-wrapper">
             <Month 
-              currentDate={currentDate} 
-              monthNum={startMnthNum} 
-              currentYr={currentYr}
+              currentMonth={currentMonth}
               type="start" 
-              direction={direction}
               handleClick={this.handleClick} 
             />
 
-            <Month monthNum={endMnthNum} type="end" handleClick={this.handleClick} />
+            <Month 
+              currentMonth={nextMonth} 
+              type="end" 
+              handleClick={this.handleClick} 
+            />
           </div>
 
           <div className="arrows next-month" onClick={this.nextMonth}>
@@ -138,7 +135,7 @@ class Datepicker extends React.Component {
           <div className="check-in-date">
             <input
               type="text"
-              value={this.formatDate(selectedStartMonth, selectedStartDay)}
+              value={selectedStartMonth === currentMonth && selectedStartDay === currentDay ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
               placeholder="Check-in"
             />
           </div>
@@ -146,7 +143,7 @@ class Datepicker extends React.Component {
           <div className="checkout-date">
             <input
               type="text"
-              value={this.formatDate(selectedEndMonth, selectedEndDay)}
+              value={selectedEndMonth === currentMonth && selectedEndDay === currentDay ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
               placeholder="Checkout"
             />
           </div>
