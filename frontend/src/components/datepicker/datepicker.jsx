@@ -102,8 +102,6 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
 
-    console.log(this.state);
-
     return (
       <div className="datepicker-wrapper">
         <div className="calendar-wrapper">

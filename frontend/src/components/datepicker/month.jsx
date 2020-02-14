@@ -25,9 +25,9 @@ class Month extends React.Component {
     let totalDays;
     let newDays = [];
 
-    if (month === 'February') {
+    if (month === 1) {
       totalDays = 28;
-    } else if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
+    } else if (month === 3 || month === 5 || month === 8 || month === 10) {
       totalDays = 30;
     } else {
       totalDays = 31;
