@@ -7,6 +7,7 @@ class Month extends React.Component {
     this.state = {
       days: []
     }
+    this.getSelectedYr = this.getSelectedYr.bind(this);
   }
   
   // Runs once component has mounted
@@ -41,9 +42,21 @@ class Month extends React.Component {
     this.setState({days: newDays});
   }
 
+  // Gets the correct year for the date the user selected
+  getSelectedYr(currentMonth, nextMonth, yr) {
+    let updatedYr;
+    
+    if (currentMonth === 0 && nextMonth !== 1) {
+      updatedYr = yr + 1;
+    } else {
+      updatedYr = yr;
+    }
+    return updatedYr;
+  }
+
   // Renders the Month component
   render() {
-    const { currentMonth, type } = this.props;
+    const { currentMonth, nextMonth, currentYr, type } = this.props;
     const months = [
       'January',
       'February',
@@ -59,6 +72,7 @@ class Month extends React.Component {
       'December'
     ]
     let month = months[currentMonth];
+    let yr = this.getSelectedYr(currentMonth, nextMonth, currentYr);
 
     return (
       <div className={`${type}-month`}>
@@ -76,7 +90,7 @@ class Month extends React.Component {
           </div>
           
           <div className="number-days">
-            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(currentMonth, day)}>{day}</div>)}
+            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(currentMonth, day, yr)}>{day}</div>)}
           </div>
         </div>
       </div>

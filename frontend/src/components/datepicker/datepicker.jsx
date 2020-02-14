@@ -18,6 +18,8 @@ class Datepicker extends React.Component {
       selectedStartDay: '',
       selectedEndMonth: '',
       selectedEndDay: '',
+      //testing
+      selectedStartYr: '',
       clicks: 0
     }
 
@@ -58,7 +60,7 @@ class Datepicker extends React.Component {
   }
 
   // Handles auto fill in dates for check-in and checkout
-  handleClick(month, day) {
+  handleClick(month, day, yr) {
     let newClicks = this.state.clicks + 1;
     let realMonthNum = month + 1;
 
@@ -71,6 +73,8 @@ class Datepicker extends React.Component {
       this.setState({ selectedEndMonth: realMonthNum });
       this.setState({ selectedEndDay: day });
     }
+
+    this.setState({ selectedStartYr: yr });
   }
 
   formatDate(month, day) {
@@ -90,17 +94,21 @@ class Datepicker extends React.Component {
     }
 
     // need to figure out how to keep yr static
-    return formatMonth + '/' + formatDay + '/' + this.state.currentYr;
+    return formatMonth + '/' + formatDay + '/' + this.state.selectedStartYr;
   }
 
   render() {
     let currentDay = this.state.currentDay;
     let currentMonth = this.state.currentMonth;
+    let currentYr = this.state.currentYr;
     let nextMonth = this.state.nextMonth;
     let selectedStartMonth = this.state.selectedStartMonth;
     let selectedStartDay = this.state.selectedStartDay;
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
+
+    // console.log(currentMonth);
+    // console.log(nextMonth);
 
     return (
       <div className="datepicker-wrapper">
@@ -112,12 +120,15 @@ class Datepicker extends React.Component {
           <div className="months-wrapper">
             <Month 
               currentMonth={currentMonth}
+              nextMonth={nextMonth}
+              currentYr={currentYr}
               type="start" 
               handleClick={this.handleClick} 
             />
 
             <Month 
               currentMonth={nextMonth} 
+              currentYr={currentYr}
               type="end" 
               handleClick={this.handleClick} 
             />
