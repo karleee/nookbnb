@@ -102,8 +102,11 @@
   height: 15px;
   text-align: center;
   padding: 13px;
-  /* padding: 15px 1.5px 0 0; */
 }
+
+/* .datepicker-wrapper .calendar-wrapper .months-wrapper .days .number-days .number .active {
+  background: var(--gray);
+} */
 
 .datepicker-wrapper .calendar-wrapper .months-wrapper .days .number-days .number:hover {
   border: 2px solid var(--gray);

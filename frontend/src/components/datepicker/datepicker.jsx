@@ -60,27 +60,15 @@ class Datepicker extends React.Component {
   // Handles auto fill in dates for check-in and checkout
   handleClick(day, monthNum) {
     let newClicks = this.state.clicks + 1;
-    this.setState({ clicks: newClicks });
-
     let realMonthNum = monthNum + 1;
-    let newYr;
-
-    if (this.state.currentMonth === 11 && monthNum === 0) {
-      newYr = this.state.currentYr + 1;
-    } else if (this.state.currentMonth === 11 && monthNum === 11) {
-      newYr = this.state.currentYr - 1;
-    } else {
-      newYr = this.state.currentYr;
-    }
+    this.setState({ clicks: newClicks });
  
     if (newClicks % 2 !== 0) {
       this.setState({ selectedStartMonth: realMonthNum });
       this.setState({ selectedStartDay: day });
-      this.setState({ currentYr: newYr });
     } else {
       this.setState({ selectedEndMonth: realMonthNum });
       this.setState({ selectedEndDay: day });
-      this.setState({ currentYr: newYr });
     }
   }
 
