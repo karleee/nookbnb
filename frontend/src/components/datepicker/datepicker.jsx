@@ -10,7 +10,6 @@ class Datepicker extends React.Component {
     const monthsLength = 12;
   
     this.state= {
-      currentDate,
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
