@@ -61,6 +61,10 @@ const SpotSchema = new Schema({
     required: true
   },
   amenities: [_amenities],
+  price: {
+    type: Number,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
