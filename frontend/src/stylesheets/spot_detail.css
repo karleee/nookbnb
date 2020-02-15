@@ -165,7 +165,6 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities {
   display: grid;
   margin-top: 50px;
-  border-bottom: 1px solid var(--lightest-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities h2 {
@@ -255,4 +254,16 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities .amenities-grid .essentials-wrapper .image-wrapper .essentials-icon img {
   width: 20px;
   margin-right: 20px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-detail-booking-form {
+  width: 100%;
+  border-top: 1px solid var(--lightest-gray);
+}
+
+.spot-index-item-detail-wrapper .spot-index-detail-booking-form h2 {
+  font-family: 'cerealMedium';
+  font-size: 20px;
+  color: var(--gray);
+  margin-top: 50px;
 }
