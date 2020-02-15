@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/navbar.css"
+import "../../assets/stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
 
@@ -30,7 +30,6 @@ class NavBar extends React.Component {
 	handleSignup(e) {
 		e.preventDefault();
 		this.props.openModal("signupFirst");
-		// this.props.openModal("signupSecond");
 		this.props.history.push("/");
 	}
 
@@ -42,8 +41,6 @@ class NavBar extends React.Component {
 	}
 
 	handleSearchSubmit(e) {
-		// e.preventDefault();
-		// 	this.props.fetchSearchResults(this.state.searchInput);
 		this.navigateToSearch();
 	}
 
@@ -88,7 +85,9 @@ class NavBar extends React.Component {
 			return (
 				<div className="navbar">
 					<div className="logo">
-						<Link to={"/"} img="" className="">Logo</Link>
+						<Link to="/">
+							<img src='/images/navbar/nooks_cranny_logo.png' />
+						</Link>
 					</div>
 
 					<div className="nav-mid">
@@ -145,7 +144,9 @@ class NavBar extends React.Component {
 			return (
 				<div className="navbar">
 					<div className="logo">
-						<Link to={"/"}>Logo</Link>
+						<Link to="/">
+						  <img src='/images/navbar/nooks_cranny_logo.png' />
+						</Link>
 					</div>
 
 					<div className="search-bar">

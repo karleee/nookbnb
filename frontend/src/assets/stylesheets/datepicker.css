@@ -1,0 +1,171 @@
+@import 'variables.css';
+
+.datepicker-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  height: 50px;
+  background: transparent; 
+  margin-top: 50px;
+}
+
+.datepicker-wrapper .calendar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 70%;
+  height: 100%;
+  margin-right: 60px;
+}
+
+.datepicker-wrapper .selected-dates-wrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  width: 30%;
+  height: 100%;
+}
+
+.datepicker-wrapper .calendar-wrapper .arrows {
+    position: relative;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.datepicker-wrapper .calendar-wrapper .arrows .next-arrow-icon {
+  content: url('/images/spot_detail/next_arrow_icon.png');
+  width: 8px;
+  margin-left: -35px;
+}
+
+.datepicker-wrapper .calendar-wrapper .arrows .previous-arrow-icon {
+  content: url('/images/spot_detail/previous_arrow_icon.png');
+  width: 8px;
+  margin-left: 32px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month #start-month-header,
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month #end-month-header {
+  font-family: 'cerealRegular';
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .weekday-header,
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .weekday-header  {
+  font-family: 'cerealRegular';
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--medium-gray);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days,
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 25px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  margin-right: 150px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .number-days,
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .number-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 3px;
+  margin-top: 10px;
+  font-family: 'cerealLight';
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .number-days .number,
+.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .number-days .number {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  padding: 13px;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .days .number-days .number:hover {
+  border: 2px solid var(--gray);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-wrapper .days .number .weekday {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+}
+
+.datepicker-wrapper .selected-dates-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.datepicker-wrapper .selected-dates-wrapper .dates-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.datepicker-wrapper .selected-dates-wrapper .dates-wrapper .check-in-date input[type="text"] {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  padding: 15px 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  border: 1px solid var(--outline-gray); 
+  border-right: none;
+} 
+
+.datepicker-wrapper .selected-dates-wrapper .dates-wrapper .checkout-date input[type="text"] {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  padding: 15px 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  border: 1px solid var(--outline-gray); 
+} 

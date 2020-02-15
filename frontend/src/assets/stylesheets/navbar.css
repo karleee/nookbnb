@@ -22,8 +22,6 @@
   flex: 3;
 }
 .nav-main {
-  /* display: table-cell; */
-  /* display: block; */
   vertical-align: middle;
 	max-height: 80px;
   background-color: white;
@@ -53,37 +51,26 @@ ul.nav-main-list {
 }
 
 div.logo {
-  display: table-cell;
-  vertical-align: middle;
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  padding: 5px 5px;
-  background-color: white;
+  margin: auto 0 auto 40px;
 }
 
 .logo img {
-  filter: opacity(0.5) drop-shadow(0 0 0 red) brightness(3);
-  width: 40px;
-  background-color: red;
+  width: 55px;
 }
 
 .nav-mid {
 	display: flex;
 	position: relative;
-  /* vertical-align: baseline; */
   flex: 3;
 }
 
 .search-bar {
-	/* margin-left: 200px; */
 	background-color: white;
 }
 
 div.nav-main ul {
   display: flex;
   justify-content: space-evenly;
-  /* align-items: stretch; */
   height: fit-content;
 }
 
@@ -107,23 +94,11 @@ div.nav-main ul li .nav-link {
   flex-wrap: nowrap;
 }
 
-/* div.login-link button,
-.user-icon-div button {
-  right: 20px;
-} */
-
-/* div.signup-link button {
-	right: 100px;
-} */
 div button.profile-link {
 	padding: 0;
 	margin: 0;
 	height: fit-content;
 }
-
-/* div.help-link button {
-  right: 80px;
-} */
 
 .messages-div button {
    right: 140px;

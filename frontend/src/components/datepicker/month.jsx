@@ -7,28 +7,28 @@ class Month extends React.Component {
     this.state = {
       days: []
     }
+    this.getSelectedYr = this.getSelectedYr.bind(this);
   }
   
   // Runs once component has mounted
   componentDidMount() {
-    const { month } = this.props;
-    this.populateDays(month);
+    const { currentMonth } = this.props;
+    this.populateDays(currentMonth);
   }
 
   // Runs when component receives new props
   componentWillReceiveProps(newState) {
-    this.populateDays(newState.month);
+    this.populateDays(newState.currentMonth);
   }
 
   // Popoulates months with correct amount of days
   populateDays(month) {
     let totalDays;
     let newDays = [];
-    let splitDays = [];
 
-    if (month === 'February') {
+    if (month === 1) {
       totalDays = 28;
-    } else if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
+    } else if (month === 3 || month === 5 || month === 8 || month === 10) {
       totalDays = 30;
     } else {
       totalDays = 31;
@@ -42,15 +42,21 @@ class Month extends React.Component {
     this.setState({days: newDays});
   }
 
-  // getSelectedYr(monthNum, currentYr, direction) {
-  //   if (direction === 'forward' && monthNum === 0) {
+  // Gets the correct year for the date the user selected
+  getSelectedYr(currentMonth, nextMonth, yr) {
+    let updatedYr;
     
-  //   }
-  // }
+    if (currentMonth === 0 && nextMonth !== 1) {
+      updatedYr = yr + 1;
+    } else {
+      updatedYr = yr;
+    }
+    return updatedYr;
+  }
 
   // Renders the Month component
   render() {
-    const { currentDate, monthNum, type, direction } = this.props;
+    const { currentMonth, nextMonth, currentYr, type } = this.props;
     const months = [
       'January',
       'February',
@@ -65,13 +71,12 @@ class Month extends React.Component {
       'November',
       'December'
     ]
-    let selectedMonth = months[monthNum];
-    let selectedYr;
-
+    let month = months[currentMonth];
+    let yr = this.getSelectedYr(currentMonth, nextMonth, currentYr);
 
     return (
       <div className={`${type}-month`}>
-        <div id={`${type}-month-header`}>{selectedMonth}</div>
+        <div id={`${type}-month-header`}>{month}</div>
 
         <div className="days">
           <div className="weekday-header">
@@ -85,7 +90,7 @@ class Month extends React.Component {
           </div>
           
           <div className="number-days">
-            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(day, monthNum)}>{day}</div>)}
+            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(currentMonth, day, yr)}>{day}</div>)}
           </div>
         </div>
       </div>
