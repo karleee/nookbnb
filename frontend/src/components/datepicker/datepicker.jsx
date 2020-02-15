@@ -96,7 +96,7 @@ class Datepicker extends React.Component {
     }
   }
 
-  formatDate(month, day) {
+  formatDate(month, day, yr) {
     let formatMonth = '';
     let formatDay = '';
 
@@ -112,8 +112,7 @@ class Datepicker extends React.Component {
       formatDay = day;
     }
 
-    // need to figure out how to keep yr static
-    return formatMonth + '/' + formatDay + '/' + this.state.selectedStartYr;
+    return formatMonth + '/' + formatDay + '/' + yr;
   }
 
   render() {
@@ -122,8 +121,10 @@ class Datepicker extends React.Component {
     let nextMonth = this.state.nextMonth;
     let selectedStartMonth = this.state.selectedStartMonth;
     let selectedStartDay = this.state.selectedStartDay;
+    let selectedStartYr = this.state.selectedStartYr;
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
+    let selectedEndYr = this.state.selectedEndYr;
 
     return (
       <div className="datepicker-wrapper">
@@ -165,7 +166,7 @@ class Datepicker extends React.Component {
             <div className="check-in-date">
               <input
                 type="text"
-                value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
+                value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay, selectedStartYr)}
                 placeholder="Check-in"
               />
             </div>
@@ -173,7 +174,7 @@ class Datepicker extends React.Component {
             <div className="checkout-date">
               <input
                 type="text"
-                value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
+                value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay, selectedEndYr)}
                 placeholder="Checkout"
               />
             </div>
