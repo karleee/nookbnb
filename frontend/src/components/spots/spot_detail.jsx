@@ -50,7 +50,6 @@ class SpotDetail extends React.Component {
         </div>
 
         <div className="spot-index-item-detail-photos">
-          <p>Put images here</p>
         </div>
 
         <div className="spot-index-item-detail-description">

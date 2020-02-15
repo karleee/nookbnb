@@ -114,14 +114,11 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
 
-    // console.log('Curr: ' + currentMonth);
-    // console.log('Next: ' + nextMonth);
-
     return (
       <div className="datepicker-wrapper">
         <div className="calendar-wrapper">
           <div className="arrows prev-month" onClick={this.previousMonth}>
-            <p>&lt;</p>
+            <i className="previous-arrow-icon"></i>
           </div>
           
           <div className="months-wrapper">
@@ -142,7 +139,7 @@ class Datepicker extends React.Component {
           </div>
 
           <div className="arrows next-month" onClick={this.nextMonth}>
-            <p>&gt;</p>
+            <i className="next-arrow-icon"></i>
           </div>
         </div>
 

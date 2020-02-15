@@ -33,24 +33,23 @@
 .datepicker-wrapper .calendar-wrapper .arrows {
     position: relative;
     text-align: center;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
     cursor: pointer;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows p {
-  position: absolute;
-  top: 8px;
-  left: 13px; 
+.datepicker-wrapper .calendar-wrapper .arrows .next-arrow-icon {
+  content: url('/images/spot_detail/next_arrow_icon.png');
+  width: 8px;
+  margin-left: -35px;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows:hover {
-  width: 25px;
-  height: 25px;
-  background: var(--light-gray);
-  border-radius: 50%;
-  cursor: pointer;
+.datepicker-wrapper .calendar-wrapper .arrows .previous-arrow-icon {
+  content: url('/images/spot_detail/previous_arrow_icon.png');
+  width: 8px;
+  margin-left: 32px;
 }
 
 .datepicker-wrapper .calendar-wrapper .months-wrapper {
