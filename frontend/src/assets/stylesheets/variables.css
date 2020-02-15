@@ -45,14 +45,10 @@ src: url('../fonts/CerealMedium.woff') format('woff');
 }
 
 :root {
-  --outline-gray: #C3C3C3;
-  --lightest-gray: #DCDCDC;
+  --dark-gray:	#222222;
+  --gray: #707070;
   --light-gray: #F7F7F7;
-  --medium-gray: #707070;
-  --gray:	#222222;
+  --outline-gray: #C3C3C3;
+  --underline-gray: #E6E6E6;
   --light-teal: #A6D3CE;
-  --yellow: #FAC650;
-  --light-sand: #FBEFC2;
-  --dark-sand: #FEDEA4;
-  --green: #25B180;
 }

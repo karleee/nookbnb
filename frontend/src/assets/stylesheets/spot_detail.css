@@ -11,13 +11,13 @@
   font-family: 'cerealMedium';
   font-size: 26px;
   letter-spacing: 0.5px;
-  color: var(--gray);
+  color: var(--dark-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-header .spot-index-item-detail-location-wrapper p {
   font-family: 'cerealMedium';
   font-size: 14px;
-  color: var(--medium-gray);
+  color: var(--gray);
   margin-top: 15px;
 }
 
@@ -36,23 +36,23 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-header h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
-  color: var(--gray);
+  color: var(--dark-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-header p {
   font-family: 'cerealRegular';
   font-size: 16px;
-  color: var(--gray);
+  color: var(--dark-gray);
   margin-top: 10px;
   padding-bottom: 30px;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-header {
-  border-bottom: 1px solid var(--lightest-gray);
+  border-bottom: 1px solid var(--underline-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-perks {
-  border-bottom: 1px solid var(--lightest-gray);
+  border-bottom: 1px solid var(--underline-gray);
   margin-top: 30px;
 }
 
@@ -75,7 +75,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-perks .entire-home-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
-  color: var(--medium-gray);
+  color: var(--gray);
   margin-top: 5px;
 }
 
@@ -99,7 +99,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
-  color: var(--medium-gray);
+  color: var(--gray);
   margin-top: 5px;
 }
 
@@ -123,7 +123,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-perks .superhost-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
-  color: var(--medium-gray);
+  color: var(--gray);
   margin-top: 5px;
 }
 
@@ -148,7 +148,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-perks .check-in-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
-  color: var(--medium-gray);
+  color: var(--gray);
   margin-top: 5px;
 }
 
@@ -157,9 +157,9 @@
   font-size: 15px;
   margin-top: 30px;
   line-height: 1.75;
-  border-bottom: 1px solid var(--lightest-gray);
+  border-bottom: 1px solid var(--underline-gray);
   padding-bottom: 30px;
-  color: var(--gray);
+  color: var(--dark-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities {
@@ -170,7 +170,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
-  color: var(--gray);
+  color: var(--dark-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities .amenities-grid {
@@ -180,7 +180,7 @@
   height: 200px;
   font-family: 'cerealLight';
   font-size: 16px;
-  color: var(--gray);
+  color: var(--dark-gray);
   margin-top: 30px;
   padding-bottom: 30px;
 }
@@ -258,12 +258,12 @@
 
 .spot-index-item-detail-wrapper .spot-index-detail-booking-form {
   width: 100%;
-  border-top: 1px solid var(--lightest-gray);
+  border-top: 1px solid var(--underline-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-detail-booking-form h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
-  color: var(--gray);
+  color: var(--dark-gray);
   margin-top: 50px;
 }
