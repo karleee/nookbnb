@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/navbar.css"
+import "../../assets/stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
 

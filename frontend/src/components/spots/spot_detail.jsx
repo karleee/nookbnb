@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Datepicker from '../datepicker/datepicker';
-import '../../stylesheets/spot_detail.css';
+import '../../assets/stylesheets/spot_detail.css';
 
 class SpotDetail extends React.Component {
   // Constructor for SpotDetail component

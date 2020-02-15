@@ -6,8 +6,8 @@ import { Route, Switch } from 'react-router-dom';
 import SpotIndex from './spots/spot_index_container';
 import SpotDetail from './spots/spot_detail_container';
 import SearchContainer from './search/search_container';
-import '../stylesheets/reset.css';
-import '../stylesheets/application.css';
+import '../assets/stylesheets/reset.css';
+import '../assets/stylesheets/application.css';
 
 const App = () => (
 	<div className="app-wrapper">

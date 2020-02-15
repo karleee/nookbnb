@@ -1,6 +1,6 @@
 import React from 'react';
 import Month from './month_container';
-import '../../stylesheets/datepicker.css';
+import '../../assets/stylesheets/datepicker.css';
 
 class Datepicker extends React.Component {
   // Constructor for Datepicker
@@ -83,8 +83,6 @@ class Datepicker extends React.Component {
       this.setState({ selectedEndDay: day });
       this.setState({ selectedEndYr: yr });
     }
-
-    // console.log(this.state);
   }
 
   formatDate(month, day) {
@@ -130,7 +128,7 @@ class Datepicker extends React.Component {
             <Month 
               currentMonth={currentMonth}
               nextMonth={nextMonth}
-              currentYr={currentYr}
+              currentYr={currentYr} 
               type="start" 
               handleClick={this.handleClick} 
             />
@@ -149,20 +147,22 @@ class Datepicker extends React.Component {
         </div>
 
         <div className="selected-dates-wrapper">
-          <div className="check-in-date">
-            <input
-              type="text"
-              value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
-              placeholder="Check-in"
-            />
-          </div>
+          <div className="dates-wrapper">
+            <div className="check-in-date">
+              <input
+                type="text"
+                value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay)}
+                placeholder="Check-in"
+              />
+            </div>
 
-          <div className="checkout-date">
-            <input
-              type="text"
-              value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
-              placeholder="Checkout"
-            />
+            <div className="checkout-date">
+              <input
+                type="text"
+                value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay)}
+                placeholder="Checkout"
+              />
+            </div>
           </div>
         </div>
       </div>
