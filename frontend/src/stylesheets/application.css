@@ -1,3 +1,5 @@
-.app-main-content-wrapper {
+.app-wrapper .app-main-content-wrapper {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
 }

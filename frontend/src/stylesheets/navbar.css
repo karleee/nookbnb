@@ -22,8 +22,6 @@
   flex: 3;
 }
 .nav-main {
-  /* display: table-cell; */
-  /* display: block; */
   vertical-align: middle;
 	max-height: 80px;
   background-color: white;

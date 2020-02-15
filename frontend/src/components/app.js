@@ -13,6 +13,7 @@ const App = () => (
 	<div className="app-wrapper">
 		<Modal />
 		<NavBarContainer />
+		
 		<div className="app-main-content-wrapper">
 		  <Switch>
 		  	<Route exact path="/" component={SpotIndex} />
