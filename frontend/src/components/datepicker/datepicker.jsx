@@ -25,6 +25,7 @@ class Datepicker extends React.Component {
     this.nextMonth = this.nextMonth.bind(this);
     this.previousMonth = this.previousMonth.bind(this);
     this.resetEndDate = this.resetEndDate.bind(this);
+    this.reset = this.reset.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.formatDate = this.formatDate.bind(this);
   }
@@ -61,6 +62,16 @@ class Datepicker extends React.Component {
 
   // Resets the end date
   resetEndDate() {
+    this.setState({ selectedEndMonth: '' });
+    this.setState({ selectedEndDay: '' });
+    this.setState({ selectedEndYr: '' });
+  }
+
+  // Resets entire state
+  reset() {
+    this.setState({ selectedStartMonth: '' });
+    this.setState({ selectedStartDay: '' });
+    this.setState({ selectedStartYr: '' });
     this.setState({ selectedEndMonth: '' });
     this.setState({ selectedEndDay: '' });
     this.setState({ selectedEndYr: '' });
@@ -121,21 +132,27 @@ class Datepicker extends React.Component {
             <i className="previous-arrow-icon"></i>
           </div>
           
-          <div className="months-wrapper">
-            <Month 
-              currentMonth={currentMonth}
-              nextMonth={nextMonth}
-              currentYr={currentYr} 
-              type="start" 
-              handleClick={this.handleClick} 
-            />
+          <div className="months-content-wrapper">
+            <div className="months-wrapper">
+              <Month 
+                currentMonth={currentMonth}
+                nextMonth={nextMonth}
+                currentYr={currentYr} 
+                type="start" 
+                handleClick={this.handleClick} 
+              />
 
-            <Month 
-              currentMonth={nextMonth} 
-              currentYr={currentYr}
-              type="end" 
-              handleClick={this.handleClick} 
-            />
+              <Month 
+                currentMonth={nextMonth} 
+                currentYr={currentYr}
+                type="end" 
+                handleClick={this.handleClick} 
+              />
+            </div>
+
+            <div className="clear-dates-wrapper">
+              <button onClick={this.reset}>Clear Dates</button>
+            </div>
           </div>
 
           <div className="arrows next-month" onClick={this.nextMonth}>

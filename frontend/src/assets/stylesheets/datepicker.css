@@ -52,22 +52,28 @@
   margin-left: 32px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month #start-month-header,
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month #end-month-header {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month #start-month-header,
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month #end-month-header {
   font-family: 'cerealRegular';
   font-weight: 900;
   letter-spacing: 0.5px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .weekday-header,
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .weekday-header  {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .weekday-header,
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .weekday-header  {
   font-family: 'cerealRegular';
   font-weight: 900;
   font-size: 12px;
@@ -78,8 +84,8 @@
   width: 100%;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days,
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days  {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days,
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days  {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +93,7 @@
   margin-top: 25px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,15 +101,15 @@
   margin-right: 150px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 45%;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .number-days,
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .number-days {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days,
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   column-gap: 3px;
@@ -113,8 +119,8 @@
   font-size: 14px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .start-month .days .number-days .number,
-.datepicker-wrapper .calendar-wrapper .months-wrapper .end-month .days .number-days .number {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days .number,
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days .number {
   border: 2px solid transparent;
   border-radius: 50%;
   width: 15px;
@@ -123,7 +129,7 @@
   padding: 13px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .days .number-days .number:hover {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .days .number-days .number:hover {
   border: 2px solid var(--gray);
   border-radius: 50%;
   width: 15px;
@@ -131,7 +137,7 @@
   cursor: pointer;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-wrapper .days .number .weekday {
+.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .days .number .weekday {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,3 +175,22 @@
   border: none;
   border: 1px solid var(--outline-gray); 
 } 
+
+.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper {
+  padding-bottom: 20px;
+}
+
+.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button {
+  background: transparent;
+  border: none;
+  font-family: 'cerealMedium';
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 8px 10px;
+}
+
+.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button:hover {
+  background: var(--lightest-gray);
+  border-radius: 5px;
+  cursor: pointer;
+}
