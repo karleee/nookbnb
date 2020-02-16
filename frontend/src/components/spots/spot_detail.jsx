@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Datepicker from '../datepicker/datepicker';
 import '../../assets/stylesheets/spot_detail.css';
+import SleepingArrangementIndex from '../sleeping_arrangement/sleeping_arrangement_index';
 
 class SpotDetail extends React.Component {
   // Constructor for SpotDetail component
@@ -107,6 +108,11 @@ class SpotDetail extends React.Component {
           <div className="spot-index-item-detail-description-main">
             <p>{spot.description}</p>
           </div>
+
+          <div className="spot-index-item-detail-description-sleeping-arrangements">
+            <h2>Sleeping Arrangements</h2>
+            <SleepingArrangementIndex bedrooms={spot.bedrooms} />
+          </div> 
 
           <div className="spot-index-item-detail-description-amenities">
             <h2>Amenities</h2>

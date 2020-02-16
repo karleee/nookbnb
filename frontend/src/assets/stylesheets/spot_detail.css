@@ -162,6 +162,55 @@
   color: var(--dark-gray);
 }
 
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements {
+  margin-top: 50px;
+  border-bottom: 1px solid var(--underline-gray);
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements h2 {
+  font-family: 'cerealMedium';
+  font-size: 20px;
+  color: var(--dark-gray);
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-bottom: 50px;
+  margin-top: 25px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid var(--underline-gray); 
+  border-radius: 10px;
+  padding: 25px 90px 25px 25px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul li:first-of-type {
+  margin-right: 20px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul li .bed-icon img {
+  width: 25px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul li h3 {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-sleeping-arrangements ul li p {
+  font-family: 'cerealLight';
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .spot-index-item-detail-description-amenities {
   display: grid;
   margin-top: 50px;
@@ -181,7 +230,7 @@
   font-family: 'cerealLight';
   font-size: 16px;
   color: var(--dark-gray);
-  margin-top: 30px;
+  margin-top: 25px;
   padding-bottom: 30px;
 }
 

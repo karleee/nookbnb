@@ -41,7 +41,7 @@ src: url('../fonts/CerealMedium.woff') format('woff');
   font-family: 'cerealBlack';
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/CerealBlack.woff') format('woff'); 
+  src: url('../fonts/CerealBlack.woff') format('woff');  
 }
 
 :root {
