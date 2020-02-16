@@ -255,7 +255,7 @@ class Datepicker extends React.Component {
             </div>
 
             <div className="guests-dropdown-arrow-wrapper">
-              <i className="guests-dropdown-arrow-icon"><img src='/images/spot_detail/dropdown_arrow_icon.png' /></i>
+              {guestsState ? <i className="guests-dropdown-arrow-active-icon"></i> : <i className="guests-dropdown-arrow-icon"></i>}
             </div>
           </div>
 
@@ -269,7 +269,7 @@ class Datepicker extends React.Component {
 
                   <div className="adult-guests-buttons-wrapper">
                     <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
-                      <i className="subtract-icon"></i>
+                      {adultGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
                     </div>
 
                     <div className="button-text-wrapper">
@@ -290,7 +290,7 @@ class Datepicker extends React.Component {
 
                   <div className="children-guests-buttons-wrapper">
                     <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('children')}>
-                      <i className="subtract-icon"></i>
+                      {childrenGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
                     </div>
 
                     <div className="button-text-wrapper">
@@ -311,7 +311,7 @@ class Datepicker extends React.Component {
 
                   <div className="infant-guests-buttons-wrapper">
                     <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
-                      <i className="subtract-icon"></i>
+                      {infantGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
                     </div>
 
                     <div className="button-text-wrapper">

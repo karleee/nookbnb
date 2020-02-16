@@ -220,7 +220,7 @@
   border: 1px solid var(--outline-gray);
   border-radius: 10px;
   background: white;
-  padding: 10px 10px 5px 20px;
+  padding: 10px 10px 10px 20px;
   margin-top: 15px;
   z-index: 1;
 }
@@ -237,9 +237,18 @@
   color: var(--dark-gray);
 }
 
-.datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-icon img {
+.datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-icon {
+  content: url('/images/spot_detail/dropdown_arrow_icon.png');
   width: 18px;
+  padding-right: 10px;
 }
+
+.datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-active-icon {
+  content: url('/images/spot_detail/dropdown_arrow_active_icon.png');
+  width: 18px;
+  padding-right: 10px;
+}
+
 
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu {
   display: flex;
@@ -307,6 +316,14 @@
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .infant-guests-wrapper .infant-guests-buttons-wrapper .subtract-button-wrapper .subtract-icon {
   content: url('/images/spot_detail/subtract_icon.png');
   width: 30px;
+}
+
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .adult-guests-wrapper .adult-guests-buttons-wrapper .subtract-button-wrapper .subtract-icon-disable,
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .children-guests-wrapper .children-guests-buttons-wrapper .subtract-button-wrapper .subtract-icon-disable,
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .infant-guests-wrapper .infant-guests-buttons-wrapper .subtract-button-wrapper .subtract-icon-disable {
+  content: url('/images/spot_detail/subtract_disable_icon.png');
+  width: 30px;
+  cursor: not-allowed;
 }
 
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .adult-guests-wrapper .adult-guests-buttons-wrapper .add-button-wrapper .add-icon:hover,
