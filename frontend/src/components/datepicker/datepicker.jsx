@@ -19,7 +19,10 @@ class Datepicker extends React.Component {
       selectedEndMonth: '',
       selectedEndDay: '',
       selectedEndYr: '',
-      guests: 2,
+      totalGuests: 1,
+      adultGuests: 1,
+      childrenGuests: 0,
+      infantGuests: 0,
       guestsState: false,
       clicks: 0
     }
@@ -28,8 +31,10 @@ class Datepicker extends React.Component {
     this.previousMonth = this.previousMonth.bind(this);
     this.resetEndDate = this.resetEndDate.bind(this);
     this.reset = this.reset.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleDropdownClick = this.handleDropdownClick.bind(this);
+    this.handleDateClick = this.handleDateClick.bind(this);
+    this.toggleGuestsState = this.toggleGuestsState.bind(this);
+    this.handleGuestsAddingClick = this.handleGuestsAddingClick.bind(this);
+    this.handleGuestsSubtractingClick = this.handleGuestsSubtractingClick.bind(this);
     this.formatDate = this.formatDate.bind(this);
   }
 
@@ -81,7 +86,7 @@ class Datepicker extends React.Component {
   }
 
   // Handles auto fill in dates for check-in and checkout
-  handleClick(month, day, yr) {
+  handleDateClick(month, day, yr) {
     let newClicks = this.state.clicks + 1;
     let realMonthNum = month + 1;
 
@@ -100,8 +105,44 @@ class Datepicker extends React.Component {
   }
 
   // Handles dropdown menu click
-  handleDropdownClick() {
+  toggleGuestsState() {
     this.setState({ guestsState: !this.state.guestsState });
+  }
+
+  // Handles guests adding click
+  handleGuestsAddingClick(guestType) {
+    let newTotalGuests = this.state.totalGuests + 1;
+    this.setState({ totalGuests: newTotalGuests });
+
+    if (guestType === 'adult') {
+      let newAdultGuests = this.state.adultGuests + 1;
+      this.setState({ adultGuests: newAdultGuests });
+    } else if (guestType === 'child') {
+      let newChildrenGuests = this.state.childrenGuests + 1;
+      this.setState({ childrenGuests: newChildrenGuests });
+    } else if (guestType === 'infant') {
+      let newInfantGuests = this.state.infantGuests + 1;
+      this.setState({ infantGuests: newInfantGuests });
+    }
+  }
+
+  // Handles guests subtracting click
+  handleGuestsSubtractingClick(guestType) {
+    let newTotalGuests = this.state.totalGuests - 1;
+    if (newTotalGuests > 0) {
+      this.setState({ totalGuests: newTotalGuests });
+
+      if (guestType === 'adult') {
+        let newAdultGuests = this.state.adultGuests - 1;
+        this.setState({ adultGuests: newAdultGuests });
+      } else if (guestType === 'child') {
+        let newChildrenGuests = this.state.childrenGuests - 1;
+        this.setState({ childrenGuests: newChildrenGuests });
+      } else if (guestType === 'infant') {
+        let newInfantGuests = this.state.infantGuests - 1;
+        this.setState({ infantGuests: newInfantGuests });
+      }
+    }
   }
 
   // Formats dates correctly
@@ -134,7 +175,10 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
     let selectedEndYr = this.state.selectedEndYr;
-    let guests = this.state.guests;
+    let totalGuests = this.state.totalGuests;
+    let adultGuests = this.state.adultGuests;
+    let childrenGuests = this.state.childrenGuests;
+    let infantGuests = this.state.infantGuests;
     let guestsState = this.state.guestsState;
 
     return (
@@ -151,14 +195,14 @@ class Datepicker extends React.Component {
                 nextMonth={nextMonth}
                 currentYr={currentYr} 
                 type="start" 
-                handleClick={this.handleClick} 
+                handleDateClick={this.handleDateClick} 
               />
 
               <Month 
                 currentMonth={nextMonth} 
                 currentYr={currentYr}
                 type="end" 
-                handleClick={this.handleClick} 
+                handleDateClick={this.handleDateClick} 
               />
             </div>
 
@@ -191,20 +235,86 @@ class Datepicker extends React.Component {
             </div>
           </div>
 
-          <div className="guests">
+          <div className="guests" onClick={this.toggleGuestsState}>
             <div className="guests-input-wrapper">
               <label>Guests</label>
-              <p>{guests}</p>
+              <p>{totalGuests}</p>
             </div>
 
-            <div className="guests-dropdown-arrow-wrapper" onClick={this.handleDropdownClick}>
+            <div className="guests-dropdown-arrow-wrapper">
               <i className="guests-dropdown-arrow-icon"><img src='/images/spot_detail/dropdown_arrow_icon.png' /></i>
             </div>
           </div>
 
           { guestsState ? 
             <div className="guests-dropdown-menu">
-              <p>hello</p>
+              <div className="guests-dropdown-main-content-wrapper">
+                <div className="adult-guests-wrapper">
+                  <div className="adult-guests-label-wrapper">
+                    <p>Adults</p>
+                  </div> 
+
+                  <div className="adult-guests-buttons-wrapper">
+                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
+                      <i className="subtract-icon"><img src='/images/spot_detail/subtract_icon.png' /></i>
+                    </div>
+
+                    <div className="button-text-wrapper">
+                      <p>{adultGuests}</p>
+                    </div>
+
+                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                      <i className="add-icon"><img src='/images/spot_detail/add_icon.png' /></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="children-guests-wrapper">
+                  <div className="children-guests-label-wrapper">
+                    <p>Children</p>
+                    <p>Ages 2–12</p>
+                  </div>
+
+                  <div className="children-guests-buttons-wrapper">
+                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
+                      <i className="subtract-icon"><img src='/images/spot_detail/subtract_icon.png' /></i>
+                    </div>
+
+                    <div className="button-text-wrapper">
+                      <p>{childrenGuests}</p>
+                    </div>
+
+                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                      <i className="add-icon"><img src='/images/spot_detail/add_icon.png' /></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="infant-guests-wrapper">
+                  <div className="infant-guests-label-wrapper">
+                    <p>Infants</p>
+                    <p>Under 2</p>
+                  </div> 
+
+                  <div className="infant-guests-buttons-wrapper">
+                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
+                      <i className="subtract-icon"><img src='/images/spot_detail/subtract_icon.png' /></i>
+                    </div>
+
+                    <div className="button-text-wrapper">
+                      <p>{infantGuests}</p>
+                    </div>
+
+                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                      <i className="add-icon"><img src='/images/spot_detail/add_icon.png' /></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="close-wrapper">
+                  <p onClick={this.toggleGuestsState}>Close</p>
+                </div>
+              </div>
             </div> : '' }
         </div>
       </div>

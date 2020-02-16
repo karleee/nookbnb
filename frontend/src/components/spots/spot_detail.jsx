@@ -60,7 +60,7 @@ class SpotDetail extends React.Component {
             <div className="main-description">
               <div className="spot-index-item-detail-description-header">
                 <h2>Entire house hosted by {usernameCapitalized}</h2>
-                <p>{spot.occupancy} guests • {spot.bedrooms} bedrooms • {spot.beds} beds • {spot.baths} baths</p>
+                <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'} • {spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'} • {spot.beds} {spot.beds > 1 ? 'beds' : 'bed'} • {spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
               </div>
 
               <div className="spot-index-item-detail-description-perks">
