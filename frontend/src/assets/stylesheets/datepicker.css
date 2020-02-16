@@ -183,6 +183,7 @@
   font-family: 'cerealRegular';
   font-size: 16px;
   padding: 20px 10px;
+  border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: none;
@@ -207,3 +208,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu{
+  display: none;
+} */

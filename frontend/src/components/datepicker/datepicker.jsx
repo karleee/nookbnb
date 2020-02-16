@@ -19,6 +19,8 @@ class Datepicker extends React.Component {
       selectedEndMonth: '',
       selectedEndDay: '',
       selectedEndYr: '',
+      guests: 2,
+      guestsState: false,
       clicks: 0
     }
 
@@ -27,6 +29,7 @@ class Datepicker extends React.Component {
     this.resetEndDate = this.resetEndDate.bind(this);
     this.reset = this.reset.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleDropdownClick = this.handleDropdownClick.bind(this);
     this.formatDate = this.formatDate.bind(this);
   }
 
@@ -96,6 +99,12 @@ class Datepicker extends React.Component {
     }
   }
 
+  // Handles dropdown menu click
+  handleDropdownClick() {
+    this.setState({ guestsState: !this.state.guestsState });
+  }
+
+  // Formats dates correctly
   formatDate(month, day, yr) {
     let formatMonth = '';
     let formatDay = '';
@@ -125,6 +134,8 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
     let selectedEndYr = this.state.selectedEndYr;
+    let guests = this.state.guests;
+    let guestsState = this.state.guestsState;
 
     return (
       <div className="datepicker-wrapper">
@@ -179,6 +190,22 @@ class Datepicker extends React.Component {
               />
             </div>
           </div>
+
+          <div className="guests">
+            <div className="guests-input-wrapper">
+              <label>Guests</label>
+              <p>{guests}</p>
+            </div>
+
+            <div className="guests-dropdown-arrow-wrapper" onClick={this.handleDropdownClick}>
+              <i className="guests-dropdown-arrow-icon"><img src='/images/spot_detail/dropdown_arrow_icon.png' /></i>
+            </div>
+          </div>
+
+          { guestsState ? 
+            <div className="guests-dropdown-menu">
+              <p>hello</p>
+            </div> : '' }
         </div>
       </div>
     );
