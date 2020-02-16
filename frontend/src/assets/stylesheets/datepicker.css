@@ -193,7 +193,7 @@
 } 
 
 .datepicker-wrapper .calendar-wrapper .clear-dates-wrapper {
-  padding-bottom: 150px;
+  padding-bottom: 200px;
 }
 
 .datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button {
@@ -267,7 +267,7 @@
   width: 100%;
   align-items: center;
   box-sizing: border-box;
-  padding: 30px 20px;
+  padding: 30px 20px 20px 20px;
 }
 
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .adult-guests-wrapper,
@@ -326,6 +326,15 @@
   cursor: not-allowed;
 }
 
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .adult-guests-wrapper .adult-guests-buttons-wrapper .add-button-wrapper .add-icon-disable,
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .children-guests-wrapper .children-guests-buttons-wrapper .add-button-wrapper .add-icon-disable,
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .infant-guests-wrapper .infant-guests-buttons-wrapper .add-button-wrapper .add-icon-disable {
+  content: url('/images/spot_detail/add_disable_icon.png');
+  width: 30px;
+  cursor: not-allowed;
+}
+
+
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .adult-guests-wrapper .adult-guests-buttons-wrapper .add-button-wrapper .add-icon:hover,
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .children-guests-wrapper .children-guests-buttons-wrapper .add-button-wrapper .add-icon:hover,
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .infant-guests-wrapper .infant-guests-buttons-wrapper .add-button-wrapper .add-icon:hover {
@@ -361,6 +370,7 @@
   font-family: 'cerealMedium';
   text-decoration: underline;
   margin-left: 85%;
+  margin-top: 20px;
   padding: 10px;
 }
 
@@ -368,4 +378,10 @@
   background: var(--light-gray);
   border-radius: 10px;
   cursor: pointer;
+}
+
+.datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .guests-dropdown-main-content-wrapper .maximum-guests-wrapper p {
+  font-family: 'cerealLight';
+  font-size: 14px;
+  width: 90%;
 }
