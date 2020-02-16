@@ -36,6 +36,7 @@ class SpotIndex extends React.Component {
 
         <div className="spot-index-top-wrapper">
           <h2>Top-rated places to stay</h2>
+          <h3>Explore some of the best-reviewed stays in the world</h3>
           
           <ul>
             {spots.map(spot => <SpotIndexItem key={spot._id} spot={spot} />)}

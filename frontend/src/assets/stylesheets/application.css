@@ -1,5 +1,5 @@
 .app-wrapper .app-main-content-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding: 20px 0;
 }
