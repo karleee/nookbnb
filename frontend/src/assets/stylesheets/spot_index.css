@@ -79,12 +79,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 80px;
+  padding-bottom: 50px;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper h2 {
   font-family: 'cerealRegular';
-  font-size: 24px;
+  font-size: 25px;
   letter-spacing: 0.5px;
 }
 
