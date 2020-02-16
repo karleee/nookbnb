@@ -100,7 +100,7 @@
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a {
@@ -154,5 +154,5 @@
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p .price-wrapper {
   font-family: 'cerealMedium';
-  color: var(--dark-gray);
+  color: var(--dark-gray); 
 }
