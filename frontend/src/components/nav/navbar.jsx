@@ -173,7 +173,7 @@ class NavBar extends React.Component {
 										type="button"
 										className="nav-link"
 									><Link to={"/"}>
-										Host an experience</Link>
+										Become a host</Link>
 									</button>
 								</div>
 							</li>

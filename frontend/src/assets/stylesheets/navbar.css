@@ -71,16 +71,16 @@ div.logo {
 
 div.nav-main ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: fit-content;
 }
 
 div.nav-main ul li .nav-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  color: #737373;
+  color: var(--gray);
   line-height: 20px;
-  padding: 0px 10px;
+  padding: 0 17px;
   margin: 0px 0px;
   border: none;
   background: none;
@@ -93,6 +93,15 @@ div.nav-main ul li .nav-link {
   vertical-align: baseline;
   align-items: center;
   flex-wrap: nowrap;
+}
+
+button a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.help-link a {
+  text-decoration: none;
 }
 
 div button.profile-link {
