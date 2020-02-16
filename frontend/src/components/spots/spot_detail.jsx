@@ -45,9 +45,11 @@ class SpotDetail extends React.Component {
       <div className="spot-index-item-detail-wrapper">
         <div className="spot-index-item-detail-header">
           <h1>{spot.name}</h1> 
-          <div className="spot-index-item-detail-location-wrapper">
-            <p>{spot.city}, {spot.state}, {spot.country}</p>
-          </div>
+        </div>
+
+        <div className="spot-index-item-detail-location-wrapper">
+          <p>{spot.city}, {spot.state}, {spot.country}</p>
+          <div className="underline-wrapper"></div>
         </div>
 
         <div className="spot-index-item-detail-photos">
@@ -205,7 +207,7 @@ class SpotDetail extends React.Component {
           <h2>Select dates</h2>
           <Datepicker />
         </div>
-      </div>
+      </div> 
     );
   }
 }

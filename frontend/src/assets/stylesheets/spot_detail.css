@@ -14,11 +14,15 @@
   color: var(--dark-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .spot-index-item-detail-location-wrapper p {
+.spot-index-item-detail-wrapper .spot-index-item-detail-location-wrapper p {
   font-family: 'cerealMedium';
   font-size: 14px;
   color: var(--gray);
   margin-top: 15px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-location-wrapper .underline-wrapper {
+  border-top: 1px solid var(--gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-photos {
