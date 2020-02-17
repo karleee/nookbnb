@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
 	}
 
 	toggleSearchPlaceholder() {
-	  this.setState({searchPlaceholder: !this.state.searchPlaceholder});
+		this.setState({searchPlaceholder: !this.state.searchPlaceholder});
 	}
 
 	handleUpdate() {
