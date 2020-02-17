@@ -18,7 +18,7 @@
 }
 
 .search-bar-input:focus {
-  padding-right: 350px;
+  padding-right: 300px;
   transition: padding 0.25s;
 }
 
@@ -29,18 +29,12 @@
   left: 15px;
 }
 
-.close {
-  /* width: 20px;
-  line-height: 20px;
-  vertical-align: center;
-  text-align: center;
-  margin: 15px;
-  font-size: 28px;
-  color: #b3b3b3;
-  font-weight: lighter;
+.search-bar-input:focus + .close .close-icon {
   position: absolute;
-  right: 0;
-  bottom: 5px; */ 
+  content: url('/images/navbar/close_icon.png');
+  top: 15px;
+  left: 535px;
+  width: 13px;
 }
 
 .close:hover {

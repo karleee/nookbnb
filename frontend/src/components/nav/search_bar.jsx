@@ -11,13 +11,13 @@ class SearchBar extends React.Component {
 			searchPlaceholder: false
 		};
 
-		this.toggleSearchPlaceholder = this.toggleSearchPlaceholder.bind(this);
+		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 	}
 
-	toggleSearchPlaceholder() {
+	toggleSearchBarPlaceholder() {
 		this.setState({searchPlaceholder: !this.state.searchPlaceholder});
 	}
 
@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
 		};
 	}
 
-	handleClearSearch() {
+	handleClearSearch() { 
 		this.setState({ searchInput: "" });
 	}
 
@@ -49,12 +49,13 @@ class SearchBar extends React.Component {
 		if (this.state.searchInput.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
-				</div> 
+					<i className="close-icon"></i>
+				</div>  
 			);
 		}
 
 		return (
-			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchPlaceholder}>
+			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
 					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
 
@@ -75,7 +76,6 @@ class SearchBar extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-	// updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
