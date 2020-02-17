@@ -8,14 +8,6 @@ const path = require('path');
 const users = require('./routes/api/users');
 const spots = require('./routes/api/spots');
 
-// // Loading static build folder in production
-// if (process.env.NODE_ENV === 'production') {
-// 	app.use(express.static('frontend/build'));
-// 	app.get('/', (req, res) => {
-// 		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-// 	})
-// }
-
 // Using mongoose to connect to Mongo database with success and error messages
 mongoose
 	.connect(db, {
