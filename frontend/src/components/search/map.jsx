@@ -49,7 +49,6 @@ export default class Map extends Component {
       };
       this.props.requestUpdateBounds(bounds);
     });
-    this.geocoder = new this.maps.Geocoder();
   }
 
   handleChange(e) {
@@ -58,13 +57,10 @@ export default class Map extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.geocoder.geocode({ address: this.state.address }, (results, status) => {
-      if (status == 'OK') {
-        this.map.setCenter(results[0].geometry.location);
-      } else {
-        console.log(status);
-      }
-    })
+    // this.props.geocode(this.state) //.then(response => {
+    //   debugger;
+    //   this.map.setCenter(response.location.data);
+    // });
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import "../../stylesheets/search_bar.css";
+// import "../../stylesheets/search_bar.css";
 
 class SearchBar extends React.Component {
 	constructor(props) {

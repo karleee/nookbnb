@@ -7,6 +7,7 @@ const passport = require('passport');
 const path = require('path');
 const users = require('./routes/api/users');
 const spots = require('./routes/api/spots');
+const geocode = require('./routes/api/geocode');
 
 // Using mongoose to connect to Mongo database with success and error messages
 mongoose
@@ -28,6 +29,7 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 // Requests for these routes uses the specified callback function
 app.use('/api/users', users);
 app.use('/api/spots', spots);
+app.use('/api/geocode', geocode);
 
 // Middleware for Passport
 app.use(passport.initialize());
