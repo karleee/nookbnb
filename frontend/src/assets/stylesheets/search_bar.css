@@ -1,38 +1,27 @@
+@import 'variables.css';
+
 .search-bar {
-  display: flex;
-  width: 460px;
-  height: 40px;
-  border: 1px solid lightgrey;
   position: relative;
-  border-radius: 4px;
-  box-shadow: 0px 1px 5px 0px rgba(212, 212, 212, 1);
-  margin-left: 35px;
-  margin-top: 15px;
-	background-color: #ffffff;
+  width: 500px;
+  margin: 7px 0 0 10px;
 }
 
 .search-bar-input {
+  font-family: 'cerealMedium';
+  font-size: 18px;
+  color: var(--dark-gray);
+  padding: 10px 200px 10px 50px;
+  border-radius: 5px;
   border: none;
-  line-height: 30px;
-  width: 400px;
-  vertical-align: center;
-  font-size: 20px;
-  color: #595959;
+  border: 1px solid var(--outline-gray);
+  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
-.fas fa-glass {
-  width: 40px;
-  height: 40px;
-  transform: scale(1.5);
-  filter: brightness(1.7);
+.search-bar .search-icon img {
   position: absolute;
-  top: 0;
-}
-
-.fas fa-glass-div {
-  position: relative;
-  margin: 15px 5px 10px 20px;
-  display: inline-block;
+  width: 20px;
+  top: 12px;
+  left: 15px;
 }
 
 .close {
