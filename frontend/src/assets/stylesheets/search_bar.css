@@ -14,7 +14,7 @@
   border-radius: 5px;
   border: none;
   border: 1px solid var(--outline-gray);
-  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar-input:focus {
