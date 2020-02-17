@@ -40,12 +40,15 @@ class NavBar extends React.Component {
 		this.props.history.push("/");
 	}
 
+	// ** BUG FOUND ** 
+	// This is causing the search page to always render upon app load up
 	handleSearchSubmit(e) {
 		this.navigateToSearch();
 	}
 
+	// For testing, changed the route from '/search' to '/'
 	navigateToSearch() {
-		this.props.history.push("/search");
+		this.props.history.push("/");
 	}
 
 	update(property) {

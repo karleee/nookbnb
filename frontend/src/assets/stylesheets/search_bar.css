@@ -3,7 +3,7 @@
 .search-bar {
   position: relative;
   width: 500px;
-  margin: 7px 0 0 10px;
+  margin: 8px 0 0 10px;
 }
 
 .search-bar-input {
@@ -17,6 +17,11 @@
   box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.05);
 }
 
+.search-bar-input:focus {
+  padding-right: 350px;
+  transition: padding 0.25s;
+}
+
 .search-bar .search-icon img {
   position: absolute;
   width: 20px;
@@ -25,7 +30,7 @@
 }
 
 .close {
-  width: 20px;
+  /* width: 20px;
   line-height: 20px;
   vertical-align: center;
   text-align: center;
@@ -35,7 +40,7 @@
   font-weight: lighter;
   position: absolute;
   right: 0;
-  bottom: 5px;
+  bottom: 5px; */ 
 }
 
 .close:hover {

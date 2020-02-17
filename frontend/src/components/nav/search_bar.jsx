@@ -49,8 +49,7 @@ class SearchBar extends React.Component {
 		if (this.state.searchInput.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
-					x
-				</div>
+				</div> 
 			);
 		}
 
@@ -68,7 +67,7 @@ class SearchBar extends React.Component {
 						onChange={this.handleUpdate()}
 					/>
 
-				  {close}
+					{close}
 				</div>
 			</div>
 		);
