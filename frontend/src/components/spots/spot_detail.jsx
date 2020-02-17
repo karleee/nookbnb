@@ -53,6 +53,13 @@ class SpotDetail extends React.Component {
         </div>
 
         <div className="spot-index-item-detail-photos">
+          <div className="main-photo-wrapper">
+            <img src={`${spot.main_image_url}`} alt="Main spot photo" /> 
+          </div>
+
+          <div className="thumbnail-photos-wrapper">
+            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => <img src={url} alt="Thumbnail photo" />) : ''}
+          </div>
         </div>
 
         <div className="spot-index-item-detail-description">
