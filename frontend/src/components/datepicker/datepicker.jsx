@@ -129,10 +129,10 @@ class Datepicker extends React.Component {
       this.setState({ totalGuests: newTotalGuests });
 
       if (guestType === 'adult' && guestCount < 4) {
-        let newAdultGuests = this.state.adultGuests + 1;
+        let newAdultGuests = guestCount + 1;
         this.setState({ adultGuests: newAdultGuests });
       } else if (guestType === 'children' && guestCount < 4) {
-        let newChildrenGuests = this.state.childrenGuests + 1;
+        let newChildrenGuests = guestCount + 1;
         this.setState({ childrenGuests: newChildrenGuests });
       } 
     }
@@ -140,8 +140,8 @@ class Datepicker extends React.Component {
 
   // Handles guests subtracting click
   handleGuestsSubtractingClick(guestType) {
-    let newTotalGuests = this.state.totalGuests - 1;
-    let newGuestCount;
+    let totalGuests = this.state.adultGuests + this.state.childrenGuests;
+    let newTotalGuests;
     let guestCount;
 
     if (guestType === 'adult') {
@@ -152,19 +152,18 @@ class Datepicker extends React.Component {
       guestCount = this.state.infantGuests;
     }
 
-    newGuestCount = guestCount - 1;    
-
-    if (newTotalGuests >= 0 && newGuestCount >= 0) {
+    if (totalGuests > 0) {
+      newTotalGuests = totalGuests - 1;
       this.setState({ totalGuests: newTotalGuests });
 
-      if (guestType === 'adult') {
-        let newAdultGuests = this.state.adultGuests - 1;
+      if (guestType === 'adult' && guestCount > 1) {
+        let newAdultGuests = guestCount - 1;
         this.setState({ adultGuests: newAdultGuests });
-      } else if (guestType === 'children') {
-        let newChildrenGuests = this.state.childrenGuests - 1;
+      } else if (guestType === 'children' && guestCount > 0) {
+        let newChildrenGuests = guestCount - 1;
         this.setState({ childrenGuests: newChildrenGuests });
-      } else if (guestType === 'infant') {
-        let newInfantGuests = this.state.infantGuests - 1;
+      } else if (guestType === 'infant' && guestCount > 0) {
+        let newInfantGuests = guestCount - 1;
         this.setState({ infantGuests: newInfantGuests });
       }
     }
