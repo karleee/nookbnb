@@ -57,18 +57,19 @@ class SearchBar extends React.Component {
 		return (
 			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchPlaceholder}>
 				<div className="search-bar">
-					<i className="fas fa-search"></i>
+					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
+
+					<input
+						id="searchInput"
+						type="text"
+						className="search-bar-input"
+						value={this.state.searchInput}
+						placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
+						onChange={this.handleUpdate()}
+					/>
+
+				  {close}
 				</div>
-				<input
-					id="searchInput"
-					type="text"
-					className="search-bar-input"
-					value={this.state.searchInput}
-					placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
-					onChange={this.handleUpdate()}
-				>
-				</input>
-				{close}
 			</div>
 		);
 	}
