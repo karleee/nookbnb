@@ -49,7 +49,7 @@ class SearchBar extends React.Component {
 		if (this.state.searchInput.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
-					<i className="close-icon"></i>
+					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
 				</div>  
 			);
 		}

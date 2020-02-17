@@ -29,12 +29,20 @@
   left: 15px;
 }
 
-.search-bar-input:focus + .close .close-icon {
+.close .close-icon img {
   position: absolute;
-  content: url('/images/navbar/close_icon.png');
   top: 15px;
   left: 535px;
-  width: 13px;
+  width: 13px; 
+  opacity: 0;
+}
+
+.search-bar-input:focus + .close .close-icon img {
+  position: absolute;
+  top: 15px;
+  left: 535px;
+  width: 13px; 
+  opacity: 1;
 }
 
 .close:hover {
