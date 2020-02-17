@@ -19,7 +19,6 @@ class Datepicker extends React.Component {
       selectedEndMonth: '',
       selectedEndDay: '',
       selectedEndYr: '',
-      totalGuests: 1,
       adultGuests: 1,
       childrenGuests: 0,
       infantGuests: 0,
@@ -111,9 +110,8 @@ class Datepicker extends React.Component {
 
   // Handles guests adding click
   handleGuestsAddingClick(guestType) {
-    let infantCount = this.state.infantGuests;
-    let newTotalGuests = (this.state.totalGuests + 1) - infantCount;
-    let newGuestCount;
+    let totalGuests = this.state.adultGuests + this.state.childrenGuests;
+    let newTotalGuests;
     let guestCount;
 
     if (guestType === 'adult') {
@@ -126,16 +124,15 @@ class Datepicker extends React.Component {
       return;
     }
 
-    newGuestCount = (guestCount + 1) - infantCount;  
-
-    if (newTotalGuests <= 4 && newGuestCount <= 4) {
+    if (totalGuests < 4) {
+      newTotalGuests = totalGuests + 1;
       this.setState({ totalGuests: newTotalGuests });
 
-      if (guestType === 'adult') {
-        let newAdultGuests = this.state.adultGuests + 1;
+      if (guestType === 'adult' && guestCount < 4) {
+        let newAdultGuests = guestCount + 1;
         this.setState({ adultGuests: newAdultGuests });
-      } else {
-        let newChildrenGuests = this.state.childrenGuests + 1;
+      } else if (guestType === 'children' && guestCount < 4) {
+        let newChildrenGuests = guestCount + 1;
         this.setState({ childrenGuests: newChildrenGuests });
       } 
     }
@@ -143,8 +140,8 @@ class Datepicker extends React.Component {
 
   // Handles guests subtracting click
   handleGuestsSubtractingClick(guestType) {
-    let newTotalGuests = this.state.totalGuests - 1;
-    let newGuestCount;
+    let totalGuests = this.state.adultGuests + this.state.childrenGuests;
+    let newTotalGuests;
     let guestCount;
 
     if (guestType === 'adult') {
@@ -155,19 +152,18 @@ class Datepicker extends React.Component {
       guestCount = this.state.infantGuests;
     }
 
-    newGuestCount = guestCount - 1;    
-
-    if (newTotalGuests >= 0 && newGuestCount >= 0) {
+    if (totalGuests > 0) {
+      newTotalGuests = totalGuests - 1;
       this.setState({ totalGuests: newTotalGuests });
 
-      if (guestType === 'adult') {
-        let newAdultGuests = this.state.adultGuests - 1;
+      if (guestType === 'adult' && guestCount > 1) {
+        let newAdultGuests = guestCount - 1;
         this.setState({ adultGuests: newAdultGuests });
-      } else if (guestType === 'children') {
-        let newChildrenGuests = this.state.childrenGuests - 1;
+      } else if (guestType === 'children' && guestCount > 0) {
+        let newChildrenGuests = guestCount - 1;
         this.setState({ childrenGuests: newChildrenGuests });
-      } else if (guestType === 'infant') {
-        let newInfantGuests = this.state.infantGuests - 1;
+      } else if (guestType === 'infant' && guestCount > 0) {
+        let newInfantGuests = guestCount - 1;
         this.setState({ infantGuests: newInfantGuests });
       }
     }
@@ -203,10 +199,10 @@ class Datepicker extends React.Component {
     let selectedEndMonth = this.state.selectedEndMonth;
     let selectedEndDay = this.state.selectedEndDay;
     let selectedEndYr = this.state.selectedEndYr;
-    let totalGuests = this.state.totalGuests;
     let adultGuests = this.state.adultGuests;
     let childrenGuests = this.state.childrenGuests;
     let infantGuests = this.state.infantGuests;
+    let totalGuests = adultGuests + childrenGuests;
     let guestsState = this.state.guestsState;
 
     return (
@@ -284,7 +280,7 @@ class Datepicker extends React.Component {
 
                   <div className="adult-guests-buttons-wrapper">
                     <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
-                      {adultGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                      {adultGuests > 1 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
                     </div>
 
                     <div className="button-text-wrapper">
@@ -334,7 +330,6 @@ class Datepicker extends React.Component {
                     </div>
 
                     <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
-                      {/* {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>} */}
                       <i className="add-icon"></i>
                     </div>
                   </div>
