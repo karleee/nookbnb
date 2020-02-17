@@ -108,8 +108,7 @@
   text-decoration: none;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .image-wrapper {
-  background: orange;
+.spot-index-wrapper .spot-index-top-wrapper ul a li .image-wrapper img {
   width: 215px;
   height: 140px;
   border-radius: 5px;

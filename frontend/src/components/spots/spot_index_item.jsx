@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 const SpotIndexItem = ({ spot }) => (
   <Link to={`/spots/${spot._id}`}>
     <li>
-      <div className="image-wrapper"></div>
+      <div className="image-wrapper"><img src={spot.main_image_url} alt="Spot thumbnail" /></div>
         <div className="superhost-wrapper">
           <p>Superhost</p>
           <p>{spot.country}</p>
