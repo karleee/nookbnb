@@ -61,14 +61,14 @@ class NavBar extends React.Component {
 				<div>
 					<i className="fas fa-glass"></i>
 					<form onSubmit={this.props.handleSearchSubmit}>
-						<div className="search-bar-input">
+						{/* <div className="search-bar-input">
 							<input
 								type="text"
 								placeholder="Search"
 								value={this.state.searchInput}
 								onChange={this.update("searchInput")}
 							/>
-						</div>
+						</div> */}
 						<div>
 							<input type="submit" />
 						</div>
@@ -90,9 +90,9 @@ class NavBar extends React.Component {
 						</Link>
 					</div>
 
-					<div className="nav-mid">
+					{/* <div className="nav-mid">
 						<div className="search-bar">{this.navbarSearch()}</div>
-					</div>
+					</div> */}
 
 					<div className="nav-main">
 						<ul className="nav-main-list">
@@ -149,10 +149,14 @@ class NavBar extends React.Component {
 						</Link>
 					</div>
 
-					<div className="search-bar">
+					{/* <div className="search-bar">
 						{this.props.location.pathname !== "/" || this.props.currentUser ? (
 							<SearchBar />
 						) : null}
+					</div> */}
+
+					<div className="search-bar">
+					  <SearchBar />
 					</div>
 
 					<div className="nav-main">

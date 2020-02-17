@@ -7,19 +7,23 @@ class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: ""
+			searchInput: "",
+			searchPlaceholder: false
 		};
 
+		this.toggleSearchPlaceholder = this.toggleSearchPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 	}
 
+	toggleSearchPlaceholder() {
+	  this.setState({searchPlaceholder: !this.state.searchPlaceholder});
+	}
+
 	handleUpdate() {
 		return e => {
 			this.setState({ searchInput: e.target.value });
-			// this.setState({ searchInput: "" });
-
 		};
 	}
 
@@ -50,10 +54,8 @@ class SearchBar extends React.Component {
 			);
 		}
 
-		// debugger
-
 		return (
-			<div className={className} onSubmit={this.handleSubmitSearch}>
+			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchPlaceholder}>
 				<div className="search-bar">
 					<i className="fas fa-search"></i>
 				</div>
@@ -62,9 +64,10 @@ class SearchBar extends React.Component {
 					type="text"
 					className="search-bar-input"
 					value={this.state.searchInput}
-					placeholder="Search"
+					placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
 					onChange={this.handleUpdate()}
-				/>
+				>
+				</input>
 				{close}
 			</div>
 		);

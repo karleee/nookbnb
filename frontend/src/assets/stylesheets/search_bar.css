@@ -1,5 +1,7 @@
+@import 'variables.css';
+
 .search-bar {
-  display: flex;
+  /* display: flex;
   width: 460px;
   height: 40px;
   border: 1px solid lightgrey;
@@ -8,16 +10,21 @@
   box-shadow: 0px 1px 5px 0px rgba(212, 212, 212, 1);
   margin-left: 35px;
   margin-top: 15px;
-	background-color: #ffffff;
+  background-color: #ffffff; */
+  width: 460px;
+  margin-top: 7px;
 }
 
 .search-bar-input {
-  border: none;
+  /* border: none;
   line-height: 30px;
   width: 400px;
   vertical-align: center;
   font-size: 20px;
-  color: #595959;
+  color: #595959; */
+  font-family: 'cerealMedium';
+  font-size: 18px;
+  padding: 10px 20px;
 }
 
 .fas fa-glass {
