@@ -111,18 +111,33 @@ class Datepicker extends React.Component {
 
   // Handles guests adding click
   handleGuestsAddingClick(guestType) {
-    let newTotalGuests = this.state.totalGuests + 1;
-    this.setState({ totalGuests: newTotalGuests });
+    let infantCount = this.state.infantGuests;
+    let newTotalGuests = (this.state.totalGuests + 1) - infantCount;
+    let newGuestCount;
+    let guestCount;
 
     if (guestType === 'adult') {
-      let newAdultGuests = this.state.adultGuests + 1;
-      this.setState({ adultGuests: newAdultGuests });
+      guestCount = this.state.adultGuests;
     } else if (guestType === 'children') {
-      let newChildrenGuests = this.state.childrenGuests + 1;
-      this.setState({ childrenGuests: newChildrenGuests });
-    } else if (guestType === 'infant') {
+      guestCount = this.state.childrenGuests;
+    } else {
       let newInfantGuests = this.state.infantGuests + 1;
       this.setState({ infantGuests: newInfantGuests });
+      return;
+    }
+
+    newGuestCount = (guestCount + 1) - infantCount;  
+
+    if (newTotalGuests <= 4 && newGuestCount <= 4) {
+      this.setState({ totalGuests: newTotalGuests });
+
+      if (guestType === 'adult') {
+        let newAdultGuests = this.state.adultGuests + 1;
+        this.setState({ adultGuests: newAdultGuests });
+      } else {
+        let newChildrenGuests = this.state.childrenGuests + 1;
+        this.setState({ childrenGuests: newChildrenGuests });
+      } 
     }
   }
 
@@ -251,7 +266,7 @@ class Datepicker extends React.Component {
           <div className="guests" onClick={this.toggleGuestsState}>
             <div className="guests-input-wrapper">
               <label>Guests</label>
-              <p>{totalGuests}</p>
+              <p>{totalGuests > 1 ? `${totalGuests} guests` : `${totalGuests} guest`} {infantGuests > 0 ? `, ${infantGuests} infants` : ''}</p>
             </div>
 
             <div className="guests-dropdown-arrow-wrapper">
@@ -277,7 +292,7 @@ class Datepicker extends React.Component {
                     </div>
 
                     <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('adult')}>
-                      <i className="add-icon"></i>
+                      {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
                     </div>
                   </div>
                 </div>
@@ -298,7 +313,7 @@ class Datepicker extends React.Component {
                     </div>
 
                     <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('children')}>
-                      <i className="add-icon"></i>
+                      {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
                     </div>
                   </div>
                 </div>
@@ -319,9 +334,14 @@ class Datepicker extends React.Component {
                     </div>
 
                     <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                      {/* {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>} */}
                       <i className="add-icon"></i>
                     </div>
                   </div>
+                </div>
+
+                <div className="maximum-guests-wrapper">
+                  <p>4 guests maximum. Infants don’t count toward the number of guests.</p>
                 </div>
 
                 <div className="close-wrapper">
