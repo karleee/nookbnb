@@ -7,7 +7,8 @@ Nookbnb is a single page MERN stack application that parodies off the concept an
 <img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/home_main1.png" alt="Homepage" width="900px"     border="1">
 </kbd>
 
-
+<br>
+<br>
 
 <kbd>
 <img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/home_main2.png" alt="Homepage" width="900px" border="1">
