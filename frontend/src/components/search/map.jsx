@@ -51,7 +51,11 @@ export default class Map extends Component {
         southWest: { lat: south, lng: west }
       };
       this.props.requestUpdateBounds(bounds);
-      this.props.updateMapCenter(this.map.getCenter());
+      
+      const center = this.map.getCenter();
+      const lat = center.lat();
+      const lng = center.lng();
+      this.props.updateMapCenter(center);
     });
   }
 
@@ -78,7 +82,7 @@ export default class Map extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}
-          defaultCenter={this.props.center}
+          defaultCenter={mapOptions.center}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => (
             this.apiIsLoaded(map, maps)
