@@ -42,12 +42,6 @@ class SearchBar extends React.Component {
 		})
 	}
 
-	// handleSearchSubmit(e) {
-	// 	e.preventDefault();
-	// 	this.props.fetchTreehouseSearchResults(this.state.searchTerm);
-	// 	this.setState({ redirectToSearchIdx: true });
-	// }
-
 	handleSearchUpdate() {
 		return e => {
 			this.setState({
@@ -57,29 +51,27 @@ class SearchBar extends React.Component {
 	}
 	
 	renderNavbarSearchField() {
-		// if (this.props.navbarType === "With search") {
-			return (
-				<div className={this.state.searchFormClasses.join(" ")}>
-					<i className="fas fa-search"></i>
-					<form
-						className="navbar-search-form"
-						onSubmit={this.handleSearchSubmit}
-					>
-						<div className="navbar-search-input-container">
-							<input
-								className="navbar-search-input"
-								type="text"
-								placeholder="Search"
-								value={this.state.searchTerm}
-								onChange={this.handleSearchUpdate()}
-								onFocus={this.toggleSearchBarLength}
-								onBlur={this.toggleSearchBarLength}
-							/>
-						</div>
-					</form>
-				</div>
-			);
-		// }
+		return (
+			<div className={this.state.searchFormClasses.join(" ")}>
+				<i className="fas fa-search"></i>
+				<form
+					className="navbar-search-form"
+					onSubmit={this.handleSearchSubmit}
+				>
+					<div className="navbar-search-input-container">
+						<input
+							className="navbar-search-input"
+							type="text"
+							placeholder="Search"
+							value={this.state.searchTerm}
+							onChange={this.handleSearchUpdate()}
+							onFocus={this.toggleSearchBarLength}
+							onBlur={this.toggleSearchBarLength}
+						/>
+					</div>
+				</form>
+			</div>
+		);
 	}
 
 	render() {
