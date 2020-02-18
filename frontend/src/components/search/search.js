@@ -2,6 +2,7 @@ import React from 'react';
 import Map from './map';
 import FiltersBar from '../filter/filters_bar';
 import SearchResultsIndex from './search_results_index';
+import "./search.css"
 
 class Search extends React.Component {
 	constructor(props) {
@@ -31,29 +32,17 @@ class Search extends React.Component {
 		} = this.props;
 
 		return (
-			<div>
+			<div className="search">
 				<FiltersBar />
-				<br />
-				<br />
-
-				<div className="spot-index-top-wrapper">
-					<h2>Search Results</h2>
-					<h3>Explore some of the best-reviewed stays in the world</h3>
-
-					<div>
-						<SearchResultsIndex spots={spots} />
-					</div>
-				</div>
-
-				<div className="map-container">
-					<Map
+				<SearchResultsIndex spots={spots} />
+				<Map
 						requestUpdateBounds={requestUpdateBounds}
 						geocode={geocode}
-            center={center}
-            spots={spots}
-            updateMapCenter={updateMapCenter}>
-					></Map>
-				</div>
+						center={center}
+						spots={spots}
+						updateMapCenter={updateMapCenter}
+						id="map-container"
+					/>
 			</div>
 		);
 	}

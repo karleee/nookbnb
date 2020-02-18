@@ -74,16 +74,20 @@
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
+  border-bottom: 1px solid var(--underline-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header h2 {
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header .description-wrapper h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
   color: var(--dark-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header p {
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header .description-wrapper p {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
@@ -91,8 +95,9 @@
   padding-bottom: 30px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header {
-  border-bottom: 1px solid var(--underline-gray);
+.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .main-description .spot-index-item-detail-description-header .profile-image-wrapper img {
+  width: 62px;
+  border-radius: 50%;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks {
@@ -372,4 +377,3 @@
   color: var(--dark-gray);
   margin-top: 50px;
 }
-
