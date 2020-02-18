@@ -13,7 +13,7 @@ export default function Search({ spots, requestUpdateBounds, geocode, center }) 
           requestUpdateBounds={requestUpdateBounds}
           geocode={geocode}
           center={center}>
-          </Map>
+        </Map>
       </div>
     </div>
   )
