@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: { address: '' },
+			searchInput: { address: "" },
 			searchPlaceholder: false
 		};
 
@@ -31,24 +31,18 @@ class SearchBar extends React.Component {
 	}
 
 	handleClearSearch() { 
-		this.setState({searchInput: { address: '' }}); 
+		this.setState({searchInput: { address: "" }}); 
 	}
 
 	handleSubmitSearch(e) {
 		e.preventDefault();
-		debugger;
-		this.props.geocode(this.state.searchInput).then(() => {
+		// debugger;
+		this.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
 			})
 		})
 	}
-
-	// handleSearchSubmit(e) {
-	// 	e.preventDefault();
-	// 	this.props.fetchTreehouseSearchResults(this.state.searchTerm);
-	// 	this.setState({ redirectToSearchIdx: true });
-	// }
 
 	handleSearchUpdate() {
 		return e => {
@@ -65,7 +59,7 @@ class SearchBar extends React.Component {
 					<i className="fas fa-search"></i>
 					<form
 						className="navbar-search-form"
-						onSubmit={this.handleSearchSubmit}
+						onSubmit={this.handleSubmitSearch}
 					>
 						<div className="navbar-search-input-container">
 							<input
