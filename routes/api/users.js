@@ -97,6 +97,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 	res.json({
 		id: req.user.id,
 		email: req.user.email
+		profile_image_url: req.user.profile_image_url 
 	});
 })
 

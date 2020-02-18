@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import "../../assets/stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
-// import FiltersBar from "../filter/filters_bar";
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -53,21 +52,6 @@ class NavBar extends React.Component {
 				[property]: e.target.value
 			});
 	}
-
-	// navbarSearch() {
-	// 	if (this.props.loggedIn) {
-	// 		return (
-	// 			<div>
-	// 				<i className="fas fa-glass"></i>
-	// 				<form onSubmit={this.props.handleSearchSubmit}>
-	// 					<div>
-	// 						<input type="submit" />
-	// 					</div>
-	// 				</form>
-	// 			</div>
-	// 		);
-	// 	}
-	// }
 
 	// Selectively render links dependent on whether the user is logged in
 	getLinks() {
@@ -125,7 +109,6 @@ class NavBar extends React.Component {
 							<li>
 								<div className="nav-link">
 									<Dropdown
-										// className="everything-but-dropdown"
 										currentUser={currentUser}
 										logout={logout}
 									/>
