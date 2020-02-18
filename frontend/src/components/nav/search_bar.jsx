@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import "../../assets/stylesheets/search_bar.css";
 import { requestUpdateBounds, geocode } from "../../actions/filter_actions";
 
+
 class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,8 +15,9 @@ class SearchBar extends React.Component {
 
 		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+		// this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
+		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	toggleSearchBarPlaceholder() {
@@ -40,6 +42,46 @@ class SearchBar extends React.Component {
 				pathname: "/search",
 			})
 		})
+	}
+
+	// handleSearchSubmit(e) {
+	// 	e.preventDefault();
+	// 	this.props.fetchTreehouseSearchResults(this.state.searchTerm);
+	// 	this.setState({ redirectToSearchIdx: true });
+	// }
+
+	handleSearchUpdate() {
+		return e => {
+			this.setState({
+				searchTerm: e.currentTarget.value
+			});
+		};
+	}
+	
+	renderNavbarSearchField() {
+		// if (this.props.navbarType === "With search") {
+			return (
+				<div className={this.state.searchFormClasses.join(" ")}>
+					<i className="fas fa-search"></i>
+					<form
+						className="navbar-search-form"
+						onSubmit={this.handleSearchSubmit}
+					>
+						<div className="navbar-search-input-container">
+							<input
+								className="navbar-search-input"
+								type="text"
+								placeholder="Search"
+								value={this.state.searchTerm}
+								onChange={this.handleSearchUpdate()}
+								onFocus={this.toggleSearchBarLength}
+								onBlur={this.toggleSearchBarLength}
+							/>
+						</div>
+					</form>
+				</div>
+			);
+		// }
 	}
 
 	render() {

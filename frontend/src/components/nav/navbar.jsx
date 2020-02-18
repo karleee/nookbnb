@@ -3,11 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 import "../../assets/stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
+// import FiltersBar from "../filter/filters_bar";
 
 class NavBar extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			searchInput: ""
 		};
@@ -16,8 +16,8 @@ class NavBar extends React.Component {
 		this.getLinks = this.getLinks.bind(this);
 		this.handleSignup = this.handleSignup.bind(this);
 		this.handleLogin = this.handleLogin.bind(this);
-		this.navbarSearch = this.navbarSearch.bind(this);
-		this.handleSearchSubmit = this.handleSearchSubmit(this);
+		// this.navbarSearch = this.navbarSearch.bind(this);
+		// this.handleSearchSubmit = this.handleSearchSubmit(this);
 		this.navigateToSearch = this.navigateToSearch.bind(this);
 	}
 
@@ -26,18 +26,16 @@ class NavBar extends React.Component {
 		this.props.logout();
 	}
 
-	// ED: added signup modal
 	handleSignup(e) {
 		e.preventDefault();
 		this.props.openModal("signupFirst");
-		this.props.history.push("/");
+		// this.props.history.push("/");
 	}
 
-	// ED: added login modal
 	handleLogin(e) {
 		e.preventDefault();
 		this.props.openModal("login");
-		this.props.history.push("/");
+		// this.props.history.push("/");
 	}
 
 	// ** BUG FOUND ** 
@@ -58,20 +56,20 @@ class NavBar extends React.Component {
 			});
 	}
 
-	navbarSearch() {
-		if (this.props.loggedIn) {
-			return (
-				<div>
-					<i className="fas fa-glass"></i>
-					<form onSubmit={this.props.handleSearchSubmit}>
-						<div>
-							<input type="submit" />
-						</div>
-					</form>
-				</div>
-			);
-		}
-	}
+	// navbarSearch() {
+	// 	if (this.props.loggedIn) {
+	// 		return (
+	// 			<div>
+	// 				<i className="fas fa-glass"></i>
+	// 				<form onSubmit={this.props.handleSearchSubmit}>
+	// 					<div>
+	// 						<input type="submit" />
+	// 					</div>
+	// 				</form>
+	// 			</div>
+	// 		);
+	// 	}
+	// }
 
 	// Selectively render links dependent on whether the user is logged in
 	getLinks() {
@@ -81,8 +79,12 @@ class NavBar extends React.Component {
 				<div className="navbar">
 					<div className="logo">
 						<Link to="/">
-							<img src='/images/navbar/nooks_cranny_logo.png' />
+							<img src="/images/navbar/nooks_cranny_logo.png" />
 						</Link>
+					</div>
+
+					<div className="search-bar">
+						<SearchBar />
 					</div>
 
 					<div className="nav-main">
@@ -124,7 +126,11 @@ class NavBar extends React.Component {
 							</li>
 							<li>
 								<div className="nav-link">
-									<Dropdown className="" currentUser={currentUser} logout={logout} />
+									<Dropdown
+										// className="everything-but-dropdown"
+										currentUser={currentUser}
+										logout={logout}
+									/>
 								</div>
 							</li>
 						</ul>
@@ -198,6 +204,7 @@ class NavBar extends React.Component {
 		return (
 			<div>
 				{this.getLinks()}
+				{/* <FiltersBar /> */}
 			</div>
 		);
 	}

@@ -23,8 +23,8 @@ class SignupFirstForm extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		// if (nextProps.signedIn === true) {
-		if (nextProps.currentUser === true) {
+		if (nextProps.signedIn === true) {
+		// if (nextProps.currentUser === true) {
 			this.props.history.push("/");
 		}
 
@@ -33,7 +33,7 @@ class SignupFirstForm extends React.Component {
 
 	handleDemo(e) {
 		e.preventDefault();
-		const user = { email: "user1@gmail.com", password: "user1password" };
+		const user = { email: "demouser@nookbnb.com", password: "password" };
 		this.props.demoLogin(user).then(this.props.closeModal);
 	}
 

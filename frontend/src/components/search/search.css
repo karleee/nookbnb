@@ -1,4 +1,6 @@
+/* ED: i added the flex display as a temp fix to blocking  the filter  */
 #map-container {
   width: 500px;
   height: 500px;
+  display: flex;
 }

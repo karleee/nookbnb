@@ -39,39 +39,36 @@ class Dropdown extends React.Component {
 		const { currentUser, logout } = this.props;
 		const menu = this.state.showMenu ? (
 			<div className="">
-				<div className="">
-					<div className="">
-						<span className="" />
-					</div>
-					<div className="">
-						<Link to={`/users/${currentUser.id}`} className="">
-							{" "}
-							<p className="">
-								 Profile
-								<span className="" />
-							</p>
-						</Link>
-					</div>
-				</div>
-				<div className="item-separator" />
-				<Link to="/" className="">Account</Link>
-				<div className="item-separator" />
-				<button onClick={e => logout()} className="">
+				<div className="user-dropdown-list">
+				<button className="dropdown-button">
+					<Link to={`/users/${currentUser.id}`} className="dropdown-button">
+						{" "}
+							Profile
+					</Link>
+				</button>
+				<button className="dropdown-button">
+					<Link to="/" className="">
+						Account
+					</Link>
+				</button>
+				<button onClick={e => logout()} className="dropdown-button">
 					Logout
 				</button>
+				</div>
 			</div>
 		) : null;
 		return (
 			<div>
-				<button type="button" onClick={this.showMenu} className="">
+				<button type="button" onClick={this.showMenu} className="user-dropdown-list">
 					<div
-						className=""
+						className="user-dropdown-list"
 						ref={el => {
 							this.dropdownElement = el;
 						}}
 					>
-						<span className=""></span>
-						<p>Profile</p>
+						<span className="">
+						<img src="/images/navbar/nooks_cranny_logo.png" id="profile-pict"/>
+						</span>
 					</div>
 				</button>
 

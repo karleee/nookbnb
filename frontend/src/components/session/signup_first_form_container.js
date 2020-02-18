@@ -7,7 +7,7 @@ import SignupFirstForm from "./signup_first_form";
 
 const mapStateToProps = state => {
 	return {
-		// signedIn: state.session.isSignedIn,
+		signedIn: state.session.isSignedIn,
 		errors: state.errors.session,
 		formType: "signupFirst"
 	};

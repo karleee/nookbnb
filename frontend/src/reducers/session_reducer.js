@@ -5,11 +5,11 @@ import {
 } from "../actions/session_actions";
 
 // Initial state
-const _initialState = {
+const _initialState = Object.freeze({
 	isAuthenticated: false,
 	user: {},
 	// currentSpot: {}
-};
+});
 
 // Session reducer
 export default function(state = _initialState, action) {

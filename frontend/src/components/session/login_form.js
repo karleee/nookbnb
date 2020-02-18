@@ -20,7 +20,8 @@ class LoginForm extends React.Component {
 	// Once the user has been authenticated, redirect to the Tweets page
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.currentUser === true) {
-			this.props.history.push("/");
+			this.props.history.push("/")
+			this.props.closeModal();
 		}
 
 		// Set or clear errors
@@ -64,23 +65,25 @@ class LoginForm extends React.Component {
 			password: this.state.password
 		};
 		this.props.login(user)
-			.then(this.props.history.push("/"), () => this.props.closeModal());
+			.then(() => this.props.closeModal());
+			// .then(this.props.history.push("/"), () => this.props.closeModal());
+		// this.props.login(user);
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
-		const user = { email: "user1@gmail.com", password: "user1password" };
-		this.props
-			.demoLogin(user)
+		const user = { email: "demouser@nookbnb.com", password: "password" };
+		this.props.login(user)
 			.then(this.props.history.push("/"), this.props.closeModal());
+			// .then(() => this.props.closeModal());
 	}
 
 	render() {
 		let errors;
 		if (this.props.errors) {
 			errors = this.props.errors;
-		// } else {
-		// 	errors = {};
+		} else {
+			errors = {};
 		}
 		let emailErrors = errors.email ? <div>{errors.email}</div> : <></>;
 		let passwordErrors = errors.password ? (

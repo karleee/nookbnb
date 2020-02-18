@@ -1,11 +1,13 @@
-// ED: created new modal component file
-
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupSecondFormContainer from "../session/signup_second_form_container";
 import SignupFirstFormContainer from "../session/signup_first_form_container";
+import GuestsFilter from "../filter/guests_filter";
+import MoreFilters from "../filter/more_filters";
+import DatesFilter from "../filter/dates_filter";
+
 import "./modal.css"
 
 const Modal = ({ modal, closeModal }) => {
@@ -19,6 +21,12 @@ const Modal = ({ modal, closeModal }) => {
 			component = <SignupFirstFormContainer />
 	} else if (formType === "signupSecond") {
 			component = <SignupSecondFormContainer />;
+	// } else if (formType === "Guests") {
+	// 		component = <GuestsFilter />;
+	// } else if (formType === "Amenities") {
+	// 		component = <MoreFilters />;
+	// } else if (formType === "Dates") {
+	// component = <DatesFilter />;
 	}
 	
 	// if (!modal) {
@@ -49,8 +57,8 @@ const Modal = ({ modal, closeModal }) => {
 
 const mapStateToProps = state => {
 	return {
-		// modal: state.ui.modal
-		modal: state.modal
+		modal: state.ui.modal
+		// modal: state.modal
 	};
 };
 

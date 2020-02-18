@@ -17,9 +17,10 @@ class SignupSecondForm extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		// if (nextProps.signedIn === true) {
-		if (nextProps.currentUser === true) {
+		if (nextProps.signedIn === true) {
+		// if (nextProps.currentUser === true) {
 			this.props.history.push("/");
+			this.props.closeModal();
 		}
 
 		this.setState({ errors: nextProps.errors });
@@ -39,9 +40,9 @@ class SignupSecondForm extends React.Component {
 			password: this.state.password,
 		};
 
-		this.props.signup(user, this.props.history)
-			.then(this.props.history.push("./"), 
-			() => this.props.closeModal());
+		this.props.signup(user, this.props.history);
+			// .then(this.props.history.push("/"), 
+			// () => this.props.closeModal());
 	}
 
 	renderErrors() {
@@ -99,7 +100,7 @@ class SignupSecondForm extends React.Component {
 						<br />
 						<input
 							type="text"
-							value={this.state.email}
+							value={this.state.birthdate}
 							onChange={this.update("birthdate")}
 							placeholder="Birthdate (mm/dd/yyyy)"
 							className="session-input-birthdate"
@@ -107,7 +108,7 @@ class SignupSecondForm extends React.Component {
 						<br />
 						<p className="session-instruct">
 							To sign up, you need to be at least 18. Your birthday won't be
-							shared with other people who use Airbnb.
+							shared with other people who use Nookbnb.
 						</p>
 						<br />
 						<input
@@ -134,7 +135,7 @@ class SignupSecondForm extends React.Component {
 						{/* {this.renderErrors()} */}
 						<br />
 						<p className="session-text">
-							Already have an Airbnb account? {this.props.login}
+							Already have an Nookbnb account? {this.props.login}
 						</p>
 					</div>
 				</form>
