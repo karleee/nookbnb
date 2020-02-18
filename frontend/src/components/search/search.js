@@ -2,7 +2,9 @@ import React from 'react';
 import Map from './map';
 import FiltersBar from '../filter/filters_bar';
 
-export default function Search({ spots, requestUpdateBounds, geocode, center }) {
+export default function Search(
+  { spots, requestUpdateBounds, geocode, center, updateMapCenter }
+  ) {
   return (
     <div>
       <FiltersBar />
@@ -13,7 +15,8 @@ export default function Search({ spots, requestUpdateBounds, geocode, center }) 
           requestUpdateBounds={requestUpdateBounds}
           geocode={geocode}
           center={center}
-          spots={spots}>
+          spots={spots}
+          updateMapCenter={updateMapCenter}>
         </Map>
       </div>
     </div>
