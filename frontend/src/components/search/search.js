@@ -8,11 +8,13 @@ export default function Search({ spots, requestUpdateBounds, geocode, center }) 
       <FiltersBar />
       <br/>
       <br/>
-      <Map 
-        requestUpdateBounds={requestUpdateBounds}
-        geocode={geocode}
-        center={center}>
-        </Map>
+      <div className="map-container">
+        <Map 
+          requestUpdateBounds={requestUpdateBounds}
+          geocode={geocode}
+          center={center}>
+          </Map>
+      </div>
     </div>
   )
 }

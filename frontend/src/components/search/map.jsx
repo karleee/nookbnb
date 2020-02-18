@@ -24,10 +24,13 @@ export default class Map extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if (this.MarkerManager) {
 			this.MarkerManager.updateMarkers(spots);
-		}
+    }
+    if (this.props.center !== prevProps.center) {
+      this.map.setCenter(this.props.center);
+    }
   }
   
   // This callback is invoked when the google maps api becomes available to use
@@ -57,10 +60,8 @@ export default class Map extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.geocode(this.state).then(data => {
-      debugger;
-      this.map.setCenter(this.props.center);
-    });
+    this.props.geocode(this.state); //.then(data => {
+      // this.map.setCenter(this.props.center);
   }
 
   render() {
