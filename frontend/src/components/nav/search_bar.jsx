@@ -86,7 +86,7 @@ class SearchBar extends React.Component {
 		}
 
 		return (
-			<form className={className} 
+			<form autocomplete="off" className={className} 
 				onSubmit={this.handleSubmitSearch} 
 				onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
