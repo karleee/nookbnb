@@ -38,8 +38,8 @@ class SpotDetail extends React.Component {
   render() {
     const { currentSpot } = this.props;
     let spot = currentSpot['spot'];
-    let userEmail = currentSpot['user'].email;
-    let username = userEmail.substr(0, userEmail.indexOf('@')); 
+    let user = currentSpot['user'];
+    let username = user.email.substr(0, user.email.indexOf('@')); 
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
     return (
