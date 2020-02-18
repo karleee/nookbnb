@@ -41,6 +41,6 @@ export const fetchSpot = id => dispatch => (
 
 export const fetchFilteredSpots = bounds => dispatch => {
   return getFilteredSpots(bounds)
-    .then(spots => dispatch(receiveSpots(spots)))
+    .then(res => dispatch(receiveSpots(res.data)))
     .catch(err => console.log(err))
 }; 

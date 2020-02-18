@@ -12,7 +12,7 @@ const mapOptions = {
 }; 
 
 // this is an example spots array for testing marker manager
-const spots = [{ id: 1, lat: 37.773972, lng: -122.431297 }]
+// const spots = [{ id: 1, lat: 37.773972, lng: -122.431297 }]
 // testing end
 
 export default class Map extends Component {
@@ -26,7 +26,7 @@ export default class Map extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.MarkerManager) {
-			this.MarkerManager.updateMarkers(spots);
+			this.MarkerManager.updateMarkers(this.props.spots);
     }
     if (this.props.center !== prevProps.center) {
       this.map.setCenter(this.props.center);
@@ -39,7 +39,7 @@ export default class Map extends Component {
     this.map = map;
     this.maps = maps;
     this.MarkerManager = new MarkerManager(map, maps);
-    this.MarkerManager.updateMarkers(spots);
+    this.MarkerManager.updateMarkers(this.props.spots);
     this.registerMapListeners();
   }
 
