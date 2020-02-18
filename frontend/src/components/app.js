@@ -8,11 +8,19 @@ import SpotDetail from './spots/spot_detail_container';
 import SearchContainer from './search/search_container';
 import '../stylesheets/reset.css';
 import '../stylesheets/application.css';
+import FiltersBar from "./filter/filters_bar";
+import DatesFilter from "./filter/dates_filter";
+import GuestsFilter from "./filter/guests_filter";
+import MoreFilters from "./filter/more_filters";
 
 const App = () => (
 	<div className="app-wrapper">
 		<Modal />
 		<NavBarContainer />
+		<FiltersBar />
+		<DatesFilter />
+		<GuestsFilter />
+		<MoreFilters />
 		<div className="app-main-content-wrapper">
 		  <Switch>
 		  	<Route exact path="/" component={SpotIndex} />

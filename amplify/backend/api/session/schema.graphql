@@ -1,0 +1,51 @@
+type User @model {
+  id: ID!
+  email: String!
+  password: String!
+  session_token: String!
+  fname: String!
+  lname: String!
+  birthdate: String!
+  trips: [Trip] @connection(name: "Trips")
+  reviews: [Review] @connection(name: "ReviewAuthor")
+}
+type Spot @model {
+  id: ID!
+  name: String!
+  metadata: MetaData!
+  latitude: Float!
+  longitude: Float!
+  address: String!
+  description: String!
+  city: String!
+  state: String!
+  country: String!
+  occupancy: Int
+  bedrooms: Int
+  beds: Int
+  baths: Int
+  amenities: String!
+  reviews: [Review] @connection(name: "SpotReviews")
+}
+type MetaData {
+  category: Category
+}
+enum Category { spot_img }
+
+type Trip @model {
+  id: ID!
+  start_date: String!
+  end_date: String!
+  user_id: Int
+  spot_id: Int
+  visitor: User @connection(name: "Trips")
+}
+type Review @model {
+  id: ID!
+  user_id: Int
+  spot_id: Int
+  body: String!
+  spot: Spot @connection(name: "SpotReviews")
+  author: User @connection(name: "ReviewAuthor")
+}
+

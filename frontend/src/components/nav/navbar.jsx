@@ -3,11 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 import "../../stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
+import FiltersBar from "../filter/filters_bar";
 
 class NavBar extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			searchInput: ""
 		};
@@ -17,7 +17,7 @@ class NavBar extends React.Component {
 		this.handleSignup = this.handleSignup.bind(this);
 		this.handleLogin = this.handleLogin.bind(this);
 		this.navbarSearch = this.navbarSearch.bind(this);
-		this.handleSearchSubmit = this.handleSearchSubmit(this);
+		// this.handleSearchSubmit = this.handleSearchSubmit(this);
 		this.navigateToSearch = this.navigateToSearch.bind(this);
 	}
 
@@ -26,15 +26,12 @@ class NavBar extends React.Component {
 		this.props.logout();
 	}
 
-	// ED: added signup modal
 	handleSignup(e) {
 		e.preventDefault();
 		this.props.openModal("signupFirst");
-		// this.props.openModal("signupSecond");
 		this.props.history.push("/");
 	}
 
-	// ED: added login modal
 	handleLogin(e) {
 		e.preventDefault();
 		this.props.openModal("login");
@@ -42,8 +39,8 @@ class NavBar extends React.Component {
 	}
 
 	handleSearchSubmit(e) {
-		// e.preventDefault();
-		// 	this.props.fetchSearchResults(this.state.searchInput);
+		e.preventDefault();
+		// this.state.searchInput
 		this.navigateToSearch();
 	}
 
@@ -63,7 +60,7 @@ class NavBar extends React.Component {
 			return (
 				<div>
 					<i className="fas fa-glass"></i>
-					<form onSubmit={this.props.handleSearchSubmit}>
+					<form onSubmit={this.props.handleSubmit}>
 						<div className="search-bar-input">
 							<input
 								type="text"
@@ -208,6 +205,7 @@ class NavBar extends React.Component {
 		return (
 			<div>
 				{this.getLinks()}
+				<FiltersBar />
 			</div>
 		);
 	}

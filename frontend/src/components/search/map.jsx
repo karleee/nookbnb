@@ -59,7 +59,7 @@ export default class Map extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.geocoder.geocode({ address: this.state.address }, (results, status) => {
-      if (status == 'OK') {
+      if (status === 'OK') {
         this.map.setCenter(results[0].geometry.location);
       } else {
         console.log(status);
