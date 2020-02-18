@@ -74,7 +74,6 @@ class SearchBar extends React.Component {
 		);
 	}
 
-	// Rendering search bar component
 	render() {
 		let close;
 		let className = "search-bar";
