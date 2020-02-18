@@ -34,7 +34,6 @@ class SearchBar extends React.Component {
 
 	handleSubmitSearch(e) {
 		e.preventDefault();
-		// debugger;
 		this.props.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
@@ -86,7 +85,7 @@ class SearchBar extends React.Component {
 		}
 
 		return (
-			<form className={className} 
+			<form autocomplete="off" className={className} 
 				onSubmit={this.handleSubmitSearch} 
 				onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
