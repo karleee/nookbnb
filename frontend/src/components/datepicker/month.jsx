@@ -90,7 +90,7 @@ class Month extends React.Component {
           </div>
           
           <div className="number-days">
-            {this.state.days.map(day => <div className="number" onClick={() => this.props.handleClick(currentMonth, day, yr)}>{day}</div>)}
+            {this.state.days.map(day => <p className="number" onClick={() => this.props.handleDateClick(currentMonth, day, yr)}>{day}</p>)}
           </div>
         </div>
       </div>

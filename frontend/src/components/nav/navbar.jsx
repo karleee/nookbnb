@@ -40,12 +40,15 @@ class NavBar extends React.Component {
 		this.props.history.push("/");
 	}
 
+	// ** BUG FOUND ** 
+	// This is causing the search page to always render upon app load up
 	handleSearchSubmit(e) {
 		this.navigateToSearch();
 	}
 
+	// For testing, changed the route from '/search' to '/'
 	navigateToSearch() {
-		this.props.history.push("/search");
+		this.props.history.push("/");
 	}
 
 	update(property) {
@@ -61,14 +64,6 @@ class NavBar extends React.Component {
 				<div>
 					<i className="fas fa-glass"></i>
 					<form onSubmit={this.props.handleSearchSubmit}>
-						<div className="search-bar-input">
-							<input
-								type="text"
-								placeholder="Search"
-								value={this.state.searchInput}
-								onChange={this.update("searchInput")}
-							/>
-						</div>
 						<div>
 							<input type="submit" />
 						</div>
@@ -88,10 +83,6 @@ class NavBar extends React.Component {
 						<Link to="/">
 							<img src='/images/navbar/nooks_cranny_logo.png' />
 						</Link>
-					</div>
-
-					<div className="nav-mid">
-						<div className="search-bar">{this.navbarSearch()}</div>
 					</div>
 
 					<div className="nav-main">
@@ -150,9 +141,7 @@ class NavBar extends React.Component {
 					</div>
 
 					<div className="search-bar">
-						{this.props.location.pathname !== "/" || this.props.currentUser ? (
-							<SearchBar />
-						) : null}
+					  <SearchBar />
 					</div>
 
 					<div className="nav-main">
@@ -173,7 +162,7 @@ class NavBar extends React.Component {
 										type="button"
 										className="nav-link"
 									><Link to={"/"}>
-										Host an experience</Link>
+										Become a host</Link>
 									</button>
 								</div>
 							</li>

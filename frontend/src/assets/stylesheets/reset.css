@@ -4,6 +4,6 @@
   padding: 0;
 }
 
-input:focus, a:focus {
+input:focus, a:focus, button:focus {
   outline: none;
 }

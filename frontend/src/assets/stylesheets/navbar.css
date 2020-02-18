@@ -1,3 +1,5 @@
+@import 'variables.css';
+
 .navbar {
   background-color: white;
   border-bottom: 1px solid #e4e4e4;
@@ -6,15 +8,14 @@
   margin-top: 0;
   padding: 0;
   height: 80px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
 	width: 99%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  font-family: "Circular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
+  font-family: 'cerealMedium';
 }
 .nav-left {
   display: flex;
@@ -70,16 +71,16 @@ div.logo {
 
 div.nav-main ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: fit-content;
 }
 
 div.nav-main ul li .nav-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  color: #737373;
+  color: var(--gray);
   line-height: 20px;
-  padding: 0px 10px;
+  padding: 0 17px;
   margin: 0px 0px;
   border: none;
   background: none;
@@ -92,6 +93,15 @@ div.nav-main ul li .nav-link {
   vertical-align: baseline;
   align-items: center;
   flex-wrap: nowrap;
+}
+
+button a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.help-link a {
+  text-decoration: none;
 }
 
 div button.profile-link {

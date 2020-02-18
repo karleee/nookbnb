@@ -1,29 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-// import "../../stylesheets/search_bar.css";
+import "../../assets/stylesheets/search_bar.css";
 
 class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: ""
+			searchInput: "",
+			searchPlaceholder: false
 		};
 
+		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 	}
 
+	toggleSearchBarPlaceholder() {
+		this.setState({searchPlaceholder: !this.state.searchPlaceholder});
+	}
+
 	handleUpdate() {
 		return e => {
 			this.setState({ searchInput: e.target.value });
-			// this.setState({ searchInput: "" });
-
 		};
 	}
 
-	handleClearSearch() {
+	handleClearSearch() { 
 		this.setState({ searchInput: "" });
 	}
 
@@ -45,34 +49,33 @@ class SearchBar extends React.Component {
 		if (this.state.searchInput.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
-					x
-				</div>
+					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
+				</div>  
 			);
 		}
 
-		// debugger
-
 		return (
-			<div className={className} onSubmit={this.handleSubmitSearch}>
+			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
-					<i className="fas fa-search"></i>
+					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
+
+					<input
+						id="searchInput"
+						type="text"
+						className="search-bar-input"
+						value={this.state.searchInput}
+						placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
+						onChange={this.handleUpdate()}
+					/>
+
+					{close}
 				</div>
-				<input
-					id="searchInput"
-					type="text"
-					className="search-bar-input"
-					value={this.state.searchInput}
-					placeholder="Search"
-					onChange={this.handleUpdate()}
-				/>
-				{close}
 			</div>
 		);
 	}
 }
 
 const mapDispatchToProps = dispatch => ({
-	// updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
