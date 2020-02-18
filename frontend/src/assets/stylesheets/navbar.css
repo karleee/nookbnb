@@ -1,3 +1,5 @@
+@import 'variables.css';
+
 .navbar {
   background-color: white;
   border-bottom: 1px solid #e4e4e4;
@@ -6,15 +8,14 @@
   margin-top: 0;
   padding: 0;
   height: 80px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
 	width: 99%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  font-family: "Circular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
+  font-family: 'cerealMedium';
 }
 .nav-left {
   display: flex;
@@ -22,8 +23,6 @@
   flex: 3;
 }
 .nav-main {
-  /* display: table-cell; */
-  /* display: block; */
   vertical-align: middle;
 	max-height: 80px;
   background-color: white;
@@ -53,46 +52,35 @@ ul.nav-main-list {
 }
 
 div.logo {
-  display: table-cell;
-  vertical-align: middle;
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  padding: 5px 5px;
-  background-color: white;
+  margin: auto 0 auto 40px;
 }
 
 .logo img {
-  filter: opacity(0.5) drop-shadow(0 0 0 red) brightness(3);
-  width: 40px;
-  background-color: red;
+  width: 55px;
 }
 
 .nav-mid {
 	display: flex;
 	position: relative;
-  /* vertical-align: baseline; */
   flex: 3;
 }
 
 .search-bar {
-	/* margin-left: 200px; */
 	background-color: white;
 }
 
 div.nav-main ul {
   display: flex;
-  justify-content: space-evenly;
-  /* align-items: stretch; */
+  justify-content: space-between;
   height: fit-content;
 }
 
 div.nav-main ul li .nav-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  color: #737373;
+  color: var(--gray);
   line-height: 20px;
-  padding: 0px 10px;
+  padding: 0 17px;
   margin: 0px 0px;
   border: none;
   background: none;
@@ -107,23 +95,20 @@ div.nav-main ul li .nav-link {
   flex-wrap: nowrap;
 }
 
-/* div.login-link button,
-.user-icon-div button {
-  right: 20px;
-} */
+button a {
+  text-decoration: none;
+  color: var(--gray);
+}
 
-/* div.signup-link button {
-	right: 100px;
-} */
+.help-link a {
+  text-decoration: none;
+}
+
 div button.profile-link {
 	padding: 0;
 	margin: 0;
 	height: fit-content;
 }
-
-/* div.help-link button {
-  right: 80px;
-} */
 
 .messages-div button {
    right: 140px;

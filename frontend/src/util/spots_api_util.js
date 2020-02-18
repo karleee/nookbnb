@@ -12,6 +12,7 @@ export const getFilteredSpots = data => {
     params: data
   });
 };
+
 // Backend route for retrieving a specific spot
 export const getSpot = spotId => {
   return axios.get(`/api/spots/${spotId}`);

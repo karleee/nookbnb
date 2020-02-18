@@ -2,13 +2,12 @@ import { connect } from 'react-redux';
 import Month from './month';
 
 // Mapping passed values to props
-const mapStateToProps = (state, { currentDate, monthNum, currentYr, type, direction, handleClick }) => ({
-  currentDate,
-  monthNum,
+const mapStateToProps = (state, { currentMonth, nextMonth, currentYr, type, handleDateClick }) => ({
+  currentMonth,
+  nextMonth,
   currentYr,
   type,
-  direction,
-  handleClick
+  handleDateClick
 });
 
 export default connect(mapStateToProps)(Month);

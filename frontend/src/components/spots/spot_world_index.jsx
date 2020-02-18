@@ -12,24 +12,32 @@ class SpotWorldIndex extends React.Component {
 
     return (
       <div className="spot-index-world-regions">
-        <div className="spot-index-world-paris">
-          <p>Put thumbnail image here</p>
-          <p>Paris</p>
+        <div className="spot-index-world-breezy-hollow">
+          <div className="image-wrapper">
+            <img src='/images/homepage/breezy_hollow.png' />
+          </div>
+          <p>Breezy Hollow</p>
         </div>
 
-        <div className="spot-index-world-new-york">
-          <p>Put thumbnail image here</p>
-          <p>New York</p>
+        <div className="spot-index-world-lost-lure-creek">
+          <div className="image-wrapper">
+            <img src='/images/homepage/lost_lure_creek.png' />
+          </div>
+          <p>Lost Lure Creek</p>
         </div>
 
-        <div className="spot-index-world-sydney">
-          <p>Put thumbnail image here</p>
-          <p>Sydney</p>
+        <div className="spot-index-world-saltwater-shores">
+          <div className="image-wrapper">
+            <img src='/images/homepage/saltwater_shores.png' />
+          </div>
+          <p>Saltwater Shores</p>
         </div>
 
-        <div className="spot-index-world-cape-town">
-          <p>Put thumbnail image here</p>
-          <p>Cape Town</p>
+        <div className="spot-index-world-sunburst-island">
+          <div className="image-wrapper">
+            <img src='/images/homepage/sunburst_island.png' />
+          </div>
+          <p>Sunburst Island</p>
         </div>
       </div>
     );

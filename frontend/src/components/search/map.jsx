@@ -49,7 +49,6 @@ export default class Map extends Component {
       };
       this.props.requestUpdateBounds(bounds);
     });
-    this.geocoder = new this.maps.Geocoder();
   }
 
   handleChange(e) {
@@ -58,13 +57,10 @@ export default class Map extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.geocoder.geocode({ address: this.state.address }, (results, status) => {
-      if (status === 'OK') {
-        this.map.setCenter(results[0].geometry.location);
-      } else {
-        console.log(status);
-      }
-    })
+    this.props.geocode(this.state).then(data => {
+      debugger;
+      this.map.setCenter(this.props.center);
+    });
   }
 
   render() {
@@ -80,7 +76,7 @@ export default class Map extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}
-          defaultCenter={mapOptions.center}
+          defaultCenter={this.props.center}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => (
             this.apiIsLoaded(map, maps)

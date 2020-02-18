@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/navbar.css"
+import "../../assets/stylesheets/navbar.css"
 import Dropdown from "./dropdown";
 import SearchBar from "./search_bar";
 import FiltersBar from "../filter/filters_bar";
@@ -38,14 +38,15 @@ class NavBar extends React.Component {
 		this.props.history.push("/");
 	}
 
+	// ** BUG FOUND ** 
+	// This is causing the search page to always render upon app load up
 	handleSearchSubmit(e) {
-		e.preventDefault();
-		// this.state.searchInput
 		this.navigateToSearch();
 	}
 
+	// For testing, changed the route from '/search' to '/'
 	navigateToSearch() {
-		this.props.history.push("/search");
+		this.props.history.push("/");
 	}
 
 	update(property) {
@@ -60,15 +61,7 @@ class NavBar extends React.Component {
 			return (
 				<div>
 					<i className="fas fa-glass"></i>
-					<form onSubmit={this.props.handleSubmit}>
-						<div className="search-bar-input">
-							<input
-								type="text"
-								placeholder="Search"
-								value={this.state.searchInput}
-								onChange={this.update("searchInput")}
-							/>
-						</div>
+					<form onSubmit={this.props.handleSearchSubmit}>
 						<div>
 							<input type="submit" />
 						</div>
@@ -85,11 +78,9 @@ class NavBar extends React.Component {
 			return (
 				<div className="navbar">
 					<div className="logo">
-						<Link to={"/"} img="" className="">Logo</Link>
-					</div>
-
-					<div className="nav-mid">
-						<div className="search-bar">{this.navbarSearch()}</div>
+						<Link to="/">
+							<img src='/images/navbar/nooks_cranny_logo.png' />
+						</Link>
 					</div>
 
 					<div className="nav-main">
@@ -142,13 +133,13 @@ class NavBar extends React.Component {
 			return (
 				<div className="navbar">
 					<div className="logo">
-						<Link to={"/"}>Logo</Link>
+						<Link to="/">
+						  <img src='/images/navbar/nooks_cranny_logo.png' />
+						</Link>
 					</div>
 
 					<div className="search-bar">
-						{this.props.location.pathname !== "/" || this.props.currentUser ? (
-							<SearchBar />
-						) : null}
+					  <SearchBar />
 					</div>
 
 					<div className="nav-main">
@@ -169,7 +160,7 @@ class NavBar extends React.Component {
 										type="button"
 										className="nav-link"
 									><Link to={"/"}>
-										Host an experience</Link>
+										Become a host</Link>
 									</button>
 								</div>
 							</li>

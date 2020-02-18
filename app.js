@@ -7,6 +7,15 @@ const passport = require('passport');
 const path = require('path');
 const users = require('./routes/api/users');
 const spots = require('./routes/api/spots');
+const geocode = require('./routes/api/geocode');
+
+// Loading static build folder for production
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('frontend/build'));
+	app.get('/', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+	})
+}
 
 // Using mongoose to connect to Mongo database with success and error messages
 mongoose
@@ -28,6 +37,7 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 // Requests for these routes uses the specified callback function
 app.use('/api/users', users);
 app.use('/api/spots', spots);
+app.use('/api/geocode', geocode);
 
 // Middleware for Passport
 app.use(passport.initialize());
@@ -37,5 +47,5 @@ require('./config/passport')(passport);
 
 // Route for serving static assets
 // Makes content under the public directory accessible
-// i.e. In components, <img src='/calendar/splash.jpg' />
-app.use('/calendar', express.static(path.join(__dirname, 'public')))
+// i.e. In components, <img src='/images/splash.jpg' />
+app.use('/images', express.static(path.join(__dirname, 'public')))

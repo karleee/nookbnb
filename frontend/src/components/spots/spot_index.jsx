@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SpotWorldIndex from './spot_world_index';
 import SpotIndexItem from './spot_index_item';
+import '../../assets/stylesheets/spot_index.css';
 
 class SpotIndex extends React.Component {
   // Constructor for SpotIndex
@@ -29,12 +30,13 @@ class SpotIndex extends React.Component {
     return (
       <div className="spot-index-wrapper">
         <div className="spot-index-world-wrapper">
-          <h2>Travel the world with Airbnb</h2>
-          <SpotWorldIndex spots={spots} />
+          <h2>Travel the world with Nookbnb</h2>
+          <SpotWorldIndex spots={spots} /> 
         </div> 
 
         <div className="spot-index-top-wrapper">
           <h2>Top-rated places to stay</h2>
+          <h3>Explore some of the best-reviewed stays in the world</h3>
           
           <ul>
             {spots.map(spot => <SpotIndexItem key={spot._id} spot={spot} />)}

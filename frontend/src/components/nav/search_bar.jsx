@@ -2,49 +2,35 @@ import React from "react";
 import { connect } from "react-redux";
 import { requestUpdateBounds } from "../../actions/filter_actions";
 import { withRouter } from "react-router";
-import "./search_bar.css"
+import "../../assets/stylesheets/search_bar.css";
 
 
 class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: ""
+			searchInput: "",
+			searchPlaceholder: false
 		};
 
+		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	const input = document.getElementById("searchInput");
-	// 	const options = { types: ["(regions)"] };
-	// 	const autocomplete = new google.maps.places.Autocomplete(input, options);
-
-	// 	let address;
-	// 	autocomplete.addListener("place_changed", e => {
-	// 		if (!autocomplete.getPlace().formatted_address) {
-	// 			address = autocomplete.getPlace().name;
-	// 			this.setState({ search: address });
-	// 			this.handleSubmit(address);
-	// 		} else {
-	// 			address = autocomplete.getPlace().formatted_address;
-	// 			this.setState({ search: address });
-	// 			this.handleSubmit(address);
-	// 		}
-	// 	});
-	// }
+	toggleSearchBarPlaceholder() {
+		this.setState({searchPlaceholder: !this.state.searchPlaceholder});
+	}
 
 	handleUpdate() {
 		return e => {
 			this.setState({ searchInput: e.target.value });
-			// this.setState({ searchInput: "" });
 		};
 	}
 
-	handleClearSearch() {
+	handleClearSearch() { 
 		this.setState({ searchInput: "" });
 	}
 
@@ -62,21 +48,22 @@ class SearchBar extends React.Component {
 	// }
 
 	// "fetchSearchResults" is temp name. will replace when file is created
-	// handleSubmitSearch(e) {
-	// 	e.preventDefault();
-	// 	this.props.requestUpdateBounds(this.state.searchInput).then(() => {
-	// 		this.props.history.push({
-	// 			pathname: "/search"
-	// 		});
-	// 	});
-	// 	this.setState({ searchInput: "" });
-	// 	this.props.handleClearSearch();
-	// }
-	handleSearchSubmit(e) {
+	handleSubmitSearch(e) {
 		e.preventDefault();
-		this.props.fetchTreehouseSearchResults(this.state.searchTerm);
-		this.setState({ redirectToSearchIdx: true });
+		this.props.requestUpdateBounds(this.state.searchInput).then(() => {
+			this.props.history.push({
+				pathname: "/search"
+			});
+		});
+		this.setState({ searchInput: "" });
+		this.props.handleClearSearch();
 	}
+
+	// handleSearchSubmit(e) {
+	// 	e.preventDefault();
+	// 	this.props.fetchTreehouseSearchResults(this.state.searchTerm);
+	// 	this.setState({ redirectToSearchIdx: true });
+	// }
 
 	handleSearchUpdate() {
 		return e => {
@@ -87,7 +74,7 @@ class SearchBar extends React.Component {
 	}
 	
 	renderNavbarSearchField() {
-		if (this.props.navbarType === "With search") {
+		// if (this.props.navbarType === "With search") {
 			return (
 				<div className={this.state.searchFormClasses.join(" ")}>
 					<i className="fas fa-search"></i>
@@ -109,7 +96,7 @@ class SearchBar extends React.Component {
 					</form>
 				</div>
 			);
-		}
+		// }
 	}
 
 	render() {
@@ -117,28 +104,28 @@ class SearchBar extends React.Component {
 		let className = "search-bar";
 		if (this.state.searchInput.length > 0) {
 			close = (
-				<div className="close" onClick={this.handleSubmit}>
-					x
-				</div>
+				<div className="close" onClick={this.handleClearSearch}>
+					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
+				</div>  
 			);
 		}
 
-		// debugger
-
 		return (
-			<div className={className} onSubmit={this.handleSubmit}>
+			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
-					<i className="fas fa-search"></i>
+					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
+
+					<input
+						id="searchInput"
+						type="text"
+						className="search-bar-input"
+						value={this.state.searchInput}
+						placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
+						onChange={this.handleUpdate()}
+					/>
+
+					{close}
 				</div>
-				<input
-					id="searchInput"
-					type="text"
-					className="search-bar-input"
-					value={this.state.searchInput}
-					placeholder="Search"
-					onChange={this.handleUpdate}
-				/>
-				{close}
 			</div>
 		);
 	}

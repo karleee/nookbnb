@@ -1,0 +1,160 @@
+@import 'variables.css';
+
+.spot-index-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%; 
+}
+
+.spot-index-wrapper .spot-index-world-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper h2 {
+  font-family: 'cerealRegular';
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island  {
+  box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  margin-right: 20px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper {
+  background: var(--light-teal); 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 17px 35px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper {
+  background: var(--light-teal); 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 15px 35px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper {
+  background: var(--light-teal); 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 25px 35px 28px 35px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper img   {
+  width: 100px;
+}
+
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow p,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores p,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek p,
+.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island p {
+  font-family: 'cerealRegular';
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--gray);
+  margin: 10px 0 0 20px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 80px;
+  padding-bottom: 50px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper h2 {
+  font-family: 'cerealRegular';
+  font-size: 25px;
+  letter-spacing: 0.5px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper h3 {
+  font-family: 'cerealLight';
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-top: 5px;  
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a {
+  text-decoration: none;
+  margin-bottom: 35px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li .image-wrapper img {
+  width: 215px;
+  height: 140px;
+  border-radius: 5px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
+  font-family: 'cerealRegular';
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  border-radius: 5px;
+  border: 1px solid var(--dark-gray);
+  margin: 10px 5px 0 0;
+  padding: 3px 5px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
+  font-family: 'cerealLight';
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 10px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li h4 {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  color: var(--dark-gray);
+  margin-top: 5px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li p {
+  font-family: 'cerealLight';
+  font-size: 16px;
+  color: var(--dark-gray);
+  margin-top: 5px;
+}
+
+.spot-index-wrapper .spot-index-top-wrapper ul a li p .price-wrapper {
+  font-family: 'cerealMedium';
+  color: var(--dark-gray); 
+}
