@@ -139,23 +139,27 @@ And to keep my code DRY, I managed to create a single adding and subtracting cli
 
 ------
 
-### Flexible Searching
+### Feature #2
 
 
 
 **Challenges**
+> Challenge #1
 
+> Challenge #2
 
+> Challenge #3
 
 **Solutions**
 
-> Solution 1
-
-
+> Solution #1
 
 
   
-> Solution 2
+> Solution #2
+
+
+> Solution #3
 
 
 
