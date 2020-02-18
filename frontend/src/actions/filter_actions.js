@@ -24,11 +24,10 @@ export const requestUpdateBounds = bounds => (dispatch, getState) => {
 
 export const geocode = addressObject => dispatch => {
   // Send address to the backend to be geocoded into location (lat, lng)
-  debugger;
   return fetchGeocode(addressObject)
-    .then(location => {
+    .then(response => {
       debugger;
-      return dispatch(updateMapCenter(location));
+      return dispatch(updateMapCenter(response.data));
     })
     .catch(err => console.log(err));
 };
