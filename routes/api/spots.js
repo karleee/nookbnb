@@ -13,7 +13,9 @@ router.get('/', (req, res) => {
 // Adding an additional route for displaying spots in a certain area
 // Used on location based search as well as moving around on the map
 router.get('/search', (req, res) => {
-  Spot.inBounds(JSON.parse(req.query.bounds))
+  const northEast = JSON.parse(req.query.northEast);
+  const southWest = JSON.parse(req.query.southWest);
+  Spot.inBounds({ northEast, southWest })
     .then(spots => res.json(spots))
     .catch(err => res.status(404).json({ nospotsfound: 'No spots found' }));
 });
