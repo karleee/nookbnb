@@ -58,7 +58,6 @@ export default class Map extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.geocode(this.state).then(data => {
-      debugger;
       this.map.setCenter(this.props.center);
     });
   }

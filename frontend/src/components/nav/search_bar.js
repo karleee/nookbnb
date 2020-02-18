@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import "../../assets/stylesheets/search_bar.css";
+import { requestUpdateBounds, geocode } from "../../actions/filter_actions";
 
 class SearchBar extends React.Component {
 	constructor(props) {
@@ -34,7 +35,7 @@ class SearchBar extends React.Component {
 	// "fetchSearchResults" is temp name. will replace when file is created
 	handleSubmitSearch(e) {
 		e.preventDefault();
-		this.props.fetchSearchResults(this.state.searchInput).then(() => {
+		this.props.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
 			})
@@ -76,6 +77,8 @@ class SearchBar extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
+  requestUpdateBounds: bounds => dispatch(requestUpdateBounds(bounds)),
+  geocode: addressObject => dispatch(geocode(addressObject))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
