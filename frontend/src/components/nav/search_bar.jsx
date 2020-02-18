@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: { address: '' },
+			searchInput: { address: "" },
 			searchPlaceholder: false
 		};
 

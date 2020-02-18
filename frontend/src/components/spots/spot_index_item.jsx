@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import "../../assets/stylesheets/spot_index.css";
 
 const SpotIndexItem = ({ spot }) => (
   <Link to={`/spots/${spot._id}`}>

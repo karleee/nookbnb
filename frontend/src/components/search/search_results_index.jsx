@@ -23,8 +23,11 @@ class SearchResultsIndex extends React.Component {
 
 		return (
 			<div className="search-index">
-				<h2>{numResults} places to stay</h2>
-				<ul>{spotItems}</ul>
+				<div className="search-index-top-wrapper">
+					<h2>Search Results</h2>
+					<h3>{numResults} places to stay</h3>
+				</div>
+				<div className="search-index-div"><ul>{spotItems}</ul></div>
 			</div>
 		);
 	}
