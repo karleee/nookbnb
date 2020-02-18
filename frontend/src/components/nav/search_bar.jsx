@@ -54,6 +54,7 @@ class SearchBar extends React.Component {
 			<div className={this.state.searchFormClasses.join(" ")}>
 				<i className="fas fa-search"></i>
 				<form
+				  autofill="off"
 					className="navbar-search-form"
 					onSubmit={this.handleSearchSubmit}
 				>
