@@ -26,7 +26,7 @@ export const requestUpdateBounds = bounds => (dispatch, getState) => {
   dispatch(updateBounds(bounds));
   // Fetch the correct spots from the backend 
   // Based on the bounds object that is now in state
-  return fetchFilteredSpots(getState().ui.filters)(dispatch);
+  return fetchFilteredSpots(getState().ui.filters.bounds)(dispatch);
 };
 
 export const geocode = addressObject => dispatch => {
