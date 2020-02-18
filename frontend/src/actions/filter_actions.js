@@ -23,7 +23,7 @@ export const changeFilter = (filter, value) => ({
 
 export const requestUpdateBounds = bounds => (dispatch, getState) => {
   // Updates state
-  debugger;
+  // debugger;
   dispatch(updateBounds(bounds));
   // Fetch the correct spots from the backend 
   // Based on the bounds object that is now in state

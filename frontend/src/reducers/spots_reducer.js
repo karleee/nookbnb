@@ -9,8 +9,9 @@ export default function(state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_ALL_SPOTS: 
-    case RECEIVE_SPOTS:     
       return Object.assign({}, state, action.spots.data);
+    case RECEIVE_SPOTS:
+      return Object.assign({}, state, action.spots);     
     default:
       return state;
   }
