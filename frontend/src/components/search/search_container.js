@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   geocode: addressObject => dispatch(geocode(addressObject)),
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   fetch,
-  fetchFilteredSpots: (filters) => dispatch(fetchFilteredSpots(filters))
+  fetchFilteredSpots: (filters) => dispatch(fetchFilteredSpots(filters)),
   updateMapCenter: location => dispatch(updateMapCenter(location))
 });
 

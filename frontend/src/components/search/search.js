@@ -3,7 +3,6 @@ import Map from './map';
 import FiltersBar from '../filter/filters_bar';
 import SearchResultsIndex from './search_results_index';
 
-<<<<<<< HEAD
 class Search extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,10 +11,7 @@ class Search extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		// if (this.props.location.search !== nextProps.location.search) {
-			// this.props.removeListings();
 			this.props.fetchFilteredSpots();
-		// }
 	}
 
 	updateBounds(bounds) {
@@ -60,27 +56,6 @@ class Search extends React.Component {
 			</div>
 		);
 	}
-=======
-export default function Search(
-  { spots, requestUpdateBounds, geocode, center, updateMapCenter }
-  ) {
-  return (
-    <div>
-      <FiltersBar />
-      <br/>
-      <br/>
-      <div className="map-container">
-        <Map 
-          requestUpdateBounds={requestUpdateBounds}
-          geocode={geocode}
-          center={center}
-          spots={spots}
-          updateMapCenter={updateMapCenter}>
-        </Map>
-      </div>
-    </div>
-  )
->>>>>>> master
 }
 
 export default Search;
