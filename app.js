@@ -7,6 +7,7 @@ const passport = require('passport');
 const path = require('path');
 const users = require('./routes/api/users');
 const spots = require('./routes/api/spots');
+const geocode = require('./routes/api/geocode');
 
 // Loading static build folder for production
 if (process.env.NODE_ENV === 'production') {
@@ -36,6 +37,7 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 // Requests for these routes uses the specified callback function
 app.use('/api/users', users);
 app.use('/api/spots', spots);
+app.use('/api/geocode', geocode);
 
 // Middleware for Passport
 app.use(passport.initialize());
