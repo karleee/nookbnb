@@ -8,6 +8,7 @@ class SpotDetail extends React.Component {
   // Constructor for SpotDetail component
   constructor(props) {
     super(props);
+    window.scrollTo(0, 0);
     this.state = { 
       user: { email: '' },
       name: '',
