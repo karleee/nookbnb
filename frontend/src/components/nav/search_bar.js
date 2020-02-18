@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: "",
+			searchInput: { address: '' },
 			searchPlaceholder: false
 		};
 
@@ -24,30 +24,30 @@ class SearchBar extends React.Component {
 
 	handleUpdate() {
 		return e => {
-			this.setState({ searchInput: e.target.value });
-		};
+			this.setState({ searchInput: { address: e.target.value } });
+		}
 	}
 
 	handleClearSearch() { 
 		this.setState({ searchInput: "" });
 	}
 
-	// "fetchSearchResults" is temp name. will replace when file is created
 	handleSubmitSearch(e) {
 		e.preventDefault();
+		debugger;
 		this.props.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
 			})
 		})
-		this.setState({ searchInput: "" });
-		this.props.handleClearSearch();
+		// this.setState({ searchInput: "" });
+		// this.props.handleClearSearch();
 	}
 
 	render() {
 		let close;
 		let className = "search-bar";
-		if (this.state.searchInput.length > 0) {
+		if (this.state.searchInput.address.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
 					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
@@ -56,7 +56,9 @@ class SearchBar extends React.Component {
 		}
 
 		return (
-			<div className={className} onSubmit={this.handleSubmitSearch} onClick={this.toggleSearchBarPlaceholder}>
+			<form className={className} 
+				onSubmit={this.handleSubmitSearch} 
+				onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
 					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
 
@@ -64,14 +66,14 @@ class SearchBar extends React.Component {
 						id="searchInput"
 						type="text"
 						className="search-bar-input"
-						value={this.state.searchInput}
+						value={this.state.searchInput.address}
 						placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
 						onChange={this.handleUpdate()}
 					/>
 
 					{close}
 				</div>
-			</div>
+			</form>
 		);
 	}
 }
