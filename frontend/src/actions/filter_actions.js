@@ -26,7 +26,6 @@ export const geocode = addressObject => dispatch => {
   // Send address to the backend to be geocoded into location (lat, lng)
   return fetchGeocode(addressObject)
     .then(response => {
-      debugger;
       return dispatch(updateMapCenter(response.data));
     })
     .catch(err => console.log(err));
