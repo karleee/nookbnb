@@ -45,20 +45,27 @@ The first challenge was to build out this widget without using any pre-built wid
 
 Another key point that we had to keep in mind was the overall organization of all of the different components in our application and separating out irrelevant code into new components. Planning out how to break apart the calendar widget into as few components as possible while still achieving the basic functionality of date picking and dynamic displaying proved to be quite time consuming.
 
+<br>
+
 > Split Years
 
 Another interesting challenge was determining how to account for split year portions of the calendar. For example, when the user landed on the calendar page that displayed both December and January, I needed to show the user the correct year for the month that they had chosen. The widget not only needed to keep track of the current year, but it also had to add or subtract the correct amount when the user clicked on the previous and next buttons.
+
+<br>
 
 > Guests Amount
 
 The last challenge was to create a customizable guest amount dropdown menu that was integrated into the calendar widget. More specifically, after doing some research, it seems that Airbnb **does not** include infants as a part of the total guests count. Additionally, they are enforcing a maximum amount of guests to the rental and the UI is dynamic enough to change appearances and functionality depending on whether or not the guest limit had been reached.
 
 <br>
+<br>
 
 **Solutions**
 > Building from Scratch: Solution
 
 For the first trial, I attempted to use the built in React datepicker, which uses hooks rather than functional components. Although this achieved the functionality that I wanted, there were some limitations. Styling for the built in widget seemed to be embedded within the widget itself; and rather than using traditional CSS or SCSS, it utilized props to manage custom style needs. Due to the time restraint and lack of familiarity with the code produced by this hook, I decided that it would take less time and increase efficiency if I created a calendar widget from scratch. Not only did this save time on the styling process, but it also increased my understanding and knowledge of how to build a custom calendar component.
+
+<br>
 
 > Split Years: Solution
 
@@ -83,6 +90,45 @@ And to determine which text field to autofill, a clever solution that I thought 
       this.setState({ selectedEndMonth: realMonthNum });
       this.setState({ selectedEndDay: day });
       this.setState({ selectedEndYr: yr });
+    }
+  }
+```
+<br>
+
+> Guests Amount: Solution
+
+To create the guests amount dropdown menu, I created a HTML element that rendered the entirety of the dropdown menu; however, to make it appear as though it only activated when the user clicked on the guests options input bar, I initially set the opacity to 0. Once the user clicks on the input bar, a class is added to this HTML element and using styling, I changed the opacity to 1 for this specific class. This created the toggling effect that I was trying to accomplish with this piece of the calendar widget.
+
+And to keep my code DRY, I managed to create a single adding and subtracting click event for every category of guests in the dropdown menu. These generic functions take in a string that indicates which type of guest they need to change the state for; and it also provides checks to see if the maximum guest amount has been reached. Because there can only be a maximum of four guests, the maximum amount for any of these categories can only be four. And if the code execution has reached the inside of the initial `if` statement, then we can safely assume that the total guest count has not reached the maximum and additions can still be made. A similar process applies to the subtraction function as well, except of course that the changes to the state are decreasing the total amount and the bounding range is checking to see if the guest amount is already at 0 (in that case, we cannot subtract any more). To account for how Airbnb handles the amount of infants in a rental, I excluded the infant guests from my total count.
+
+``` javascript
+// Handles guests adding click
+  handleGuestsAddingClick(guestType) {
+    let totalGuests = this.state.adultGuests + this.state.childrenGuests;
+    let newTotalGuests;
+    let guestCount;
+
+    if (guestType === 'adult') {
+      guestCount = this.state.adultGuests;
+    } else if (guestType === 'children') {
+      guestCount = this.state.childrenGuests;
+    } else {
+      let newInfantGuests = this.state.infantGuests + 1;
+      this.setState({ infantGuests: newInfantGuests });
+      return;
+    }
+
+    if (totalGuests < 4) {
+      newTotalGuests = totalGuests + 1;
+      this.setState({ totalGuests: newTotalGuests });
+
+      if (guestType === 'adult' && guestCount < 4) {
+        let newAdultGuests = guestCount + 1;
+        this.setState({ adultGuests: newAdultGuests });
+      } else if (guestType === 'children' && guestCount < 4) {
+        let newChildrenGuests = guestCount + 1;
+        this.setState({ childrenGuests: newChildrenGuests });
+      } 
     }
   }
 ```
