@@ -18,7 +18,7 @@ const App = () => (
 		<Modal />
 		<NavBarContainer />
 		<FiltersBar />
-		<DatesFilter />
+		{/* <DatesFilter /> */}
 		<GuestsFilter />
 		<MoreFilters />
 		<div className="app-main-content-wrapper">
