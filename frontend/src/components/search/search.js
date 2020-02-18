@@ -7,18 +7,16 @@ class Search extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-		this.updateBounds = this.updateBounds.bind(this);
+		// this.requestUpdateBounds = this.requestUpdateBounds.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
 			this.props.fetchFilteredSpots();
 	}
 
-	updateBounds(bounds) {
-		this.props.startLoading();
+	requestUpdateBounds(bounds) {
 		this.props
-			.updateFilter("bounds", bounds)
-			.then(() => this.props.stopLoading());
+			.updateFilter(bounds);
 	}
 
 	render() {
@@ -42,9 +40,9 @@ class Search extends React.Component {
 					<h2>Search Results</h2>
 					<h3>Explore some of the best-reviewed stays in the world</h3>
 
-					<ul>
-						<SearchResultsIndex spots={this.props.spots} />
-					</ul>
+					<div>
+						<SearchResultsIndex spots={spots} />
+					</div>
 				</div>
 
 				<div className="map-container">

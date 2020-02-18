@@ -9,9 +9,9 @@ class SearchResultsIndex extends React.Component {
 	}
 
 	render() {
-		if (!this.props.spots) {
-			return <div />;
-		}
+		// if (!this.props.spots) {
+		// 	return <div />;
+		// }
 
 		let { spots } = this.props;
 
@@ -24,9 +24,9 @@ class SearchResultsIndex extends React.Component {
 		return (
 			<div className="">
 				<h2>{numResults} places to stay</h2>
-				{spotItems}
+				<ul>{spotItems}</ul>
 			</div>
-		)
+		);
 	}
 }
 

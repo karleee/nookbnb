@@ -6,8 +6,8 @@ import { selectSpotsInBounds } from '../../reducers/selectors';
 import Search from "./search";
 
 const mapStateToProps = state => ({
-  spots: selectSpotsInBounds(state),
-  // spots: Object.values(state.entities.spots),
+  // spots: selectSpotsInBounds(state),
+  spots: Object.values(state.entities.spots),
   center: state.ui.filters.center
 });
 
