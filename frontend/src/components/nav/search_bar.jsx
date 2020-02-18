@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
 	}
 
 	handleClearSearch() { 
-		this.setState({searchInput: { address: '' }});
+		this.setState({searchInput: { address: '' }}); 
 	}
 
 	handleSubmitSearch(e) {
