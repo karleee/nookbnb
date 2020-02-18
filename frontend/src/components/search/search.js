@@ -28,7 +28,8 @@ class Search extends React.Component {
 			requestUpdateBounds,
 			geocode,
 			center,
-			updateFilter
+      updateFilter,
+      updateMapCenter
 		} = this.props;
 
 		return (
@@ -50,7 +51,9 @@ class Search extends React.Component {
 					<Map
 						requestUpdateBounds={requestUpdateBounds}
 						geocode={geocode}
-						center={center}
+            center={center}
+            spots={spots}
+            updateMapCenter={updateMapCenter}>
 					></Map>
 				</div>
 			</div>
