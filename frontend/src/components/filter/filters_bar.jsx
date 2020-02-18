@@ -1,23 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import { requestUpdateBounds } from "../../actions/filter_actions";
+import { updateFilter } from "../../actions/filter_actions";
 import GuestsFilter from "./guests_filter";
 import DatesFilter from "./dates_filter";
 import MoreFilters from "./more_filters";
 import { startLoading, stopLoading } from "../../actions/loading_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
+import "./filters.css"
 
 class FiltersBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			// box: null,
+			modal: null,
 			dates: "Dates",
 			amenities: "Amenities",
 			minGuests: "Guests",
-			// startDate: "",
-			// endDate: "",
-			formType: ""
+			startDate: "",
+			endDate: "",
+			// formType: ""
 		};
 		this.handleClick = this.handleClick.bind(this);
 		this.hideModal = this.hideModal.bind(this);
@@ -39,48 +40,41 @@ class FiltersBar extends React.Component {
 	updateGuests(guests) {
 		this.props.startLoading();
 		this.props
-			.requestUpdateBounds("minGuests", guests)
+			.updateFilter("minGuests", guests)
 			.then(() => this.props.stopLoading());
 	}
 
 	updateAmenities(amenities) {
 		this.props.startLoading();
 		this.props
-			.requestUpdateBounds("amenities", amenities)
+			.updateFilter("amenities", amenities)
 			.then(() => this.props.stopLoading());
 	}
 
 	updateDates(dates) {
 		this.props.startLoading();
 		this.props
-			.requestUpdateBounds("dates", dates)
+			.updateFilter("dates", dates)
 			.then(() => this.props.stopLoading());
 	}
 
-	handleSignup(e) {
-		e.stopPropagation();
-		this.props.openModal("signupFirst");
-		// this.props.openModal("signupSecond");
-		this.props.history.push("/");
-	}
-
-	handleClick({ formType }) {
+	handleClick(modal) {
 		return e => {
 			e.stopPropagation();
-			this.setState({ formType });
-			this.props.openModal({ formType });
+			this.setState({ modal });
+			// this.props.openModal({ formType });
 		};
 	}
 
 	hideModal() {
-		this.setState({ formType: null });
+		this.setState({ modal: null });
 	}
 
 	render() {
 		let currentUser;
 		let component;
 
-		if (this.state.formType === "Guests") {
+		if (this.state.modal === "Guests") {
 			component = (
 				<GuestsFilter
 					updateGuests={this.updateGuests}
@@ -88,7 +82,7 @@ class FiltersBar extends React.Component {
 					minGuests={this.props.filters.minGuests}
 				/>
 			);
-		} else if (this.state.formType === "Amenities") {
+		} else if (this.state.modal === "Amenities") {
 			component = (
 				<MoreFilters
 					updateAmenities={this.updateAmenities}
@@ -97,7 +91,7 @@ class FiltersBar extends React.Component {
 					// 	maxPrice={this.props.filters.price.maxPrice}
 				/>
 			);
-		} else if (this.state.formType === "Dates") {
+		} else if (this.state.modal === "Dates") {
 			component = (
 				<DatesFilter
 					updateDates={this.updateDates}
@@ -115,11 +109,11 @@ class FiltersBar extends React.Component {
 					<div
 						onClick={this.handleClick("Dates")}
 						className={
-							this.state.formType === "Dates"
-							// this.props.filters.dates.startDate !== "" ||
-							// this.props.filters.dates.endDate !== ""
-								? "filter-button selected"
-								: "filter-button"
+							this.state.modal === "Dates" ||
+							this.props.filters.dates.startDate !== "" ||
+							this.props.filters.dates.endDate !== ""
+							? "filter-button selected"
+							: "filter-button"
 						}
 					>
 						{this.state.dates}
@@ -127,7 +121,7 @@ class FiltersBar extends React.Component {
 					<div
 						onClick={this.handleClick("Guests")}
 						className={
-							this.state.formType === "Guests" ||
+							this.state.modal === "Guests" ||
 							this.props.filters.minGuests > 1
 								? "filter-button selected"
 								: "filter-button"
@@ -138,11 +132,12 @@ class FiltersBar extends React.Component {
 					<div
 						onClick={this.handleClick("Amenities")}
 						className={
-							this.state.formType === "Amenities"
-							// 	this.props.filters.price.minPrice > 10 ||
-							// 	this.props.filters.price.maxPrice < 1000
-							// 		? "filter-button selected"
-							// 		: "filter-button"
+							this.state.modal === "Amenities" ||
+								this.props.filters.amenities.bedrooms > 0 ||
+								this.props.filters.amenities.beds < 0 ||
+								this.props.filters.amenities.bathrooms < 0
+									? "filter-button selected"
+									: "filter-button"
 						}
 					>
 						{this.state.amenities}
@@ -164,9 +159,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	requestUpdateBounds: filter => dispatch(requestUpdateBounds(filter)),
-	openModal: formType => dispatch(openModal(formType)),
-	hideModal: () => dispatch(closeModal())
+	updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+	// openModal: formType => dispatch(openModal(formType)),
+	// hideModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FiltersBar);

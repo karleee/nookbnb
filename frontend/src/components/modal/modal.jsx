@@ -21,12 +21,12 @@ const Modal = ({ modal, closeModal }) => {
 			component = <SignupFirstFormContainer />
 	} else if (formType === "signupSecond") {
 			component = <SignupSecondFormContainer />;
-	} else if (formType === "Guests") {
-			component = <GuestsFilter />;
-	} else if (formType === "Amenities") {
-			component = <MoreFilters />;
-	} else if (formType === "Dates") {
-			component = <DatesFilter />;
+	// } else if (formType === "Guests") {
+	// 		component = <GuestsFilter />;
+	// } else if (formType === "Amenities") {
+	// 		component = <MoreFilters />;
+	// } else if (formType === "Dates") {
+	// component = <DatesFilter />;
 	}
 	
 	// if (!modal) {

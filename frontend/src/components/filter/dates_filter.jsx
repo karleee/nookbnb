@@ -3,7 +3,8 @@ import Helmet from "react-helmet";
 import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import DayPickerInput from "react-day-picker/DayPickerInput";
-
+import "./filters.css"
+import Datepicker from "../datepicker/datepicker"
 
 export default class DatesFilter extends React.Component {
 	static defaultProps = {
@@ -18,8 +19,11 @@ export default class DatesFilter extends React.Component {
 			formType: "Dates"
 		};
 		this.handleDayClick = this.handleDayClick.bind(this);
-		this.handleResetClick = this.handleResetClick.bind(this);
+		// this.handleResetClick = this.handleResetClick.bind(this);
 		// this.state = this.getInitialState();
+		    this.handleClear = this.handleClear.bind(this);
+				this.handleApply = this.handleApply.bind(this);
+				this.updateField = this.updateField.bind(this);
 	}
 
 	// getInitialState() {
@@ -35,54 +39,101 @@ export default class DatesFilter extends React.Component {
 		this.setState(range);
 	}
 
-	handleResetClick() {
-		this.setState(this.getInitialState());
+	// handleResetClick() {
+	// 	this.setState(this.getInitialState());
+	// }
+
+	parseDate(date) {
+    if (date === "") {
+      return date;
+    }
+    let parsed = "";
+    let stringDate = date.toString();
+    let arrDate = stringDate.split(" ");
+
+    parsed += arrDate[1] + " " + arrDate[2];
+    return parsed;
 	}
+	
+	updateField(field) {
+    return e => {
+      this.setState({ [field]: e });
+    };
+	}
+
+	handleClear() {
+    this.setState({ startDate: "", endDate: "" });
+  }
+
+  handleApply() {
+    this.props.updateDates(this.state);
+    this.props.hideModal();
+  }
 
 	render() {
 		const { from, to } = this.state;
 		const modifiers = { start: from, end: to };
 		return (
-			<div className="RangeExample">
-				<p>
-					{!from && !to && "Please select the first day."}
-					{from && !to && "Please select the last day."}
-					{from &&
-						to &&
-						`Selected from ${from.toLocaleDateString()} to
-                ${to.toLocaleDateString()}`}{" "}
-					{from && to && (
-						<button className="link" onClick={this.handleResetClick}>
-							Reset
-						</button>
-					)}
-				</p>
-				<DayPickerInput
-					className="Selectable"
-					numberOfMonths={this.props.numberOfMonths}
-					selectedDays={[from, { from, to }]}
-					modifiers={modifiers}
-					onDayClick={this.handleDayClick}
-				/>
-				<Helmet>
-					<style>{`
-  .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-    background-color: #f0f8ff !important;
-    color: #4a90e2;
-  }
-  .Selectable .DayPicker-Day {
-    border-radius: 0 !important;
-  }
-  .Selectable .DayPicker-Day--start {
-    border-top-left-radius: 50% !important;
-    border-bottom-left-radius: 50% !important;
-  }
-  .Selectable .DayPicker-Day--end {
-    border-top-right-radius: 50% !important;
-    border-bottom-right-radius: 50% !important;
-  }
-`}</style>
-				</Helmet>
+			<div className="dates-filter">
+				<div className="dates-div">
+					<span className="check-in">
+						<DayPickerInput
+							// numberOfMonths={this.props.numberOfMonths}
+							// selectedDays={[from, { from, to }]}
+							// modifiers={modifiers}
+							// onDayClick={this.handleDayClick}
+							value={this.parseDate(this.state.startDate)}
+							onDayChange={this.updateField("startDate")}
+							classNames={{
+								container: "date-input",
+								overlayWrapper: "calendar-wrapper",
+								overlay: "calendar"
+							}}
+							placeholder="Check In"
+							dayPickerProps={{
+								selectedDay: this.state.startDate,
+								disabledDays: [
+									{ before: new Date() },
+									{ after: this.state.endDate }
+								]
+							}}
+						/>
+					</span>
+					<span className="arrow">
+						<i className="material-icons"></i>
+					</span>
+					<span className="check-out">
+						<DayPickerInput
+							// numberOfMonths={this.props.numberOfMonths}
+							// selectedDays={[from, { from, to }]}
+							// modifiers={modifiers}
+							// onDayClick={this.handleDayClick}
+							value={this.parseDate(this.state.endDate)}
+							onDayChange={this.updateField("endDate")}
+							classNames={{
+								container: "date-input",
+								overlayWrapper: "calendar-wrapper",
+								overlay: "calendar"
+							}}
+							placeholder="Check Out"
+							dayPickerProps={{
+								selectedDay: this.state.startDate,
+								disabledDays: [
+									{ before: new Date() },
+									{ before: this.state.startDate }
+								]
+							}}
+						/>
+					</span>
+				</div>
+				<div className="dates-filter-apply-clear">
+					<div className="dates-filter-clear" onClick={this.handleClear}>
+						Clear
+					</div>
+					<div className="dates-filter-apply" onClick={this.handleApply}>
+						Apply
+					</div>
+				</div>
 			</div>
 		);
 	}
