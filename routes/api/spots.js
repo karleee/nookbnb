@@ -23,7 +23,7 @@ router.get('/search', (req, res) => {
 // Route for a particular spot
 router.get('/:spotId', (req, res) => {
   Spot.findById(req.params.spotId)
-    .populate({ path: 'user', select: 'email _id' })
+    .populate({ path: 'user', select: 'email profile_image_url _id' })
     .then(data => {
       let payload = { user: data.user, spot: data };
       payload.spot.user = data.user._id;

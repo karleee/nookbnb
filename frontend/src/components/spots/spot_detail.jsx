@@ -46,7 +46,7 @@ class SpotDetail extends React.Component {
       <div className="spot-index-item-detail-wrapper">
         <div className="spot-index-item-detail-header">
           <h1>{spot.name}</h1> 
-        </div>
+        </div> 
 
         <div className="spot-index-item-detail-location-wrapper">
           <p>{spot.city}, {spot.state}, {spot.country}</p>
@@ -67,8 +67,14 @@ class SpotDetail extends React.Component {
           <div className="main-description-wrapper">
             <div className="main-description">
               <div className="spot-index-item-detail-description-header">
-                <h2>Entire house hosted by {usernameCapitalized}</h2>
-                <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'} • {spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'} • {spot.beds} {spot.beds > 1 ? 'beds' : 'bed'} • {spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
+                <div className="description-wrapper">
+                  <h2>Entire house hosted by {usernameCapitalized}</h2>
+                  <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'} • {spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'} • {spot.beds} {spot.beds > 1 ? 'beds' : 'bed'} • {spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
+                </div>
+
+                <div className="profile-image-wrapper">
+                  <img src={user.profile_image_url} alt="Profile image" />
+                </div>
               </div>
 
               <div className="spot-index-item-detail-description-perks">
