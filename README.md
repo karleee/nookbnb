@@ -36,6 +36,7 @@ This calendar widget, which was built from scratch, dynamically renders the corr
 </kbd>
 
 <br>
+<br>
 
 **Challenges**
 > Challenge #1
