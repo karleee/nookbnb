@@ -55,7 +55,7 @@ export default class Map extends Component {
       const center = this.map.getCenter();
       const lat = center.lat();
       const lng = center.lng();
-      this.props.updateMapCenter(center);
+      this.props.updateMapCenter({ lat, lng });
     });
   }
 
@@ -73,12 +73,12 @@ export default class Map extends Component {
     const defaultCenter = this.props.center;
     return (
       <div id='map-container'>
-        <form onSubmit={this.handleSubmit}>
+        {/* <form onSubmit={this.handleSubmit}>
           <input 
             type="text" 
             value={this.state.address} 
             onChange={this.handleChange} />
-        </form>
+        </form> */}
 
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
