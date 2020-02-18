@@ -16,8 +16,6 @@ class NavBar extends React.Component {
 		this.getLinks = this.getLinks.bind(this);
 		this.handleSignup = this.handleSignup.bind(this);
 		this.handleLogin = this.handleLogin.bind(this);
-		// this.navbarSearch = this.navbarSearch.bind(this);
-		// this.handleSearchSubmit = this.handleSearchSubmit(this);
 		this.navigateToSearch = this.navigateToSearch.bind(this);
 	}
 
