@@ -1,4 +1,4 @@
-# Airbnb Clone
+# Nookbnb
 
 ## Introduction
 Nookbnb is a single page MERN stack application that parodies off the concept and style of Airbnb. Drawing inspiration from the popular 'Animal Crossing' video game series, visitors to the site are able to browse rental listings for properties owned by Tom Nook himself. 
