@@ -53,6 +53,8 @@ Another interesting challenge was determining how to account for split year port
 
 The last challenge was to create a customizable guest amount dropdown menu that was integrated into the calendar widget. More specifically, after doing some research, it seems that Airbnb **does not** include infants as a part of the total guests count. Additionally, they are enforcing a maximum amount of guests to the rental and the UI is dynamic enough to change appearances and functionality depending on whether or not the guest limit had been reached.
 
+<br>
+
 **Solutions**
 > Building from Scratch: Solution
 
