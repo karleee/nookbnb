@@ -3,7 +3,7 @@ import { fetchGeocode } from '../util/map_api_util';
 
 export const UPDATE_BOUNDS = "UPDATE_BOUNDS";
 export const UPDATE_MAP_CENTER = "UPDATE_MAP_CENTER";
-export const UPDATE_FILTER= "UPDATE_FILTER";
+export const UPDATE_FILTER = "UPDATE_FILTER";
 
 export const updateBounds = bounds => ({
   type: UPDATE_BOUNDS,

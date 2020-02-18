@@ -56,7 +56,12 @@ export default class Map extends Component {
       const lat = center.lat();
       const lng = center.lng();
       this.props.updateMapCenter(center);
+      // this.props.updateFilter("bounds", bounds);
     });
+  }
+
+  componentWillUpdate() {
+    this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   handleChange(e) {
