@@ -31,7 +31,7 @@ class SearchBar extends React.Component {
 	}
 
 	handleClearSearch() { 
-		this.setState({ searchInput: "" });
+		this.setState({searchInput: { address: '' }}); 
 	}
 
 	handleSubmitSearch(e) {
@@ -42,8 +42,6 @@ class SearchBar extends React.Component {
 				pathname: "/search",
 			})
 		})
-		// this.setState({ searchInput: "" });
-		// this.props.handleClearSearch();
 	}
 
 	// handleSearchSubmit(e) {
@@ -89,7 +87,7 @@ class SearchBar extends React.Component {
 	render() {
 		let close;
 		let className = "search-bar";
-		if (this.state.searchInput.address.length > 0) {
+		if (this.state.searchInput.address && this.state.searchInput.address.length > 0) {
 			close = (
 				<div className="close" onClick={this.handleClearSearch}>
 					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
