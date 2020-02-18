@@ -15,9 +15,7 @@ class SearchBar extends React.Component {
 
 		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		// this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
-		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	toggleSearchBarPlaceholder() {
