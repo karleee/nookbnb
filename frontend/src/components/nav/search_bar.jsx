@@ -37,7 +37,7 @@ class SearchBar extends React.Component {
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		// debugger;
-		this.geocode(this.state.searchInput).then(() => {
+		this.props.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
 			})
