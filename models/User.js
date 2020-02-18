@@ -10,9 +10,10 @@ const UserSchema = new Schema({
 		type: String,
 		required: true
 	},
+	profile_image_url: '',
 	date: {
 		type: Date,
-		default: Date.now
+		default: Date.now 
 	}
 })
 
