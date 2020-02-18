@@ -4,7 +4,6 @@ import { withRouter } from "react-router";
 import "../../assets/stylesheets/search_bar.css";
 import { requestUpdateBounds, geocode } from "../../actions/filter_actions";
 
-
 class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
@@ -15,7 +14,7 @@ class SearchBar extends React.Component {
 
 		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		// this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -37,7 +36,7 @@ class SearchBar extends React.Component {
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		// debugger;
-		this.geocode(this.state.searchInput).then(() => {
+		this.props.geocode(this.state.searchInput).then(() => {
 			this.props.history.push({
 				pathname: "/search",
 			})
