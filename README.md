@@ -9,6 +9,7 @@ Nookbnb is a single page MERN stack application that parodies off the concept an
 
 <br>
 <br>
+<br>
 
 <kbd>
 <img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/home_main2.png" alt="Homepage" width="900px" border="1">
@@ -30,6 +31,9 @@ To see the most up to date version, please visit [the homepage](https://nookbnb.
 
 This calendar widget, which was built from scratch, dynamically renders the correct amount of days for each month and allows users to choose a check-in and checkout date. A dropdown menu to choose how many guests will be staying in the rental is also available to the user. The widget enforces that there can only be a maximum of four guests and adjusts the editing buttons for each category of guests accordingly.
 
+<kbd>
+<img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/calendar_widget_main.png" alt="Homepage" width="900px" border="1">
+</kbd>
 
 
 **Challenges**
