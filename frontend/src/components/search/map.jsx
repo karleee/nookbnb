@@ -51,7 +51,6 @@ export default class Map extends Component {
         southWest: { lat: south, lng: west }
       };
       this.props.requestUpdateBounds(bounds);
-      
       const center = this.map.getCenter();
       const lat = center.lat();
       const lng = center.lng();
