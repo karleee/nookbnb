@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 
-import { requestUpdateBounds } from "../../actions/filter_actions";
+import { requestUpdateBounds, geocode } from "../../actions/filter_actions";
 import { selectSpotsInBounds } from '../../reducers/selectors';
-import { geocode } from '../../actions/filter_actions';
 import Search from "./search";
 
 const mapStateToProps = state => ({
