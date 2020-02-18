@@ -6,7 +6,8 @@ import { geocode } from '../../actions/filter_actions';
 import Search from "./search";
 
 const mapStateToProps = state => ({
-  spots: selectSpotsInBounds(state)
+  spots: selectSpotsInBounds(state),
+  center: state.ui.filters.center
 });
 
 const mapDispatchToProps = dispatch => ({

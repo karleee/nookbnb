@@ -59,7 +59,7 @@ export default class Map extends Component {
     e.preventDefault();
     this.props.geocode(this.state).then(data => {
       debugger;
-      this.map.setCenter(data.location);
+      this.map.setCenter(this.props.center);
     });
   }
 
@@ -76,7 +76,7 @@ export default class Map extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}
-          defaultCenter={mapOptions.center}
+          defaultCenter={this.props.center}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => (
             this.apiIsLoaded(map, maps)
