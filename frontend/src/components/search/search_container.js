@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { requestUpdateBounds, geocode, updateFilter } from "../../actions/filter_actions";
+import { requestUpdateBounds, geocode, updateFilter, updateMapCenter } from "../../actions/filter_actions";
 import { fetchFilteredSpots } from "../../actions/spot_actions";
 import { selectSpotsInBounds } from '../../reducers/selectors';
 import Search from "./search";
@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   fetch,
   fetchFilteredSpots: (filters) => dispatch(fetchFilteredSpots(filters))
+  updateMapCenter: location => dispatch(updateMapCenter(location))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
