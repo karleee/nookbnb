@@ -70,6 +70,7 @@ export default class Map extends Component {
   }
 
   render() {
+    const defaultCenter = this.props.center;
     return (
       <div id='map-container'>
         <form onSubmit={this.handleSubmit}>
@@ -82,7 +83,7 @@ export default class Map extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}
-          defaultCenter={mapOptions.center}
+          defaultCenter={defaultCenter}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => (
             this.apiIsLoaded(map, maps)
