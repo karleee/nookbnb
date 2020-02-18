@@ -10,7 +10,6 @@ const UserSchema = new Schema({
 		type: String,
 		required: true
 	},
-	profile_image_url: 'https://nookbnb-seeds.s3-us-west-1.amazonaws.com/default.png',
 	date: {
 		type: Date,
 		default: Date.now 
