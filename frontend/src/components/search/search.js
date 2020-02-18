@@ -12,7 +12,7 @@ class Search extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-			this.props.fetchFilteredSpots();
+			// this.props.fetchFilteredSpots();
 	}
 
 	requestUpdateBounds(bounds) {

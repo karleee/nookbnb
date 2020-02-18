@@ -23,6 +23,7 @@ export const changeFilter = (filter, value) => ({
 
 export const requestUpdateBounds = bounds => (dispatch, getState) => {
   // Updates state
+  // debugger;
   dispatch(updateBounds(bounds));
   // Fetch the correct spots from the backend 
   // Based on the bounds object that is now in state
@@ -41,6 +42,6 @@ export const geocode = addressObject => dispatch => {
 export const updateFilter = (filter, value) => {
 	return (dispatch, getState) => {
 		dispatch(changeFilter(filter, value));
-		return fetchFilteredSpots(getState().ui.filters)(dispatch);
+		// return fetchFilteredSpots(getState().ui.filters)(dispatch);
 	};
 };
