@@ -61,15 +61,15 @@ class SpotDetail extends React.Component {
     // add onClick={() => this.props.openModal('spotModal')} to div for modal
     return (
       <div className="spot-index-item-detail-wrapper">
-        <div className="spot-index-item-detail-photos">
-          <div className="main-photo-wrapper">
-            <img src={`${spot.main_image_url}`} alt="Main spot photo" />  
+        <div className="thumbnail-photos-wrapper">
+          <div className="main-image-wrapper">
+            <img src={`${spot.main_image_url}`} alt="Main spot photo" />
             <div className="overlay-wrapper"></div>
           </div>
-
-          <div className="thumbnail-photos-wrapper">
+          
+          <div className="side-image-wrapper">
             {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => 
-              <div className="thumbnail-image-wrapper">
+              <div className="image-wrapper">
                 <img src={url} alt="Thumbnail photo" />
                 <div className="overlay-wrapper"></div>
               </div>) : ''}

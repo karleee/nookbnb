@@ -7,35 +7,22 @@
   width: 80%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 100%;
   height: 50%;
-  margin-top: 25px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .main-photo-wrapper {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .main-image-wrapper {
   position: relative;
   width: 50%;
-  height: 99.5%;
+  height: 100%;
   overflow: hidden;
   margin-right: 0.2%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .main-photo-wrapper img {
-  width: 100%;
-  height: 100%;
-}
-
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .main-photo-wrapper img:hover {
-  transform: scale(1.10);
-  transition: transform 1s;
-  cursor: pointer;
-}
-
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .side-image-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -44,26 +31,37 @@
   height: 100%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .thumbnail-image-wrapper {
-  position: relative;
-  width: 49.82%;
-  height: 49.5%;
-  overflow: hidden;
-}
-
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .thumbnail-image-wrapper img {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .main-image-wrapper img {
   width: 100%;
   height: 100%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .thumbnail-image-wrapper img:hover {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .main-image-wrapper img:hover {
   transform: scale(1.10);
   transition: transform 1s;
   cursor: pointer;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .thumbnail-image-wrapper .overlay-wrapper,
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .main-photo-wrapper .overlay-wrapper {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .side-image-wrapper .image-wrapper {
+  position: relative;
+  width: 49.8%;
+  height: 49.5%;
+  overflow: hidden;
+}
+
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .side-image-wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .side-image-wrapper .image-wrapper img:hover {
+  transform: scale(1.10);
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .side-image-wrapper .image-wrapper .overlay-wrapper,
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .main-image-wrapper .overlay-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,19 +72,11 @@
   z-index: -1;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos:hover .thumbnail-image-wrapper:not(:hover) .overlay-wrapper {
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
   opacity: 1;
   z-index: 1;
   transition: opacity 0.5s;
 }
-
-.spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper:hover .thumbnail-image-wrapper:not(:hover) .overlay-wrapper {
-  opacity: 1;
-  z-index: 1;
-  transition: opacity 0.5s;
-}
-
-/* END OF OVERLAY TESTING */
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-header {
   display: flex;
