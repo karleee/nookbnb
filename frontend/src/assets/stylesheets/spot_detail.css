@@ -73,15 +73,10 @@
   border-top: 1px solid var(--gray);
 }
 
-/* .spot-index-item-detail-wrapper .spot-index-item-detail-description {
-  width: 100%;
-} */
-
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* margin-top: 45px; */
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .description-wrapper {
@@ -124,6 +119,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper .perk-wrapper p {
@@ -148,6 +144,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .perk-wrapper p {
@@ -172,6 +169,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper .perk-wrapper p {
@@ -197,6 +195,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper .perk-wrapper p {
@@ -213,26 +212,26 @@
   line-height: 1.75;
   border-bottom: 1px solid var(--underline-gray);
   padding-bottom: 30px;
-  color: var(--dark-gray);
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements {
-  margin-top: 50px;
+  margin-top: 30px;
   border-bottom: 1px solid var(--underline-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements h2 {
   font-family: 'cerealMedium';
-  font-size: 20px;
-  color: var(--dark-gray);
+  font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-  padding-bottom: 50px;
-  margin-top: 25px;
+  padding-bottom: 40px;
+  margin-top: 20px;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li {
@@ -240,7 +239,7 @@
   flex-direction: column;
   justify-content: flex-start;
   border: 1px solid var(--underline-gray); 
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 25px 90px 25px 25px;
   margin-right: 20px;
 }
@@ -264,13 +263,13 @@
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities {
   display: grid;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities h2 {
   font-family: 'cerealMedium';
-  font-size: 20px;
-  color: var(--dark-gray);
+  font-size: 16px;
+  color: var(--medium-gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid {
@@ -281,7 +280,7 @@
   font-family: 'cerealLight';
   font-size: 16px;
   color: var(--dark-gray);
-  margin-top: 25px;
+  margin-top: 20px;
   padding-bottom: 30px;
 }
 

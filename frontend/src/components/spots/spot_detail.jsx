@@ -129,7 +129,7 @@ class SpotDetail extends React.Component {
               </div>
 
               <div className="spot-index-item-detail-description-sleeping-arrangements">
-                <h2>Sleeping Arrangements</h2>
+                <h2>Sleeping arrangements</h2>
                 <SleepingArrangementIndex bedrooms={spot.bedrooms} />
               </div> 
 
