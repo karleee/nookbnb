@@ -21,9 +21,10 @@ class SpotDetail extends React.Component {
       baths: 0,
       description: '',
       amenities: [],
-      hoverImage: false
+      // hoverImage: false
     } 
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    // this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    // this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
   // Runs once component is mounted
@@ -37,11 +38,17 @@ class SpotDetail extends React.Component {
   }
 
   // Adds class to other images for overaly effect
-  handleMouseEnter() {
+  // handleMouseEnter() {
     // ReactDOM.findDOMNode(<instance-of-outermost-component>).getElementsByClassName('snap')
     // const images = document.getElementsByClassName('thumbnail-image-wrapper');
     // this.setState({ hoverImage: !!this.state.hoverImage });
-  }
+    // console.log(e.currentTarget);
+    // this.setState({ hoverImage: true });
+  // }
+
+  // handleMouseLeave() {
+  //   this.setState({ hoverImage: false });
+  // }
 
   // Rendering component
   render() {
@@ -57,12 +64,14 @@ class SpotDetail extends React.Component {
         <div className="spot-index-item-detail-photos">
           <div className="main-photo-wrapper">
             <img src={`${spot.main_image_url}`} alt="Main spot photo" />  
+            <div className="overlay-wrapper"></div>
           </div>
 
           <div className="thumbnail-photos-wrapper">
             {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => 
               <div className="thumbnail-image-wrapper">
                 <img src={url} alt="Thumbnail photo" />
+                <div className="overlay-wrapper"></div>
               </div>) : ''}
           </div>
         </div>
