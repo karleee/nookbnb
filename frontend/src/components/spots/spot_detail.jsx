@@ -42,10 +42,11 @@ class SpotDetail extends React.Component {
     let username = user.email.substr(0, user.email.indexOf('@')); 
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
+    // add onClick={() => this.props.openModal('spotModal')} to div for modal
     return (
       <div className="spot-index-item-detail-wrapper">
         <div className="spot-index-item-detail-photos">
-          <div className="main-photo-wrapper" onClick={() => this.props.openModal('spotModal')}>
+          <div className="main-photo-wrapper">
             <img src={`${spot.main_image_url}`} alt="Main spot photo" />  
           </div>
 

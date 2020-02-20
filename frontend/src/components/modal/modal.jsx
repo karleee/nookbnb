@@ -27,10 +27,8 @@ const Modal = ({ modal, closeModal }) => {
 	  component = <SpotModal />;
 	}
 
-	console.log(formType);
-
 	return (
-		<div className="modal-background" onClick={closeModal}>
+		<div className="modal-background" onClick={formType === 'spotModal' ? '' : closeModal}>
 			<div className="modal-child" onClick={e => e.stopPropagation()}>
 				{component}
 			</div>
