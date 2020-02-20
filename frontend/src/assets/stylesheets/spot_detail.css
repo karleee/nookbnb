@@ -251,6 +251,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
+  color: var(--medium-gray);
   letter-spacing: 0.5px;
   margin-top: 15px;
 }
@@ -258,6 +259,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li p {
   font-family: 'cerealLight';
   font-size: 14px;
+  color: var(--medium-gray);
   margin-top: 10px;
 }
 
