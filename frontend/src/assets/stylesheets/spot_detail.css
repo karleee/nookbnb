@@ -52,6 +52,7 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .image-wrapper img {
   width: 100%;
   height: 100%;
+  padding-bottom: 1%;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-photos .thumbnail-photos-wrapper .image-wrapper img:hover {
