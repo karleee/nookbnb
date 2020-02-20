@@ -1,50 +1,33 @@
 import React from "react";
-import { closeModal } from "../../actions/modal_actions";
-import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupSecondFormContainer from "../session/signup_second_form_container";
 import SignupFirstFormContainer from "../session/signup_first_form_container";
-import GuestsFilter from "../filter/guests_filter";
-import MoreFilters from "../filter/more_filters";
-import DatesFilter from "../filter/dates_filter";
+import SpotModal from '../../components/spots/spot_modal_container';
+import '../../assets/stylesheets/modal.css';
+// import GuestsFilter from "../filter/guests_filter";
+// import MoreFilters from "../filter/more_filters";
+// import DatesFilter from "../filter/dates_filter";
 
-import "./modal.css"
+// import "./modal.css"
 
 const Modal = ({ modal, closeModal }) => {
+	let component;
+	let type;
+
 	if (!modal) return null;
 	let { formType } = modal;
 
-	let component;
 	if (formType === "login") {
-			component = <LoginFormContainer />
+		component = <LoginFormContainer />
 	} else if (formType === "signupFirst") {
-			component = <SignupFirstFormContainer />
+		component = <SignupFirstFormContainer />
 	} else if (formType === "signupSecond") {
-			component = <SignupSecondFormContainer />;
-	// } else if (formType === "Guests") {
-	// 		component = <GuestsFilter />;
-	// } else if (formType === "Amenities") {
-	// 		component = <MoreFilters />;
-	// } else if (formType === "Dates") {
-	// component = <DatesFilter />;
+		component = <SignupSecondFormContainer />;
+	} else if (formType === 'spotModal') {
+	  component = <SpotModal />;
 	}
-	
-	// if (!modal) {
-	// 	return null;
-	// }
-	// let component;
-	// switch (modal) {
-	// 	case "login":
-	// 		component = <LoginFormContainer />;
-	// 		break;
-	// 	case "signupFirst":
-	// 		component = <SignupFirstFormContainer />;
-	// 		break;
-	// 	case "signupSecond":
-	// 		component = <SignupSecondFormContainer />;
-	// 	default:
-	// 		return null;
-	// }
+
+	console.log(formType);
 
 	return (
 		<div className="modal-background" onClick={closeModal}>
@@ -55,17 +38,18 @@ const Modal = ({ modal, closeModal }) => {
 	);
 }
 
-const mapStateToProps = state => {
-	return {
-		modal: state.ui.modal
-		// modal: state.modal
-	};
-};
+export default Modal;
 
-const mapDispatchToProps = dispatch => {
-	return {
-		closeModal: () => dispatch(closeModal())
-	};
-};
+// const mapStateToProps = state => {
+// 	return {
+// 		modal: state.ui.modal
+// 	};
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+// const mapDispatchToProps = dispatch => {
+// 	return {
+// 		closeModal: () => dispatch(closeModal())
+// 	};
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Modal);

@@ -19,12 +19,10 @@ class SignupFirstForm extends React.Component {
 		// this.handleSubmit = this.handleSubmit.bind(this);
 		this.clearedErrors = false;
 		this.handleDemo = this.handleDemo.bind(this);
-		// this.handleSignup = this.handleSignup.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.signedIn === true) {
-		// if (nextProps.currentUser === true) {
 			this.props.history.push("/");
 		}
 
@@ -39,15 +37,7 @@ class SignupFirstForm extends React.Component {
 
 	handleSignup(e) {
 		e.preventDefault();
-	// 	this.props.closeModal()
-		// this.props.openModal("signupSecond");
-		// .then(this.props.history.push("/"));
 	}
-	
-	// handleSubmit(e) {
-	// 	e.preventDefault();
-	// 	openModal("signupSecond");
-	// }
 
 	renderErrors() {
 		return (
@@ -74,18 +64,17 @@ class SignupFirstForm extends React.Component {
 						</div>
 						<br /> or <br />
 						<div onClick={this.handleSignup}>
-							{/* {this.props.signupSecond} */}
 							<button
 								type="submit"
 								onClick={() => this.props.openModal("signupSecond")}
 								className="session-submit"
 							>
-								Continue with email
+							Continue with email
 							</button>
 						</div>
-						{/* <br/>  */}
-						{/* <input type="submit" value="Continue with email" /> */}
+
 						<br />
+
 						<div className="session-text">
 							Already have an account?
 							<span

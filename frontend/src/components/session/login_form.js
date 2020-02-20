@@ -39,16 +39,6 @@ class LoginForm extends React.Component {
 		);
 	}
 
-	// renderErrors() {
-	// 	return (
-	// 		<ul>
-	// 			{this.props.errors.map((error, i) => (
-	// 				<li key={`error-${i}`}>{error}</li>
-	// 			))}
-	// 		</ul>
-	// 	);
-	// }
-
 	// Handle field updates (called in the render method)
 	update(field) {
 		return e =>
@@ -66,8 +56,6 @@ class LoginForm extends React.Component {
 		};
 		this.props.login(user)
 			.then(() => this.props.closeModal());
-			// .then(this.props.history.push("/"), () => this.props.closeModal());
-		// this.props.login(user);
 	}
 
 	handleDemo(e) {
@@ -75,7 +63,6 @@ class LoginForm extends React.Component {
 		const user = { email: "demouser@nookbnb.com", password: "password" };
 		this.props.login(user)
 			.then(this.props.history.push("/"), this.props.closeModal());
-			// .then(() => this.props.closeModal());
 	}
 
 	render() {
@@ -121,8 +108,9 @@ class LoginForm extends React.Component {
 							className="session-input-password"
 						/>
 						<div className="session-errors">{passwordErrors}</div>
+
 						<br />
-						{/* <div className="modalError">{this.renderErrors()}</div> */}
+						
 						<input type="submit" value="Log in" className="session-submit" />
 						<br />
 						<a href="#" className="session-text">
