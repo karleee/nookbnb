@@ -44,15 +44,6 @@ class SpotDetail extends React.Component {
 
     return (
       <div className="spot-index-item-detail-wrapper">
-        <div className="spot-index-item-detail-header">
-          <h1>{spot.name}</h1> 
-        </div> 
-
-        <div className="spot-index-item-detail-location-wrapper">
-          <p>{spot.city}, {spot.state}, {spot.country}</p>
-          <div className="underline-wrapper"></div>
-        </div>
-
         <div className="spot-index-item-detail-photos">
           <div className="main-photo-wrapper">
             <img src={`${spot.main_image_url}`} alt="Main spot photo" /> 
@@ -63,18 +54,28 @@ class SpotDetail extends React.Component {
           </div>
         </div>
 
+        <div className="spot-index-item-detail-header">
+          <div className="name-wrapper">
+            <h1>{spot.name}</h1>
+          </div>
+
+          <div className="profile-image-wrapper">
+            <img src={user.profile_image_url} alt="Profile image" />
+          </div>
+        </div>
+
+        <div className="spot-index-item-detail-location-wrapper">
+          <p>{spot.city}</p>
+        </div> 
+
         <div className="spot-index-item-detail-description">
           <div className="main-description-wrapper">
-            <div className="main-description">
-              <div className="spot-index-item-detail-description-header">
-                <div className="description-wrapper">
-                  <h2>Entire house hosted by {usernameCapitalized}</h2>
-                  <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'} • {spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'} • {spot.beds} {spot.beds > 1 ? 'beds' : 'bed'} • {spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
-                </div>
-
-                <div className="profile-image-wrapper">
-                  <img src={user.profile_image_url} alt="Profile image" />
-                </div>
+            <div className="description-wrapper">
+              <div className="header-details-wrapper">
+                <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'}</p>
+                <p>{spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'}</p>
+                <p>{spot.beds} {spot.beds > 1 ? 'beds' : 'bed'}</p>
+                <p>{spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
               </div>
 
               <div className="spot-index-item-detail-description-perks">
