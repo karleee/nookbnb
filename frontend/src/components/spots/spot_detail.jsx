@@ -46,7 +46,7 @@ class SpotDetail extends React.Component {
     return (
       <div className="spot-index-item-detail-wrapper">
         <div className="spot-index-item-detail-photos">
-          <div className="main-photo-wrapper" onClick={() => this.props.openModal('spotModal')}>
+          <div className="main-photo-wrapper">
             <img src={`${spot.main_image_url}`} alt="Main spot photo" />  
           </div>
 
