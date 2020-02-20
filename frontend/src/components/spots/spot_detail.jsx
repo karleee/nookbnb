@@ -50,7 +50,7 @@ class SpotDetail extends React.Component {
           </div>
 
           <div className="thumbnail-photos-wrapper">
-            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => <img src={url} alt="Thumbnail photo" />) : ''}
+            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => <div className="image-wrapper"><img src={url} alt="Thumbnail photo" /></div>) : ''}
           </div>
         </div>
 
