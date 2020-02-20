@@ -17,11 +17,11 @@ const Modal = ({ modal, closeModal }) => {
 	if (!modal) return null;
 	let { formType } = modal;
 
-	if (formType === "login") {
+	if (formType === 'login') {
 		component = <LoginFormContainer />
-	} else if (formType === "signupFirst") {
+	} else if (formType === 'signupFirst') {
 		component = <SignupFirstFormContainer />
-	} else if (formType === "signupSecond") {
+	} else if (formType === 'signupSecond') {
 		component = <SignupSecondFormContainer />;
 	} else if (formType === 'spotModal') {
 	  component = <SpotModal />;

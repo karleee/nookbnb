@@ -20,8 +20,10 @@ class SpotDetail extends React.Component {
       beds: 0,
       baths: 0,
       description: '',
-      amenities: []
+      amenities: [],
+      hoverImage: false
     } 
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
   }
 
   // Runs once component is mounted
@@ -32,6 +34,13 @@ class SpotDetail extends React.Component {
   // Runs when component receives new props that update the state
   componentWillReceiveProps(newState) {
     this.setState({ currentSpot: newState.spot });
+  }
+
+  // Adds class to other images for overaly effect
+  handleMouseEnter() {
+    // ReactDOM.findDOMNode(<instance-of-outermost-component>).getElementsByClassName('snap')
+    // const images = document.getElementsByClassName('thumbnail-image-wrapper');
+    // this.setState({ hoverImage: !!this.state.hoverImage });
   }
 
   // Rendering component
@@ -51,7 +60,10 @@ class SpotDetail extends React.Component {
           </div>
 
           <div className="thumbnail-photos-wrapper">
-            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => <div className="image-wrapper"><img src={url} alt="Thumbnail photo" /></div>) : ''}
+            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map(url => 
+              <div className="thumbnail-image-wrapper">
+                <img src={url} alt="Thumbnail photo" />
+              </div>) : ''}
           </div>
         </div>
 
