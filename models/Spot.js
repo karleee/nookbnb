@@ -65,6 +65,7 @@ const SpotSchema = new Schema({
     type: Number,
     required: true
   },
+  thumbnail_image_urls: [],
   date: {
     type: Date,
     default: Date.now

@@ -70,7 +70,7 @@
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   z-index: -1;
-}
+} 
 
 .spot-index-item-detail-wrapper .thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
   opacity: 1;
