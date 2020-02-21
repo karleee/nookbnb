@@ -47,7 +47,6 @@ class SpotDetail extends React.Component {
     let username = user.email.substr(0, user.email.indexOf('@')); 
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
-    // add onClick={() => this.props.openModal('spotModal')} to div for modal
     return (
       <div className="spot-index-item-detail-wrapper">
         <div className="thumbnail-photos-wrapper">
@@ -66,12 +65,18 @@ class SpotDetail extends React.Component {
         </div>
 
         <div className="spot-index-item-detail-header">
-          <div className="name-wrapper">
-            <h1>{spot.name}</h1>
+          <div className="header">
+            <div className="name-wrapper">
+              <h1>{spot.name}</h1>
+            </div>
+
+            <div className="profile-image-wrapper">
+              <img src={user.profile_image_url} alt="Profile image" />
+            </div>
           </div>
 
-          <div className="profile-image-wrapper">
-            <img src={user.profile_image_url} alt="Profile image" />
+          <div className="price">
+            <p><span>${spot.price}</span> per night</p>
           </div>
         </div>
 
@@ -223,9 +228,9 @@ class SpotDetail extends React.Component {
               </div>
             </div>
 
-            <div className="price">
+            {/* <div className="price">
               <span className="price-text-wrapper"><h2>${spot.price}</h2>/ night</span>
-            </div>
+            </div> */}
           </div> 
         </div>
 

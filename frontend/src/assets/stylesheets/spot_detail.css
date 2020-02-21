@@ -81,13 +81,19 @@
 .spot-index-item-detail-wrapper .spot-index-item-detail-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  width: 55%;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 2%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .name-wrapper h1 {
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 53%;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .header .name-wrapper h1 {
   font-family: 'cerealMedium';
   font-size: 32px;
   letter-spacing: 0.5px;
@@ -95,10 +101,34 @@
   width: 70%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .profile-image-wrapper img {
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .header .profile-image-wrapper img {
   width: 62px;
   border-radius: 50%;
   margin-left: -60px;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .price {
+  width: 30%;
+  height: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid var(--outline-gray);
+  margin-left: 10%;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .price p {
+  font-family: 'cerealMedium';
+  color: var(--medium-gray);
+  font-size: 12px;
+  margin-left: 7%;
+}
+
+.spot-index-item-detail-wrapper .spot-index-item-detail-header .price p span {
+  font-family: 'cerealMedium';
+  color: var(--medium-gray);
+  font-size: 24px;
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-location-wrapper p {
@@ -106,10 +136,6 @@
   font-size: 15px;
   color: var(--medium-gray);
   margin-top: 10px;
-}
-
-.spot-index-item-detail-wrapper .spot-index-item-detail-location-wrapper .underline-wrapper {
-  border-top: 1px solid var(--gray);
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper {
@@ -402,7 +428,7 @@
   align-items: baseline;
   font-family: 'cerealLight';
   color: var(--dark-gray);
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .price .price-text-wrapper h2 {
