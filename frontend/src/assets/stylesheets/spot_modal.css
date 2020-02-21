@@ -1,0 +1,41 @@
+.spot-modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 3;
+}
+
+.spot-modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.spot-modal .selected-image-wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.spot-modal .selected-image-wrapper img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.spot-modal .close-wrapper {
+  width: 1.7%;
+  height: 82%;
+  padding-right: 4.5%;
+}
+
+.spot-modal .close-wrapper:hover {
+  cursor: pointer;
+}
+
+.spot-modal .close-wrapper img {
+  width: 100%;
+}

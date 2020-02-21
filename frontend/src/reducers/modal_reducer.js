@@ -1,5 +1,10 @@
 // ED: added modal reducer file
-import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
+import { OPEN_MODAL, OPEN_SPOT_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+
+const _initialSpotModal = {
+	formType: '',
+	imageNum: ''
+}
 
 const modalReducer = (state = null, action) => {
 	switch (action.type) {
@@ -7,6 +12,8 @@ const modalReducer = (state = null, action) => {
 			return {
 				formType: action.formType
 			};
+		case OPEN_SPOT_MODAL:
+			return Object.assign({}, _initialSpotModal, { formType: action.formType, imageNum: action.imageNum });
 		case CLOSE_MODAL:
 			return null;
 		default:

@@ -12,7 +12,6 @@ const RootReducer = combineReducers({
 	entities,
 	ui,
 	currentSpot,
-	modal,
 	errors
 });
 

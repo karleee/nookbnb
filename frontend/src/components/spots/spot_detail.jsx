@@ -20,11 +20,9 @@ class SpotDetail extends React.Component {
       beds: 0,
       baths: 0,
       description: '',
-      amenities: [],
-      // hoverImage: false
+      amenities: []
     } 
-    // this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    // this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    // this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   // Runs once component is mounted
@@ -37,17 +35,8 @@ class SpotDetail extends React.Component {
     this.setState({ currentSpot: newState.spot });
   }
 
-  // Adds class to other images for overaly effect
-  // handleMouseEnter() {
-    // ReactDOM.findDOMNode(<instance-of-outermost-component>).getElementsByClassName('snap')
-    // const images = document.getElementsByClassName('thumbnail-image-wrapper');
-    // this.setState({ hoverImage: !!this.state.hoverImage });
-    // console.log(e.currentTarget);
-    // this.setState({ hoverImage: true });
-  // }
-
-  // handleMouseLeave() {
-  //   this.setState({ hoverImage: false });
+  // handleImageClick(num) {
+  //   this.setState({ currentSpot: {activeImage: num}});
   // }
 
   // Rendering component
@@ -62,14 +51,14 @@ class SpotDetail extends React.Component {
     return (
       <div className="spot-index-item-detail-wrapper">
         <div className="thumbnail-photos-wrapper">
-          <div className="main-image-wrapper">
+          <div className="main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
             <img src={`${spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''}`} alt="Main spot photo" />
             <div className="overlay-wrapper"></div>
           </div>
           
           <div className="side-image-wrapper">
-            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.slice(1, spot.thumbnail_image_urls.length).map(url => 
-              <div className="image-wrapper">
+            {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.slice(1, spot.thumbnail_image_urls.length).map((url, indx) => 
+              <div className="image-wrapper" onClick={() => this.props.openSpotModal('spot', indx + 1)}>
                 <img src={url} alt="Thumbnail photo" />
                 <div className="overlay-wrapper"></div>
               </div>) : ''}

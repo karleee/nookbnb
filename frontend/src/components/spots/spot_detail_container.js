@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchSpot } from '../../actions/spot_actions';
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { openSpotModal, closeModal } from '../../actions/modal_actions';
 import SpotDetail from './spot_detail';
 
 // Mapping value of spotId from URL to props
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 // Mapping thunk action to props
 const mapDispatchToProps = dispatch => ({
   fetchSpot: id => dispatch(fetchSpot(id)),
-  openModal: formType => dispatch(openModal(formType))
+  openSpotModal: (formType, imageNum) => dispatch(openSpotModal(formType, imageNum)),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SpotDetail);
