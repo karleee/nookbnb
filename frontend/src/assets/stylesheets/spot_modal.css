@@ -18,12 +18,14 @@
 
 .spot-modal .selected-image-wrapper {
   width: 50%;
+  height: 70%;
   margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .spot-modal .selected-image-wrapper img {
-  width: 100%;
-  border-radius: 15px;
+  width: 125%;
 }
 
 .spot-modal .close-wrapper {
