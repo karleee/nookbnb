@@ -17,6 +17,7 @@
 }
 
 .spot-modal .selected-image-wrapper {
+  position: relative;
   width: 50%;
   height: 70%;
   margin: 0 auto;
@@ -25,6 +26,8 @@
 }
 
 .spot-modal .selected-image-wrapper img {
+  position: absolute;
+  left: -10%;
   width: 125%;
 }
 
