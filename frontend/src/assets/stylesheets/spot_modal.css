@@ -66,12 +66,21 @@
   width: 70px;
   height: 70px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 7px;
   margin-top: 3.5%;
+  border: 2.5px solid transparent;
+  opacity: 0.5;
+}
+
+.spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper:hover {
+  opacity: 1;
+  transition: ease-in-out 0.25s;
+  cursor: pointer;
 }
 
 .spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper.active {
   border: 2.5px solid var(--dark-gray);
+  opacity: 1;
 }
 
 .spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper img {

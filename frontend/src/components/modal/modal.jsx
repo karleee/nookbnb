@@ -26,9 +26,8 @@ const Modal = ({ modal, closeModal }) => {
 	  component = <SpotModal />;
 	}
 
-	// add this into modal background div when ready onClick={type === 'spotModal' ? '' : closeModal}
 	return (
-		<div className={`${type}-modal-wrapper`} onClick={closeModal}> 
+		<div className={`${type}-modal-wrapper`} onClick={type === 'spot' ? '' : closeModal}> 
 		  {component}
 		</div>
 	);

@@ -1,5 +1,4 @@
 import React from "react";
-import { openModal, closeModal } from "../../actions/modal_actions";
 import '../../assets/stylesheets/spot_modal.css';
 
 class SpotModal extends React.Component {
@@ -8,6 +7,10 @@ class SpotModal extends React.Component {
     this.state = {
       currentImage: this.props.modal.imageNum
     }
+  }
+
+  handleClick(num) {
+    this.setState({ currentImage: num });
   }
 
   render() {
@@ -26,7 +29,7 @@ class SpotModal extends React.Component {
 
           <div className="thumbnails">
             {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map((url, indx) =>
-              <div className={`thumbnail-wrapper ${indx === this.state.currentImage ? "active" : ""}`}>
+              <div className={`thumbnail-wrapper ${indx === this.state.currentImage ? "active" : ""}`} onClick={() => this.handleClick(indx)}>
                 <img src={url} alt="Spot photo" />
               </div>) : ''}
           </div>
