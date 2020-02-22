@@ -5,8 +5,11 @@ class Month extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      days: []
+      days: [],
+      emptyDays: [],
+      leapYear: this.props.currentYr % 4 === 0
     }
+    this.populateDays = this.populateDays.bind(this);
     this.getSelectedYr = this.getSelectedYr.bind(this);
   }
   
@@ -21,13 +24,25 @@ class Month extends React.Component {
     this.populateDays(newState.currentMonth);
   }
 
-  // Popoulates months with correct amount of days
+  // Populates months with correct amount of days
   populateDays(month) {
+    let firstDay = (new Date(this.props.currentYr, month, 1)).getDay();
+    let emptyDays = [];
     let totalDays;
     let newDays = [];
 
-    if (month === 1) {
+    // Setting empty days
+    for (let i = 0; i < firstDay; i++) {
+      emptyDays.push(i);
+    }
+
+    this.setState({ emptyDays });
+
+    // Setting total days for months
+    if (month === 1 && !this.state.leapYear) {
       totalDays = 28;
+    } else if (month === 1 && this.state.leapYear) {
+      totalDays = 29;
     } else if (month === 3 || month === 5 || month === 8 || month === 10) {
       totalDays = 30;
     } else {
@@ -90,6 +105,7 @@ class Month extends React.Component {
           </div>
           
           <div className="number-days">
+            {this.state.emptyDays.map(day => <p className="empty"></p>)}
             {this.state.days.map(day => <p className="number" onClick={() => this.props.handleDateClick(currentMonth, day, yr)}>{day}</p>)}
           </div>
         </div>

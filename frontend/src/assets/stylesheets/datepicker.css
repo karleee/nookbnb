@@ -77,6 +77,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  height: 340px;
 }
 
 .datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month #start-month-header,
@@ -351,8 +352,7 @@
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu .close-wrapper {
   font-family: 'cerealMedium';
   text-decoration: underline;
-  margin-left: 85%;
-  margin-top: 20px;
+  margin: 5% 0 0 80%;
   padding: 10px;
 }
 
