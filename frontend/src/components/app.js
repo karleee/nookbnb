@@ -14,7 +14,7 @@ const App = () => (
 		<Modal />
 		<NavBarContainer />
 		
-		<div className='app-main-content-wrapper'>
+		<div className="app-main-content-wrapper">
 		  <Switch>
 		  	<Route exact path='/' component={SpotIndex} />
 		  	<Route exact path='/spots/:spotId' component={SpotDetail} />

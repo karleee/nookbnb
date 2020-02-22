@@ -18,16 +18,17 @@
   justify-content: space-around;
   align-items: flex-start;
   width: 70%;
-  height: 100%;
   margin-right: 60px;
 }
 
 .datepicker-wrapper .selected-dates-wrapper {
-  display: flex;
-  flex-direction: column;
-  cursor: default;
   width: 30%;
-  height: 100%;
+}
+
+.datepicker-wrapper .selected-dates-wrapper .dates-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .datepicker-wrapper .calendar-wrapper .arrows {
@@ -158,38 +159,36 @@
   cursor: default;
 }
 
-.datepicker-wrapper .selected-dates-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.datepicker-wrapper .selected-dates-wrapper .dates-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
 .datepicker-wrapper .selected-dates-wrapper .dates-wrapper .check-in-date input[type="text"] {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
-  padding: 20px 0 20px 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border: none;
   border: 1px solid var(--outline-gray); 
   border-right: none;
+  /* padding: 15px 10px; */
+  /* padding: 10px 0 10px 15px; */
+  /* padding: 18px 0;
+  padding-left: 10px; */
+  padding: 10% 0 10% 8%;
 } 
 
 .datepicker-wrapper .selected-dates-wrapper .dates-wrapper .checkout-date input[type="text"] {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
-  padding: 20px 0 20px 20px;
   border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: none;
   border: 1px solid var(--outline-gray); 
+  /* padding: 15px 10px; */
+  /* padding: 10px 0 10px 15px; */
+  /* padding: 18px 0; 
+  padding-left: 10px; */
+  padding: 10% 0 10% 8%;
 } 
 
 .datepicker-wrapper .calendar-wrapper .clear-dates-wrapper {
@@ -220,9 +219,11 @@
   border: 1px solid var(--outline-gray);
   border-radius: 10px;
   background: white;
-  padding: 10px 10px 10px 20px;
+  /* padding: 10px 15px; */
+  /* padding: 10px 0 10px 15px; */
   margin-top: 15px;
   z-index: 1;
+  padding: 3% 0 3% 8%;
 }
 
 .datepicker-wrapper .selected-dates-wrapper .guests .guests-input-wrapper label {

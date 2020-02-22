@@ -8,40 +8,62 @@
   left: 0;
   background: white;
   z-index: 3;
+  height: 100vh;
 }
 
 .spot-modal {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
-  margin-top: 8%;
+  margin-top: 5.5%;
 }
 
-.spot-modal .selected-image-wrapper {
-  position: relative;
-  width: 50%;
-  height: 70%;
+.spot-modal .main-image-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 65%;
+}
+
+.spot-modal .main-image-wrapper .previous-arrow-wrapper .previous-arrow {
+  content: url('/images/spot_detail/previous_arrow_icon.png');
+}
+
+.spot-modal .main-image-wrapper .previous-arrow-wrapper .previous-arrow:hover {
+  cursor: pointer;
+}
+
+.spot-modal .main-image-wrapper .selected-image-wrapper {
   overflow: hidden;
   border-radius: 15px;
+  margin: 0 8%;
+  width: 100%;
+  height: 550px;
 }
 
-.spot-modal .selected-image-wrapper img {
-  position: absolute;
-  left: -10%;
-  width: 125%;
+.spot-modal .main-image-wrapper .selected-image-wrapper img {
+  width: 130%;
+  margin-left: -10%;
 }
 
-.spot-modal .side-images-wrapper {
+.spot-modal .next-arrow-wrapper .next-arrow {
+  content: url('/images/spot_detail/next_arrow_icon.png');
+}
+
+.spot-modal .next-arrow-wrapper .next-arrow:hover {
+  cursor: pointer;
+}
+
+.spot-modal .side-images-wrapper { 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: -3%;
 }
 
 .spot-modal .side-images-wrapper .close-wrapper {
-  width: 8%;
+  width: 6.5%;
 }
 
 .spot-modal .side-images-wrapper .close-wrapper:hover {
@@ -58,7 +80,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 90%;
-  margin-top: 15%;
+  margin-top: 8%;
 }
 
 .spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper {

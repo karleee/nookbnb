@@ -7,10 +7,22 @@ class SpotModal extends React.Component {
     this.state = {
       currentImage: this.props.modal.imageNum
     }
+    this.previous = this.previous.bind(this);
+    this.next = this.next.bind(this);
   }
 
   handleClick(num) {
     this.setState({ currentImage: num });
+  }
+
+  previous() {
+    let newState = ((this.state.currentImage - 1) + this.props.spot.thumbnail_image_urls.length) % this.props.spot.thumbnail_image_urls.length;
+    this.setState({ currentImage: newState });
+  }
+
+  next() {
+    let newState = (this.state.currentImage + 1) % this.props.spot.thumbnail_image_urls.length;
+    this.setState({ currentImage: newState });
   }
 
   render() {
@@ -18,9 +30,19 @@ class SpotModal extends React.Component {
 
     return (
       <div className="spot-modal">
-        <div className="selected-image-wrapper">
-          <img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[this.state.currentImage] : ''} alt="Spot photo" />
-        </div> 
+        <div className="main-image-wrapper">
+          <div className="previous-arrow-wrapper" onClick={this.previous}> 
+            <i className="previous-arrow"></i> 
+          </div>
+
+          <div className="selected-image-wrapper">
+            <img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[this.state.currentImage] : ''} alt="Spot photo" />
+          </div> 
+
+          <div className="next-arrow-wrapper" onClick={this.next}>
+            <i className="next-arrow"></i>
+          </div>
+        </div>
 
         <div className="side-images-wrapper">
           <div className="close-wrapper" onClick={this.props.closeModal}>

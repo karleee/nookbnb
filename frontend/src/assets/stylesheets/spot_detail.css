@@ -7,6 +7,10 @@
   width: 80%;
 }
 
+.spot-index-item-detail-wrapper.modal-open {
+  overflow: hidden;
+}
+
 .spot-index-item-detail-wrapper .thumbnail-photos-wrapper {
   display: flex;
   flex-direction: row;
@@ -109,7 +113,7 @@
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-header .price {
   width: 30%;
-  height: 65%;
+  height: 65%; 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -428,7 +432,6 @@
   align-items: baseline;
   font-family: 'cerealLight';
   color: var(--dark-gray);
-  /* margin-top: 20px; */
 }
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-description .price .price-text-wrapper h2 {
