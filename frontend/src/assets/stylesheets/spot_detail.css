@@ -114,7 +114,7 @@
 
 .spot-index-item-detail-wrapper .spot-index-item-detail-header .price {
   width: 30%;
-  height: 65%; 
+  height: 60px; 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
