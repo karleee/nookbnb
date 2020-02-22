@@ -2,6 +2,7 @@ import React from "react";
 import '../../assets/stylesheets/spot_modal.css';
 
 class SpotModal extends React.Component {
+  // Constructor for SpotModal
   constructor(props) {
     super(props);
     this.state = {
@@ -11,20 +12,34 @@ class SpotModal extends React.Component {
     this.next = this.next.bind(this);
   }
 
+  // Hides scrolling when modal is mounted
+  componentDidMount() {
+    if (this.props.modal) document.body.style.overflow = 'hidden';
+  }
+
+  // Reactiviates scrolling when modal is unmounted
+  componentWillUnmount() {
+    document.body.style.overflow = 'unset';
+  }
+
+  // Handles image clicking
   handleClick(num) {
     this.setState({ currentImage: num });
   }
 
+  // Goes to previous photo
   previous() {
     let newState = ((this.state.currentImage - 1) + this.props.spot.thumbnail_image_urls.length) % this.props.spot.thumbnail_image_urls.length;
     this.setState({ currentImage: newState });
   }
 
+  // Goes to next photo
   next() {
     let newState = (this.state.currentImage + 1) % this.props.spot.thumbnail_image_urls.length;
     this.setState({ currentImage: newState });
   }
 
+  // Renders component
   render() {
     const { spot } = this.props;
 
