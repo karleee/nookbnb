@@ -5,7 +5,6 @@ import SpotDetail from './spot_detail';
 
 // Mapping value of spotId from URL to props
 const mapStateToProps = (state, ownProps) => ({
-  modal: state.ui.modal,
   spotId: ownProps.match.params.spotId,
   currentSpot: state.currentSpot
 });

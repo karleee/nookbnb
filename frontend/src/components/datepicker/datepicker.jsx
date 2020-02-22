@@ -272,7 +272,7 @@ class Datepicker extends React.Component {
 
           { guestsState ? 
             <div className="guests-dropdown-menu">
-              <div className="guests-dropdown-main-content-wrapper">
+              {/* <div className="guests-dropdown-main-content-wrapper"> */}
                 <div className="adult-guests-wrapper">
                   <div className="adult-guests-label-wrapper">
                     <p>Adults</p>
@@ -342,7 +342,7 @@ class Datepicker extends React.Component {
                 <div className="close-wrapper">
                   <p onClick={this.toggleGuestsState}>Close</p>
                 </div>
-              </div>
+              {/* </div> */}
             </div> : '' }
         </div>
       </div>

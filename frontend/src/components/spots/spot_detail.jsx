@@ -36,14 +36,14 @@ class SpotDetail extends React.Component {
 
   // Rendering component
   render() {
-    const { modal, currentSpot } = this.props;
+    const { currentSpot } = this.props;
     let spot = currentSpot['spot'];
     let user = currentSpot['user'];
     let username = user.email.substr(0, user.email.indexOf('@')); 
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
     return (
-      <div className={`spot-index-item-detail-wrapper ${modal ? 'open-modal' : ''}`}> 
+      <div className="spot-index-item-detail-wrapper"> 
         <div className="thumbnail-photos-wrapper">
           <div className="main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
             <img src={`${spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''}`} alt="Main spot photo" />
