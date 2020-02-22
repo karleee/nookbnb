@@ -272,77 +272,75 @@ class Datepicker extends React.Component {
 
           { guestsState ? 
             <div className="guests-dropdown-menu">
-              {/* <div className="guests-dropdown-main-content-wrapper"> */}
-                <div className="adult-guests-wrapper">
-                  <div className="adult-guests-label-wrapper">
-                    <p>Adults</p>
-                  </div> 
+              <div className="adult-guests-wrapper">
+                <div className="adult-guests-label-wrapper">
+                  <p>Adults</p>
+                </div> 
 
-                  <div className="adult-guests-buttons-wrapper">
-                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
-                      {adultGuests > 1 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
-                    </div>
-
-                    <div className="button-text-wrapper">
-                      <p>{adultGuests}</p>
-                    </div>
-
-                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('adult')}>
-                      {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="children-guests-wrapper">
-                  <div className="children-guests-label-wrapper">
-                    <p>Children</p>
-                    <p>Ages 2–12</p>
+                <div className="adult-guests-buttons-wrapper">
+                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
+                    {adultGuests > 1 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
                   </div>
 
-                  <div className="children-guests-buttons-wrapper">
-                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('children')}>
-                      {childrenGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
-                    </div>
+                  <div className="button-text-wrapper">
+                    <p>{adultGuests}</p>
+                  </div>
 
-                    <div className="button-text-wrapper">
-                      <p>{childrenGuests}</p>
-                    </div>
-
-                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('children')}>
-                      {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
-                    </div>
+                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('adult')}>
+                    {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
                   </div>
                 </div>
+              </div>
 
-                <div className="infant-guests-wrapper">
-                  <div className="infant-guests-label-wrapper">
-                    <p>Infants</p>
-                    <p>Under 2</p>
-                  </div> 
+              <div className="children-guests-wrapper">
+                <div className="children-guests-label-wrapper">
+                  <p>Children</p>
+                  <p>Ages 2–12</p>
+                </div>
 
-                  <div className="infant-guests-buttons-wrapper">
-                    <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
-                      {infantGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
-                    </div>
+                <div className="children-guests-buttons-wrapper">
+                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('children')}>
+                    {childrenGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                  </div>
 
-                    <div className="button-text-wrapper">
-                      <p>{infantGuests}</p>
-                    </div>
+                  <div className="button-text-wrapper">
+                    <p>{childrenGuests}</p>
+                  </div>
 
-                    <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
-                      <i className="add-icon"></i>
-                    </div>
+                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('children')}>
+                    {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
                   </div>
                 </div>
+              </div>
 
-                <div className="maximum-guests-wrapper">
-                  <p>4 guests maximum. Infants don’t count toward the number of guests.</p>
-                </div>
+              <div className="infant-guests-wrapper">
+                <div className="infant-guests-label-wrapper">
+                  <p>Infants</p>
+                  <p>Under 2</p>
+                </div> 
 
-                <div className="close-wrapper">
-                  <p onClick={this.toggleGuestsState}>Close</p>
+                <div className="infant-guests-buttons-wrapper">
+                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
+                    {infantGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                  </div>
+
+                  <div className="button-text-wrapper">
+                    <p>{infantGuests}</p>
+                  </div>
+
+                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                    <i className="add-icon"></i>
+                  </div>
                 </div>
-              {/* </div> */}
+              </div>
+
+              <div className="maximum-guests-wrapper">
+                <p>4 guests maximum. Infants don’t count toward the number of guests.</p>
+              </div>
+
+              <div className="close-wrapper">
+                <p onClick={this.toggleGuestsState}>Close</p>
+              </div>
             </div> : '' }
         </div>
       </div>
