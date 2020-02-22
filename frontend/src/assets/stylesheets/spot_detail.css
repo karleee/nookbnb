@@ -72,6 +72,24 @@
   z-index: -1;
 } 
 
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .view-images-wrapper button {
+  position: absolute;
+  top: 64%;
+  left: 79%;
+  z-index: 1;
+  font-family: 'cerealMedium';
+  font-size: 15px;
+  color: var(--medium-gray);
+  background: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .view-images-wrapper button:hover {
+  cursor: pointer;
+}
+
 .spot-index-item-detail-wrapper .thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
   opacity: 1;
   z-index: 1;

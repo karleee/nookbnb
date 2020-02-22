@@ -57,6 +57,10 @@ class SpotDetail extends React.Component {
                 <div className="overlay-wrapper"></div>
               </div>) : ''}
           </div>
+
+          <div className="view-images-wrapper"> 
+            <button onClick={() => this.props.openSpotModal('spot', 0)}>View Photos</button>
+          </div>
         </div>
 
         <div className="spot-index-item-detail-header">
