@@ -171,11 +171,12 @@
   border-bottom-right-radius: 10px;
   border: none;
   border: 1px solid var(--outline-gray); 
-  padding: 10% 0 9.5% 8%;
+  padding: 10% 0 10% 8%;
 } 
 
 .datepicker-wrapper .calendar-wrapper .clear-dates-wrapper {
-  padding-bottom: 200px;
+  height: 25%;
+  padding-bottom: 150px;
 }
 
 .datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button {
