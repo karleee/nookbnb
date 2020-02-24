@@ -108,6 +108,13 @@ class Datepicker extends React.Component {
           endDay = day;
           endYr = yr;
         }
+      } else {
+        if (month + 1 >= startMonthNum && parseInt(day) > parseInt(startDay) && yr >= startYr) {
+          clicks = this.state.clicks + 1;
+          endMonthNum = month + 1;
+          endDay = day;
+          endYr = yr;
+        }
       }
     }
 
