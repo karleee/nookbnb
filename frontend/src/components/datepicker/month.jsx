@@ -86,6 +86,7 @@ class Month extends React.Component {
       'November',
       'December'
     ]
+    let weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
     let month = months[currentMonth];
     let yr = this.getSelectedYr(currentMonth, nextMonth, currentYr);
 
@@ -94,17 +95,8 @@ class Month extends React.Component {
         <div id={`${type}-month-header`}>{month}</div>
 
         <div className="days">
-          <div className="weekday-header">
-            <div className="weekday">Su</div>
-            <div className="weekday">Mo</div>
-            <div className="weekday">Tu</div>
-            <div className="weekday">We</div>
-            <div className="weekday">Th</div>
-            <div className="weekday">Fr</div>
-            <div className="weekday">Sa</div>
-          </div>
-          
           <div className="number-days">
+            {weekdays.map(weekday => <p className="weekday">{weekday}</p>)}
             {this.state.emptyDays.map(day => <p className="empty"></p>)}
             {this.state.days.map(day => <p className="number" onClick={() => this.props.handleDateClick(currentMonth, day, yr)}>{day}</p>)}
           </div>
