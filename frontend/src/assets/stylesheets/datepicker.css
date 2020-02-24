@@ -128,6 +128,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   column-gap: 3px;
+  row-gap: 3px;
   margin-top: 10px;
   font-family: 'cerealLight';
   font-weight: 900;
@@ -136,19 +137,20 @@
 
 .datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days .number,
 .datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days .number {
-  border: 2px solid transparent;
-  border-radius: 50%;
   width: 15px;
   height: 15px;
+  padding: 13px; 
+  background: var(--light-teal);
+  border-radius: 5px;
+  font-family: 'cerealMedium';
   text-align: center;
-  padding: 13px;
+  color: var(--dark-teal);
 }
 
 .datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .days .number-days .number:hover {
-  border: 2px solid var(--dark-gray);
-  border-radius: 50%;
   width: 15px;
   height: 15px;
+  background: var(--teal);
   cursor: pointer;
 }
 

@@ -127,7 +127,6 @@ class Datepicker extends React.Component {
     this.setState({ selectedEndDay: endDay });
     this.setState({ selectedEndYr: endYr });
 
-    console.log(this.state.clicks);
     if (this.state.clicks % 2 === 0) this.resetEndDate();
   }
 
