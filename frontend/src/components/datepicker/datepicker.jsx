@@ -8,7 +8,7 @@ class Datepicker extends React.Component {
     super(props);
     let currentDate = new Date();
     const monthsLength = 12;
-    this.state= {
+    this.state = {
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth(),
       nextMonth: (currentDate.getMonth() + 1) % monthsLength,
@@ -76,6 +76,7 @@ class Datepicker extends React.Component {
 
   // Resets entire state
   reset() {
+    this.setState({ clicks: 0 });
     this.setState({ selectedStartMonth: '' });
     this.setState({ selectedStartDay: '' });
     this.setState({ selectedStartYr: '' });
@@ -86,21 +87,41 @@ class Datepicker extends React.Component {
 
   // Handles auto fill in dates for check-in and checkout
   handleDateClick(month, day, yr) {
-    let newClicks = this.state.clicks + 1;
-    let realMonthNum = month + 1;
+    let clicks = this.state.clicks;
+    let startMonthNum = this.state.selectedStartMonth;
+    let startDay = this.state.selectedStartDay;
+    let startYr = this.state.selectedStartYr;
+    let endMonthNum = this.state.selectedEndMonth;
+    let endDay = this.state.selectedEndDay;
+    let endYr = this.state.selectedEndYr;
 
-    this.setState({ clicks: newClicks });
- 
-    if (newClicks % 2 !== 0) {
-      this.setState({ selectedStartMonth: realMonthNum });
-      this.setState({ selectedStartDay: day });
-      this.setState({ selectedStartYr: yr });
-      this.resetEndDate();
+    if (this.state.clicks % 2 === 0) {
+      clicks = this.state.clicks + 1;
+      startMonthNum = month + 1;
+      startDay = day;
+      startYr = yr;
     } else {
-      this.setState({ selectedEndMonth: realMonthNum });
-      this.setState({ selectedEndDay: day });
-      this.setState({ selectedEndYr: yr });
+      if (startMonthNum === 12) {
+        if ((month === 11 && yr === startYr && parseInt(day) > parseInt(startDay)) || yr > startYr) {
+          clicks = this.state.clicks + 1;
+          endMonthNum = month + 1;
+          endDay = day;
+          endYr = yr;
+        }
+      }
     }
+
+    this.setState({ clicks });
+    this.setState({ selectedStartMonth: startMonthNum });
+    this.setState({ selectedStartDay: startDay });
+    this.setState({ selectedStartYr: startYr });
+
+    this.setState({ selectedEndMonth: endMonthNum });
+    this.setState({ selectedEndDay: endDay });
+    this.setState({ selectedEndYr: endYr });
+
+    console.log(this.state.clicks);
+    if (this.state.clicks % 2 === 0) this.resetEndDate();
   }
 
   // Handles dropdown menu click

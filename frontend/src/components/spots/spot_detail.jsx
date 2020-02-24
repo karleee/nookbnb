@@ -226,10 +226,6 @@ class SpotDetail extends React.Component {
                 </div>
               </div>
             </div>
-
-            {/* <div className="price">
-              <span className="price-text-wrapper"><h2>${spot.price}</h2>/ night</span>
-            </div> */}
           </div> 
         </div>
 
