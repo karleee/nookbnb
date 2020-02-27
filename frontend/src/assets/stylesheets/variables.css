@@ -52,6 +52,7 @@ src: url('../fonts/CerealMedium.woff') format('woff');
   --outline-gray: #C3C3C3;
   --underline-gray: #E6E6E6;
   --light-teal: #EDF5F7; 
+  --medium-teal: #A9D9D0;
   --teal: #CEEEEC;
   --dark-teal: #128387;
 }

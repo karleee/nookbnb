@@ -37,21 +37,21 @@
 
 .spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper,
 .spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper {
-  background: var(--light-teal); 
+  background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 17px 35px;
 }
 
 .spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper {
-  background: var(--light-teal); 
+  background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 15px 35px;
 }
 
 .spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper {
-  background: var(--light-teal); 
+  background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 25px 35px 28px 35px;
