@@ -118,18 +118,13 @@ class LoginForm extends React.Component {
 
 					  <div className="button-separator-wrapper"><p>or</p></div>
 
-						{/* <div className="email-input-wrapper"> */}
-						  {/* <label> */}
-						  	{/* Email */}
-					      <input
-						    	type="text"
-						    	className={errors.email && errors.email.length !== 0 ? 'bad-input' : ''}
-					      	value={this.state.email}
-					      	onChange={this.update('email')}
-					      	placeholder="Email"
-					      />
-						  {/* </label> */}
-						{/* </div> */}
+					  <input
+							type="text"
+							className={errors.email && errors.email.length !== 0 ? 'bad-input' : ''}
+					  	value={this.state.email}
+					  	onChange={this.update('email')}
+					  	placeholder="Email"
+					  />
 				  	
 					  <input
 							type="password"

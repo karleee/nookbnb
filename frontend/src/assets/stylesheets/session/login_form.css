@@ -63,7 +63,7 @@
   content: url('/images/modal/session_form_close_hover.png');
   width: 32.5px;
   cursor: pointer;
-  margin: -7.8px 0 0 -7.5px;
+  margin: -8px 0 0 -7.5px;
 }
 
 .login-modal-wrapper form .header-wrapper h1 {
@@ -128,39 +128,25 @@
   box-sizing: border-box;
 }
 
-/* .login-modal-wrapper form .main-content-wrapper .email-input-wrapper label {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border: 1px solid var(--outline-gray);
-  padding: 10px 10px;
-  box-sizing: border-box;
-  font-family: 'cerealRegular';
-  font-size: 16px;
-} */
-
-/* .login-modal-wrapper form .main-content-wrapper .email-input-wrapper label input[type="text"] {
-  border: none;
-  display: none;
-}
-
-.login-modal-wrapper form .main-content-wrapper .email-input-wrapper label .bad-input {
-  display: inline-block;
-} */
-
-
-.login-modal-wrapper form .main-content-wrapper .bad-input {
+.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input,
+.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input {
   background-color: var(--light-red);
+  border-color: var(--red);
 }
 
-.login-modal-wrapper form .main-content-wrapper .bad-input::placeholder {
+.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input::placeholder,
+.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input::placeholder  {
   font-family: 'cerealMedium';
   color: var(--red);
 }
 
+.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input:focus,
+.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input:focus {
+  background-color: transparent;
+}
+
 .login-modal-wrapper form .main-content-wrapper input[type="text"]:focus::placeholder,
-.login-modal-wrapper form .main-content-wrapper input[type="password"]:focus::placeholder,
-.login-modal-wrapper form .main-content-wrapper .bad-input:focus::placeholder {
+.login-modal-wrapper form .main-content-wrapper input[type="password"]:focus::placeholder {
   font-size: 12px;
   transform: translateY(-20px);
   transition: all 0.5s;
