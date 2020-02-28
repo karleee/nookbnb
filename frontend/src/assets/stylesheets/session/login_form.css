@@ -124,7 +124,8 @@
   border: 1px solid var(--outline-gray);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding: 20px 10px;
+  padding: 22px 10px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -148,7 +149,7 @@
 .login-modal-wrapper form .main-content-wrapper input[type="text"]:focus::placeholder,
 .login-modal-wrapper form .main-content-wrapper input[type="password"]:focus::placeholder {
   font-size: 12px;
-  transform: translateY(-20px);
+  transform: translateY(-19px);
   transition: all 0.5s;
 }
 
@@ -162,7 +163,7 @@
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 20px 10px;
+  padding: 22px 10px;
   box-sizing: border-box;
 }
 

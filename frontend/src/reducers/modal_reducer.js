@@ -6,12 +6,10 @@ const _initialSpotModal = {
 	imageNum: ''
 }
 
-const modalReducer = (state = null, action) => {
+const modalReducer = (state = null, action) => { 
 	switch (action.type) {
 		case OPEN_MODAL:
-			return {
-				formType: action.formType
-			};
+			return { formType: action.formType };
 		case OPEN_SPOT_MODAL:
 			return Object.assign({}, _initialSpotModal, { formType: action.formType, imageNum: action.imageNum });
 		case CLOSE_MODAL:

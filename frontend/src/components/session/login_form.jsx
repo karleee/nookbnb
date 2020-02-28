@@ -8,19 +8,17 @@ class LoginForm extends React.Component {
 		this.state = {
 			email: '',
 			password: '',
-			errors: {}
+			errors: []
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 		this.handleDemo = this.handleDemo.bind(this);
-		this.closeLoginModal = this.closeLoginModal.bind(this);
 	}
 
 	// After authentication redirect user to home page
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.currentUser === true) {
 			this.props.history.push('/');
-			this.setState({ errors: {} });
 			this.props.closeModal();
 		}
 	}
@@ -39,7 +37,7 @@ class LoginForm extends React.Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
+				{Object.values(this.props.errors).map((error, i) => (
 					<li key={`error-${i}`}>{this.state.errors[error]}</li>
 				))}
 			</ul>
@@ -48,10 +46,7 @@ class LoginForm extends React.Component {
 
 	// Handle field updates
 	update(field) {
-		return e =>
-			this.setState({
-				[field]: e.currentTarget.value
-			});
+		return e => this.setState({ [field]: e.currentTarget.value });
 	}
 
 	// Handle form submission
@@ -63,11 +58,9 @@ class LoginForm extends React.Component {
 		};
 
 		if (this.props.errors) {
-			this.props.login(user)
-				.then(this.openLoginModal);
+			this.props.login(user).then(this.openLoginModal);
 		} else {
-		  this.props.login(user)
-				.then(() => this.props.closeModal());
+		  this.props.login(user).then(() => this.props.closeModal());
 		}
 	}
 
@@ -79,12 +72,6 @@ class LoginForm extends React.Component {
 			.then(this.props.history.push('/'), this.props.closeModal());
 	}
 
-	// Closes a login modal
-	closeLoginModal() {
-		this.setState({ errors: {} });
-		this.props.closeModal();
-	}
-
 	// Rendering component
 	render() {
 		let errors;
@@ -92,7 +79,7 @@ class LoginForm extends React.Component {
 		if (this.props.errors) {
 			errors = this.props.errors;
 		} else {
-			errors = {};
+			errors = [];
 		}
 
 		let emailErrors = errors.email ? <div className="email-error">{errors.email}</div> : '';
@@ -100,11 +87,11 @@ class LoginForm extends React.Component {
 
 		return (
 			<div className="login-modal-wrapper">
-				<div className="modal-wrapper" onClick={this.closeLoginModal}></div>
+				<div className="modal-wrapper" onClick={this.props.closeModal}></div>
 
 				<form onSubmit={this.handleSubmit} className={errors.email && errors.email.length !== 0 ? 'form-errors' : 'form-normal'}>
 					<div className="header-wrapper">
-					  <div className="close-wrapper" onClick={this.closeLoginModal}>
+					  <div className="close-wrapper" onClick={this.props.closeModal}>
 					  	<i className="close-button"></i>
 					  </div>
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { login } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import SignupFirstForm from "./signup_first_form";

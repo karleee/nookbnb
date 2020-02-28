@@ -21,7 +21,7 @@ const Modal = ({ modal, closeModal }) => {
 	}
 
 	return (
-		<div className={`${type}-modal-wrapper`} onClick={type === 'spot' ? '' : ''}> 
+		<div className={`${type}-modal-wrapper`}> 
 		  {component}
 		</div>
 	);
