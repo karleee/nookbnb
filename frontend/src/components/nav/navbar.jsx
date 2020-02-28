@@ -134,33 +134,6 @@ class NavBar extends React.Component {
 					<div className="nav-main">
 						<ul className="nav-main-list">
 							<li>
-								<div>
-									<button
-										type="button"
-										className="nav-link"
-									><Link to={"/"}>
-										Host a home</Link>
-									</button>
-								</div>
-							</li>
-							<li>
-								<div>
-									<button
-										type="button"
-										className="nav-link"
-									><Link to={"/"}>
-										Become a host</Link>
-									</button>
-								</div>
-							</li>
-							<li>
-								<div className="help-link">
-									<Link to={"/"}><button type="button" className="nav-link">
-										Help
-									</button></Link>
-								</div>
-							</li>
-							<li>
 								<div className="signup-link">
 									<button onClick={this.handleSignup} className="nav-link">
 										Sign up

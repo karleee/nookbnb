@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { signup, login } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import SignupSecondFormContainer from "./signup_second_form_container";
-import "./session_forms.css"
+import '../../assets/stylesheets/session/login_form.css';
 
 class SignupFirstForm extends React.Component {
 	constructor(props) {

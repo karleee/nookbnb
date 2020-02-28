@@ -1,19 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { login } from "../../actions/session_actions";
-import { openModal, closeModal } from "../../actions/modal_actions";
-import LoginForm from "./login_form";
+import React from 'react';
+import { connect } from 'react-redux';
+import { login } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
+import LoginForm from './login_form';
 
-// ED: added formType
-const mapStateToProps = state => {
-	return {
-		errors: state.errors.session,
-		formType: "login"
-	};
-};
+// Mapping state to props
+const mapStateToProps = state => ({
+	modal: state.ui.modal,
+	errors: state.errors.session
+});
 
-// ED: added openOpen, closeModal, signup, loginDemo
+// Mapping dispatched functions to props
 const mapDispatchToProps = dispatch => {
 	return {
 		login: user => dispatch(login(user)),
@@ -22,7 +19,7 @@ const mapDispatchToProps = dispatch => {
 		),
 		demoLogin: user => dispatch(login(user)),
 		openModal: formType => dispatch(openModal(formType)),
-		closeModal: () => dispatch(closeModal()),
+		closeModal: () => dispatch(closeModal())
 	};
 };
 

@@ -18,7 +18,6 @@ class FiltersBar extends React.Component {
 			minGuests: "Guests",
 			startDate: "",
 			endDate: "",
-			// formType: ""
 		};
 		this.handleClick = this.handleClick.bind(this);
 		this.hideModal = this.hideModal.bind(this);

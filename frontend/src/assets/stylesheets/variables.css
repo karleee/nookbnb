@@ -55,4 +55,9 @@ src: url('../fonts/CerealMedium.woff') format('woff');
   --medium-teal: #A9D9D0;
   --teal: #CEEEEC;
   --dark-teal: #128387;
+  --pink: #E22452;
+  --medium-pink: #DE1F62;
+  --dark-pink: #D51465;
+  --light-red: #FFF6F5;
+  --red: #A93426;
 }
