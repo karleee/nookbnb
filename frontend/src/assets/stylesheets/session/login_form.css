@@ -17,10 +17,10 @@
 
 .login-modal-wrapper .form-normal {
   position: fixed;
-  top: 17%;
-  left: 31%;
+  top: 15%;
+  left: 30%;
   width: 40%;
-  height: 65%;
+  height: 67%;
   background: white;
   border-radius: 15px;
   text-align: center;
@@ -29,10 +29,10 @@
 
 .login-modal-wrapper .form-errors {
   position: fixed;
-  top: 14.5%;
-  left: 31%;
+  top: 13%;
+  left: 30%;
   width: 40%;
-  height: 70%;
+  height: 72%;
   background: white;
   border-radius: 15px;
   text-align: center;
