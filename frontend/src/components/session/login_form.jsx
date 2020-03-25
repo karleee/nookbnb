@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import '../../assets/stylesheets/session/login_form.css';
 
 class LoginForm extends React.Component {
+	// Constructor for LoginForm
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -67,7 +68,7 @@ class LoginForm extends React.Component {
 	// Handle demo user login
 	handleDemo(e) {
 		e.preventDefault();
-		const user = { email: 'demouser@nookbnb.com', password: 'password' };
+		const user = { email: 'isabelle@gmail.com', password: 'password' };
 		this.props.login(user)
 			.then(this.props.history.push('/'), this.props.closeModal());
 	}
