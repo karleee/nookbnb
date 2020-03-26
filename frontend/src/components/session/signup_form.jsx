@@ -58,8 +58,8 @@ class SignupForm extends Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.props.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				{Object.values(this.props.errors).map((error, i) => (
+					<li key={`error-${i}`}>{error}</li>
 				))}
 			</ul>
 		);
