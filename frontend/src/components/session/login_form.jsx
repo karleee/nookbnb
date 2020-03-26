@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../../assets/stylesheets/session/login_form.css';
 
-class LoginForm extends React.Component {
+class LoginForm extends Component {
 	// Constructor for LoginForm
 	constructor(props) {
 		super(props);
 		this.state = {
 			email: '',
-			password: '',
-			errors: []
+			password: ''
 		};
-		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 		this.handleDemo = this.handleDemo.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	// After authentication redirect user to home page
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.currentUser === true) {
+		if (nextProps.currentUser) {
 			this.props.history.push('/');
 			this.props.closeModal();
 		}
@@ -39,7 +38,7 @@ class LoginForm extends React.Component {
 		return (
 			<ul>
 				{Object.values(this.props.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+					<li key={`error-${i}`}>{error}</li>
 				))}
 			</ul>
 		);
@@ -74,23 +73,14 @@ class LoginForm extends React.Component {
 	}
 
 	// Rendering component
-	render() {
-		let errors;
-
-		if (this.props.errors) {
-			errors = this.props.errors;
-		} else {
-			errors = [];
-		}
-
-		let emailErrors = errors.email ? <div className="email-error">{errors.email}</div> : '';
-		let passwordErrors = errors.password ? <div className="password-error">{errors.password}</div> : '';
+	render() {		
+		const { errors } = this.props;
 
 		return (
 			<div className="login-modal-wrapper">
 				<div className="modal-wrapper" onClick={this.props.closeModal}></div>
 
-				<form onSubmit={this.handleSubmit} className={errors.email && errors.email.length !== 0 ? 'form-errors' : 'form-normal'}>
+				<form onSubmit={this.handleSubmit} className={errors.email ? 'form-errors' : 'form-normal'}>
 					<div className="header-wrapper">
 					  <div className="close-wrapper" onClick={this.props.closeModal}>
 					  	<i className="close-button"></i>
@@ -101,14 +91,14 @@ class LoginForm extends React.Component {
 
 					<div className="main-content-wrapper">
 					  <button onClick={this.handleDemo}>
-					  	Demo Log in
+					  	Demo Log In
 					  </button>
 
 					  <div className="button-separator-wrapper"><p>or</p></div>
 
 					  <input
 							type="text"
-							className={errors.email && errors.email.length !== 0 ? 'bad-input' : ''}
+							className={errors.email ? 'bad-input' : ''}
 					  	value={this.state.email}
 					  	onChange={this.update('email')}
 					  	placeholder="Email"
@@ -116,21 +106,20 @@ class LoginForm extends React.Component {
 				  	
 					  <input
 							type="password"
-							className={errors.email && errors.email.length !== 0 ? 'bad-input' : ''}
+							className={errors.email ? 'bad-input' : ''}
 					  	value={this.state.password}
 					  	onChange={this.update("password")}
 					  	placeholder="Password"
 					  />
 
-						<div className="session-errors">
-							{emailErrors}
-							{passwordErrors}
+						<div className="session-errors-wrapper">
+							{this.renderErrors()}
 						</div>
 				  	
 					  <button type="submit">Log in</button>
 
 						<div className="no-account-wrapper">
-							<p>Don't have an account? <span onClick={() => this.props.openModal('signupFirst')}>Sign up</span></p>
+							<p>Don't have an account? <span onClick={() => this.props.openModal('signup')}>Sign up</span></p>
 						</div>
 					</div>
 				</form>

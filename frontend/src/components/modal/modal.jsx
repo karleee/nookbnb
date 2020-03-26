@@ -1,21 +1,18 @@
 import React from "react";
 import LoginForm from '../session/login_form_container';
-import SignupSecondFormContainer from "../session/signup_second_form_container";
-import SignupFirstFormContainer from "../session/signup_first_form_container";
+import SignupForm from "../session/signup_form_container";
 import SpotModal from '../../components/spots/spot_modal_container';
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal }) => {
 	let component;
 
 	if (!modal) return null;
 	let type = modal.formType;
 
 	if (type === 'login') {
-		component = <LoginForm closeModal={closeModal} />
-	} else if (type === 'signupFirst') { 
-		component = <SignupFirstFormContainer />
-	} else if (type === 'signupSecond') {
-		component = <SignupSecondFormContainer />;
+		component = <LoginForm />
+	} else if (type === 'signup') { 
+		component = <SignupForm />
 	} else if (type === 'spot') {
 	  component = <SpotModal />;
 	}

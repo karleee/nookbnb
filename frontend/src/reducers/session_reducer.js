@@ -2,13 +2,12 @@ import {
 	RECEIVE_CURRENT_USER,
 	RECEIVE_USER_LOGOUT,
 	RECEIVE_USER_SIGN_IN
-} from "../actions/session_actions";
+} from '../actions/session_actions';
 
 // Initial state
 const _initialState = Object.freeze({
 	isAuthenticated: false,
-	user: {},
-	// currentSpot: {}
+	user: {}
 });
 
 // Session reducer
