@@ -9,6 +9,7 @@ const defaultFilters = {
     northEast: { lat: 36.812626705465405, lng: -119.37501705576172},
     southWest: { lat: 36.7438798797963, lng: -119.46084774423828 }
   },
+  bounds: {},
   minGuests: 1, 
   dates: {
     startDate: "",
