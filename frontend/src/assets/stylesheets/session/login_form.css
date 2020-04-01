@@ -80,14 +80,19 @@
   box-sizing: border-box;
 }
 
-.login-modal-wrapper form .main-content-wrapper .session-errors {
+/* Session Errors */
+.session-errors-wrapper {
   font-family: 'cerealLight';
   font-size: 12px;
   color: var(--red);
   margin: 10px 0 5px 0;
 }
 
-.login-modal-wrapper form .main-content-wrapper .session-errors .email-error {
+.session-errors-wrapper ul {
+  list-style: none;
+}
+
+.session-errors-wrapper .email-error {
   margin-bottom: 8px;
 }
 

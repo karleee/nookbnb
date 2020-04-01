@@ -1,7 +1,7 @@
 # Nookbnb
 
 ## Introduction
-Nookbnb is a single page MERN stack application that parodies off the concept and style of Airbnb. Drawing inspiration from the popular 'Animal Crossing' video game series, visitors to the site are able to browse rental listings for properties owned by Tom Nook himself. 
+Nookbnb is a single page MERN stack (MongoDB, Express, React, Node) application that parodies off the concept and style of Airbnb. Drawing inspiration from the popular 'Animal Crossing' video game series, visitors to the site are able to browse rental listings for properties owned by Tom Nook himself. 
 
 <kbd>
 <img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/home_main1.png" alt="Homepage" width="900px"     border="1">

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import "../../assets/stylesheets/navbar.css"
-import Dropdown from "./dropdown";
-import SearchBar from "./search_bar";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import '../../assets/stylesheets/navbar.css'
+import Dropdown from './dropdown';
+import SearchBar from './search_bar';
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -25,14 +25,12 @@ class NavBar extends React.Component {
 
 	handleSignup(e) {
 		e.preventDefault();
-		this.props.openModal("signupFirst");
-		// this.props.history.push("/");
+		this.props.openModal('signup');
 	}
 
 	handleLogin(e) {
 		e.preventDefault();
-		this.props.openModal("login");
-		// this.props.history.push("/");
+		this.props.openModal('login');
 	}
 
 	// ** BUG FOUND ** 
