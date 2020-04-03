@@ -12,7 +12,6 @@
   flex-direction: column; 
   width: 100%;
   height: 35vh;
-  /* background: orange; */
 }
 
 .spot-index-wrapper .spot-index-world-wrapper h2 {
@@ -27,71 +26,51 @@
   margin-top: 1.5em;
   width: 100%;
   height: 100%;
-  /* background: yellow; */
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper  {
+.breezy-hollow-wrapper,
+.lost-lure-creek-wrapper,
+.saltwater-shores-wrapper,
+.sunburst-island-wrapper  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'cerealRegular';
+  font-size: 0.9em;
+  font-weight: 900;
+  color: var(--gray);
   box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
   text-align: left;
   border-radius: 10px;
   box-sizing: border-box;
-  /* padding-bottom: 1.5em; */
   margin-right: 20px;
-  width: 20%;
+  width: 17%;
   height: 100%;
-  background: red;
+}
+
+.breezy-hollow-wrapper p,
+.lost-lure-creek-wrapper p,
+.saltwater-shores-wrapper p,
+.sunburst-island-wrapper p  {
+  margin-top: 0.7em;
 }
 
 .image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 80%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: var(--medium-teal);
+  overflow: hidden;
 }
 
-/* .spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper .image-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 17px 35px;
-} */
-
-/* .spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 15px 35px;
-} */
-
-/* .spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 25px 35px 28px 35px;
-} */
-
-.spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper .image-wrapper img   {
-  width: 100%; 
+.image-wrapper img {
+  width: 60%;
 }
-
-/* .spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper p,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper p,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper p,
-.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper p {
-  font-family: 'cerealRegular';
-  font-size: 14px;
-  font-weight: 900;
-  color: var(--gray);
-  margin: 10px 0 0 20px;
-} */
 
 .spot-index-wrapper .spot-index-top-wrapper {
   display: flex;
