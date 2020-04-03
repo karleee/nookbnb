@@ -4,76 +4,94 @@
   display: flex;
   flex-direction: column;
   width: 80%; 
+  height: 100%;
 }
 
 .spot-index-wrapper .spot-index-world-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   width: 100%;
+  height: 35vh;
+  /* background: orange; */
 }
 
 .spot-index-wrapper .spot-index-world-wrapper h2 {
   font-family: 'cerealRegular';
-  font-size: 24px;
+  font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions {
+.spot-index-wrapper .spot-index-world-wrapper .world-container {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 1.5em;
+  width: 100%;
+  height: 100%;
+  /* background: yellow; */
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island  {
+.spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper  {
   box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
   text-align: left;
-  border-radius: 15px;
-  padding-bottom: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  /* padding-bottom: 1.5em; */
   margin-right: 20px;
+  width: 20%;
+  height: 100%;
+  background: red;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper {
+.image-wrapper {
+  width: 100%;
+  height: 80%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: var(--medium-teal);
+}
+
+/* .spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper .image-wrapper,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper .image-wrapper {
   background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 17px 35px;
-}
+} */
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper {
+/* .spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper .image-wrapper {
   background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 15px 35px;
-}
+} */
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper {
+/* .spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper .image-wrapper {
   background: var(--medium-teal); 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 25px 35px 28px 35px;
+} */
+
+.spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper .image-wrapper img,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper .image-wrapper img   {
+  width: 100%; 
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper img   {
-  width: 100px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island p {
+/* .spot-index-wrapper .spot-index-world-wrapper .world-container .breezy-hollow-wrapper p,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .saltwater-shores-wrapper p,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .lost-lure-creek-wrapper p,
+.spot-index-wrapper .spot-index-world-wrapper .world-container .sunburst-island-wrapper p {
   font-family: 'cerealRegular';
   font-size: 14px;
   font-weight: 900;
   color: var(--gray);
   margin: 10px 0 0 20px;
-}
+} */
 
 .spot-index-wrapper .spot-index-top-wrapper {
   display: flex;
