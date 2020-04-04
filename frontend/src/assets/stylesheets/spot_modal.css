@@ -1,6 +1,9 @@
 @import 'variables.css';
 
 .spot-modal-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,56 +16,73 @@
 .spot-modal {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 5.5%;
+  width: 100vw;
+  height: 75vh;
+  padding: 3em;
 }
 
-.spot-modal .main-image-wrapper {
+.modal-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.modal.main-image-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
   width: 65%;
+  height: 100%;
 }
 
-.spot-modal .main-image-wrapper .previous-arrow-wrapper .previous-arrow {
-  content: url('/images/spot_detail/previous_arrow_icon.png');
-}
-
-.spot-modal .main-image-wrapper .previous-arrow-wrapper .previous-arrow:hover {
-  cursor: pointer;
-}
-
-.spot-modal .main-image-wrapper .selected-image-wrapper {
+.modal.selected-image-wrapper {
+  position: relative;
   overflow: hidden;
   border-radius: 15px;
   margin: 0 8%;
-  width: 100%;
-  height: 550px;
+  width: 90%;
+  height: 100%;
 }
 
-.spot-modal .main-image-wrapper .selected-image-wrapper img {
-  width: 130%;
-  margin-left: -10%;
+.modal.selected-image-wrapper img {
+  height: 100%;
 }
 
-.spot-modal .next-arrow-wrapper .next-arrow {
-  content: url('/images/spot_detail/next_arrow_icon.png');
+/* Modal nav arrows styling */
+
+.modal.main-image-wrapper .previous-arrow-wrapper .previous-arrow {
+  content: url('/images/spot_detail/previous_arrow_icon.png');
+  width: 1em;
 }
 
-.spot-modal .next-arrow-wrapper .next-arrow:hover {
+.modal.main-image-wrapper .previous-arrow-wrapper .previous-arrow:hover {
   cursor: pointer;
 }
 
-.spot-modal .side-images-wrapper { 
+.modal.next-arrow-wrapper .next-arrow {
+  content: url('/images/spot_detail/next_arrow_icon.png');
+  width: 1em;
+}
+
+.modal.next-arrow-wrapper .next-arrow:hover {
+  cursor: pointer;
+}
+
+/* Sidebar images styling */
+
+.modal.side-images-wrapper { 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-top: -3%;
+  width: 27%;
+  height: 100%;
 }
 
 .spot-modal .side-images-wrapper .close-wrapper {
-  width: 6.5%;
+  width: 7%;
 }
 
 .spot-modal .side-images-wrapper .close-wrapper:hover {
@@ -73,38 +93,40 @@
   width: 100%;
 }
 
-.spot-modal .side-images-wrapper .thumbnails {
+.modal.thumbnails-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 90%;
+  align-content: flex-start;
+  width: 100%;
   margin-top: 8%;
 }
 
-.spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper {
+.modal.thumbnail-image-wrapper {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 5em;
+  height: 5em;
   overflow: hidden;
   border-radius: 7px;
-  margin-top: 3.5%;
+  box-sizing: border-box;
   border: 2.5px solid transparent;
   opacity: 0.5;
+  margin-bottom: 1em;
 }
 
-.spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper:hover {
+.modal.thumbnail-image-wrapper:hover {
   opacity: 1;
   transition: ease-in-out 0.25s;
   cursor: pointer;
 }
 
-.spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper.active {
+.modal.thumbnail-image-wrapper.active {
   border: 2.5px solid var(--dark-gray);
   opacity: 1;
 }
 
-.spot-modal .side-images-wrapper .thumbnails .thumbnail-wrapper img {
+.modal.thumbnail-image-wrapper img {
   position: absolute;
   left: -35%;
   width: 200%;
@@ -114,12 +136,12 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 90%;
+  width: 100%;
   margin-top: 15%;
 }
 
 .spot-modal .side-images-wrapper .numbering p {
   font-family: 'cerealMedium';
-  font-size: 16px;
+  font-size: 1em;
   color: var(--medium-gray);
 }

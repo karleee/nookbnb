@@ -7,7 +7,4 @@ const mapStateToProps = (state, { spots }) => ({
   spots
 }); 
 
-const mapDispatchToProps = dispatch => ({
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SpotWorldIndex);
+export default connect(mapStateToProps, null)(SpotWorldIndex);

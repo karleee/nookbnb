@@ -4,154 +4,170 @@
   display: flex;
   flex-direction: column;
   width: 80%; 
+  height: 100%;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper {
+.spot-index-world-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   width: 100%;
+  height: 35vh;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper h2 {
+.spot-index-world-wrapper h2 {
   font-family: 'cerealRegular';
-  font-size: 24px;
+  font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions {
+.world-container {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 1.5em;
+  width: 100%;
+  height: 100%;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island  {
-  box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
-  text-align: left;
-  border-radius: 15px;
-  padding-bottom: 15px;
-  margin-right: 20px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 17px 35px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 15px 35px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper {
-  background: var(--medium-teal); 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 25px 35px 28px 35px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek .image-wrapper img,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island .image-wrapper img   {
-  width: 100px;
-}
-
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-breezy-hollow p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-saltwater-shores p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-lost-lure-creek p,
-.spot-index-wrapper .spot-index-world-wrapper .spot-index-world-regions .spot-index-world-sunburst-island p {
+.breezy-hollow-wrapper,
+.lost-lure-creek-wrapper,
+.saltwater-shores-wrapper,
+.sunburst-island-wrapper  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'cerealRegular';
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 900;
   color: var(--gray);
-  margin: 10px 0 0 20px;
+  box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  width: 20%;
+  height: 100%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper {
+.breezy-hollow-wrapper p,
+.lost-lure-creek-wrapper p,
+.saltwater-shores-wrapper p,
+.sunburst-island-wrapper p  {
+  margin-top: 0.7em;
+}
+
+.world-container .region.image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: var(--medium-teal);
+  overflow: hidden;
+}
+
+.region.image-wrapper img {
+  width: 60%;
+}
+
+/* Top rated stays styling */
+
+.spot-index-top-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 80px;
-  padding-bottom: 50px;
+  height: 65vh;
+  margin-top: 5em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper h2 {
+.spot-index-top-wrapper h2 {
   font-family: 'cerealRegular';
-  font-size: 25px;
+  font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper h3 {
+.spot-index-top-wrapper h3 {
   font-family: 'cerealLight';
-  font-size: 16px;
+  font-size: 1em;
   letter-spacing: 0.5px;
   margin-top: 5px;  
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul {
+.spot-index-top-wrapper ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
   margin-top: 30px;
+  width: 100%;
+  height: 100%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a {
+.spot-index-top-wrapper ul a {
   text-decoration: none;
-  margin: 0 1% 3% 0;
+  width: 25%;
+  height: 65%;
+  margin-right: 2em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .image-wrapper img {
-  width: 215px;
-  height: 140px;
+.spot-index-top-wrapper ul a li {
+  width: 100%;
+  height: 100%;
+}
+
+.top-rated.image-wrapper {
+  width: 100%;
+  height: 50%; 
+}
+
+.top-rated.image-wrapper img {
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper {
+.top-rated-text-wrapper {
+  margin-top: 0.5em;
+}
+
+.spot-index-top-wrapper ul a li .superhost-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
+.spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
   font-family: 'cerealRegular';
-  font-size: 13px;
+  font-size: 0.813em;
   text-transform: uppercase;
   color: var(--dark-gray);
   border-radius: 5px;
   border: 1px solid var(--dark-gray);
-  margin: 10px 5px 0 0;
-  padding: 3px 5px;
+  padding: 0.3em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
+.spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
   font-family: 'cerealLight';
-  font-size: 14px;
+  font-size: 1em;
   color: var(--gray);
-  margin-top: 10px;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li h4 {
   font-family: 'cerealRegular';
-  font-size: 16px;
+  font-size: 1.13em;
   color: var(--dark-gray);
-  margin-top: 5px;
+  margin-top: 0.357em;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p {
   font-family: 'cerealLight';
-  font-size: 16px;
+  font-size: 1.1em;
   color: var(--dark-gray);
-  margin-top: 5px;
+  margin-top: 0.2em;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p .price-wrapper {
