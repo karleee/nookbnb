@@ -1,7 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+
 import SpotWorldIndex from './spot_world_index';
 import SpotIndexItem from './spot_index_item';
+import Footer from '../footer/footer';
+
 import '../../assets/stylesheets/spot_index.css';
 
 class SpotIndex extends React.Component {
@@ -42,6 +45,8 @@ class SpotIndex extends React.Component {
             {spots.map(spot => <SpotIndexItem key={spot._id} spot={spot} />)}
           </ul>
         </div> 
+
+        <Footer />
       </div>
     );
   }
