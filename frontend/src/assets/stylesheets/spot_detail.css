@@ -21,7 +21,7 @@
   width: 50%;
   height: 100%;
   overflow: hidden;
-  margin-right: 0.5em;
+  margin-right: 0.2em;
 }
 
 .spot-detail.main-image-wrapper img {
@@ -47,8 +47,8 @@
 
 .side-image-wrapper .image-wrapper {
   position: relative;
-  width: 49.2%;
-  height: 49%;
+  width: 49.7%;
+  height: 49.55%;
   overflow: hidden;
 }
 
