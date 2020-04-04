@@ -81,9 +81,9 @@
   display: flex;
   flex-direction: column;
   width: 80%;
+  height: 70vh;
   box-sizing: border-box;
   padding: 8em 0;
-  background: gray;
 }
 
 .spot-index-top-wrapper h2 {
@@ -110,22 +110,26 @@
   height: 100%;
 }
 
-.spot-index-top-wrapper ul a {
-  text-decoration: none;
+.spot-index-top-wrapper ul li {
   width: 20%;
-  height: 60%;
-  margin-right: 2em;
-  background: yellowgreen;
+  height: 100%;
+  margin-right: 2em; 
 }
 
-.spot-index-top-wrapper ul a li {
+.spot-index-top-wrapper ul li a {
+  width: 100%;
+  height: 100%;
+}
+
+.top-spot-wrapper {
   width: 100%;
   height: 100%;
 }
 
 .top-rated.image-wrapper {
   width: 100%;
-  height: 50%; 
+  height: 60%;
+  overflow: hidden;
 }
 
 .top-rated.image-wrapper img {
@@ -138,14 +142,18 @@
   margin-top: 0.5em;
 }
 
-.spot-index-top-wrapper ul a li .superhost-wrapper {
+.superhost-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
 }
 
-.spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
+.spot-index-top-wrapper ul li a {
+  text-decoration: none;
+}
+
+.spot-index-top-wrapper ul li a .superhost-wrapper p:first-of-type {
   font-family: 'cerealRegular';
   font-size: 0.813em;
   text-transform: uppercase;
@@ -155,27 +163,27 @@
   padding: 0.3em;
 }
 
-.spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
+.spot-index-top-wrapper ul li a .superhost-wrapper p:last-of-type {
   font-family: 'cerealLight';
   font-size: 1em;
   color: var(--gray);
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li h4 {
+.spot-index-wrapper .spot-index-top-wrapper ul li a h4 {
   font-family: 'cerealRegular';
   font-size: 1em;
   color: var(--dark-gray);
   margin-top: 0.357em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li p {
+.spot-index-wrapper .spot-index-top-wrapper ul li a p {
   font-family: 'cerealLight';
   font-size: 1em;
   color: var(--dark-gray);
   margin-top: 0.2em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li p .price-wrapper {
+.price-wrapper {
   font-family: 'cerealMedium';
   color: var(--dark-gray); 
 }

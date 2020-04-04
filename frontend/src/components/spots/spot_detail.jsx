@@ -63,6 +63,7 @@ class SpotDetail extends React.Component {
           </div>
         </div>
 
+        <div className="spot-detail main-content-container">
         <div className="spot-index-item-detail-header">
           <div className="header">
             <div className="name-wrapper">
@@ -232,6 +233,7 @@ class SpotDetail extends React.Component {
         <div className="spot-index-detail-booking-form">
           <h2>Select dates</h2>
           <Datepicker />
+        </div>
         </div>
       </div> 
     );
