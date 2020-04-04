@@ -158,14 +158,14 @@
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li h4 {
   font-family: 'cerealRegular';
-  font-size: 1.13em;
+  font-size: 1em;
   color: var(--dark-gray);
   margin-top: 0.357em;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p {
   font-family: 'cerealLight';
-  font-size: 1.1em;
+  font-size: 1em;
   color: var(--dark-gray);
   margin-top: 0.2em;
 }
