@@ -55,7 +55,7 @@
   padding: 10px;
 }
 
-.world-container .region.image-wrapper {
+.world-container .region.image-wrapper { 
   display: flex;
   flex-direction: row;
   justify-content: center;
