@@ -16,7 +16,7 @@
   height: 55vh; 
 }
 
-.main-image-wrapper {
+.spot-detail.main-image-wrapper {
   position: relative;
   width: 50%;
   height: 100%;
@@ -24,12 +24,12 @@
   margin-right: 0.5em;
 }
 
-.main-image-wrapper img {
+.spot-detail.main-image-wrapper img {
   width: 100%;
   height: 100%;
 }
 
-.main-image-wrapper img:hover {
+.spot-detail.main-image-wrapper img:hover {
   transform: scale(1.10);
   transition: transform 1s;
   cursor: pointer;
@@ -64,7 +64,7 @@
 }
 
 .side-image-wrapper .image-wrapper .overlay-wrapper,
-.main-image-wrapper .overlay-wrapper {
+.spot-detail.main-image-wrapper .overlay-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -86,7 +86,7 @@
   background: white;
   border: none;
   padding: 0.5em 	0.938em;
-  border-radius: 0.3em;
+  border-radius: 0.3em; 
 }
 
 .spot-index-item-detail-wrapper .thumbnail-photos-wrapper .view-images-wrapper button:hover {

@@ -45,12 +45,12 @@ class SpotDetail extends React.Component {
     return (
       <div className="spot-index-item-detail-wrapper"> 
         <div className="thumbnail-photos-wrapper">
-          <div className="main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
+          <div className="spot-detail main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
             <img src={`${spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''}`} alt="Main spot photo" />
             <div className="overlay-wrapper"></div>
           </div>
           
-          <div className="side-image-wrapper">
+          <div className="spot-detail side-image-wrapper">
             {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.slice(1, spot.thumbnail_image_urls.length).map((url, indx) => 
               <div className="image-wrapper" onClick={() => this.props.openSpotModal('spot', indx + 1)}>
                 <img src={url} alt="Thumbnail photo" />
