@@ -7,20 +7,20 @@
   height: 100%;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper {
+.spot-index-world-wrapper {
   display: flex;
   flex-direction: column; 
   width: 100%;
   height: 35vh;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper h2 {
+.spot-index-world-wrapper h2 {
   font-family: 'cerealRegular';
   font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-wrapper .spot-index-world-wrapper .world-container {
+.world-container {
   display: flex;
   flex-direction: row;
   margin-top: 1.5em;
@@ -55,7 +55,7 @@
   margin-top: 0.7em;
 }
 
-.image-wrapper {
+.world-container .image-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -72,44 +72,60 @@
   width: 60%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper {
+/* Top rated stays styling */
+
+.spot-index-top-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 80px;
-  padding-bottom: 50px;
+  height: 65vh;
+  margin-top: 5em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper h2 {
+.spot-index-top-wrapper h2 {
   font-family: 'cerealRegular';
-  font-size: 25px;
+  font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper h3 {
+.spot-index-top-wrapper h3 {
   font-family: 'cerealLight';
-  font-size: 16px;
+  font-size: 1em;
   letter-spacing: 0.5px;
   margin-top: 5px;  
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul {
+.spot-index-top-wrapper ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
   margin-top: 30px;
+  width: 100%;
+  height: 100%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a {
+.spot-index-top-wrapper ul a {
   text-decoration: none;
-  margin: 0 1% 3% 0;
+  width: 20%;
+  height: 65%;
+  margin-right: 2em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .image-wrapper img {
-  width: 215px;
-  height: 140px;
+.spot-index-top-wrapper ul a li {
+  width: 100%;
+  height: 100%;
+}
+
+.spot-index-top-wrapper .image-wrapper {
+  width: 100%;
+  height: 60%;
+}
+
+.spot-index-top-wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
 }
 
