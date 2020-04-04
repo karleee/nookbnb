@@ -129,42 +129,45 @@
   border-radius: 5px;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper {
+.top-rated-text-wrapper {
+  margin-top: 0.5em;
+}
+
+.spot-index-top-wrapper ul a li .superhost-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
+.spot-index-top-wrapper ul a li .superhost-wrapper p:first-of-type {
   font-family: 'cerealRegular';
-  font-size: 13px;
+  font-size: 0.813em;
   text-transform: uppercase;
   color: var(--dark-gray);
   border-radius: 5px;
   border: 1px solid var(--dark-gray);
-  margin: 10px 5px 0 0;
-  padding: 3px 5px;
+  padding: 0.3em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
+.spot-index-top-wrapper ul a li .superhost-wrapper p:last-of-type {
   font-family: 'cerealLight';
-  font-size: 14px;
+  font-size: 1em;
   color: var(--gray);
-  margin-top: 10px;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li h4 {
   font-family: 'cerealRegular';
-  font-size: 16px;
+  font-size: 1.13em;
   color: var(--dark-gray);
-  margin-top: 5px;
+  margin-top: 0.357em;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p {
   font-family: 'cerealLight';
-  font-size: 16px;
+  font-size: 1.1em;
   color: var(--dark-gray);
-  margin-top: 5px;
+  margin-top: 0.2em;
 }
 
 .spot-index-wrapper .spot-index-top-wrapper ul a li p .price-wrapper {
