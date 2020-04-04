@@ -6,7 +6,7 @@ import "../../assets/stylesheets/spot_index.css";
 const SpotIndexItem = ({ spot }) => (
   <Link to={`/spots/${spot._id}`}>
     <li>
-      <div className="image-wrapper"><img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''} alt="Spot thumbnail" /></div>
+      <div className="top-rated image-wrapper"><img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''} alt="Spot thumbnail" /></div>
 
       <div className="top-rated-text-wrapper">
         <div className="superhost-wrapper">

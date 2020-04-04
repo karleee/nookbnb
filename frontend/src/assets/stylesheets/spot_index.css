@@ -118,12 +118,12 @@
   height: 100%;
 }
 
-.spot-index-top-wrapper .image-wrapper {
+.top-rated.image-wrapper {
   width: 100%;
-  height: 60%;
+  height: 50%; 
 }
 
-.spot-index-top-wrapper .image-wrapper img {
+.top-rated.image-wrapper img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
