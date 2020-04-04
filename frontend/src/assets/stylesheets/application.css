@@ -1,5 +1,6 @@
 .app-wrapper .app-main-content-wrapper {
   display: flex;
   justify-content: center;
-  padding: 120px 0;
+  box-sizing: border-box;
+  padding: 8em 9em;
 }
