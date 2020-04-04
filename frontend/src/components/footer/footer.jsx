@@ -5,8 +5,9 @@ class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentDev: '',
-      otherDevs: []
+      dev1: false,
+      dev2: false,
+      dev3: false
     }
     this.monitorClick();
     this.showContactInfo = this.showContactInfo.bind(this);
@@ -18,18 +19,32 @@ class Footer extends Component {
     const allKeys = Object.keys(this.state);
     const currentDev = `dev${devNum}`;
     const foundKey = allKeys.indexOf(currentDev);
+    let currentDevBool;
+
+    if (devNum === 1) {
+      currentDevBool = this.state.dev1;
+    } else if (devNum === 2) {
+      currentDevBool = this.state.dev2;
+    } else {
+      currentDevBool = this.state.dev3;
+    }
 
     const otherDevs = allKeys.slice(2, foundKey).concat(allKeys.slice(foundKey + 1, allKeys.length));
 
-    this.setState({ currentDev });
-    this.setState({ otherDevs });
+    this.setState({ [currentDev]: !currentDevBool });
+
+    otherDevs.forEach(dev => {
+      this.setState({ [dev]: false });
+    });
   }
 
   monitorClick() {
     window.addEventListener('click', e => {
       if (e.target.parentElement.className !== 'developer-name-wrapper') {
-        this.setState({ currentDev: '' });
-        this.setState({ otherDevs: [] });
+        const allKeys = Object.keys(this.state);
+        allKeys.forEach(dev => {
+          this.setState({ [dev]: false});
+        });
       }
     });
   }
@@ -41,16 +56,16 @@ class Footer extends Component {
           <div className="about-wrapper">
             <h3>About</h3>
             <ul>
-              <li><a href="https://github.com/karleee/morsel">Github</a></li>
+              <li><a href="https://github.com/karleee/nookbnb">Github</a></li>
             </ul>
           </div>
 
           <div className="discover-wrapper">
             <h3>Discover</h3>
             <ul>
-              <li><a href="https://nookbnb.herokuapp.com/#/">Nookbnb</a></li>
-              <li><a href="http://sleepify-dev.herokuapp.com/">Sleepify</a></li>
-              <li><a href="https://rumble-demo.herokuapp.com/">Rumble</a></li>
+              <li><a href="https://themorsel.herokuapp.com/#/">Morsel</a></li>
+              <li><a href="http://dootify.herokuapp.com/#/splash">Dotify</a></li>
+              <li><a href="http://quarrel-pro.herokuapp.com/#/">Quarrel</a></li>
             </ul>
           </div>
 
@@ -63,7 +78,7 @@ class Footer extends Component {
                   <div className="developers-triangle-wrapper"></div>
                 </div>
 
-                {this.state.currentDev === 'dev1' ? <div className="developers-dropdown-wrapper">
+                {this.state.dev1 ? <div className="developers-dropdown-wrapper">
                   <ul>
                     <a href="https://github.com/karleee"><li>Github</li></a>
                     <a href="https://www.linkedin.com/in/karleee/"><li>LinkedIn</li></a>
@@ -80,7 +95,7 @@ class Footer extends Component {
                   <div className="developers-triangle-wrapper"></div>
                 </div>
 
-                {this.state.currentDev === 'dev2' ? <div className="developers-dropdown-wrapper">
+                {this.state.dev2 ? <div className="developers-dropdown-wrapper">
                   <ul>
                     <a href="https://github.com/kewlfeet"><li>Github</li></a>
                     <a href="https://www.linkedin.com/in/don-ayesh-sondapperumaarachchi-827894146/"><li>LinkedIn</li></a>
@@ -97,30 +112,13 @@ class Footer extends Component {
                   <div className="developers-triangle-wrapper"></div>
                 </div>
 
-                {this.state.currentDev === 'dev3' ? <div className="developers-dropdown-wrapper">
+                {this.state.dev3 ? <div className="developers-dropdown-wrapper">
                   <ul>
                     <li>Github</li>
                     <li>LinkedIn</li>
                     <li>Angel List</li>
                     <li>Portfolio</li>
                     <li>Email</li>
-                  </ul>
-                </div> : ''}
-              </li>
-
-              <li>
-                <div className="developer-name-wrapper" onClick={e => this.showContactInfo(e, 4)}>
-                  <p >John Enriquez</p>
-                  <div className="developers-triangle-wrapper"></div>
-                </div>
-
-                {this.state.currentDev === 'dev4' ? <div className="developers-dropdown-wrapper">
-                  <ul>
-                    <a href="https://github.com/johnenriquez"><li>Github</li></a>
-                    <a href="https://www.linkedin.com/in/johnenriquez/"><li>LinkedIn</li></a>
-                    <a href="https://angel.co/u/john-enriquez"><li>Angel List</li></a>
-                    <a href="https://johnenriquez.com/"><li>Portfolio</li></a>
-                    <a href="mailto:john.enriquez@gmail.com"><li>Email</li></a>
                   </ul>
                 </div> : ''}
               </li>
