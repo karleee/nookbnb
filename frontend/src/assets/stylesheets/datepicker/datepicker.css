@@ -18,77 +18,76 @@
   justify-content: space-around;
   align-items: flex-start;
   width: 70%;
-  margin-right: 60px;
+  margin-right: 2em;
 }
 
-.datepicker-wrapper .selected-dates-wrapper {
+.selected-dates-wrapper {
   width: 30%;
 }
 
-.datepicker-wrapper .selected-dates-wrapper .dates-wrapper {
+.dates-wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
 .datepicker-wrapper .calendar-wrapper .arrows {
-    position: relative;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 1.875em;
+  height: 1.875em;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows .next-arrow-icon {
+.next-arrow-icon {
   content: url('/images/spot_detail/next_arrow_icon.png');
   width: 8px;
   margin-left: -35px;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows .next-arrow-icon:hover {
+.next-arrow-icon:hover {
   content: url('/images/spot_detail/next_arrow_hover_icon.png');
   width: 35px;
   margin-top: -11px;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows .previous-arrow-icon {
+.previous-arrow-icon {
   content: url('/images/spot_detail/previous_arrow_icon.png');
   width: 8px;
   margin-left: 32px;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows .previous-arrow-icon:hover {
+.previous-arrow-icon:hover {
   content: url('/images/spot_detail/previous_arrow_hover_icon.png');
   width: 35px;
   margin-top: -10px;
   margin-left: 18px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper {
+.months-content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper {
+.months-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  /* height: 300px; */
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month #start-month-header,
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month #end-month-header {
+#start-month-header,
+#end-month-header {
   font-family: 'cerealRegular';
   font-weight: 900;
   letter-spacing: 0.5px;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days,
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days  {
+.start-month .days,
+.end-month .days  {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,23 +95,20 @@
   margin-top: 5%;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%;
-  margin-right: 150px;
-}
-
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month {
+.start-month,
+.end-month {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 45%;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days,
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days {
+.start-month {
+  margin-right: 9.375em;
+}
+
+.start-month .days .number-days,
+.end-month .days .number-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   column-gap: 3px;
@@ -123,16 +119,15 @@
   text-align: center;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days .weekday,
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days .weekday {
+.start-month .days .number-days .weekday,
+.end-month .days .number-days .weekday {
   font-family: 'cerealLight';
   font-size: 12px;
   color: var(--gray);
   margin-bottom: 5%;
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .start-month .days .number-days .number,
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .end-month .days .number-days .number {
+.number {
   width: 15px;
   height: 15px;
   padding: 13px; 
@@ -143,42 +138,50 @@
   color: var(--dark-teal);
 }
 
-.datepicker-wrapper .calendar-wrapper .months-content-wrapper .months-wrapper .days .number-days .number:hover {
+.number:hover {
   width: 15px;
   height: 15px;
   background: var(--teal);
   cursor: pointer;
 }
 
-.datepicker-wrapper .selected-dates-wrapper .dates-wrapper .check-in-date input[type="text"] {
+/* Check in and check out styling */
+
+.check-in-date,
+.checkout-date {
+  width: 50%;
+}
+
+.check-in-date input[type="text"],
+.checkout-date input[type="text"] {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
+  width: 100%;
+  border: none;
+  border: 1px solid var(--outline-gray); 
+  box-sizing: border-box;
+  padding: 10% 0 10% 8%;
+} 
+
+.check-in-date input[type="text"] {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border: none;
-  border: 1px solid var(--outline-gray); 
   border-right: none;
-  padding: 10% 0 10% 8%;
-} 
+}
 
-.datepicker-wrapper .selected-dates-wrapper .dates-wrapper .checkout-date input[type="text"] {
-  font-family: 'cerealRegular';
-  font-size: 16px;
-  color: var(--dark-gray);
-  border: none;
+.checkout-date input[type="text"] {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: none;
-  border: 1px solid var(--outline-gray); 
-  padding: 10% 0 10% 8%;
 } 
 
-.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper {
+/* Clear dates button styling */
+
+.clear-dates-wrapper {
   margin-top: 5em;
 }
 
-.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button {
+.clear-dates-wrapper button {
   background: transparent;
   border: none;
   font-family: 'cerealMedium';
@@ -187,13 +190,15 @@
   padding: 10px 12px;
 }
 
-.datepicker-wrapper .calendar-wrapper .clear-dates-wrapper button:hover {
+.clear-dates-wrapper button:hover {
   background: var(--light-gray);
   border-radius: 5px;
   cursor: pointer;
 }
 
-.datepicker-wrapper .selected-dates-wrapper .guests {
+/* Guests styling */
+
+.guests {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -202,7 +207,8 @@
   border: 1px solid var(--outline-gray);
   border-radius: 10px;
   background: white;
-  margin-top: 15px;
+  margin-top: 0.9375em;
+  box-sizing: border-box;
   padding: 3% 1.5% 3% 4.5%;
 }
 
