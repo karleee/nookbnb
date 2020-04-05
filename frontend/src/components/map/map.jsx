@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './search.css';
 import GoogleMapReact from 'google-map-react';
 import MarkerManager from '../../util/marker_manager';
 
@@ -73,7 +72,7 @@ export default class Map extends Component {
   render() {
     const defaultCenter = this.props.center;
     return (
-      <div id='map-container'>
+      <div className='map-container'>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
           defaultZoom={mapOptions.zoom}

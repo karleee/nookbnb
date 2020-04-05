@@ -1,5 +1,7 @@
-import React from "react";
-import SpotIndexItem from "../spots/spot_index_item";
+import React from 'react';
+
+import SpotIndexItem from '../spots/spot_index_item';
+import Footer from '../footer/footer';
 
 class SearchResultsIndex extends React.Component {
 	constructor(props) {
@@ -9,10 +11,6 @@ class SearchResultsIndex extends React.Component {
 	}
 
 	render() {
-		// if (!this.props.spots) {
-		// 	return <div />;
-		// }
-
 		let { spots } = this.props;
 
 		const spotItems = this.props.spots.map(spot => (
@@ -22,12 +20,15 @@ class SearchResultsIndex extends React.Component {
 		let numResults = spots.length;
 
 		return (
-			<div className="search-index">
-				<div className="search-index-top-wrapper">
+			<div className="search-index-container">
+				<div className="search-index-header-wrapper">
 					<h2>Search Results</h2>
 					<h3>{numResults} places to stay</h3>
 				</div>
-				<div className="search-index-div"><ul>{spotItems}</ul></div>
+
+				<div className="search-index-spots-wrapper">
+					<ul>{spotItems}</ul>
+				</div>
 			</div>
 		);
 	}

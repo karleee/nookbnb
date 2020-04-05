@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { requestUpdateBounds, geocode, updateFilter, updateMapCenter } from "../../actions/filter_actions";
 import { fetchFilteredSpots } from "../../actions/spot_actions";
 import { selectSpotsInBounds } from '../../reducers/selectors';
-import Search from "./search";
+
+import Search from './search';
 
 const mapStateToProps = state => ({
   // spots: selectSpotsInBounds(state),
