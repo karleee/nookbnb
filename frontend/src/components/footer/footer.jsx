@@ -91,34 +91,34 @@ class Footer extends Component {
 
               <li>
                 <div className="developer-name-wrapper" onClick={e => this.showContactInfo(e, 2)}>
-                  <p>Don Sondapperumaarachchi</p>
+                  <p>Kieran Scannell</p>
                   <div className="developers-triangle-wrapper"></div>
                 </div>
 
                 {this.state.dev2 ? <div className="developers-dropdown-wrapper">
                   <ul>
-                    <a href="https://github.com/kewlfeet"><li>Github</li></a>
-                    <a href="https://www.linkedin.com/in/don-ayesh-sondapperumaarachchi-827894146/"><li>LinkedIn</li></a>
-                    <a href="https://angel.co/u/don-sondapperumaarachchi"><li>Angel List</li></a>
-                    <a href="http://donsondapperumaarachchi.com/"><li>Portfolio</li></a>
-                    <a href="mailto:ayesh98@gmail.com"><li>Email</li></a>
+                    <a href="https://github.com/ktscannell"><li>Github</li></a>
+                    <a href="https://www.linkedin.com/in/kierantscannell/"><li>LinkedIn</li></a>
+                    <a href="https://angel.co/u/kieran-scannell"><li>Angel List</li></a>
+                    <a href="https://www.kierantscannell.com/"><li>Portfolio</li></a>
+                    <a href="mailto:kieran.t.scannell@gmail.com"><li>Email</li></a>
                   </ul>
                 </div> : ''}
               </li>
 
               <li>
                 <div className="developer-name-wrapper" onClick={e => this.showContactInfo(e, 3)}>
-                  <p>Josh Graham</p>
+                  <p>Elizabeth Dang</p>
                   <div className="developers-triangle-wrapper"></div>
                 </div>
 
                 {this.state.dev3 ? <div className="developers-dropdown-wrapper">
                   <ul>
-                    <li>Github</li>
-                    <li>LinkedIn</li>
-                    <li>Angel List</li>
-                    <li>Portfolio</li>
-                    <li>Email</li>
+                    <a href="https://github.com/eqdang"><li>Github</li></a>
+                    <a href="https://www.linkedin.com/mwlite/in/elizabethqdang"><li>LinkedIn</li></a>
+                    <a href="https://angel.co/u/eqdang"><li>Angel List</li></a>
+                    <a href=""><li>Portfolio</li></a>
+                    <a href="mailto:Elizabethqdang@gmail.com"><li>Email</li></a>
                   </ul>
                 </div> : ''}
               </li>
@@ -127,7 +127,7 @@ class Footer extends Component {
         </div>
 
         <div className="footer-copyright-wrapper">
-          <small>Copyright &copy; 2020 Morsel</small>
+          <small>&copy; 2020 Nookbnb, All rights reserved</small>
         </div>
       </div>
     );
