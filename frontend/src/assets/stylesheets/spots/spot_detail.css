@@ -78,7 +78,7 @@
 .view-images-wrapper button {
   position: absolute;
   top: 85%;
-  left: 87%;
+  left: 90%;
   z-index: 1;
   font-family: 'cerealMedium';
   font-size: 0.938em;
@@ -96,17 +96,17 @@
   padding: 0 9em;
 }
 
-.spot-index-item-detail-wrapper .thumbnail-photos-wrapper .view-images-wrapper button:hover {
+.view-images-wrapper button:hover {
   cursor: pointer;
 }
 
-.spot-index-item-detail-wrapper .thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
+.thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
   opacity: 1;
   z-index: 1;
   transition: opacity 0.5s;
 }  
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header {
+.spot-index-item-detail-header {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -114,14 +114,14 @@
   margin-top: 2%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .header {
+.spot-index-item-detail-header .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 53%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .header .name-wrapper h1 {
+.spot-index-item-detail-header .header .name-wrapper h1 {
   font-family: 'cerealMedium';
   font-size: 32px;
   letter-spacing: 0.5px;
@@ -129,13 +129,13 @@
   width: 70%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .header .profile-image-wrapper img {
+.spot-index-item-detail-header .header .profile-image-wrapper img {
   width: 62px;
   border-radius: 50%;
   margin-left: -60px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .price {
+.spot-index-item-detail-header .price {
   width: 30%;
   height: 60px; 
   display: flex;
@@ -146,38 +146,38 @@
   margin-left: 10%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .price p {
+.spot-index-item-detail-header .price p {
   font-family: 'cerealMedium';
   color: var(--medium-gray);
   font-size: 12px;
   margin-left: 7%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-header .price p span {
+.spot-index-item-detail-header .price p span {
   font-family: 'cerealMedium';
   color: var(--medium-gray);
   font-size: 24px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-location-wrapper p {
+.spot-index-item-detail-location-wrapper p {
   font-family: 'cerealLight';
   font-size: 15px;
   color: var(--medium-gray);
   margin-top: 10px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper {
+.main-description-wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .description-wrapper {
+.description-wrapper {
   width: 55%;
   margin-right: 100px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .description-wrapper .header-details-wrapper {
+.header-details-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -185,7 +185,7 @@
   border-bottom: 1px solid var(--underline-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .description-wrapper .header-details-wrapper p {
+.header-details-wrapper p {
   font-family: 'cerealLight';
   font-size: 16px;
   color: var(--dark-gray);
@@ -193,86 +193,86 @@
   padding-bottom: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks {
+.spot-index-item-detail-description-perks {
   border-bottom: 1px solid var(--underline-gray);
   margin-top: 30px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper {
+.entire-home-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper .image-wrapper .star-icon img {
+.entire-home-perk-wrapper .image-wrapper .star-icon img {
   width: 23px;
   margin-right: 17px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper .perk-wrapper h3 {
+.entire-home-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .entire-home-perk-wrapper .perk-wrapper p {
+.entire-home-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper {
+.sparkling-clean-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .image-wrapper .cleaner-icon img {
+.sparkling-clean-perk-wrapper .image-wrapper .cleaner-icon img {
   width: 15px;
   margin-right: 25px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .perk-wrapper h3 {
+.sparkling-clean-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .sparkling-clean-perk-wrapper .perk-wrapper p {
+.sparkling-clean-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper {
+.superhost-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper .image-wrapper .badge-icon img {
+.superhost-perk-wrapper .image-wrapper .badge-icon img {
   width: 16px;
   margin-right: 24px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper .perk-wrapper h3 {
+.superhost-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .superhost-perk-wrapper .perk-wrapper p {
+.superhost-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper {
+.check-in-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -280,25 +280,25 @@
   padding-bottom: 30px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper .image-wrapper .house-icon img {
+.check-in-perk-wrapper .image-wrapper .house-icon img {
   width: 25px;
   margin-right: 18px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper .perk-wrapper h3 {
+.check-in-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-perks .check-in-perk-wrapper .perk-wrapper p {
+.check-in-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-body {
+.spot-index-item-detail-description-body {
   font-family: 'cerealRegular';
   font-size: 15px;
   margin-top: 30px;
@@ -308,18 +308,18 @@
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements {
+.spot-index-item-detail-description-sleeping-arrangements {
   margin-top: 30px;
   border-bottom: 1px solid var(--underline-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements h2 {
+.spot-index-item-detail-description-sleeping-arrangements h2 {
   font-family: 'cerealMedium';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul {
+.spot-index-item-detail-description-sleeping-arrangements ul {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -327,7 +327,7 @@
   margin-top: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li {
+.spot-index-item-detail-description-sleeping-arrangements ul li {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -337,11 +337,11 @@
   margin-right: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li .bed-icon img {
+.spot-index-item-detail-description-sleeping-arrangements ul li .bed-icon img {
   width: 25px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li h3 {
+.spot-index-item-detail-description-sleeping-arrangements ul li h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
@@ -349,25 +349,25 @@
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-sleeping-arrangements ul li p {
+.spot-index-item-detail-description-sleeping-arrangements ul li p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--medium-gray);
   margin-top: 10px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities {
+.spot-index-item-detail-description-amenities {
   display: grid;
   margin-top: 30px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities h2 {
+.spot-index-item-detail-description-amenities h2 {
   font-family: 'cerealMedium';
   font-size: 16px;
   color: var(--medium-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid {
+.spot-index-item-detail-description-amenities .amenities-grid {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -379,78 +379,78 @@
   padding-bottom: 30px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .wifi-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .wifi-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .wifi-wrapper .image-wrapper .wifi-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .wifi-wrapper .image-wrapper .wifi-icon img {
   width: 22px;
   margin-right: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .kitchen-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .kitchen-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .kitchen-wrapper .image-wrapper .kitchen-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .kitchen-wrapper .image-wrapper .kitchen-icon img {
   width: 20px;
   margin-right: 22px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .breakfast-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .breakfast-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .breakfast-wrapper .image-wrapper .breakfast-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .breakfast-wrapper .image-wrapper .breakfast-icon img {
   width: 23px;
   margin-right: 19px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .parking-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .parking-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .parking-wrapper .image-wrapper .parking-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .parking-wrapper .image-wrapper .parking-icon img {
   width: 23px;
   margin-right: 19px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .pool-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .pool-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .pool-wrapper .image-wrapper .pool-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .pool-wrapper .image-wrapper .pool-icon img {
   width: 19px;
   margin-right: 23px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .essentials-wrapper {
+.spot-index-item-detail-description-amenities .amenities-grid .essentials-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 15px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .main-description-wrapper .spot-index-item-detail-description-amenities .amenities-grid .essentials-wrapper .image-wrapper .essentials-icon img {
+.spot-index-item-detail-description-amenities .amenities-grid .essentials-wrapper .image-wrapper .essentials-icon img {
   width: 20px;
   margin-right: 20px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .price .price-text-wrapper {
+.spot-index-item-detail-description .price .price-text-wrapper {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -458,18 +458,20 @@
   color: var(--dark-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-item-detail-description .price .price-text-wrapper h2 {
+.spot-index-item-detail-description .price .price-text-wrapper h2 {
   font-family: 'cerealMedium';
   color: var(--dark-gray);
   margin-right: 5px;
 }
 
-.spot-index-item-detail-wrapper .spot-index-detail-booking-form {
+/* Datepicker styling */
+
+.spot-index-detail-booking-form {
   width: 100%;
   border-top: 1px solid var(--underline-gray);
 }
 
-.spot-index-item-detail-wrapper .spot-index-detail-booking-form h2 {
+.spot-index-detail-booking-form h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
   color: var(--dark-gray);
