@@ -80,11 +80,11 @@ class Footer extends Component {
 
                 {this.state.dev1 ? <div className="developers-dropdown-wrapper">
                   <ul>
-                    <a href="https://github.com/karleee"><li>Github</li></a>
-                    <a href="https://www.linkedin.com/in/karleee/"><li>LinkedIn</li></a>
-                    <a href="https://angel.co/u/karleee"><li>Angel List</li></a>
-                    <a href="http://karleee.com/"><li>Portfolio</li></a>
-                    <a href="mailto:karleee@protonmail.com"><li>Email</li></a>
+                    <li><a href="https://github.com/karleee">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/karleee/">LinkedIn</a></li>
+                    <li><a href="https://angel.co/u/karleee">Angel List</a></li>
+                    <li><a href="http://karleee.com/">Portfolio</a></li>
+                    <li><a href="mailto:karleee@protonmail.com">Email</a></li>
                   </ul>
                 </div> : ''}
               </li>
@@ -97,11 +97,11 @@ class Footer extends Component {
 
                 {this.state.dev2 ? <div className="developers-dropdown-wrapper">
                   <ul>
-                    <a href="https://github.com/ktscannell"><li>Github</li></a>
-                    <a href="https://www.linkedin.com/in/kierantscannell/"><li>LinkedIn</li></a>
-                    <a href="https://angel.co/u/kieran-scannell"><li>Angel List</li></a>
-                    <a href="https://www.kierantscannell.com/"><li>Portfolio</li></a>
-                    <a href="mailto:kieran.t.scannell@gmail.com"><li>Email</li></a>
+                    <li><a href="https://github.com/ktscannell">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/kierantscannell/">LinkedIn</a></li>
+                    <li><a href="https://angel.co/u/kieran-scannell">Angel List</a></li>
+                    <li><a href="https://www.kierantscannell.com/">Portfolio</a></li>
+                    <li><a href="mailto:kieran.t.scannell@gmail.com">Email</a></li>
                   </ul>
                 </div> : ''}
               </li>
@@ -114,11 +114,11 @@ class Footer extends Component {
 
                 {this.state.dev3 ? <div className="developers-dropdown-wrapper">
                   <ul>
-                    <a href="https://github.com/eqdang"><li>Github</li></a>
-                    <a href="https://www.linkedin.com/mwlite/in/elizabethqdang"><li>LinkedIn</li></a>
-                    <a href="https://angel.co/u/eqdang"><li>Angel List</li></a>
-                    <a href=""><li>Portfolio</li></a>
-                    <a href="mailto:Elizabethqdang@gmail.com"><li>Email</li></a>
+                    <li><a href="https://github.com/eqdang">Github</a></li>
+                    <li><a href="https://www.linkedin.com/mwlite/in/elizabethqdang">LinkedIn</a></li>
+                    <li><a href="https://angel.co/u/eqdang">Angel List</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="mailto:Elizabethqdang@gmail.com">Email</a></li>
                   </ul>
                 </div> : ''}
               </li>
