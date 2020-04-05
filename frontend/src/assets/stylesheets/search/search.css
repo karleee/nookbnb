@@ -6,7 +6,6 @@
   width: 100%;
   height: 100%;
   margin-top: 5em;
-  /* background: red; */
 }
 
 .search-results-wrapper {
@@ -14,17 +13,15 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
-  /* background: yellow; */
 }
 
 .search-index-container {
   width: 50%;
   height: 100%;
-  /* background: green; */
+  overflow: scroll;
 }
 
 .map-container {
   width: 50%;
   height: 100%;
-  /* background: orange; */
 }

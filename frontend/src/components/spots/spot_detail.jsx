@@ -5,7 +5,7 @@ import Datepicker from '../datepicker/datepicker';
 import SleepingArrangementIndex from '../sleeping_arrangement/sleeping_arrangement_index';
 import Footer from '../footer/footer';
 
-import '../../assets/stylesheets/spot_detail.css';
+import '../../assets/stylesheets/spots/spot_detail.css';
 
 class SpotDetail extends React.Component {
   // Constructor for SpotDetail component

@@ -5,7 +5,7 @@ import SpotWorldIndex from './spot_world_index';
 import SpotIndexItem from './spot_index_item';
 import Footer from '../footer/footer';
 
-import '../../assets/stylesheets/spot_index.css';
+import '../../assets/stylesheets/spots/spot_index.css';
 
 class SpotIndex extends React.Component {
   // Constructor for SpotIndex

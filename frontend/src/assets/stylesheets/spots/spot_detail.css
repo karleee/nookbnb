@@ -1,4 +1,4 @@
-@import 'variables.css';
+@import '../variables.css';
 
 .spot-index-item-detail-wrapper { 
   display: flex;
