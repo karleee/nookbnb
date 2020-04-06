@@ -7,10 +7,6 @@ class Dropdown extends React.Component {
 		super(props);
 		this.state = { showMenu: false };
 		this.toggleMenu();
-		this.showMenu = this.showMenu.bind(this);
-		this.closeMenu = this.closeMenu.bind(this);
-		this.dropdownElement = null;
-		this.setDropwdownElementRef = element => { this.dropdownElement = element };
 	}
 
 	// Changes search input placeholder
@@ -22,21 +18,6 @@ class Dropdown extends React.Component {
 				this.setState({ showMenu: false });
 			}
 		});
-	}
-
-	showMenu(event) {
-		event.preventDefault();
-		this.setState({ showMenu: true }, () => {
-			document.addEventListener("click", event => this.closeMenu(event));
-		});
-	}
-
-	closeMenu(event) {
-		if (this.dropdownElement && !this.dropdownElement.contains(event.target)) {
-			this.setState({ showMenu: false }, () => {
-				document.removeEventListener("click", event => this.closeMenu(event));
-			});
-		}
 	}
 
 	render() {
@@ -56,8 +37,8 @@ class Dropdown extends React.Component {
 
 				{this.state.showMenu ? <div className="dropdown-menu-wrapper">
 					<ul>
-					  <li>
-						  <button onClick={e => logout()} className="dropdown-button">Logout</button>
+						<li onClick={e => logout()} className="dropdown-button">
+						  <button>Logout</button>
 						</li>
 					</ul>
 				</div> : ''}

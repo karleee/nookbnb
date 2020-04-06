@@ -9,9 +9,7 @@ import '../../assets/stylesheets/navbar/navbar.css'
 class NavBar extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			searchInput: ""
-		};
+		this.state = { searchInput: '' };
 
 		this.logoutUser = this.logoutUser.bind(this);
 		this.getLinks = this.getLinks.bind(this);
