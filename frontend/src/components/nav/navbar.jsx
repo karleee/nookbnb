@@ -69,18 +69,12 @@ class NavBar extends React.Component {
 						<SearchBar />
 					</div>
 
-					{/* <div className="nav-main"> */}
-						<ul>
-							<li>
-								{/* <div className="nav-link"> */}
-									<Dropdown
-										currentUser={currentUser}
-										logout={logout}
-									/>
-								{/* </div> */}
-							</li>
-						</ul>
-					{/* </div> */}
+					<div className="profile-wrapper">
+						<Dropdown
+							currentUser={currentUser}
+							logout={logout}
+						/>
+					</div>
 				</div>
 			);
 		} else {
