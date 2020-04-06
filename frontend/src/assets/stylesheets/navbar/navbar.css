@@ -1,0 +1,34 @@
+@import '../variables.css';
+
+/* Navbar styling */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'cerealMedium';
+  background-color: white;
+  border-bottom: 1px solid #e4e4e4;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  padding: 1em 2em;
+  z-index: 1;
+}
+
+/* Logo styling */
+
+.logo {
+  height: 60%;
+  margin-right: 2em;
+}
+
+.logo a {
+  width: 100%;
+}
+
+.logo img {
+  height: 100%;
+}

@@ -8,30 +8,40 @@ class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchInput: { address: "" },
-			searchPlaceholder: false
+			searchInput: '',
+			searchPlaceholder: 'Anywhere • Stays'
 		};
 
-		this.toggleSearchBarPlaceholder = this.toggleSearchBarPlaceholder.bind(this);
+		this.togglePlaceholder();
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 		this.handleClearSearch = this.handleClearSearch.bind(this);
 	}
 
-	toggleSearchBarPlaceholder() {
-		this.setState({ searchPlaceholder: !this.state.searchPlaceholder });
+	// Changes search input placeholder
+	togglePlaceholder() {
+		window.addEventListener('click', e => {
+			if (e.target.parentElement.className === 'search-bar') {
+				this.setState({ searchPlaceholder: 'Search' });
+			} else {
+				this.setState({ searchPlaceholder: 'Anywhere • Stays' });
+			}
+		});
 	}
 
+	// Updates search input
 	handleUpdate() {
 		return e => {
-			this.setState({ searchInput: { address: e.target.value } });
+			this.setState({ searchInput: e.target.value });
 		}
 	}
 
+	// Clears searach input
 	handleClearSearch() {
-		this.setState({ searchInput: { address: "" } });
+		this.setState({ searchInput: '' });
 	}
 
+	// Handles submitting search input
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		this.props.geocode(this.state.searchInput).then(() => {
@@ -39,18 +49,19 @@ class SearchBar extends React.Component {
 				pathname: "/search",
 			})
 		})
-		// this.setState({ searchInput: "" });
-		// this.props.handleClearSearch();
 	}
 
+	// Renders SearchBar component
 	render() {
 		let close;
 		let className = "search-bar";
-		if (this.state.searchInput && this.state.searchInput.address.length > 0) {
+		if (this.state.searchInput && this.state.searchInput.length > 0) {
 			close = (
-				<div className="close" onClick={this.handleClearSearch}>
-					<i className="close-icon"><img src='/images/navbar/close_icon.png' /></i>
-				</div>
+				// <div className="close" onClick={this.handleClearSearch}>
+					<div className="close-icon" onClick={this.handleClearSearch}>
+						<img src='/images/navbar/close_icon.png' />
+					</div>
+				// </div>
 			);
 		}
 
@@ -60,14 +71,16 @@ class SearchBar extends React.Component {
 				onSubmit={this.handleSubmitSearch}
 				onClick={this.toggleSearchBarPlaceholder}>
 				<div className="search-bar">
-					<i className="search-icon"><img src='/images/navbar/search_bar_icon.png' /></i>
+					<div className="search-icon">
+						<img src='/images/navbar/search_bar_icon.png' />
+					</div>
 
 					<input
 						id="searchInput"
 						type="text"
 						className="search-bar-input"
-						value={this.state.searchInput.address}
-						placeholder={this.state.searchPlaceholder ? 'Search' : 'Anywhere • Stays'}
+						value={this.state.searchInput}
+						placeholder={this.state.searchPlaceholder}
 						onChange={this.handleUpdate()}
 					/>
 

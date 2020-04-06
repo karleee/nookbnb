@@ -70,41 +70,6 @@ class NavBar extends React.Component {
 					<div className="nav-main">
 						<ul className="nav-main-list">
 							<li>
-								<div>
-									<Link to={"/"} className="nav-link">
-										Become a host
-									</Link>
-								</div>
-							</li>
-							<li>
-								<div>
-									<Link to={"/wishlists"} className="nav-link">
-										Saved
-									</Link>
-								</div>
-							</li>
-							<li>
-								<div>
-									<Link to={"/trips"} className="nav-link">
-										Trips
-									</Link>
-								</div>
-							</li>
-							<li>
-								<div>
-									<Link to={"/"} className="nav-link">
-										Messages
-									</Link>
-								</div>
-							</li>
-							<li>
-								<div>
-									<Link to={"/"} className="nav-link">
-										Help
-									</Link>
-								</div>
-							</li>
-							<li>
 								<div className="nav-link">
 									<Dropdown
 										currentUser={currentUser}
