@@ -3,13 +3,13 @@
 .search-bar {
   position: relative;
   width: 31em;
-  margin: 8px 0 0 10px;
 }
 
 .search-bar-input {
   font-family: 'cerealMedium';
   font-size: 1em;
   color: var(--dark-gray);
+  box-sizing: border-box;
   padding: 10px 200px 10px 50px;
   border-radius: 5px;
   border: none;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import '../../assets/stylesheets/navbar.css'
+
 import Dropdown from './dropdown';
 import SearchBar from './search_bar';
+
+import '../../assets/stylesheets/navbar/navbar.css'
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -67,18 +69,18 @@ class NavBar extends React.Component {
 						<SearchBar />
 					</div>
 
-					<div className="nav-main">
-						<ul className="nav-main-list">
+					{/* <div className="nav-main"> */}
+						<ul>
 							<li>
-								<div className="nav-link">
+								{/* <div className="nav-link"> */}
 									<Dropdown
 										currentUser={currentUser}
 										logout={logout}
 									/>
-								</div>
+								{/* </div> */}
 							</li>
 						</ul>
-					</div>
+					{/* </div> */}
 				</div>
 			);
 		} else {
@@ -94,23 +96,18 @@ class NavBar extends React.Component {
 					  <SearchBar />
 					</div>
 
-					<div className="nav-main">
-						<ul className="nav-main-list">
-							<li>
-								<div className="signup-link">
-									<button onClick={this.handleSignup} className="nav-link">
-										Sign up
-									</button>
-								</div>
-							</li>
-							<li>
-								<div className="login-link">
-									<button onClick={this.handleLogin} className="nav-link">
-										Log in
-									</button>
-								</div>
-							</li>
-						</ul>
+					<div className="signup-login-wrapper">
+						<div className="signup-button">
+							<button onClick={this.handleSignup}>
+								<p>Sign up</p>
+							</button>
+						</div>
+
+						<div className="login-button">
+							<button onClick={this.handleLogin}>
+								<p>Log in</p>
+							</button>
+						</div>
 					</div>
 				</div>
 			);
@@ -121,7 +118,6 @@ class NavBar extends React.Component {
 		return (
 			<div>
 				{this.getLinks()}
-				{/* <FiltersBar /> */}
 			</div>
 		);
 	}

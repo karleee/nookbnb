@@ -13,16 +13,19 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 10%;
-  padding: 1em 2em;
+  height: 12%;
+  box-sizing: border-box;
+  padding: 0 2em;
   z-index: 1;
 }
 
 /* Logo styling */
 
 .logo {
+  width: 4%;
   height: 60%;
-  margin-right: 2em;
+  text-align: center;
+  margin-right: 1em;
 }
 
 .logo a {
@@ -32,3 +35,68 @@
 .logo img {
   height: 100%;
 }
+
+/* Signup and login link styling */
+
+
+.signup-login-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  width: 59%;
+  height: 100%;
+}
+
+.navbar button {
+  font-family: 'cerealBold';
+  font-size: 1em;
+  border: none;
+  background: transparent;
+  color: var(--gray);
+  border-bottom: 5px solid transparent;
+}
+
+.navbar button:hover {
+  border-bottom: 5px solid var(--gray);
+  cursor: pointer;
+}
+
+.signup-button,
+.login-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.signup-button p,
+.login-button p {
+  padding-bottom: 1.5em;
+}
+
+.login-button {
+  margin-left: 3em;
+}
+
+
+/* .navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  background: yellow;
+  width: 50%;
+}
+
+.navbar ul li button {
+  font-family: 'cerealBold';
+  font-size: 1em;
+  border: none;
+  background: transparent;
+  color: var(--gray);
+  border-bottom: 5px solid red;
+}
+
+.navbar ul li button:last-of-type {
+  margin-left: 3em;
+} */
