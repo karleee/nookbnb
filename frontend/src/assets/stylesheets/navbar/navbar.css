@@ -10,11 +10,11 @@
   font-family: 'cerealMedium';
   background-color: white;
   border-bottom: 1px solid #e4e4e4;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  height: 12%;
-  box-sizing: border-box;
+  height: 12vh;
+  box-sizing: border-box; 
   padding: 0 2em;
   z-index: 1;
 }
@@ -22,10 +22,10 @@
 /* Logo styling */
 
 .logo {
-  width: 4%;
-  height: 60%;
+  width: 3em;
+  height: 3em;
   text-align: center;
-  margin-right: 1em;
+  margin-right: 1.5em;
 }
 
 .logo a {
@@ -45,7 +45,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-content: flex-end;
-  width: 59%;
+  width: 70%;
   height: 100%;
 }
 
@@ -68,37 +68,14 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 4em;
+  width: 3.5em;
 }
 
 .signup-button p,
 .login-button p {
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
 }
 
 .login-button {
   margin-left: 3em;
 }
-
-
-/* .navbar ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  list-style: none;
-  background: yellow;
-  width: 50%;
-}
-
-.navbar ul li button {
-  font-family: 'cerealBold';
-  font-size: 1em;
-  border: none;
-  background: transparent;
-  color: var(--gray);
-  border-bottom: 5px solid red;
-}
-
-.navbar ul li button:last-of-type {
-  margin-left: 3em;
-} */
