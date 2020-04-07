@@ -17,21 +17,13 @@ export const setOptionsFromLocation = async find_loc => {
 
   // Default to San Francisco
   if (!res.data.results.length) {
-    let { geometry } = res.data.results[0];
     return {
       center: {
-        lat: geometry.location.lat,
-        lng: geometry.location.lng
-      },
-      zoom: 6
+        lat: 37.773972,
+        lng: -122.431297
+      }, 
+      zoom: 13
     };
-    // return {
-    //   center: {
-    //     lat: 37.773972,
-    //     lng: -122.431297
-    //   }, 
-    //   zoom: 13
-    // };
   } else {
     // Get latitude and longitude from geometry field returned by response
     let { geometry } = res.data.results[0];
