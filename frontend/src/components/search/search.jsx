@@ -17,16 +17,14 @@ class Search extends React.Component {
     this.setState({ find_loc: newProps.match.params.find_loc });
 	}
 
-	// Renders Search component
-	render() {
-		const { spots } = this.props;
-
+	// Gets spots matching search input
+	getSpots(spots) {
 		// Getting lowercased location string from search input
 		const location = this.state.find_loc;
 		let locationArr;
 		let lowercasedLocation = [];
 		let foundSpots = [];
-		
+
 		if (location) {
 			locationArr = location.split(' ');
 			locationArr.forEach(word => lowercasedLocation.push(word.toLowerCase()));
@@ -40,10 +38,18 @@ class Search extends React.Component {
 			if (city === lowercasedLocation || state === lowercasedLocation) foundSpots.push(spot);
 		});
 
+		return foundSpots;
+	}
+
+	// Renders Search component
+	render() {
+		const { spots } = this.props;
+    const foundSpots = this.getSpots(spots);
+
 		return (
 			<div className="search-container">
 				<div className="search-results-wrapper">
-				  <SearchResultsIndex spots={spots} />
+				  <SearchResultsIndex spots={foundSpots} />
 					<Map find_loc={this.state.find_loc} spots={foundSpots} /> 
 				</div>
 
