@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 class SpotWorldIndex extends React.Component {
@@ -11,32 +12,52 @@ class SpotWorldIndex extends React.Component {
 
     return (
       <div className="world-container"> 
-        <div className="breezy-hollow-wrapper">
-          <div className="region image-wrapper">
-            <img src='/images/homepage/breezy_hollow.png' />
-          </div>
-          <p>Breezy Hollow</p>
+        <div className="napa-wrapper">
+          <Link to="/search/napa%20city">
+            <div className="region image-wrapper">
+              <img src='/images/homepage/breezy_hollow.png' />
+            </div>
+
+            <div className="region text-wrapper">
+              <p>Napa City</p>
+            </div>
+          </Link>
         </div>
 
-        <div className="lost-lure-creek-wrapper">
-          <div className="region image-wrapper">
-            <img src='/images/homepage/lost_lure_creek.png' />
-          </div>
-          <p>Lost Lure Creek</p>
+        <div className="south-lake-tahoe-wrapper">
+          <Link to="/search/south%20lake%20tahoe">
+            <div className="region image-wrapper">
+              <img src='/images/homepage/lost_lure_creek.png' />
+            </div>
+
+            <div className="region text-wrapper">
+              <p>South Lake Tahoe</p>
+            </div>
+          </Link>
         </div>
 
-        <div className="saltwater-shores-wrapper">
-          <div className="region image-wrapper">
-            <img src='/images/homepage/saltwater_shores.png' />
-          </div>
-          <p>Saltwater Shores</p>
+        <div className="monterey-wrapper">
+          <Link to="/search/monterey">
+            <div className="region image-wrapper">
+              <img src='/images/homepage/saltwater_shores.png' />
+            </div>
+
+            <div className="region text-wrapper">
+              <p>Monterey</p>
+            </div>
+          </Link>
         </div>
 
-        <div className="sunburst-island-wrapper">
-          <div className="region image-wrapper">
-            <img src='/images/homepage/sunburst_island.png' />
-          </div>
-          <p>Sunburst Island</p>
+        <div className="honolulu-wrapper">
+          <Link to="/search/honolulu">
+            <div className="region image-wrapper">
+              <img src='/images/homepage/sunburst_island.png' />
+            </div>
+
+            <div className="region text-wrapper">
+              <p>Honolulu</p>
+            </div>
+          </Link>
         </div>
       </div>
     );
