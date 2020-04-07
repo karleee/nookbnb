@@ -30,9 +30,6 @@ class Map extends Component {
         // before adding markers, set up bounds
         let bounds = new google.maps.LatLngBounds();
 
-        // Auto-centering the map
-        // this.map.panTo(new google.maps.LatLng(options.center.lat, options.center.lng));
-
         // Displaying nearby spots
         this.props.spots.forEach(spot => {
           // Create a position from spot coordinates
