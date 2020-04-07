@@ -24,7 +24,7 @@
   overflow: scroll;
 }
 
-.map-container {
+#map-container {
   width: 45%;
-  height: 100%;
+  /* height: 100%; */ 
 }
