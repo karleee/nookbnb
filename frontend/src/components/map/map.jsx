@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 import * as MapUtil from '../../util/map_util';
 
-import GoogleMapReact from 'google-map-react';
-import MarkerManager from '../../util/marker_manager';
-
 // this is an example spots array for testing marker manager
 // const spots = [{ id: 1, lat: 37.773972, lng: -122.431297 }]
 // testing end
@@ -13,27 +10,42 @@ import MarkerManager from '../../util/marker_manager';
 class Map extends Component {
   constructor(props) {
     super(props);
-    // this.state = { address: '' }
-    // this.apiIsLoaded = this.apiIsLoaded.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
   }
 
+  // Initially mounts the map with first search input
   componentDidMount() {
     // Solves problem of linting rule in ReactJS that forbids unknown global vars
     const google = window.google;
-    const map = this.refs.map;
+    const map = document.getElementById('map-container');
 
     // Creating the map
     MapUtil.setOptionsFromLocation(this.props.find_loc)
       .then(options => {
+        this.map = new google.maps.Map(map, options); 
+
+        // Auto-centering the map
+        this.map.panTo(new google.maps.LatLng(options.center.lat, options.center.lng));
+      });
+  }
+
+  componentWillReceiveProps(newProps) {
+    // Solves problem of linting rule in ReactJS that forbids unknown global vars
+    const google = window.google;
+    const map = document.getElementById('map-container');
+
+    console.log(newProps);
+
+    // Creating the map
+    MapUtil.setOptionsFromLocation(newProps.find_loc)
+      .then(options => {
         console.log(options);
         this.map = new google.maps.Map(map, options);
-      })
 
-    // Setting up region bounds
-    let bounds = new google.maps.LatLngBounds();
+        // Auto-centering the map
+        this.map.panTo(new google.maps.LatLng(options.center.lat, options.center.lng));
+      });
   }
+
 
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.MarkerManager) {
@@ -72,7 +84,8 @@ class Map extends Component {
   //   this.MarkerManager.updateMarkers(this.props.spots);
   // }
 
-  // handleChange(e) {
+  // // Handles a new search input
+  // handleUpdate(e) {
   //   this.setState({ address: e.currentTarget.value })
   // }
 
@@ -83,7 +96,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div id="map-container" ref="map">Map</div>
+      <div id="map-container"></div>
     );
   }
 }

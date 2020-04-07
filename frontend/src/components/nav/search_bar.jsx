@@ -30,12 +30,10 @@ class SearchBar extends React.Component {
 
 	// Updates search input
 	handleUpdate() {
-		return e => {
-			this.setState({ searchInput: e.target.value });
-		}
+		return e => { this.setState({ searchInput: e.target.value }) };
 	}
 
-	// Clears searach input
+	// Clears search input
 	handleClearSearch() {
 		this.setState({ searchInput: '' });
 	}
@@ -44,7 +42,7 @@ class SearchBar extends React.Component {
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		const loc = this.state.searchInput; 
-		this.props.history.push(`/s?find_loc=${loc}`); 
+		this.props.history.push(`/search/${loc}`); 
 	}
 
 	// Renders SearchBar component

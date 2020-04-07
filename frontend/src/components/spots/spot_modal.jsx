@@ -5,9 +5,7 @@ class SpotModal extends React.Component {
   // Constructor for SpotModal
   constructor(props) {
     super(props);
-    this.state = {
-      currentImage: this.props.modal.imageNum 
-    }
+    this.state = { currentImage: this.props.modal.imageNum };
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
   }

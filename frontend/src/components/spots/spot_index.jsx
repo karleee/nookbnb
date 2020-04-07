@@ -23,7 +23,7 @@ class SpotIndex extends React.Component {
 
   // Runs when component receives new props that update the state
   componentWillReceiveProps(newState) {
-    this.setState({ spots: newState.spots });
+    this.setState({ spots: newState.spots }); 
   }
 
   // Rendering component

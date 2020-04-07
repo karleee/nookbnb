@@ -11,7 +11,7 @@ const _initialState = Object.freeze({
 });
 
 // Session reducer
-export default function(state = _initialState, action) {
+export default function(state=_initialState, action) {
 	switch (action.type) {
 		case RECEIVE_CURRENT_USER:
 			return {
