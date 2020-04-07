@@ -19,6 +19,65 @@ class Search extends React.Component {
 
 	// Gets spots matching search input
 	getSpots(spots) {
+		// Library of state abbreviations
+		const states = {
+			"AL": "alabama",
+			"AK": "alaska",
+			"AS": "american samoa",
+			"AZ": "arizona",
+			"AR": "arkansas",
+			"CA": "california",
+			"CO": "colorado",
+			"CT": "connecticut",
+			"DE": "delaware",
+			"DC": "district of columbia",
+			"FL": "florida",
+			"GA": "georgia",
+			"GU": "guam",
+			"HI": "hawaii",
+			"ID": "idaho",
+			"IL": "illinois",
+			"IN": "indiana",
+			"IA": "iowa",
+			"KS": "kansas",
+			"KY": "kentucky",
+			"LA": "louisiana",
+			"ME": "maine",
+			"MD": "maryland",
+			"MA": "massachusetts",
+			"MI": "michigan",
+			"MN": "minnesota",
+			"MS": "mississippi",
+			"MO": "missouri",
+			"MT": "montana",
+			"NE": "nebraska",
+			"NV": "nevada",
+			"NH": "new hampshire",
+			"NJ": "new jersey",
+			"NM": "new mexico",
+			"NY": "new york",
+			"NC": "north carolina",
+			"ND": "north dakota",
+			"OH": "ohio",
+			"OK": "oklahoma",
+			"OR": "oregon",
+			"PA": "pennsylvania",
+			"PR": "puerto rico",
+			"RI": "rhode island",
+			"SC": "south carolina",
+			"SD": "south dakota",
+			"TN": "tennessee",
+			"TX": "texas",
+			"UT": "utah",
+			"VT": "vermont",
+			"VI": "virgin Islands",
+			"VA": "virginia",
+			"WA": "washington",
+			"WV": "west Virginia",
+			"WI": "wisconsin",
+			"WY": "wyoming"
+		}
+
 		// Getting lowercased location string from search input
 		const location = this.state.find_loc;
 		let locationArr;
@@ -34,8 +93,12 @@ class Search extends React.Component {
 		// Searching for spots matching location
 		spots.forEach(spot => {
 			const city = spot.city.toLowerCase();
-			const state = spot.state.toLowerCase();
-			if (city === lowercasedLocation || state === lowercasedLocation) foundSpots.push(spot);
+			const stateAbbr = spot.state.toLowerCase();
+			const stateFull = states[spot.state];
+
+			if (city === lowercasedLocation || stateAbbr === lowercasedLocation || stateFull === lowercasedLocation) {
+				foundSpots.push(spot);
+			}
 		});
 
 		return foundSpots;
