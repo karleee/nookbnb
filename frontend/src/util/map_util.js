@@ -20,10 +20,8 @@ export const setOptionsFromLocation = async find_loc => {
   if (!res.data.results.length) {
     return {
       center: {
-        // lat: 37.773972,
-        // lng: -122.431297
-        lat: res.data.results[0].geometry.location.lat,
-        lng: res.data.results[0].geometry.location.lng
+        lat: 37.773972,
+        lng: -122.431297
       }, 
       zoom: 13
     };
