@@ -1,4 +1,3 @@
-// ED: added modal reducer file
 import { OPEN_MODAL, OPEN_SPOT_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
 
 const _initialSpotModal = {

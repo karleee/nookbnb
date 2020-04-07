@@ -33,17 +33,13 @@
   height: 100%;
 }
 
-.breezy-hollow-wrapper,
-.lost-lure-creek-wrapper,
-.saltwater-shores-wrapper,
-.sunburst-island-wrapper  {
+.napa-wrapper,
+.south-lake-tahoe-wrapper,
+.monterey-wrapper,
+.honolulu-wrapper  {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'cerealRegular';
-  font-size: 0.9em;
-  font-weight: 900;
-  color: var(--gray);
   box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
   text-align: left;
   border-radius: 10px;
@@ -53,14 +49,29 @@
   height: 100%;
 }
 
-.breezy-hollow-wrapper p,
-.lost-lure-creek-wrapper p,
-.saltwater-shores-wrapper p,
-.sunburst-island-wrapper p  {
-  padding: 1em;
+.napa-wrapper a,
+.south-lake-tahoe-wrapper a,
+.monterey-wrapper a,
+.honolulu-wrapper a {
+  text-decoration: none;
+  font-family: 'cerealRegular';
+  font-size: 0.9em;
+  color: var(--gray);
+  width: 100%;
+  height: 100%;
 }
 
-.world-container .region.image-wrapper { 
+.region.text-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 1.5em;
+  width: 100%;
+  height: 20%;
+}
+
+.region.image-wrapper { 
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -72,11 +83,11 @@
   background: var(--medium-teal);
   overflow: hidden;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 1em;
 }
 
 .region.image-wrapper img {
-  width: 80%;
+  height: 90%;
 }
 
 /* Top rated stays styling */

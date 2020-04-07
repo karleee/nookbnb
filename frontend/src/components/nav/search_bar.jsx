@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import "../../assets/stylesheets/search_bar.css";
-import { requestUpdateBounds, geocode } from "../../actions/filter_actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
+import '../../assets/stylesheets/search_bar.css';
 
 class SearchBar extends React.Component {
 	constructor(props) {
@@ -11,7 +11,6 @@ class SearchBar extends React.Component {
 			searchInput: '',
 			searchPlaceholder: 'Anywhere • Stays'
 		};
-
 		this.togglePlaceholder();
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
@@ -22,7 +21,7 @@ class SearchBar extends React.Component {
 	togglePlaceholder() {
 		window.addEventListener('click', e => {
 			if (e.target.parentElement.className === 'search-bar') {
-				this.setState({ searchPlaceholder: 'Search' });
+				this.setState({ searchPlaceholder: 'Search by city or state' });
 			} else {
 				this.setState({ searchPlaceholder: 'Anywhere • Stays' });
 			}
@@ -31,12 +30,10 @@ class SearchBar extends React.Component {
 
 	// Updates search input
 	handleUpdate() {
-		return e => {
-			this.setState({ searchInput: e.target.value });
-		}
+		return e => { this.setState({ searchInput: e.target.value }) };
 	}
 
-	// Clears searach input
+	// Clears search input
 	handleClearSearch() {
 		this.setState({ searchInput: '' });
 	}
@@ -44,11 +41,8 @@ class SearchBar extends React.Component {
 	// Handles submitting search input
 	handleSubmitSearch(e) {
 		e.preventDefault();
-		this.props.geocode(this.state.searchInput).then(() => {
-			this.props.history.push({
-				pathname: "/search",
-			})
-		})
+		const loc = this.state.searchInput; 
+		this.props.history.push(`/search/${loc}`); 
 	}
 
 	// Renders SearchBar component
@@ -57,31 +51,30 @@ class SearchBar extends React.Component {
 		let className = "search-bar";
 		if (this.state.searchInput && this.state.searchInput.length > 0) {
 			close = (
-				// <div className="close" onClick={this.handleClearSearch}>
-					<div className="close-icon" onClick={this.handleClearSearch}>
-						<img src='/images/navbar/close_icon.png' />
-					</div>
-				// </div>
+				<div className="close-icon" onClick={this.handleClearSearch}>
+					<img src='/images/navbar/close_icon.png' />
+				</div>
 			);
 		}
 
 		return (
-			<form autoComplete="off"
+			<form 
+			  autoComplete="off"
 			  className={className}
 				onSubmit={this.handleSubmitSearch}
-				onClick={this.toggleSearchBarPlaceholder}>
+				onClick={this.toggleSearchBarPlaceholder}
+			>
 				<div className="search-bar">
 					<div className="search-icon">
 						<img src='/images/navbar/search_bar_icon.png' />
 					</div>
 
 					<input
-						id="searchInput"
 						type="text"
-						className="search-bar-input"
 						value={this.state.searchInput}
 						placeholder={this.state.searchPlaceholder}
 						onChange={this.handleUpdate()}
+						maxLength="75"
 					/>
 
 					{close}
@@ -91,10 +84,5 @@ class SearchBar extends React.Component {
 	}
 }
 
-const mapDispatchToProps = dispatch => ({
-	requestUpdateBounds: bounds => dispatch(requestUpdateBounds(bounds)),
-	geocode: addressObject => dispatch(geocode(addressObject))
-});
-
-export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
+export default withRouter(SearchBar);
 

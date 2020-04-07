@@ -1,88 +1,77 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import MarkerManager from '../../util/marker_manager';
+import { withRouter } from 'react-router-dom';
 
-const mapOptions = {
-  center: {
-    lat: 37.773972,
-    lng: -122.431297
-  }, // San Francisco coords
-  zoom: 13
-}; 
+import * as MapUtil from '../../util/map_util';
 
-// this is an example spots array for testing marker manager
-// const spots = [{ id: 1, lat: 37.773972, lng: -122.431297 }]
-// testing end
-
-export default class Map extends Component {
+class Map extends Component {
   constructor(props) {
     super(props);
-    this.state = { address: '' }
-    this.apiIsLoaded = this.apiIsLoaded.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.MarkerManager) {
-			this.MarkerManager.updateMarkers(this.props.spots);
-    }
-    if (this.props.center !== prevProps.center) {
-      this.map.setCenter(this.props.center);
-    }
-  }
-  
-  // This callback is invoked when the google maps api becomes available to use
-  // It is used similarly to componentDidMount
-  apiIsLoaded(map, maps) {
-    this.map = map;
-    this.maps = maps;
-    this.MarkerManager = new MarkerManager(map, maps);
-    this.MarkerManager.updateMarkers(this.props.spots);
-    this.registerMapListeners();
+  // Initially mounts the map with first search input
+  componentDidMount() {
+    this.drawMap(this.props.find_loc);
   }
 
-  registerMapListeners() {
-    this.map.addListener('idle', () => {
-      const { north, south, east, west } = this.map.getBounds().toJSON();
-      const bounds = {
-        northEast: { lat: north, lng: east },
-        southWest: { lat: south, lng: west }
-      };
-      this.props.requestUpdateBounds(bounds);
-      const center = this.map.getCenter();
-      const lat = center.lat();
-      const lng = center.lng();
-    });
+  componentWillReceiveProps(newProps) {
+    this.drawMap(newProps.find_loc);
   }
 
-  componentWillUpdate() {
-    this.MarkerManager.updateMarkers(this.props.spots);
+  drawMap(address) {
+    // Solves problem of linting rule in ReactJS that forbids unknown global vars
+    const google = window.google;
+    const map = document.getElementById('map-container');
+
+    // Creating the map
+    MapUtil.setOptionsFromLocation(address)
+      .then(options => {
+        this.map = new google.maps.Map(map, options);
+
+        // before adding markers, set up bounds
+        let bounds = new google.maps.LatLngBounds();
+
+        // Auto-centering the map
+        // this.map.panTo(new google.maps.LatLng(options.center.lat, options.center.lng));
+
+        // Displaying nearby spots
+        this.props.spots.forEach(spot => {
+          // Create a position from spot coordinates
+          const latitude = spot.latitude;
+          const longitude = spot.longitude;
+          const position = new google.maps.LatLng(latitude, longitude);
+
+          // Place markers on the map
+          const marker = new google.maps.Marker({
+            position,
+            map: this.map
+          });
+
+          // extend the bounds to fit this position
+          bounds.extend(position);
+        });
+
+        // Autozooming and autocentering if there are results
+        if (this.props.spots.length) {
+          // Autozooming
+          this.map.fitBounds(bounds);
+
+          // Adjust zooming value if too large
+          let theMap = this.map;
+          var listener = google.maps.event.addListener(theMap, "idle", function () {
+            if (theMap.getZoom() > 16) theMap.setZoom(16);
+            google.maps.event.removeListener(listener);
+          });
+
+          // Autocentering
+          this.map.panToBounds(bounds);
+        }
+      });
   }
 
-  handleChange(e) {
-    this.setState({ address: e.currentTarget.value })
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.geocode(this.state);
-  }
-
+  // Renders Map component
   render() {
-    const defaultCenter = this.props.center;
-    return (
-      <div className='map-container'>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API_KEY }}
-          defaultZoom={mapOptions.zoom}
-          defaultCenter={defaultCenter}
-          yesIWantToUseGoogleMapApiInternals
-          onGoogleApiLoaded={({ map, maps }) => (
-            this.apiIsLoaded(map, maps)
-          )}
-        />
-      </div>
-    )
+    return <div id="map-container"></div>;
   }
 }
+
+export default withRouter(Map);
