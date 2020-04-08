@@ -24,7 +24,8 @@ To see the most up to date version, please visit [the homepage](https://nookbnb.
 * Database – MongoDB
 * Libraries – Mongoose, React
 * Server Environment – NodeJS
-
+* Google Maps API
+* Frontend - HTML/CSS
 
 ## Feature Spotlight
 ### Custom Calendar Widget

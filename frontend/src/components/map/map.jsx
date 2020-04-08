@@ -10,11 +10,11 @@ class Map extends Component {
 
   // Initially mounts the map with first search input
   componentDidMount() {
-    this.drawMap(this.props.find_loc);
+    // this.drawMap(this.props.find_loc);
   }
 
   componentWillReceiveProps(newProps) {
-    this.drawMap(newProps.find_loc);
+    // this.drawMap(newProps.find_loc);
   }
 
   drawMap(address) {

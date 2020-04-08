@@ -1,17 +1,19 @@
 import React from "react";
 import "./filters.css";
+import { updateFilter } from "../../actions/filter_actions";
 
-class MoreFilters extends React.Component {
+class AmenitiesFilter extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			bedrooms: this.props.bedrooms,
-			bathrooms: this.props.bathrooms,
-			beds: this.props.beds,
+			wifi: "",
+			breakfast: "",
+			parking: "",
+			essentials: "",
 			formType: "Amenities"
 		};
 		this.handleClear = this.handleClear.bind(this);
-		this.handleApply = this.handleApply.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentDidMount() {
@@ -47,12 +49,11 @@ class MoreFilters extends React.Component {
 		console.log();
 	}
 
-	handleApply() {
-		// const range = $("#price-slider").slider("option", "values");
-		// this.props.updatePrice({
-		//   minPrice: range[0],
-		//   maxPrice: range[1]
-		// });
+	handleSubmit() {
+		this.props.updateFilter("wifi", this.state.wifi);
+		this.props.updateFilter("breakfast", this.state.breakfast)
+		this.props.updateFilter("parking", this.state.parking)
+		this.props.updateFilter("essentials", this.state.essentials)
 		this.hideModal();
 	}
 
@@ -72,52 +73,48 @@ class MoreFilters extends React.Component {
 		return (
 			<div className="amenities-filter">
 				<div className="amenities-filter-content">
-					<div className="guests-filter-adults">
-						<div className="guests-filter-text">Bedrooms</div>
-						<div className="guests-filter-minus" onClick={this.handleMinus}>
-							-
-						</div>
 
-						<div className="guests-filter-value">{this.state.bedrooms}+</div>
-						<div className="guests-filter-plus" onClick={this.handlePlus}>
-							+
-						</div>
-					</div><br/>
 					<div className="guests-filter-adults">
-						<div className="guests-filter-text">Bathrooms</div>
-						<div className="guests-filter-minus" onClick={this.handleMinus}>
-							-
-						</div>
+						<div className="guests-filter-text">WiFi</div>
+						<input className="guests-filter-minus" type="checkbox" click={this.handleMinus} />
+
+						<div className="guests-filter-value">{this.state.wifi}+</div>
+						<input className="guests-filter-plus" type="checkbox" onClick={this.handlePlus} />
+					</div>
+					<br/>
+
+					<div className="guests-filter-adults">
+						<div className="guests-filter-text">Breakfast</div>
+						<input className="guests-filter-minus" type="checkbox" onClick={this.handleMinus} />
 						<br/>
 						<div className="guests-filter-value">{this.state.bathrooms}+</div>
-						<div className="guests-filter-plus" onClick={this.handlePlus}>
-							+
-						</div>
-					</div><br/>
+						<input className="guests-filter-plus" type="checkbox" onClick={this.handlePlus} />
+					</div>
+
+					<br/>
 					<div className="guests-filter-adults">
-						<div className="guests-filter-text">Beds</div>
-						<div className="guests-filter-minus" onClick={this.handleMinus}>
-							-
-						</div>
+
+						<div className="guests-filter-text">Parking</div>
+						<input className="guests-filter-minus" type="checkbox" onClick={this.handleMinus} />
 						<div className="guests-filter-value">{this.state.beds}+</div>
-						<div className="guests-filter-plus" onClick={this.handlePlus}>
-							+
+						<input className="guests-filter-plus" type="checkbox" onClick={this.handlePlus} />
 						</div>
 
-					</div><br/><br/>
+					<br/><br/>
 
 					<div className="amenities-filter-apply-clear">
 						<div className="amenities-filter-clear" onClick={this.handleClear}>
 							Clear
 						</div>
-						<div className="amenities-filter-apply" onClick={this.handleApply}>
+						<div className="amenities-filter-apply" onClick={this.handleSubmit}>
 							Apply
 						</div>
 					</div>
 				</div>
 			</div>
 		);
+
 	}
 }
 
-export default MoreFilters;
+export default AmenitiesFilter;

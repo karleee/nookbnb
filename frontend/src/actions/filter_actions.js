@@ -1,5 +1,6 @@
-import { fetchFilteredSpots } from "./spot_actions";
+import { fetchFilteredSpots, fetchSpots } from "./spot_actions";
 import { fetchGeocode } from '../util/map_api_util';
+import { getState } from "../store/store";
 
 export const UPDATE_BOUNDS = "UPDATE_BOUNDS";
 export const UPDATE_MAP_CENTER = "UPDATE_MAP_CENTER";
@@ -42,6 +43,7 @@ export const geocode = addressObject => dispatch => {
 export const updateFilter = (filter, value) => {
 	return (dispatch, getState) => {
 		dispatch(changeFilter(filter, value));
-		// return fetchFilteredSpots(getState().ui.filters)(dispatch);
+		// 
+		return fetchFilteredSpots(getState().ui.filters)(dispatch);
 	};
 };

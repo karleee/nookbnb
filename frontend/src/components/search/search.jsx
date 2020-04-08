@@ -1,5 +1,6 @@
 import React from 'react';
 
+import FiltersBar from '../filter/filters_bar';
 import Map from '../map/map';
 import SearchResultsIndex from './search_results_index';
 import Footer from '../footer/footer';
@@ -109,14 +110,18 @@ class Search extends React.Component {
 		const { spots } = this.props;
     const foundSpots = this.getSpots(spots);
 
+		const map = foundSpots.length > 0 ? <Map find_loc={this.state.find_loc} spots={foundSpots} /> : null;
+
 		return (
 			<div className="search-container">
+				<div><FiltersBar /></div>
 				<div className="search-results-wrapper">
 				  <SearchResultsIndex spots={foundSpots} />
 					<Map find_loc={this.state.find_loc} spots={foundSpots} /> 
+					{map}
 				</div>
 
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		);
 	}

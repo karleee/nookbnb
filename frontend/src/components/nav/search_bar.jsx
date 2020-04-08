@@ -75,6 +75,7 @@ class SearchBar extends React.Component {
 						placeholder={this.state.searchPlaceholder}
 						onChange={this.handleUpdate()}
 						maxLength="75"
+						required
 					/>
 
 					{close}

@@ -19,3 +19,12 @@ export const selectSpotsInBounds = (state) => {
     return [];
   }
 };
+
+export const filterSearchResults = (state) => {
+	const value = state.ui.filters.value;
+	if (Object.keys(value) !== "") {
+		return Object.values(state.entities.spots).filter(spot => spot.filter.value)
+	} else {
+		null
+	}
+}

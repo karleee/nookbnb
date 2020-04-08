@@ -4,7 +4,9 @@ import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "./filters.css"
-import Datepicker from "../datepicker/datepicker"
+import Datepicker from "../datepicker/datepicker";
+import { updateFilter } from "../../actions/filter_actions";
+
 
 export default class DatesFilter extends React.Component {
 	static defaultProps = {
@@ -14,44 +16,44 @@ export default class DatesFilter extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			startDate: this.props.startDate,
-			endDate: this.props.endDate,
+			startDate: "",
+			endDate: "",
 			formType: "Dates"
 		};
 		this.handleDayClick = this.handleDayClick.bind(this);
-		// this.handleResetClick = this.handleResetClick.bind(this);
-		// this.state = this.getInitialState();
+			this.handleResetClick = this.handleResetClick.bind(this);
+			this.state = this.getInitialState();
 		    this.handleClear = this.handleClear.bind(this);
-				this.handleApply = this.handleApply.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
 				this.updateField = this.updateField.bind(this);
 	}
 
-	// getInitialState() {
-	// 	return {
-	// 		from: "",
-	// 		to: "",
-	// 		formType: "dates" 
-	// 	};
-	// }
+	getInitialState() {
+		return {
+			from: "",
+			to: "",
+			formType: "dates" 
+		};
+	}
 
 	handleDayClick(day) {
 		const range = DateUtils.addDayToRange(day, this.state);
 		this.setState(range);
 	}
 
-	// handleResetClick() {
-	// 	this.setState(this.getInitialState());
-	// }
+	handleResetClick() {
+		this.setState(this.getInitialState());
+	}
 
 	parseDate(date) {
     if (date === "") {
       return date;
     }
     let parsed = "";
-    let stringDate = date.toString();
-    let arrDate = stringDate.split(" ");
+    // let stringDate = date.toString();
+    // let arrDate = stringDate.split(" ");
 
-    parsed += arrDate[1] + " " + arrDate[2];
+    // parsed += arrDate[1] + " " + arrDate[2];
     return parsed;
 	}
 	
@@ -65,8 +67,9 @@ export default class DatesFilter extends React.Component {
     this.setState({ startDate: "", endDate: "" });
   }
 
-  handleApply() {
-    this.props.updateDates(this.state);
+  handleSubmit() {
+		this.props.updateFilter("startDate", this.state.startDate);
+		this.props.updateFilter("endDate", this.state.endDate);
     this.props.hideModal();
   }
 
@@ -78,10 +81,10 @@ export default class DatesFilter extends React.Component {
 				<div className="dates-div">
 					<span className="check-in">
 						<DayPickerInput
-							// numberOfMonths={this.props.numberOfMonths}
-							// selectedDays={[from, { from, to }]}
-							// modifiers={modifiers}
-							// onDayClick={this.handleDayClick}
+							numberOfMonths={this.props.numberOfMonths}
+							selectedDays={[from, { from, to }]}
+							modifiers={modifiers}
+							onDayClick={this.handleDayClick}
 							value={this.parseDate(this.state.startDate)}
 							onDayChange={this.updateField("startDate")}
 							classNames={{
@@ -104,10 +107,10 @@ export default class DatesFilter extends React.Component {
 					</span>
 					<span className="check-out">
 						<DayPickerInput
-							// numberOfMonths={this.props.numberOfMonths}
-							// selectedDays={[from, { from, to }]}
-							// modifiers={modifiers}
-							// onDayClick={this.handleDayClick}
+							numberOfMonths={this.props.numberOfMonths}
+							selectedDays={[from, { from, to }]}
+							modifiers={modifiers}
+							onDayClick={this.handleDayClick}
 							value={this.parseDate(this.state.endDate)}
 							onDayChange={this.updateField("endDate")}
 							classNames={{
@@ -130,7 +133,7 @@ export default class DatesFilter extends React.Component {
 					<div className="dates-filter-clear" onClick={this.handleClear}>
 						Clear
 					</div>
-					<div className="dates-filter-apply" onClick={this.handleApply}>
+					<div className="dates-filter-apply" onClick={this.handleSubmit}>
 						Apply
 					</div>
 				</div>

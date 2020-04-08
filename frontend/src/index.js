@@ -19,11 +19,13 @@ import { logout } from "./actions/session_actions";
 
 // TESTING START
 import { getFilteredSpots } from './util/spots_api_util';
+import { updateFilter } from "./actions/filter_actions";
 // TESTING END
 
 document.addEventListener("DOMContentLoaded", () => {
 	// TESTING START
 	window.getSpots = getFilteredSpots;
+	window.updateFilter = updateFilter;
 	// TESTING END
 
 	let store;
