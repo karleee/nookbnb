@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SearchIndexItem = ({ spot }) => {
   // Get first three amenities of the spot
@@ -15,32 +16,34 @@ const SearchIndexItem = ({ spot }) => {
 
   return (
     <li>
-      <div className="search-index-item image-wrapper">
-        <img src={spot.thumbnail_image_urls[0]} alt="Main spot photo" />
-      </div>
-
-      <div className="search-index-item text-wrapper">
-        <div className="search-index-item superhost-wrapper">
-          <p>Superhost</p>
-          <p>Entire home</p>
+      <Link to={`/spots/${spot._id}`}>
+        <div className="search-index-item image-wrapper">
+          <img src={spot.thumbnail_image_urls[0]} alt="Main spot photo" />
         </div>
 
-        <div className="search-index-item spot-text-wrapper">
-          <h2>{spot.name}</h2> 
-
-          <div className="details-wrapper">
-            <p>{details}</p>
-            <p>{joinedAmenities}</p>
-            <div className="search-index-item separator-wrapper"></div>
-            <p>Includes cancellation flexibility</p>
+        <div className="search-index-item text-wrapper">
+          <div className="search-index-item superhost-wrapper">
+            <p>Superhost</p>
+            <p>Entire home</p>
           </div>
-        </div>
 
-        <div className="search-index-item price-wrapper">
-          <p><span>${spot.price}</span> / night</p>
+          <div className="search-index-item spot-text-wrapper">
+            <h2>{spot.name}</h2> 
+
+            <div className="details-wrapper">
+              <p>{details}</p>
+              <p>{joinedAmenities}</p>
+              <div className="search-index-item separator-wrapper"></div>
+              <p>Includes cancellation flexibility</p>
+            </div>
+          </div>
+
+          <div className="search-index-item price-wrapper">
+            <p><span>${spot.price}</span> / night</p>
+          </div>
+          
         </div>
-        
-      </div>
+      </Link>
     </li>
   );
 };

@@ -56,12 +56,18 @@
 }
 
 .search-index.spots-wrapper ul li {
-  display: flex;
-  flex-direction: row;
   width: 100%;
   height: 50%;
   border-bottom: 1px solid var(--outline-gray);
   padding: 1.5em 0;
+}
+
+.search-index.spots-wrapper ul li a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 .search-index.spots-wrapper ul li:last-of-type {
