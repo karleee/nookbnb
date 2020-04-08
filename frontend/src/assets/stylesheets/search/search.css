@@ -64,6 +64,10 @@
   padding: 1.5em 0;
 }
 
+.search-index.spots-wrapper ul li:last-of-type {
+  border-bottom: none;
+}
+
 .search-index-item {
   width: 100%;
 }
