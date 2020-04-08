@@ -12,6 +12,12 @@ class Search extends React.Component {
 		this.state = { find_loc: this.props.find_loc };
 	}
 
+	// Runs once component has mounted
+	// Ensures search results appear on a manual page refresh by the user
+	componentDidMount() {
+		this.props.fetchSpots();
+	}	
+
 	// Triggers a re-render when component receives new props
 	componentWillReceiveProps(newProps) {
     this.setState({ find_loc: newProps.match.params.find_loc });
@@ -113,7 +119,7 @@ class Search extends React.Component {
 			<div className="search-container">
 				<div className="search-results-wrapper">
 				  <SearchIndex spots={foundSpots} find_loc={this.state.find_loc} fetchSpots={this.props.fetchSpots} />
-					{/* <Map spots={foundSpots} find_loc={this.state.find_loc} />   */}
+					<Map spots={foundSpots} find_loc={this.state.find_loc} />  
 				</div>
 
 				<Footer />

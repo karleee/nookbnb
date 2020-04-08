@@ -23,7 +23,6 @@ class Map extends Component {
     // Solves problem of linting rule in ReactJS that forbids unknown global vars
     const google = window.google;
     const map = document.getElementById('map-container');
-    console.log(window.google);
 
     // Creating the map
     MapUtil.setOptionsFromLocation(address)
