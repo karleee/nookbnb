@@ -8,13 +8,15 @@
   margin-top: 5em;
 }
 
-.search-results-wrapper {
+.search-results-wrapper { 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 92vh;
 }
+
+/* Search results list styling */
 
 .search-index-container {
   width: 55%;
@@ -24,6 +26,140 @@
   overflow: scroll;
 }
 
+.search-index.header-wrapper {
+  width: 100%;
+  height: 20%;
+}
+
+.search-index.header-wrapper p {
+  font-family: 'cerealRegular';
+  font-size: 0.9em;
+  color: var(--dark-gray);
+}
+
+.search-index.header-wrapper h2 {
+  font-family: 'cerealBold';
+  font-size: 1.8em;
+  color: var(--dark-gray);
+  margin-top: 0.2em;
+}
+
+.search-index.spots-wrapper {
+  width: 100%;
+  height: 80%;
+}
+
+.search-index.spots-wrapper ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.search-index.spots-wrapper ul li {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  border-bottom: 1px solid var(--outline-gray);
+  padding: 1.5em 0;
+}
+
+.search-index-item {
+  width: 100%;
+}
+
+.search-index-item.image-wrapper {
+  width: 45%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-index-item.image-wrapper img {
+  height: 100%;
+}
+
+.search-index-item.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'cerealRegular';
+  color: var(--dark-gray);
+  box-sizing: border-box;
+  padding: 1em 1em 0 1em;
+}
+
+.search-index-item.superhost-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-index-item.superhost-wrapper p:first-of-type {
+  font-family: 'cerealMedium';
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border: 1px solid var(--dark-gray);
+  padding: 0.25em;
+  border-radius: 5px;
+  margin-right: 0.7em;
+}
+
+.search-index-item.superhost-wrapper p:last-of-type {
+  font-size: 0.9em;
+  color: var(--gray);
+}
+
+.search-index-item.spot-text-wrapper {
+  font-family: 'cerealRegular';
+}
+
+.search-index-item.spot-text-wrapper h2 {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+.details-wrapper {
+  margin-top: 0.7em;
+}
+
+.details-wrapper p {
+  font-family: 'cerealLight';
+  font-size: 0.9em;
+  color: var(--gray);
+  box-sizing: border-box;
+  padding-bottom: 0.2em;
+}
+
+.search-index-item.separator-wrapper {
+  width: 5%;
+  border-bottom: 1px solid var(--outline-gray);
+  box-sizing: border-box;
+  padding: 0.3em 0;
+}
+
+.details-wrapper p:last-of-type {
+  margin-top: 0.5em;
+}
+
+.search-index-item.price-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.search-index-item.price-wrapper p {
+  font-family: 'cerealLight';
+}
+
+.search-index-item.price-wrapper p span {
+  font-family: 'cerealMedium';
+}
+
+/* Map styling */
+ 
 #map-container {
   width: 45%;
 }

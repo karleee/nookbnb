@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Map from '../map/map';
-import SearchResultsIndex from './search_results_index';
+import SearchIndex from './search_index';
 import Footer from '../footer/footer';
 
 import '../../assets/stylesheets/search/search.css';
@@ -112,8 +112,8 @@ class Search extends React.Component {
 		return (
 			<div className="search-container">
 				<div className="search-results-wrapper">
-				  <SearchResultsIndex spots={foundSpots} />
-					<Map find_loc={this.state.find_loc} spots={foundSpots} /> 
+				  <SearchIndex spots={foundSpots} />
+					<Map find_loc={this.state.find_loc} spots={foundSpots} />  
 				</div>
 
 				<Footer />

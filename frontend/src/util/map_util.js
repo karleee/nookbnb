@@ -14,7 +14,6 @@ const _getCoordsFromAddress = address => (
 // Set default Map values on initialization
 export const setOptionsFromLocation = async find_loc => {
   let res = await _getCoordsFromAddress(find_loc);
-  console.log(res.data.results);
 
   // Default to San Francisco
   if (!res.data.results.length) {
