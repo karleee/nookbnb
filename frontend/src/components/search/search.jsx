@@ -107,13 +107,13 @@ class Search extends React.Component {
 	// Renders Search component
 	render() {
 		const { spots } = this.props;
-    const foundSpots = this.getSpots(spots);
+		const foundSpots = this.getSpots(spots);
 
 		return (
 			<div className="search-container">
 				<div className="search-results-wrapper">
-				  <SearchIndex spots={foundSpots} />
-					<Map find_loc={this.state.find_loc} spots={foundSpots} />  
+				  <SearchIndex spots={foundSpots} find_loc={this.state.find_loc} fetchSpots={this.props.fetchSpots} />
+					{/* <Map spots={foundSpots} find_loc={this.state.find_loc} />   */}
 				</div>
 
 				<Footer />

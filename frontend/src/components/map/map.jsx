@@ -13,20 +13,23 @@ class Map extends Component {
     this.drawMap(this.props.find_loc);
   } 
 
+  // Draws a map with updated search input
   componentWillReceiveProps(newProps) {
     this.drawMap(newProps.find_loc);
   }
+
 
   drawMap(address) {
     // Solves problem of linting rule in ReactJS that forbids unknown global vars
     const google = window.google;
     const map = document.getElementById('map-container');
+    console.log(window.google);
 
     // Creating the map
     MapUtil.setOptionsFromLocation(address)
       .then(options => {
         this.map = new google.maps.Map(map, options);
-
+        
         // before adding markers, set up bounds
         let bounds = new google.maps.LatLngBounds();
 

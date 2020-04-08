@@ -48,4 +48,4 @@ const SearchIndexItem = ({ spot }) => {
   );
 };
  
-export default SearchIndexItem;
+export default SearchIndexItem; 
