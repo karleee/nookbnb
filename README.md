@@ -139,7 +139,74 @@ And to keep my code DRY, I managed to create a single adding and subtracting cli
 
 ------
 
-### Feature #2
+### Search with Google Map API
+
+The search functionality is implemented in 2 components--a result component and a map component integrating Google Map API. Users are able to search by city or state in the search bar. Search results are rendered alongside a Google maps that zooms according to the search position as well as displays location markers to represent the results. Integrating Google Maps posed challenges when it came to refreshing the map for every new search and updating location markers.  
+
+<kbd>
+<img src="/Users/eqdang/Desktop/app_academy/nookbnb-master/frontend/public/images/search.png" alt="Homepage" width="300px" border="1">
+</kbd>
+
+**Challenges**
+> State Management
+	
+	The first feat was mounting the map and keeping it updated in realtime and synced with each new search. At first, I set the map to a default position that rerendered upon a search entry. However, the map was inconcistent and wavered between slow loading and nonloading.
+
+	To solve this, I mount the map with the first search input and set a map based on the first search's lat/long. The map then is drawn to accomocate the lat/long of all remaining research results. Markers are also placed to represent each result in the state. If there are no results for a search entry, then the map is set to a default position.
+
+```javascript
+	// Initially mounts the map with first search input
+		componentDidMount() {
+			this.drawMap(this.props.find_loc);
+		}
+
+	// Draws a map with updated search input
+		componentWillReceiveProps(newProps) {
+			this.drawMap(newProps.find_loc);
+		}
+
+	// Creating the map
+		MapUtil.setOptionsFromLocation(address)
+			.then(options => {
+			this.map = new google.maps.Map(map, options);
+
+	// before adding markers, set up bounds
+		let bounds = new google.maps.LatLngBounds();
+
+	// Displaying nearby spots
+		this.props.spots.forEach(spot => {
+	// Create a position from spot coordinates
+		const latitude = spot.latitude;
+		const longitude = spot.longitude;
+		const position = new google.maps.LatLng(latitude, longitude);
+
+		const marker = new google.maps.Marker({
+			position,
+			map: this.map
+		});
+
+```
+
+> Marker Manager
+
+	After succesfully mountng the map to the first search state, the problem became managing updates. Markers would add to new locations upon state update, but they would not remove from those in the prevous state. 
+
+	I resolved this by mapping through the new state and creating markers for any result that didn't previosly have one. I also mapped through the old state and removed markers from any results that were not passed in the new state.  
+
+```javascript
+	updateMarkers(spots) {
+		const spotsObj = {};
+		spots.forEach(spot => spotsObj[spot.id] = spot);
+
+    spots
+      .filter(spot => !this.markers[spot.id])
+      .forEach(newspot => this.createMarkerFromSpot(newspot, this.handleClick))
+
+    Object.keys(this.markers)
+      .filter(spotId => !spotsObj[spotId])
+			.forEach(spotId => this.removeMarker(this.markers[spotId]))
+		}
+```
 
 
 
