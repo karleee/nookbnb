@@ -4,7 +4,7 @@
 Nookbnb is a single page MERN stack (MongoDB, Express, React, Node) application that parodies off the concept and style of Airbnb. Drawing inspiration from the popular 'Animal Crossing' video game series, visitors to the site are able to browse rental listings for properties owned by Tom Nook himself. 
 
 <kbd>
-<img src="https://github.com/karleee/airbnb_clone/blob/master/README_images/home_main1.png" alt="Homepage" width="900px"     border="1">
+<img src="https://github.com/karleee/nookbnb/blob/master/README_images/nookbnb_main1.png" alt="Homepage" width="900px"     border="1">
 </kbd>
 
 <br>
@@ -12,7 +12,7 @@ Nookbnb is a single page MERN stack (MongoDB, Express, React, Node) application 
 <br>
 
 <kbd>
-<img src="https://github.com/karleee/nookbnb/blob/master/README_images/home_main2.png" alt="Homepage" width="900px" border="1">
+<img src="https://github.com/karleee/nookbnb/blob/master/README_images/nookbnb_main2.png" alt="Homepage" width="900px" border="1">
 </kbd>
 
 
@@ -139,29 +139,85 @@ And to keep my code DRY, I managed to create a single adding and subtracting cli
 
 ------
 
-### Feature #2
+### Google Maps API
+To add a visualization of where vacation rentals were located in the world and to provide a more realistic simulation of the fictional locations, we integrated a third party Google Maps API. This allowed users to use the cursor to move left, right, up, and down on the map, as well as the ability to display the vacation rentals with visual markers in their respective longitude and latitude coordinates. Coupled with a searching functionality, the map performs an auto centering and zooming based on whether or not a search returns vacation rental results.
 
+<kbd>
+<img src="https://github.com/karleee/nookbnb/blob/master/README_images/maps_main1.png" alt="Homepage" width="900px"     border="1">
+</kbd>
 
+<br>
+<br>
+<br>
+
+<kbd>
+<img src="https://github.com/karleee/nookbnb/blob/master/README_images/maps_main2.png" alt="Homepage" width="900px" border="1">
+</kbd>
 
 **Challenges**
-> Challenge #1
+> Auto-Updating Map Location
 
-> Challenge #2
+The first challenge was to correctly update the map's displayed location when the user entered a new search input with the map being a solely stateless functional component. Without any local state being kept track of in the map component, what was the cleanest and most efficient way to update the map's location in real time?
 
-> Challenge #3
+> Lifecycle Methods and New Props
+
+One small but important obstacle was finding a way to render the map multiple times, although the tutorial in the Google Maps API doc suggested the map rendering to be placed inside of `componentDidMount()` that would only solve half of the problem. The map would be rendered, but when the user enters a new search input, only the initial rendered map would be displayed.
+
+> Staying in Bounds
+
+The next challenge involved finding a way to render all the retrieved location results within a predefined set of bounds, in such a way that avoided rendering a map that was too large and revealed **all** the spots or a map that was too small and prevented all search results to be visible.
 
 **Solutions**
 
-> Solution #1
+> Auto-Updating Map Location: Solution
 
+For simplicity's sake and to avoid unecessary containers for trivial components, our solution involved not the map container itself, but its parent container, which included both a container and presentational component. Rather than putting local states or a container on the map component, we chose to pass the location as a prop to the map component from the parent search component. 
 
+```javascript
+<Map spots={foundSpots} find_loc={this.state.find_loc} />
+```
+
+Another advantage of this solution was the automatic state update that happens on the search component when a user types in a new input, courtesy of React and Redux. In the container of the search component, the state determines the `find_loc` prop based on the current query parameter in the URL. 
+
+```javascript
+const mapStateToProps = (state, ownProps) => ({
+  spots: Object.values(state.entities.spots),
+  find_loc: ownProps.match.params.find_loc
+});
+```
+
+Because this prop depends on the parameter found in the URL, once it has changed, the `find_loc` prop will also be automatically updated, thus initiating a re rendering of the search component, which in turn, re-renders the map component with the new `find_loc` prop as well.
   
-> Solution #2
+> Lifecycle Methods and New Props: Solution
+
+Placing the map rendering code inside of `componentDidMount()` seemed to work at first glance, however, during testing, we discovered that this **only** rendered the map once. This gave the impression that the user's new search inputs were not being read or taken in by the component which posed a problem. Drawing on the idea from the previous challenge, that we needed to somehow tell the map to update when a new location was received, we found that the `componentWillReceiveProps()` lifecycle method did exactly what we were looking for. Once the component received a new prop, then this lifecycle method would execute anything inside of it. 
+
+Once we realized that both the `componentDidMount()` and `componentWillReceiveProps()` methods needed to perform the same process, it was apparent that we could refactor the map rendering logic into a new function. Rather than simply repeating the same map rendering code twice in these lifecycle methods, we were able to simply call on the newly made map rendering function and pass it the correct location variable.
 
 
-> Solution #3
+> Staying in Bounds: Solution
 
+To create a map that showed the correct cluster of locations without zooming in too far to too close, while also ensuring that every location in the search results were encompassed in the map display, we took advantage of some of the built in Google Maps API functions and combined it with our own custom logic.
 
+We began by iterating through every location passed to the map component with a loop (all locations that were passed to the map component were already pre filtered by the user's search input). Once we had a location, we converted the longitude and latitude, which were stored as simple float values in MongoDB, into a Google Maps LatLng object. Now that we had this new object type, we could use the `extend` method of the LatLngBounds class to create a new bounds that included the location. By iterating through **every** given location to the map component, we were able to ensure that **all** locations would be visible in the calculated bounds.
+
+```javascript
+this.props.spots.forEach(spot => {
+          // Create a position from spot coordinates
+          const latitude = spot.latitude;
+          const longitude = spot.longitude;
+          const position = new google.maps.LatLng(latitude, longitude);
+
+          // Place markers on the map
+          const marker = new google.maps.Marker({
+            position,
+            map: this.map
+          });
+
+          // extend the bounds to fit this position
+          bounds.extend(position);
+        });
+```
 
 ## Future Updates
 
