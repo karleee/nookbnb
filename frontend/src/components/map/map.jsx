@@ -15,7 +15,7 @@ class Map extends Component {
 
   // Draws a map with updated search input
   componentWillReceiveProps(newProps) {
-    this.drawMap(newProps.find_loc);
+    this.drawMap(newProps.find_loc); 
   }
 
 
