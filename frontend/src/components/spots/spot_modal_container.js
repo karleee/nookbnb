@@ -1,6 +1,5 @@
-import { connect } from 'react-redux';
-import { openModal, closeModal } from "../../actions/modal_actions";
-import { fetchSpot } from '../../actions/spot_actions';
+import {connect} from 'react-redux';
+import {closeModal} from "../../actions/modal_actions";
 import SpotModal from './spot_modal';
 
 const mapStateToProps = state => ({
