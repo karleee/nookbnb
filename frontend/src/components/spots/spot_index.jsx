@@ -11,9 +11,7 @@ class SpotIndex extends React.Component {
   // Constructor for SpotIndex
   constructor(props) {
     super(props);
-    this.state = {
-      spots: []
-    }
+    this.state = {spots: []};
   }
 
   // Runs once component is mounted

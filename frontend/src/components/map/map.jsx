@@ -26,7 +26,7 @@ class Map extends Component {
 
     // Creating the map
     MapUtil.setOptionsFromLocation(address)
-      .then(options => {
+      .then(options => { 
         this.map = new google.maps.Map(map, options);
         
         // before adding markers, set up bounds
