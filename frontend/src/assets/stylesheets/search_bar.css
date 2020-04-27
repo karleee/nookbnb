@@ -1,11 +1,19 @@
 @import 'variables.css';
 
-.search-bar {
-  position: relative;
-  width: 31em;
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+  height: 100%;
 }
 
-.search-bar input[type="text"] {
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-bar-wrapper input[type="text"] {
   font-family: 'cerealMedium';
   font-size: 1em;
   color: var(--dark-gray);
@@ -18,7 +26,7 @@
   width: 90%;
 }
 
-.search-bar input[type="text"]:focus {
+.search-bar-wrapper input[type="text"]:focus {
   width: 100%;
   transition: width 0.25s;
 }
@@ -38,7 +46,7 @@
   opacity: 0;
 }
 
-.search-bar input[type="text"]:focus + .close-icon img {
+.search-bar-wrapper input[type="text"]:focus + .close-icon img {
   opacity: 1;
 }
 

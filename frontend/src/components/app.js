@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 
-import NavBarContainer from './nav/navbar_container';
+import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/modal_container';
 import SpotIndex from './spots/spot_index_container';
 import SpotDetail from './spots/spot_detail_container';
@@ -30,11 +29,11 @@ class App extends Component {
 	
 	render() {
 		return (
-	    <div className='app-wrapper'>
+	    <div className='app main-content-container'>
 	    	<Modal />
 	    	<NavBarContainer />
 	    	
-	    	<div className="app-main-content-wrapper">
+	    	<div className="app body-wrapper">
 	    	  <Switch>
 	    	  	<Route exact path='/' component={SpotIndex} />
 	    	  	<Route exact path='/spots/:spotId' component={SpotDetail} />

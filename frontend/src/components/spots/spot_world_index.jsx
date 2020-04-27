@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 const SpotWorldIndex = () => (
-  <div className="world-container"> 
+  <div className="world-container">  
     <ul>
       <li>
         <Link to="/search/napa%20city">

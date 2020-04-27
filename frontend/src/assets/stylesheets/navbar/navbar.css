@@ -1,81 +1,222 @@
 @import '../variables.css';
 
-/* Navbar styling */
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: 'cerealMedium';
-  background-color: white;
-  border-bottom: 1px solid #e4e4e4;
+.navbar-container {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  /* align-items: center; */
   width: 100%;
-  height: 12vh;
-  box-sizing: border-box; 
-  padding: 0 2em;
+  height: 12vh; 
+  background: white;
+  border-bottom: 1px solid var(--underline-gray);
+  /* background-color: red;
+  border-bottom: 1px solid #e4e4e4;  */
+  /* justify-content: space-around; */
+  /* vertical-align: middle; */
+  /* margin-top: 0;
+  padding: 0;
+  height: 80px;
+  top: 0;
   z-index: 2;
+	width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; */
+  font-family: 'cerealMedium';
+  /* z-index: 2; */
 }
 
 /* Logo styling */
 
-.logo {
-  height: 60%;
-  text-align: center;
-  margin-right: 1.5em;
+.logo-wrapper {
+  position: relative;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+  width: 6%;
+  height: 100%;
+  /* height: 20%; */
+  overflow: hidden;
+  /* background: blue; */
 }
 
-.logo a {
+.logo-wrapper a {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 65%;
+  height: 65%;
+  /* background: yellow; */
+}
+
+.logo-wrapper img {
   width: 100%;
 }
 
-.logo img {
-  height: 100%;
-}
+/* Login and Signup links styling */
 
-/* Signup and login link styling */
-/* Profile link styling */ 
-
-.signup-login-wrapper,
-.profile-wrapper {
+.links-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-content: flex-end;
-  width: 70%;
-  height: 100%;
+  align-items: center;
+  width: 64%;
+  /* background: pink; */
+  /* margin-top: 2.6%; */
 }
 
-.navbar button {
-  font-family: 'cerealBold';
-  font-size: 1em;
-  border: none;
+.button-wrapper {
+  box-sizing: border-box;
+  padding: 0 1em;
+  border-bottom: 4px solid transparent;
+  /* background: yellow; */
+}
+
+.button-wrapper:hover {
+  cursor: pointer;
+  border-bottom: 4px solid var(--gray);
+}
+
+.button-wrapper:first-of-type {
+  margin-right: 1em;
+}
+
+.button-wrapper button {
   background: transparent;
-  color: var(--gray);
-  border-bottom: 5px solid transparent;
+  border: none;
+  /* border-bottom: 4px solid transparent; */
+  box-sizing: border-box;
+  padding-bottom: 2.5em;
 }
 
-.navbar button:hover {
-  border-bottom: 5px solid var(--gray);
+.button-wrapper p {
+  font-family: 'cerealBold';
+  font-size: 1.5em;
+  color: var(--gray);
+}
+
+/* .nav-left {
+  display: flex;
+  justify-content: flex-start;
+  flex: 3;
+} */
+
+/* .nav-main {
+  vertical-align: middle;
+	max-height: 80px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+  justify-content: flex-end;
+  padding-right: 3%;
+} */
+
+
+/* @media (max-width: 850px) {
+  .right-navbar {
+    display: none;
+  }
+} */
+
+/* ul.nav-main-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  margin: 0;
+  padding-right: 3%;
+}
+
+.logo-wrapper {
+  margin: auto 0 auto 40px;
+}
+
+.logo-wrapper img {
+  width: 55px;
+}
+
+.nav-mid {
+	display: flex;
+	position: relative;
+  flex: 3;
+}
+
+.search-bar {
+	background-color: white;
+}
+
+div.nav-main ul {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+div.nav-main ul li .nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  line-height: 20px;
+  padding: 0 17px;
+  margin: 0px 0px;
+  border: none;
+  background: none;
+  position: absolute;
+	top: 0;
+	background-color: white;
+  display: inline-flex;
+  position: relative;
+  height: 80px;
+  vertical-align: baseline;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+button a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.help-link a {
+  text-decoration: none;
+}
+
+div button.profile-link {
+	padding: 0;
+	margin: 0;
+	height: fit-content;
+}
+
+.messages-div button {
+   right: 140px;
+}
+
+.trips-div button {
+  right: 140px;
+}
+
+div.nav-main li .nav-link:hover {
+  border-bottom: 2px solid gray;
   cursor: pointer;
 }
 
-.signup-button,
-.login-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 3.5em;
+button.nav-link:active {
+  border-bottom: none;
+  outline: none;
 }
 
-.signup-button p,
-.login-button p {
-  padding-bottom: 1.5em;
-}
-
-.login-button {
-  margin-left: 3em;
-}
+button.nav-link:focus {
+  outline: none;
+} */
