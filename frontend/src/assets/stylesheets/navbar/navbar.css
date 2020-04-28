@@ -55,7 +55,6 @@
   box-sizing: border-box;
   padding: 0 1em;
   border-bottom: 4px solid transparent;
-  /* background: yellow; */
 }
 
 .button-wrapper:hover {
