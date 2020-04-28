@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.login-modal-wrapper .modal-wrapper {
+.session.background-wrapper {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -20,7 +20,7 @@
   z-index: 3;
 }
 
-.login-modal-wrapper .form-normal {
+.session.form-wrapper {
   position: fixed;
   top: 15%;
   left: 30%;
@@ -32,7 +32,9 @@
   z-index: 4;
 }
 
-.login-modal-wrapper .form-errors {
+/* Session errors styling */
+
+.session.errors-wrapper {
   position: fixed;
   top: 13%;
   left: 30%;
@@ -44,7 +46,9 @@
   z-index: 4;
 }
 
-.login-modal-wrapper form .header-wrapper {
+/* Session header styling */
+
+.session.header-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,35 +58,28 @@
   border-bottom: 1px solid var(--outline-gray);
 }
 
-.login-modal-wrapper form .close-wrapper {
+.session.close-wrapper {
   width: 17px;
   height: 17px;
 }
 
-.login-modal-wrapper form .close-wrapper .close-button {
+.session.close-button {
   content: url('/images/modal/session_form_close.png');
   width: 100%;
 }
 
-.login-modal-wrapper form .close-wrapper .close-button:hover {
+.session.close-button:hover {
   content: url('/images/modal/session_form_close_hover.png');
   width: 32.5px;
   cursor: pointer;
   margin: -8px 0 0 -7.5px;
 }
 
-.login-modal-wrapper form .header-wrapper h1 {
+.session.header-wrapper h1 {
   font-family: 'cerealMedium';
   font-size: 16px;
   color: var(--dark-gray);
   padding: 0 230px;
-}
-
-.login-modal-wrapper form .main-content-wrapper {
-  width: 100%;
-  text-align: left;
-  padding: 20px 30px 30px 30px;
-  box-sizing: border-box;
 }
 
 /* Session Errors */
@@ -101,7 +98,16 @@
   margin-bottom: 8px;
 }
 
-.login-modal-wrapper form .main-content-wrapper button {
+/* Session input styling */
+
+.session.input-wrapper {
+  width: 100%;
+  text-align: left;
+  padding: 20px 30px 30px 30px;
+  box-sizing: border-box;
+}
+
+.session.input-wrapper button {
   background-image: linear-gradient(to right, var(--pink), var(--medium-pink), var(--dark-pink));
   border-radius: 8px;
   border: none;
@@ -114,11 +120,11 @@
   margin-top: 10px;
 }
 
-.login-modal-wrapper form .main-content-wrapper button:hover {
+.session.input-wrapper button:hover {
   cursor: pointer;
 }
 
-.login-modal-wrapper form .main-content-wrapper .button-separator-wrapper {
+.session.separator-wrapper {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
@@ -126,7 +132,7 @@
   padding: 15px 250px;
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="text"] {
+.session.input-wrapper input[type="text"] {
   font-family: 'cerealLight';
   font-size: 16px;
   color: var(--dark-gray);
@@ -139,31 +145,31 @@
   box-sizing: border-box;
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input,
-.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input {
+.session.input-wrapper input[type="text"].bad-input,
+.session.input-wrapper input[type="password"].bad-input {
   background-color: var(--light-red);
   border-color: var(--red);
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input::placeholder,
-.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input::placeholder  {
+.session.input-wrapper input[type="text"].bad-input::placeholder,
+.session.input-wrapper input[type="password"].bad-input::placeholder  {
   font-family: 'cerealMedium';
   color: var(--red);
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="text"].bad-input:focus,
-.login-modal-wrapper form .main-content-wrapper input[type="password"].bad-input:focus {
+.session.input-wrapper input[type="text"].bad-input:focus,
+.session.input-wrapper input[type="password"].bad-input:focus {
   background-color: transparent;
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="text"]:focus::placeholder,
-.login-modal-wrapper form .main-content-wrapper input[type="password"]:focus::placeholder {
+.session.input-wrapper input[type="text"]:focus::placeholder,
+.session.input-wrapper input[type="password"]:focus::placeholder {
   font-size: 12px;
   transform: translateY(-19px);
   transition: all 0.5s;
 }
 
-.login-modal-wrapper form .main-content-wrapper input[type="password"] {
+.session.input-wrapper input[type="password"] {
   font-family: 'cerealLight';
   font-size: 16px;
   color: var(--dark-gray);
@@ -177,14 +183,14 @@
   box-sizing: border-box;
 }
 
-.login-modal-wrapper form .main-content-wrapper .no-account-wrapper {
+.session.no-account-wrapper {
   font-family: 'cerealRegular';
   font-size: 14px;
   color: var(--gray);
   padding-top: 30px;
 }
 
-.login-modal-wrapper form .main-content-wrapper .no-account-wrapper p span {
+.session.no-account-wrapper p span {
   font-family: 'cerealMedium';
   font-size: 14px;
   color: var(--dark-gray);
@@ -192,6 +198,6 @@
   padding: 0 5px;
 }
 
-.login-modal-wrapper form .main-content-wrapper .no-account-wrapper p span:hover {
+.session.no-account-wrapper p span:hover {
   cursor: pointer;
 }

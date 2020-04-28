@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import '../../assets/stylesheets/session/login_form.css';
+import '../../assets/stylesheets/session/session.css';
 
 class LoginForm extends Component {
 	// Constructor for LoginForm
@@ -78,23 +78,23 @@ class LoginForm extends Component {
 
 		return (
 			<div className="session modal-container">
-				<div className="modal-wrapper" onClick={this.props.closeModal}></div>
+				<div className="session background-wrapper" onClick={this.props.closeModal}></div>
 
-				<form onSubmit={this.handleSubmit} className={errors.email ? 'form-errors' : 'form-normal'}>
-					<div className="header-wrapper">
-					  <div className="close-wrapper" onClick={this.props.closeModal}>
-					  	<i className="close-button"></i>
+				<form onSubmit={this.handleSubmit} className={errors.email ? 'session errors-wrapper' : 'session form-wrapper'}>
+					<div className="session header-wrapper">
+					  <div className="session close-wrapper" onClick={this.props.closeModal}>
+					  	<i className="session close-button"></i>
 					  </div>
 
 					  <h1>Log in</h1>
 					</div>
 
-					<div className="main-content-wrapper">
+					<div className="session input-wrapper">
 					  <button onClick={this.handleDemo}>
 					  	Demo Log In
 					  </button>
 
-					  <div className="button-separator-wrapper"><p>or</p></div>
+					  <div className="session separator-wrapper"><p>or</p></div>
 
 					  <input
 							type="text"
@@ -118,7 +118,7 @@ class LoginForm extends Component {
 				  	
 					  <button type="submit">Log in</button>
 
-						<div className="no-account-wrapper">
+						<div className="session no-account-wrapper">
 							<p>Don't have an account? <span onClick={() => this.props.openModal('signup')}>Sign up</span></p>
 						</div>
 					</div>
