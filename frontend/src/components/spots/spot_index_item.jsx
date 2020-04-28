@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-import "../../assets/stylesheets/spots/spot_index.css";
+import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+
+import '../../assets/stylesheets/spots/spot_index.css';
 
 const SpotIndexItem = ({ spot }) => (
   <li>
@@ -23,6 +24,6 @@ const SpotIndexItem = ({ spot }) => (
       </div>
     </Link>
   </li>
-); 
+);  
 
 export default withRouter(SpotIndexItem);

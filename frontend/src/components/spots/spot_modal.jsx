@@ -1,5 +1,5 @@
 import React from "react";
-import '../../assets/stylesheets/spot_modal.css';
+import '../../assets/stylesheets/modal/spot_modal.css';
 
 class SpotModal extends React.Component {
   // Constructor for SpotModal

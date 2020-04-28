@@ -1,4 +1,4 @@
-@import 'variables.css';
+@import '../variables.css';
 
 .spot-modal-wrapper {
   display: flex;
