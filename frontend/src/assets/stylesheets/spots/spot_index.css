@@ -31,7 +31,6 @@
   margin-top: 1.5em;
   width: 100%;
   height: 80%;
-  /* background: pink; */
 }
 
 .world-container ul {
@@ -98,7 +97,6 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 70vh;
   margin: 7em 0;
 }
 
@@ -121,20 +119,13 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  margin-top: 30px;
+  margin-top: 30px; 
   width: 100%;
-  height: 80%;
 }
 
 .spot-index-top-wrapper ul li {
   width: 22%;
-  height: 100%;
-  margin-right: 2em; 
-}
-
-.spot-index-top-wrapper ul li a {
-  width: 100%;
-  height: 100%;
+  margin: 0 2em 2em 0; 
 }
 
 .top-spot-wrapper {
@@ -144,7 +135,8 @@
 
 .top-rated.image-wrapper {
   width: 100%;
-  height: 40%;
+  height: 60%;
+  background: green;
   overflow: hidden;
 }
 
