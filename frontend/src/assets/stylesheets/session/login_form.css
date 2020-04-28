@@ -1,9 +1,13 @@
 @import '../variables.css';
 
-.login-modal-wrapper {
-  position: relative;
+.session.modal-container {
   width: 100%;
   height: 100%;
+}
+
+.session.modal-container form {
+  display: flex;
+  flex-direction: column;
 }
 
 .login-modal-wrapper .modal-wrapper {
