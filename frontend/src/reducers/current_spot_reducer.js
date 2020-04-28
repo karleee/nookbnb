@@ -8,6 +8,8 @@ const _initialState = {
 
 // Current spot reducer (current spot that the user is viewing)
 export default function (state = _initialState, action) {
+  Object.freeze(state);
+  
   switch (action.type) {
     case RECEIVE_SINGLE_SPOT:
       let nextState = Object.assign({}, state, { spot: action.spot });

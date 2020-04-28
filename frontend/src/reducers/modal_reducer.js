@@ -6,6 +6,8 @@ const _initialSpotModal = {
 }
 
 const modalReducer = (state = null, action) => { 
+	Object.freeze(state);
+	
 	switch (action.type) {
 		case OPEN_MODAL:
 			return { formType: action.formType };
