@@ -47,7 +47,7 @@ class SearchBar extends React.Component {
 	// Renders SearchBar component
 	render() {
 		let close;
-		let className = "search-bar";
+		let className = "search-bar bar-container";
 		if (this.state.searchInput && this.state.searchInput.length > 0) {
 			close = (
 				<div className="close-icon" onClick={this.handleClearSearch}>
