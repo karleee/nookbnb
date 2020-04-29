@@ -17,10 +17,20 @@
 
 .session.form-wrapper {
   position: fixed;
-  top: 15%;
-  left: 30%;
+  /* top: 0;
+  left: 0; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* top: 15%;
+  left: 30%; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   width: 40%;
-  height: 67%;
+  /* height: 60%; */
+  /* height: 65%;  */
+  /* height: 67%; */
   background: white;
   border-radius: 15px;
   text-align: center;
@@ -107,6 +117,7 @@
   border-radius: 8px;
   border: none;
   width: 100%;
+  box-sizing: border-box;
   padding: 12px 0;
   font-family: 'cerealRegular';
   font-size: 15px;
@@ -123,7 +134,8 @@
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
-  width: 100%;
+  /* width: 100%; */
+  /* background: green; */
   padding: 15px 250px;
 }
 
