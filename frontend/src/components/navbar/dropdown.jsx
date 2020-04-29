@@ -38,7 +38,7 @@ class Dropdown extends React.Component {
 				{this.state.showMenu ? <div className="dropdown menu-wrapper">
 					<ul>
 						<li onClick={e => logout()} className="dropdown-button">
-						  <button>Logout</button>
+						  <button>Logout</button> 
 						</li>
 					</ul>
 				</div> : ''}

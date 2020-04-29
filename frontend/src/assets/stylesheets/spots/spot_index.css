@@ -33,7 +33,7 @@
   height: 80%;
 }
 
-.world-container ul {
+.world-container ul { 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
