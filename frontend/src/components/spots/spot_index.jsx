@@ -29,13 +29,13 @@ class SpotIndex extends React.Component {
     const { spots } = this.props;
 
     return (
-      <div className="spot-index-wrapper">
+      <div className="spot-index main-container">
         <div className="spot-index worlds-wrapper">
           <h2>Travel the world with Nookbnb</h2>
           <SpotWorldIndex spots={spots} /> 
         </div> 
 
-        <div className="spot-index-top-wrapper">
+        <div className="spot-index top-wrapper">
           <h2>Top-rated places to stay</h2>
           <h3>Explore some of the best-reviewed stays in the world</h3>
           

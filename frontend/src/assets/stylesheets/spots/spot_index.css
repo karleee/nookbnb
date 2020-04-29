@@ -1,37 +1,21 @@
 @import '../variables.css';
 
-.spot-index-wrapper {
+.spot-index.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%; 
   height: 100%;
   box-sizing: border-box;
-  padding-top: 10%;
+  padding: 10% 10% 0 10%; 
 }
-
-/* TESTING...*/
-
-/* .testing {
-  width: 100%;
-}
-
-.square {
-  position: relative;
-  width: 15%;
-  padding-bottom: 15%;
-  background:gold;
-} */
 
 /* World regions styling */
 
 .spot-index.worlds-wrapper {
   display: flex;
   flex-direction: column; 
-  width: 80%;
-  height: 30%;
-  /* height: 30vh; */
-  /* background: red; */
+  width: 100%;
 }
 
 .spot-index.worlds-wrapper h2 {
@@ -40,57 +24,36 @@
   letter-spacing: 0.5px; 
 }
 
-/* .world-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 1.5em;
-  width: 100%;
-  height: 80%;
-} */
-
 .spot-index.worlds-wrapper ul { 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+  /* height: 30%; */
   margin-top: 1.5em;
   list-style: none;
-  /* height: 100%; */
 }
 
 .spot-index.worlds-wrapper ul li {
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   margin-right: 2%;
   width: 15%;
-  /* padding-top: 15%; */
-  /* height: 100%; */
+  /* padding-bottom: 15%; */
+  padding-top: 15%;
 }
 
 .spot-index.worlds-wrapper ul li a {
-  /* position: absolute; */
-  /* position: relative; */
-  /* top: 0;
-  left: 0; */
+  position: absolute;
+  top: 0;
+  left: 0;
   text-decoration: none;
   font-family: 'cerealRegular';
   font-size: 0.9em;
   color: var(--gray);
   width: 100%;
-  /* padding-top: 100%; */
-  /* height: 15em; */
-  /* height: 100%; */
 }
-
-/* .main-content-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
 .region.text-wrapper {
   display: flex;
@@ -123,27 +86,27 @@
 
 /* Top rated stays styling */
 
-.spot-index-top-wrapper {
+.spot-index.top-wrapper {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   margin: 7em 0;
 }
 
-.spot-index-top-wrapper h2 {
+.spot-index.top-wrapper h2 {
   font-family: 'cerealRegular';
   font-size: 1.5em;
   letter-spacing: 0.5px;
 }
 
-.spot-index-top-wrapper h3 {
+.spot-index.top-wrapper h3 {
   font-family: 'cerealLight';
   font-size: 1em;
   letter-spacing: 0.5px;
   margin-top: 5px;  
 }
 
-.spot-index-top-wrapper ul {
+.spot-index.top-wrapper ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -153,7 +116,7 @@
   width: 100%;
 }
 
-.spot-index-top-wrapper ul li {
+.spot-index.top-wrapper ul li {
   width: 22%;
   margin: 0 2em 2em 0; 
 }
@@ -186,11 +149,11 @@
   width: 100%;
 }
 
-.spot-index-top-wrapper ul li a {
+.spot-index.top-wrapper ul li a {
   text-decoration: none;
 }
 
-.spot-index-top-wrapper ul li a .superhost-wrapper p:first-of-type {
+.spot-index.top-wrapper ul li a .superhost-wrapper p:first-of-type {
   font-family: 'cerealRegular';
   font-size: 0.813em;
   text-transform: uppercase;
@@ -201,20 +164,20 @@
   margin-right: 0.5em;
 }
 
-.spot-index-top-wrapper ul li a .superhost-wrapper p:last-of-type {
+.spot-index.top-wrapper ul li a .superhost-wrapper p:last-of-type {
   font-family: 'cerealLight';
   font-size: 1em;
   color: var(--gray);
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul li a h4 {
+.spot-index.top-wrapper ul li a h4 {
   font-family: 'cerealRegular';
   font-size: 1em;
   color: var(--dark-gray);
   margin-top: 0.357em;
 }
 
-.spot-index-wrapper .spot-index-top-wrapper ul li a p {
+.spot-index.top-wrapper ul li a p {
   font-family: 'cerealLight';
   font-size: 1em;
   color: var(--dark-gray);
