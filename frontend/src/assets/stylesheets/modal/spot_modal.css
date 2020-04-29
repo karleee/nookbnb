@@ -1,35 +1,45 @@
 @import '../variables.css';
 
-.spot-modal-wrapper {
+.spot.modal-container {
+  width: 100%;
+  height: 100%;
+}
+
+.spot.modal-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
-  background: white; 
+  box-sizing: border-box;
+  padding: 5%;
+  background: white;  
+  width: 100%;
+  height: 100%;
   z-index: 3;
 }
 
-.spot-modal {
+/* .spot.content-wrapper {
   display: flex;
   flex-direction: row;
   width: 100vw;
   height: 75vh;
   padding: 3em;
-}
+} */
 
-.modal-wrapper {
+/* .modal-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-}
+} */
 
-.modal.main-image-wrapper {
+/* Spot modal images styling */
+
+.modal-main-image-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center; 
@@ -37,7 +47,7 @@
   height: 100%;
 }
 
-.modal.selected-image-wrapper {
+.selected-image-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
@@ -46,33 +56,34 @@
   height: 100%;
 }
 
-.modal.selected-image-wrapper img {
+.selected-image-wrapper img {
   height: 100%;
 }
 
 /* Modal nav arrows styling */
 
-.modal.main-image-wrapper .previous-arrow-wrapper .previous-arrow {
+.prev-arrow-icon-wrapper {
   content: url('/images/spot_detail/previous_arrow_icon.png');
   width: 1em;
 }
 
-.modal.main-image-wrapper .previous-arrow-wrapper .previous-arrow:hover {
-  cursor: pointer;
-}
-
-.modal.next-arrow-wrapper .next-arrow {
+.next-arrow-icon-wrapper {
   content: url('/images/spot_detail/next_arrow_icon.png');
   width: 1em;
 }
 
-.modal.next-arrow-wrapper .next-arrow:hover {
+.prev-arrow-icon-wrapper:hover,
+.next-arrow-icon-wrapper:hover {
   cursor: pointer;
 }
 
+/* .next-arrow-icon-wrapper:hover {
+  cursor: pointer;
+} */
+
 /* Sidebar images styling */
 
-.modal.side-images-wrapper { 
+.side-images-wrapper { 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -81,19 +92,19 @@
   height: 100%;
 }
 
-.spot-modal .side-images-wrapper .close-wrapper {
+.close-wrapper {
   width: 7%;
 }
 
-.spot-modal .side-images-wrapper .close-wrapper:hover {
+.close-wrapper:hover {
   cursor: pointer;
 }
 
-.spot-modal .side-images-wrapper .close-wrapper img {
+.close-wrapper img {
   width: 100%;
 }
 
-.modal.thumbnails-wrapper {
+.spot.thumbnails-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -103,7 +114,7 @@
   margin-top: 8%;
 }
 
-.modal.thumbnail-image-wrapper {
+.spot.image-wrapper {
   position: relative;
   width: 5em;
   height: 5em;
@@ -115,24 +126,26 @@
   margin-bottom: 1em;
 }
 
-.modal.thumbnail-image-wrapper:hover {
+.spot.image-wrapper:hover {
   opacity: 1;
   transition: ease-in-out 0.25s;
   cursor: pointer;
 }
 
-.modal.thumbnail-image-wrapper.active {
+.spot.image-wrapper.active {
   border: 2.5px solid var(--dark-gray);
   opacity: 1;
 }
 
-.modal.thumbnail-image-wrapper img {
+.spot.image-wrapper img {
   position: absolute;
   left: -35%;
   width: 200%;
 }
 
-.spot-modal .side-images-wrapper .numbering {
+/* Spot modal numbering styling */
+
+.numbering-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -140,7 +153,7 @@
   margin-top: 15%;
 }
 
-.spot-modal .side-images-wrapper .numbering p {
+.numbering-wrapper p {
   font-family: 'cerealMedium';
   font-size: 1em;
   color: var(--medium-gray);

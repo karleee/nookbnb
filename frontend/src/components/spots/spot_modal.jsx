@@ -42,39 +42,39 @@ class SpotModal extends React.Component {
     const { spot } = this.props;
 
     return (
-      <div className="spot-modal">
-        <div className="modal-wrapper">
-          <div className="modal main-image-wrapper">
-            <div className="modal previous-arrow-wrapper" onClick={this.previous}> 
-              <i className="previous-arrow"></i> 
-            </div>
+      <div className="spot modal-wrapper">
+        {/* <div className="spot content-wrapper"> */}
+          <div className="spot modal-main-image-wrapper">
+            {/* <div className="spot prev-arrow-wrapper" onClick={this.previous}>  */}
+            <i className="spot prev-arrow-icon-wrapper" onClick={this.previous}></i> 
+            {/* </div> */}
 
             <div className="modal selected-image-wrapper">
               <img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[this.state.currentImage] : ''} alt="Spot photo" />
             </div> 
 
-            <div className="modal next-arrow-wrapper" onClick={this.next}>
-              <i className="next-arrow"></i>
-            </div>
+            {/* <div className="modal next-arrow-wrapper" onClick={this.next}> */}
+            <i className="spot next-arrow-icon-wrapper" onClick={this.next}></i>
+            {/* </div> */}
           </div>
 
-          <div className="modal side-images-wrapper">
-            <div className="close-wrapper" onClick={this.props.closeModal}>
+          <div className="spot side-images-wrapper">
+            <div className="spot close-wrapper" onClick={this.props.closeModal}>
               <img src='/images/spot_modal/modal_close.png' />
             </div>
 
-            <div className="modal thumbnails-wrapper">
+            <div className="spot thumbnails-wrapper">
               {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map((url, indx) =>
-                <div className={`modal thumbnail-image-wrapper ${indx === this.state.currentImage ? "active" : ""}`} onClick={() => this.handleClick(indx)}>
+                <div className={`spot image-wrapper ${indx === this.state.currentImage ? "active" : ""}`} onClick={() => this.handleClick(indx)}>
                   <img src={url} alt="Spot photo" />
                 </div>) : ''}
             </div>
 
-            <div className="numbering">
+            <div className="spot numbering-wrapper">
               <p>{this.state.currentImage + 1} / {spot.thumbnail_image_urls.length}</p>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

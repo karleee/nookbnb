@@ -19,7 +19,7 @@ const Modal = ({ modal }) => {
 	}
 
 	return (
-		<div className={`${type}-modal-wrapper`}> 
+		<div className={`${type} modal-container`}> 
 		  {component}
 		</div>
 	);

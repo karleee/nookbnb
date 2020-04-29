@@ -76,7 +76,7 @@ class SignupForm extends Component {
 		console.log(this.state);
 
 		return (
-			<div className="session modal-container">
+			<div className="session modal-wrapper">
 				<div className="session background-wrapper" onClick={this.props.closeModal}></div>
 
 				<form onSubmit={this.handleSubmit} className={errors.email ? 'session errors-wrapper' : 'session form-wrapper'}>

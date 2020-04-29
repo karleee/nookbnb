@@ -74,10 +74,10 @@ class LoginForm extends Component {
 
 	// Rendering component
 	render() {		
-		const { errors } = this.props;
+		const { errors } = this.props; 
 
 		return (
-			<div className="session modal-container">
+			<div className="session modal-wrapper">
 				<div className="session background-wrapper" onClick={this.props.closeModal}></div>
 
 				<form onSubmit={this.handleSubmit} className={errors.email ? 'session errors-wrapper' : 'session form-wrapper'}>
@@ -85,7 +85,7 @@ class LoginForm extends Component {
 					  <div className="session close-wrapper" onClick={this.props.closeModal}>
 					  	<i className="session close-button"></i>
 					  </div>
-
+ 
 					  <h1>Log in</h1>
 					</div>
 
