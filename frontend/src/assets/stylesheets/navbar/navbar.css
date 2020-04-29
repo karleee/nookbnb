@@ -14,7 +14,7 @@
   background: white;
   border-bottom: 1px solid var(--underline-gray);
   font-family: 'cerealMedium';
-  z-index: 2;
+  z-index: 2; 
 }
 
 /* Logo styling */
@@ -39,6 +39,13 @@
 
 .logo-wrapper img {
   width: 100%;
+}
+
+/* Profile styling */
+
+.profile-wrapper {
+  width: 64%;
+  height: 100%;
 }
 
 /* Login and Signup links styling */

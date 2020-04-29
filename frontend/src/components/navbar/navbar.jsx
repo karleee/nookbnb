@@ -55,6 +55,7 @@ class NavBar extends React.Component {
 
 		return (
 			<div className="app navbar-container">
+			  {/* <div className="navbar input-wrapper"> */}
 				<div className="navbar logo-wrapper">
 					<Link to="/">
 						<img src="/images/navbar/nooks_cranny_logo.png" />
@@ -62,27 +63,28 @@ class NavBar extends React.Component {
 				</div>
 
 				<SearchBar />
+				{/* </div> */}
 
 				{loggedIn ? 
 				<div className="navbar profile-wrapper">
 					<Dropdown
-						currentUser={currentUser}
+						currentUser={currentUser} 
 						logout={logout}
 					/>
-					</div> : 
-					<div className="navbar links-wrapper">
-		 			  <div className="navbar button-wrapper">
-		 			  	<button onClick={this.handleSignup}>
-		 			  		<p>Sign up</p>
-		 			  	</button>
-		 			  </div>
+				</div> : 
+				<div className="navbar links-wrapper">
+		 		  <div className="navbar button-wrapper">
+		 		  	<button onClick={this.handleSignup}>
+		 		  		<p>Sign up</p>
+		 		  	</button>
+		 		  </div>
 
-		 			  <div className="navbar button-wrapper">
-		 			  	<button onClick={this.handleLogin}>
-		 			  		<p>Log in</p>
-		 			  	</button>
-		 			  </div>
-		 		  </div>}
+		 		  <div className="navbar button-wrapper">
+		 		  	<button onClick={this.handleLogin}>
+		 		  		<p>Log in</p>
+		 		  	</button>
+		 		  </div>
+		 		</div>}
 			</div>
 		);
 	}

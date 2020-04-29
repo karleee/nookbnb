@@ -1,24 +1,32 @@
 @import '../variables.css';
 
-.profile-menu-container {
+.dropdown.user-wrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }
 
 /* Avatar display styling */
 
 .avatar-wrapper {
+  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   background: white;
   border: 1px solid var(--underline-gray);
-  box-sizing: border-box;
-  padding: 0.5em 1em;
+  width: 14%;
+  height: 52%;
   border-radius: 30px;
   box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-wrapper:hover {
+  cursor: pointer;
 }
 
 .avatar-wrapper p {
@@ -28,7 +36,7 @@
   padding-right: 1em;
 }
 
-.avatar-image {
+.avatar-image-wrapper {
   width: 2em;
   height: 2em;
   border-radius: 50%;
@@ -37,37 +45,43 @@
 
 /* Dropdown menu styling */
 
-.dropdown-menu-wrapper {
+.menu-wrapper {
   position: absolute;
-  top: 95%;
-  left: -70%;
-  width: 170%;
+  top: 90%;
+  left: 75%;
+  width: 25%;
   background: white;
   box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-.dropdown-menu-wrapper ul {
+.menu-wrapper ul {
   list-style: none;
   box-sizing: border-box;
   padding: 0.5em 0;
 }
 
-.dropdown-menu-wrapper ul li {
+.menu-wrapper ul li {
   width: 100%;
   box-sizing: border-box;
   padding: 0.5em 2em 0.5em 0.5em;
 }
 
-.dropdown-menu-wrapper ul li:hover {
-  background: var(--underline-gray);
+.menu-wrapper ul li:hover {
+  background: var(--light-gray);
   cursor: pointer;
 }
 
-.dropdown-menu-wrapper ul li button {
-  border-bottom: none;
+.menu-wrapper ul li button {
+  font-family: 'cerealMedium';
+  font-size: 0.9em;
+  outline: none;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 1% 5%;
 }
 
-.dropdown-menu-wrapper ul li button:hover {
+.menu-wrapper ul li button:hover {
   border-bottom: none;
 }

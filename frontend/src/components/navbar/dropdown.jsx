@@ -12,7 +12,7 @@ class Dropdown extends React.Component {
 	// Changes search input placeholder
 	toggleMenu() {
 		window.addEventListener('click', e => {
-			if (e.target.parentElement.className === 'avatar-wrapper') {
+			if (e.target.className === 'dropdown avatar-wrapper' || e.target.parentElement.className === 'dropdown avatar-wrapper') {
 				this.setState({ showMenu: !this.state.showMenu });
 			} else {
 				this.setState({ showMenu: false });
@@ -29,13 +29,13 @@ class Dropdown extends React.Component {
 		username = username[0].toUpperCase() + username.slice(1, username.length);
 
 		return (
-      <div className="profile-menu-container">
-        <div className="avatar-wrapper">
+      <div className="dropdown user-wrapper">
+        <div className="dropdown avatar-wrapper">
 					<p>{username}</p>
-					<div className="avatar-image"></div>
-				</div>
+					<i className="dropdown avatar-image-wrapper"></i>
+				</div> 
 
-				{this.state.showMenu ? <div className="dropdown-menu-wrapper">
+				{this.state.showMenu ? <div className="dropdown menu-wrapper">
 					<ul>
 						<li onClick={e => logout()} className="dropdown-button">
 						  <button>Logout</button>
