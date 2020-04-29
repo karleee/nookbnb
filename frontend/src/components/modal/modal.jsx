@@ -4,8 +4,6 @@ import LoginForm from '../session/login_form_container';
 import SignupForm from '../session/signup_form_container';
 import SpotModal from '../../components/spots/spot_modal_container';
 
-// import '../../assets/stylesheets/session/session.css';
-
 const Modal = ({ modal }) => {
 	let component;
 
