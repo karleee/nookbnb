@@ -30,7 +30,7 @@ class SpotIndex extends React.Component {
 
     return (
       <div className="spot-index-wrapper">
-        <div className="spot-index-world-wrapper">
+        <div className="spot-index worlds-wrapper">
           <h2>Travel the world with Nookbnb</h2>
           <SpotWorldIndex spots={spots} /> 
         </div> 

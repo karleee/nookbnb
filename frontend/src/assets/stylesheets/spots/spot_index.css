@@ -10,57 +10,87 @@
   padding-top: 10%;
 }
 
+/* TESTING...*/
+
+/* .testing {
+  width: 100%;
+}
+
+.square {
+  position: relative;
+  width: 15%;
+  padding-bottom: 15%;
+  background:gold;
+} */
+
 /* World regions styling */
 
-.spot-index-world-wrapper {
+.spot-index.worlds-wrapper {
   display: flex;
   flex-direction: column; 
   width: 80%;
-  height: 30vh;
+  height: 30%;
+  /* height: 30vh; */
+  /* background: red; */
 }
 
-.spot-index-world-wrapper h2 {
+.spot-index.worlds-wrapper h2 {
   font-family: 'cerealRegular';
   font-size: 1.5em;
   letter-spacing: 0.5px; 
 }
 
-.world-container {
+/* .world-container {
   display: flex;
   flex-direction: row;
   margin-top: 1.5em;
   width: 100%;
   height: 80%;
-}
+} */
 
-.world-container ul { 
+.spot-index.worlds-wrapper ul { 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  margin-top: 1.5em;
+  list-style: none;
+  /* height: 100%; */
 }
 
-.world-container ul li {
-  display: flex;
+.spot-index.worlds-wrapper ul li {
+  position: relative;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   margin-right: 2%;
   width: 15%;
-  height: 100%;
+  /* padding-top: 15%; */
+  /* height: 100%; */
 }
 
-.world-container ul li a {
+.spot-index.worlds-wrapper ul li a {
+  /* position: absolute; */
+  /* position: relative; */
+  /* top: 0;
+  left: 0; */
   text-decoration: none;
   font-family: 'cerealRegular';
   font-size: 0.9em;
   color: var(--gray);
   width: 100%;
-  height: 15em;
-  height: 100%;
+  /* padding-top: 100%; */
+  /* height: 15em; */
+  /* height: 100%; */
 }
+
+/* .main-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
 
 .region.text-wrapper {
   display: flex;
