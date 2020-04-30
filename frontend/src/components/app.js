@@ -29,17 +29,15 @@ class App extends Component {
 	
 	render() {
 		return (
-	    <div className='app main-content-container'>
+	    <div className='app app-container'>
 	    	<Modal />
 	    	<NavBarContainer />
 	    	
-	    	{/* <div className="app body-wrapper"> */}
-	    	  <Switch>
-	    	  	<Route exact path='/' component={SpotIndex} />
-	    	  	<Route exact path='/spots/:spotId' component={SpotDetail} />
-						<Route exact path='/search/:find_loc' component={SearchContainer} />
-	    	  </Switch> 
-	    	{/* </div> */}
+	    	<Switch>
+	    		<Route exact path='/' component={SpotIndex} />
+	    		<Route exact path='/spots/:spotId' component={SpotDetail} />
+					<Route exact path='/search/:find_loc' component={SearchContainer} />
+	    	</Switch> 
 	    </div>
 		);
 	}
