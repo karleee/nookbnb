@@ -128,13 +128,17 @@
 }
 
 .top-rated.image-wrapper {
+  position: relative;
   width: 100%;
-  height: 60%;
+  padding-top: 60%;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .top-rated.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
