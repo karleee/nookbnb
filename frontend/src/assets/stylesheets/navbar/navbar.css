@@ -9,7 +9,7 @@
   align-items: flex-end;
   box-sizing: border-box;
   padding: 0 3%;
-  width: 100vw;
+  width: 100%;
   height: 12%; 
   background: white;
   border-bottom: 1px solid var(--underline-gray);
@@ -63,7 +63,7 @@
 
 .button-wrapper {
   box-sizing: border-box;
-  padding: 0 1em;
+  padding: 0 7px;
   border-bottom: 4px solid transparent;
 }
 
@@ -112,6 +112,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 24%;
+    background: orange;
   }
     
   .button-wrapper button {
