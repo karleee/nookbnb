@@ -11,7 +11,7 @@
 .search-bar-wrapper {
   position: relative;
   width: 100%;
-  min-width: 300px;
+  min-width: 5em;
 }
 
 .search-bar-wrapper input[type="text"] {
@@ -19,7 +19,7 @@
   font-size: 1em;
   color: var(--dark-gray);
   box-sizing: border-box;
-  padding: 10px 0 10px 50px;
+  padding: 3% 0 3% 20%;
   border-radius: 5px;
   border: none;
   border: 1px solid var(--outline-gray);
@@ -34,16 +34,20 @@
 
 .search-icon img {
   position: absolute;
-  width: 20px;
-  top: 0.66em;
-  left: 0.83em;
+  width: 5%;
+  top: 0;
+  bottom: 0;
+  left: 5%;
+  margin: auto;
 }
 
 .close-icon img {
   position: absolute;
-  top: 15px;
-  left: 95%;
-  width: 13px; 
+  top: 0;
+  bottom: 0;
+  left: 93%;
+  margin: auto;
+  width: 3%; 
   opacity: 0;
 }
 
@@ -59,7 +63,7 @@
 
 @media screen and (min-width: 320px) {
   .search-bar-wrapper input[type="text"] {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 680));
+    font-size: calc(12px + 4 * ((100vw - 320px) / 680));
   }
 }
 

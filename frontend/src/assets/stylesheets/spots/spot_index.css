@@ -8,7 +8,6 @@
   height: 100%;
   box-sizing: border-box;
   padding: 22vh 10% 0 10%;
-  background: yellow;
 }
 
 /* World regions styling */
@@ -17,6 +16,7 @@
   display: flex;
   flex-direction: column; 
   width: 100%;
+  /* display: none;  */
 }
 
 .spot-index.worlds-wrapper h2 {
@@ -28,12 +28,15 @@
 .spot-index.worlds-wrapper ul { 
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
   justify-content: flex-start;
   width: 100%;
-  margin-top: 1.5em;
+  margin-top: 5%;
   list-style: none;
-  min-width: 436px;
-  min-height: 109px;
+  /* min-width: 10em; */
+  /* min-width: 50%; */
+  /* min-height: 109px; */
+  /* min-width: 100%; */
 }
 
 .spot-index.worlds-wrapper ul li {
@@ -93,6 +96,7 @@
   flex-direction: column;
   width: 100%;
   margin: 7em 0;
+  /* display: none; */
 }
 
 .spot-index.top-wrapper h2 {
