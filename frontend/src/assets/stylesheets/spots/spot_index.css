@@ -88,7 +88,7 @@
 
 .spot-index.top-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   width: 100%;
   box-sizing: border-box;
   padding: 7% 10%;
@@ -113,7 +113,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  margin-top: 30px; 
+  margin-top: 5%; 
   width: 100%;
 }
 
@@ -223,6 +223,14 @@
 /* Mobile and small screen styling */
 
 @media screen and (max-width: 850px) {
+  /* World regions styling */
+
+  .spot-index.worlds-wrapper {
+    box-sizing: border-box;
+    padding: 0 7%;
+    margin-top: 20vh;
+  }
+
   .spot-index.worlds-wrapper ul {
     width: 100%;
     height: 100%;
@@ -237,12 +245,32 @@
     padding-top: 25%; 
   }
 
-  .spot-index.worlds-wrapper {
-    margin-top: 20vh;
-  }
-
   .spot-index.top-wrapper {
     box-sizing: border-box;
     padding: 20% 10% 30% 10%;
+  }
+
+  /* Top spots styling */
+
+  .spot-index.top-wrapper {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20% 7%;
+  }
+
+  .spot-index.top-wrapper ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    width: 100%;
+  }
+
+  .spot-index.top-wrapper ul li {
+    width: 100%;
+    margin-bottom: 10%;
   }
 }
