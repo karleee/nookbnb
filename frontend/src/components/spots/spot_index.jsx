@@ -42,7 +42,7 @@ class SpotIndex extends React.Component {
           <ul>
             {spots.map(spot => <SpotIndexItem key={spot._id} spot={spot} />)}
           </ul>
-        </div>  
+        </div>   
 
         <Footer />
       </div>

@@ -6,6 +6,7 @@
   align-items: center;
   width: 100%; 
   height: 100%;
+  /* background: green; */
   box-sizing: border-box;
   padding: 22vh 10% 0 10%; 
 }
@@ -31,6 +32,8 @@
   width: 100%;
   margin-top: 1.5em;
   list-style: none;
+  min-width: 436px;
+  min-height: 109px;
 }
 
 .spot-index.worlds-wrapper ul li {
@@ -220,13 +223,18 @@
 
 /* Mobile and small screen styling */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 850px) {
+  .spot-index.worlds-wrapper ul {
+    width: 100%;
+    height: 100%;
+  }
+
   .spot-index.worlds-wrapper ul li {
     position: relative;
     box-shadow: 3px -1px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     margin-right: 2%;
     width: 25%;
-    padding-top: 25%;
+    padding-top: 25%; 
   }
 }

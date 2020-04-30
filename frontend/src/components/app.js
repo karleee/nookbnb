@@ -33,13 +33,13 @@ class App extends Component {
 	    	<Modal />
 	    	<NavBarContainer />
 	    	
-	    	<div className="app body-wrapper">
+	    	{/* <div className="app body-wrapper"> */}
 	    	  <Switch>
 	    	  	<Route exact path='/' component={SpotIndex} />
 	    	  	<Route exact path='/spots/:spotId' component={SpotDetail} />
 						<Route exact path='/search/:find_loc' component={SearchContainer} />
 	    	  </Switch> 
-	    	</div>
+	    	{/* </div> */}
 	    </div>
 		);
 	}
