@@ -6,8 +6,8 @@
   align-items: center;
   width: 100%; 
   height: 100%;
-  box-sizing: border-box;
-  padding: 22vh 10% 0 10%;
+  /* box-sizing: border-box; */
+  /* padding: 0 10% 0 10%; */
 }
 
 /* World regions styling */
@@ -16,7 +16,9 @@
   display: flex;
   flex-direction: column; 
   width: 100%;
-  /* display: none;  */
+  box-sizing: border-box;
+  padding: 0 10%;
+  margin-top: 22vh;
 }
 
 .spot-index.worlds-wrapper h2 {
@@ -28,15 +30,10 @@
 .spot-index.worlds-wrapper ul { 
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   justify-content: flex-start;
   width: 100%;
   margin-top: 5%;
   list-style: none;
-  /* min-width: 10em; */
-  /* min-width: 50%; */
-  /* min-height: 109px; */
-  /* min-width: 100%; */
 }
 
 .spot-index.worlds-wrapper ul li {
@@ -95,8 +92,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 7em 0;
-  /* display: none; */
+  box-sizing: border-box;
+  padding: 7% 10%;
 }
 
 .spot-index.top-wrapper h2 {
@@ -199,11 +196,11 @@
 
 @media screen and (min-width: 320px) {
   .spot-index.main-container h2 {
-    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(16px + 8 * ((100vw - 320px) / 680));
   }
 
   .spot-index.main-container h3 {
-    font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(9px + 7 * ((100vw - 320px) / 680));
   }
 
   .region.text-wrapper {
@@ -240,5 +237,14 @@
     margin-right: 2%;
     width: 25%;
     padding-top: 25%; 
+  }
+
+  .spot-index.worlds-wrapper {
+    margin-top: 20vh;
+  }
+
+  .spot-index.top-wrapper {
+    box-sizing: border-box;
+    padding: 20% 10% 30% 10%;
   }
 }

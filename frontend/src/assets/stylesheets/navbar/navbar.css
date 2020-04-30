@@ -15,7 +15,6 @@
   border-bottom: 1px solid var(--underline-gray);
   font-family: 'cerealMedium';
   z-index: 2; 
-  /* display: none; */
 }
 
 /* Logo styling */
@@ -62,44 +61,36 @@
   width: 64%;
 }
 
-.button-wrapper {
-  box-sizing: border-box;
-  padding: 0 7px;
+button {
+  font-family: 'cerealBold';
+  font-size: 1em;
+  color: var(--gray);
+  border: none;
   border-bottom: 4px solid transparent;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 0 3% 3% 0;
 }
 
-.button-wrapper:hover {
+button:hover {
   cursor: pointer;
   border-bottom: 4px solid var(--gray);
 }
 
-.button-wrapper:first-of-type {
+button:first-of-type {
   margin-right: 1em;
-}
-
-.button-wrapper button {
-  background: transparent;
-  border: none;
-  box-sizing: border-box;
-  padding-bottom: 2.5em;
-}
-
-.button-wrapper p {
-  font-family: 'cerealBold';
-  font-size: 1.5em;
-  color: var(--gray);
 }
 
 /* Dynamic styling */
 
 @media screen and (min-width: 320px) {
-  .button-wrapper p {
+  button {
     font-size: calc(8px + 8 * ((100vw - 320px) / 680));
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .button-wrapper p {
+  button {
     font-size: 16px;
   }
 }
@@ -109,14 +100,23 @@
 @media screen and (max-width: 450px) {
   .links-wrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 24%;
-    background: orange;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 4% 0;
+    margin-left: 7%;
   }
-    
-  .button-wrapper button {
-    padding-bottom: 3.5em;
+
+  button {
+    color: white;
+    padding: 0;
+    border-bottom: none;
+    width: 80%;
+    height: 45%;
+    background: var(--medium-teal);  
+    border-radius: 15px;
   }
 }
