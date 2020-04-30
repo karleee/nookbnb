@@ -53,3 +53,39 @@
 .close-icon:hover {
   cursor: pointer;
 }
+
+/* Dynamic styling */
+
+@media screen and (min-width: 320px) {
+  .search-bar-wrapper input[type="text"] {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .search-bar-wrapper input[type="text"] {
+    font-size: 16px;
+  }
+}
+
+/* Mobile and small screen styling */
+
+@media screen and (max-width: 450px) {
+  .search-bar.bar-container { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+  }
+
+  .close-icon img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 88%;
+    margin: auto;
+    width: 13px; 
+    opacity: 0;
+  }
+}

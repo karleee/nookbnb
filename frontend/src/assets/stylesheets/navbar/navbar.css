@@ -9,7 +9,7 @@
   align-items: flex-end;
   box-sizing: border-box;
   padding: 0 3%;
-  width: 100%;
+  width: 100vw;
   height: 12%; 
   background: white;
   border-bottom: 1px solid var(--underline-gray);
@@ -89,10 +89,32 @@
   color: var(--gray);
 }
 
+/* Dynamic styling */
+
+@media screen and (min-width: 320px) {
+  .button-wrapper p {
+    font-size: calc(8px + 8 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .button-wrapper p {
+    font-size: 16px;
+  }
+}
+
 /* Mobile and small screen styling */
 
-/* @media screen and (max-width: 850px) {
-  .logo-wrapper a {
-    width: 30%;
+@media screen and (max-width: 450px) {
+  .links-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 24%;
   }
-} */
+    
+  .button-wrapper button {
+    padding-bottom: 3.5em;
+  }
+}
