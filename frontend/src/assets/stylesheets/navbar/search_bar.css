@@ -25,6 +25,7 @@
   border: 1px solid var(--outline-gray);
   box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
   width: 90%;
+  min-width: 15em;
 }
 
 .search-bar-wrapper input[type="text"]:focus {

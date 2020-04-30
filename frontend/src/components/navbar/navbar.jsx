@@ -73,13 +73,9 @@ class NavBar extends React.Component {
 					/>
 				</div> : 
 				<div className="navbar links-wrapper">
-		 		  {/* <div className="navbar button-wrapper"> */}
-		 		  	<button onClick={this.handleSignup}>Sign up</button>
-		 		  {/* </div> */}
+		 		  <button onClick={this.handleSignup}>Sign up</button>
 
-		 		  {/* <div className="navbar button-wrapper"> */}
-		 		  	<button onClick={this.handleLogin}>Log in</button>
-		 		  {/* </div> */}
+		 		  <button onClick={this.handleLogin}>Log in</button>
 		 		</div>}
 			</div>
 		);
