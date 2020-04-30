@@ -55,7 +55,6 @@ class NavBar extends React.Component {
 
 		return (
 			<div className="app navbar-container">
-			  {/* <div className="navbar input-wrapper"> */}
 				<div className="navbar logo-wrapper">
 					<Link to="/">
 						<img src="/images/navbar/nooks_cranny_logo.png" />
@@ -63,7 +62,6 @@ class NavBar extends React.Component {
 				</div>
 
 				<SearchBar />
-				{/* </div> */}
 
 				{loggedIn ? 
 				<div className="navbar profile-wrapper">
