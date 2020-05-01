@@ -45,7 +45,7 @@ class Footer extends Component {
         allKeys.forEach(dev => {
           this.setState({ [dev]: false});
         });
-      }
+      } 
     });
   }
 
