@@ -8,7 +8,7 @@ input:focus, a:focus, button:focus {
   outline: none;
 }
 
-body {
+html, body {
   width: 100%;
   height: 100%;  
 } 
