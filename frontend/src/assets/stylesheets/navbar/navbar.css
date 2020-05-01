@@ -61,7 +61,7 @@
   width: 64%;
 }
 
-button {
+.navbar.links-wrapper button {
   font-family: 'cerealBold';
   font-size: 1em;
   color: var(--gray);
@@ -69,10 +69,10 @@ button {
   border-bottom: 4px solid transparent;
   background: transparent;
   box-sizing: border-box;
-  padding: 0 1em 30px 1em;
+  padding: 0 1em 30px 1em; 
 }
 
-button:hover {
+.navbar.links-wrapper button:hover {
   cursor: pointer;
   border-bottom: 4px solid var(--gray);
 }

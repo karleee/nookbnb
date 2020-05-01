@@ -46,8 +46,8 @@ class SpotDetail extends React.Component {
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
     return (
-      <div className="spot-index-item-detail-wrapper">  
-        <div className="thumbnail-photos-wrapper">
+      <div className="spot-detail main-content-wrapper">  
+        <div className="spot-detail photo-thumbs-wrapper">
           <div className="spot-detail main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
             <img src={`${spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''}`} alt="Main spot photo" />
             <div className="overlay-wrapper"></div>
@@ -68,38 +68,31 @@ class SpotDetail extends React.Component {
 
         <div className="spot-detail main-content-container">
           <div className="spot-detail header-wrapper">
-            {/* <div className="spot-index header-wrapper"> */}
-              <div className="spot-detail location-wrapper">
+            <div className="spot-detail location-wrapper">
+              <div className="spot-index geo-wrapper">
                 <h1>{spot.name}</h1>
                 <p>{spot.city}</p>
               </div>
-
-              {/* <div className="spot-index-item-detail-location-wrapper"> */}
-                {/* <p>{spot.city}</p> */}
-              {/* </div>  */}
-            {/* </div> */}
+              
+              <img src={user.profile_image_url} alt="Profile image" /> 
+            </div>
 
             <div className="spot-detail user-price-wrapper">
-              <img src={user.profile_image_url} alt="Profile image" />
               <p><span>${spot.price}</span> per night</p>
             </div>
           </div>
 
-          {/* <div className="spot-index-item-detail-location-wrapper">
-            <p>{spot.city}</p>
-          </div>  */}
-
-          <div className="spot-index-item-detail-description">
-            <div className="main-description-wrapper">
-              <div className="description-wrapper">
-                <div className="header-details-wrapper">
+          {/* <div className="spot-index-item-detail-description"> */}
+            <div className="spot-detail body-wrapper">
+              {/* <div className="description-wrapper"> */}
+                <div className="spot-detail gen-info-wrapper">
                   <p>{spot.occupancy} {spot.occupancy > 1 ? 'guests' : 'guest'}</p>
                   <p>{spot.bedrooms} {spot.bedrooms > 1 ? 'bedrooms' : 'bedroom'}</p>
                   <p>{spot.beds} {spot.beds > 1 ? 'beds' : 'bed'}</p>
                   <p>{spot.baths} {spot.baths > 1 ? 'baths' : 'bath'}</p>
                 </div>
 
-                <div className="spot-index-item-detail-description-perks">
+                <div className="spot-detail perks-wrapper">
                   <div className="entire-home-perk-wrapper">
                     <div className="image-wrapper">
                       <i className="star-icon"><img src='/images/spot_detail/star_icon.png' /></i>
@@ -145,16 +138,16 @@ class SpotDetail extends React.Component {
                   </div>
                 </div>
 
-                <div className="spot-index-item-detail-description-body">
+                <div className="spot-detail description-wrapper">
                   <p>{spot.description}</p>
                 </div>
 
-                <div className="spot-index-item-detail-description-sleeping-arrangements">
+                <div className="spot-detail sleeping-wrapper">
                   <h2>Sleeping arrangements</h2>
                   <SleepingArrangementIndex bedrooms={spot.bedrooms} />
                 </div> 
 
-                <div className="spot-index-item-detail-description-amenities">
+                <div className="spot-detail amenities-wrapper">
                   <h2>Amenities</h2>
                   
                   <div className="amenities-grid">
@@ -231,9 +224,9 @@ class SpotDetail extends React.Component {
                     }
                   </div>
                 </div>
-              </div>
+              {/* </div> */}
             </div> 
-          </div>
+          {/* </div> */}
 
           <div className="spot-index-detail-booking-form">
             <h2>Select dates</h2>
