@@ -140,7 +140,6 @@
 
 .footer-copyright-wrapper small {
   font-family: 'cerealLight';
-  font-size: 0.875em;
   color: var(--dark-gray);
 }
 
@@ -153,7 +152,8 @@
 
   .developer-name-wrapper p,
   .developers-dropdown-wrapper ul li a,
-  .footer-columns-wrapper ul li a {
+  .footer-columns-wrapper ul li a,
+  .footer-copyright-wrapper small  {
     font-size: calc(11px + 3 * ((100vw - 320px) / 680));
   }
 }
@@ -165,13 +165,8 @@
 
   .developer-name-wrapper p,
   .developers-dropdown-wrapper ul li a,
-  .footer-columns-wrapper ul li a {
+  .footer-columns-wrapper ul li a,
+  .footer-copyright-wrapper small {
     font-size: 14px;
   }
-}
-
-/* Mobile and small screen styling */
-
-@media screen and (max-width: 850px) {
-
 }
