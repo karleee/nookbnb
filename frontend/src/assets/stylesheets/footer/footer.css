@@ -30,7 +30,6 @@
 
 .footer-columns-wrapper ul li {
   font-family: 'cerealLight';
-  font-size: 0.9em;
   color: var(--dark-gray);
   padding-bottom: 1em;
 }
@@ -151,16 +150,28 @@
   .footer-columns-wrapper h3 {
     font-size: calc(10px + 2 * ((100vw - 320px) / 680));
   }
+
+  .developer-name-wrapper p,
+  .developers-dropdown-wrapper ul li a,
+  .footer-columns-wrapper ul li a {
+    font-size: calc(11px + 3 * ((100vw - 320px) / 680));
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .footer-columns-wrapper h3 {
     font-size: 12px;
   }
+
+  .developer-name-wrapper p,
+  .developers-dropdown-wrapper ul li a,
+  .footer-columns-wrapper ul li a {
+    font-size: 14px;
+  }
 }
 
 /* Mobile and small screen styling */
 
 @media screen and (max-width: 850px) {
-  
+
 }
