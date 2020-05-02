@@ -348,7 +348,7 @@
 .spot-detail.booking-wrapper {
   width: 100%;
   border-top: 1px solid var(--underline-gray);
-  display: none;
+  /* display: none;  */
 }
 
 .spot-detail.booking-wrapper h2 {
@@ -390,7 +390,8 @@
     font-size: calc(10px + 4 * ((100vw - 320px) / 680));
   }
 
-  .spot-detail.sleeping-wrapper ul li h3 {
+  .spot-detail.sleeping-wrapper ul li h3,
+  .amenities-wrapper ul li p {
     font-size: calc(8px + 8 * ((100vw - 320px) / 680));
   }
 }
@@ -417,7 +418,8 @@
 
   .spot-detail.gen-info-wrapper p,
   .spot-detail.perk-wrapper h3,
-  .spot-detail.sleeping-wrapper ul li h3 {
+  .spot-detail.sleeping-wrapper ul li h3,
+  .amenities-wrapper ul li p {
     font-size: 16px;
   }
 

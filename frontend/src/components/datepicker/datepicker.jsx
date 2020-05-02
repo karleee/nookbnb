@@ -233,10 +233,10 @@ class Datepicker extends React.Component {
     let guestsState = this.state.guestsState;
 
     return (
-      <div className="datepicker-wrapper">
-        <div className="calendar-wrapper">
-          <div className="arrows prev-month" onClick={this.previousMonth}>
-            <i className="previous-arrow-icon"></i>
+      <div className="datepicker booking-form-wrapper">
+        <div className="datepicker calendars-wrapper">
+          <div className="datepicker prev-arrow-icon" onClick={this.previousMonth}>
+            <img src="/images/spot_detail/previous_arrow_icon.png" alt="Previous arrow" /> 
           </div>
           
           <div className="months-content-wrapper">
@@ -262,39 +262,33 @@ class Datepicker extends React.Component {
             </div>
           </div>
 
-          <div className="arrows next-month" onClick={this.nextMonth}>
-            <i className="next-arrow-icon"></i>
+          <div className="datepicker next-arrow-icon" onClick={this.nextMonth}>
+            <img src="/images/spot_detail/next_arrow_icon.png" alt="Previous arrow" /> 
           </div>
         </div>
 
-        <div className="selected-dates-wrapper">
-          <div className="dates-wrapper">
-            <div className="check-in-date">
-              <input
-                type="text"
-                value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay, selectedStartYr)}
-                placeholder="Check-in"
-              />
-            </div>
+        <div className="datepicker form-wrapper">
+          <div className="datepicker dates-input-wrapper">
+            <input
+              type="text"
+              value={selectedStartMonth === '' && selectedStartDay === '' ? '' : this.formatDate(selectedStartMonth, selectedStartDay, selectedStartYr)}
+              placeholder="Check-in"
+            />
 
-            <div className="checkout-date">
-              <input
-                type="text"
-                value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay, selectedEndYr)}
-                placeholder="Checkout"
-              />
-            </div>
+            <input
+              type="text"
+              value={selectedEndMonth === '' && selectedEndDay === '' ? '' : this.formatDate(selectedEndMonth, selectedEndDay, selectedEndYr)}
+              placeholder="Checkout"
+            />
           </div>
 
-          <div className="guests" onClick={this.toggleGuestsState}>
-            <div className="guests-input-wrapper">
+          <div className="datepicker guests-input-wrapper" onClick={this.toggleGuestsState}>
+            <div className="datepicker num-guests-wrapper">
               <label>Guests</label>
               <p>{totalGuests > 1 ? `${totalGuests} guests` : `${totalGuests} guest`} {infantGuests > 0 ? `, ${infantGuests} infants` : ''}</p>
             </div>
 
-            <div className="guests-dropdown-arrow-wrapper">
-              {guestsState ? <i className="guests-dropdown-arrow-active-icon"></i> : <i className="guests-dropdown-arrow-icon"></i>}
-            </div>
+            {guestsState ? <img className="datepicker dropdown-arrow-wrapper active" src="/images/spot_detail/dropdown_arrow_active_icon.png" alt="Active dropdown arrow" /> : <img className="datepicker dropdown-arrow-wrapper" src="/images/spot_detail/dropdown_arrow_icon.png" alt="Dropdown arrow" />}
           </div>
 
           { guestsState ? 

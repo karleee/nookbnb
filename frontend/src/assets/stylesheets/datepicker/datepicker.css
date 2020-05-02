@@ -1,6 +1,6 @@
 @import '../variables.css';
 
-.datepicker-wrapper {
+.datepicker.booking-form-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -11,7 +11,7 @@
   margin: 5% 0 10% 0;
 }
 
-.datepicker-wrapper .calendar-wrapper {
+.datepicker.calendars-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -20,17 +20,94 @@
   margin-right: 2em;
 }
 
-.selected-dates-wrapper {
+/* Previous and next arrow styling */
+
+.datepicker.prev-arrow-icon img,
+.datepicker.next-arrow-icon img {
+  width: 0.5em;
+}
+
+.datepicker.prev-arrow-icon:hover,
+.datepicker.next-arrow-icon:hover {
+  cursor: pointer;
+}
+
+/* User input box styling */
+
+.datepicker.form-wrapper {
   width: 30%;
 }
 
-.dates-wrapper {
+.datepicker.dates-input-wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.datepicker-wrapper .calendar-wrapper .arrows {
+.datepicker.dates-input-wrapper input[type="text"] {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  color: var(--dark-gray);
+  /* width: 100%; */
+  border: none;
+  border: 1px solid var(--outline-gray); 
+  box-sizing: border-box;
+  padding: 5% 0 5% 8%;
+  width: 50%;
+}
+
+.datepicker.dates-input-wrapper input[type="text"]:first-of-type {
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.datepicker.dates-input-wrapper input[type="text"]:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Guests styling */
+
+.datepicker.guests-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--outline-gray);
+  border-radius: 10px;
+  background: white;
+  margin-top: 5%;
+  box-sizing: border-box;
+  padding: 3% 1.5% 3% 4.5%;
+}
+
+.datepicker.num-guests-wrapper label {
+  font-family: 'cerealLight';
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.datepicker.num-guests-wrapper p {
+  font-family: 'cerealRegular';
+  font-size: 16px;
+  color: var(--dark-gray);
+}
+
+.datepicker.dropdown-arrow-wrapper,
+.datepicker.dropdown-arrow-wrapper active {
+  width: 5%;
+  margin-right: 3%;
+}
+
+/* .datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-active-icon {
+  content: url('/images/spot_detail/dropdown_arrow_active_icon.png');
+  width: 18px;
+  padding-right: 10px;
+} */
+
+/* .datepicker-wrapper .calendar-wrapper .arrows {
   position: relative;
   text-align: center;
   width: 1.875em;
@@ -38,9 +115,9 @@
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
-}
+} */
 
-.next-arrow-icon {
+/* .next-arrow-icon {
   content: url('/images/spot_detail/next_arrow_icon.png');
   width: 8px;
   margin-left: -35px;
@@ -50,20 +127,20 @@
   content: url('/images/spot_detail/next_arrow_hover_icon.png');
   width: 35px;
   margin-top: -11px;
-}
+} */
 
-.previous-arrow-icon {
+/* .previous-arrow-icon {
   content: url('/images/spot_detail/previous_arrow_icon.png');
   width: 8px;
   margin-left: 32px;
-}
+} */
 
-.previous-arrow-icon:hover {
+/* .datepicker.prev-arrow-icon:hover {
   content: url('/images/spot_detail/previous_arrow_hover_icon.png');
   width: 35px;
   margin-top: -10px;
   margin-left: 18px;
-}
+} */
 
 .months-content-wrapper {
   display: flex;
@@ -121,7 +198,6 @@
 .start-month .days .number-days .weekday,
 .end-month .days .number-days .weekday {
   font-family: 'cerealLight';
-  /* font-size: 12px; */
   color: var(--gray);
   margin-bottom: 5%;
 }
@@ -146,12 +222,12 @@
 
 /* Check in and check out styling */
 
-.check-in-date,
+/* .check-in-date,
 .checkout-date {
   width: 50%;
-}
+} */
 
-.check-in-date input[type="text"],
+/* .check-in-date input[type="text"],
 .checkout-date input[type="text"] {
   font-family: 'cerealRegular';
   font-size: 16px;
@@ -161,18 +237,18 @@
   border: 1px solid var(--outline-gray); 
   box-sizing: border-box;
   padding: 10% 0 10% 8%;
-} 
+}  */
 
-.check-in-date input[type="text"] {
+/* .check-in-date input[type="text"] {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-right: none;
-}
+} */
 
-.checkout-date input[type="text"] {
+/* .checkout-date input[type="text"] {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-} 
+}  */
 
 /* Clear dates button styling */
 
@@ -197,7 +273,7 @@
 
 /* Guests styling */
 
-.guests {
+/* .datepicker.guests-input-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -209,31 +285,31 @@
   margin-top: 0.9375em;
   box-sizing: border-box;
   padding: 3% 1.5% 3% 4.5%;
-}
+} */
 
-.datepicker-wrapper .selected-dates-wrapper .guests .guests-input-wrapper label {
+/* .datepicker-wrapper .selected-dates-wrapper .guests .guests-input-wrapper label {
   font-family: 'cerealLight';
   font-size: 12px;
   color: var(--gray);
-}
+} */
 
-.datepicker-wrapper .selected-dates-wrapper .guests .guests-input-wrapper p {
+/* .datepicker-wrapper .selected-dates-wrapper .guests .guests-input-wrapper p {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
-}
+} */
 
-.datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-icon {
+/* .datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-icon {
   content: url('/images/spot_detail/dropdown_arrow_icon.png');
   width: 18px;
   padding-right: 10px;
-}
+} */
 
-.datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-active-icon {
+/* .datepicker-wrapper .selected-dates-wrapper .guests .guests-dropdown-arrow-wrapper .guests-dropdown-arrow-active-icon {
   content: url('/images/spot_detail/dropdown_arrow_active_icon.png');
   width: 18px;
   padding-right: 10px;
-}
+} */
 
 
 .datepicker-wrapper .selected-dates-wrapper .guests-dropdown-menu {
@@ -376,5 +452,22 @@
   .start-month .days .number-days .weekday,
   .end-month .days .number-days .weekday {
     font-size: 12px;
+  }
+}
+
+/* Small screen styling */
+
+@media screen and (max-width: 1420px) {
+  .datepicker-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calendar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
   }
 }
