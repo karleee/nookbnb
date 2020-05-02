@@ -196,13 +196,11 @@
 
 .spot-detail.perk-wrapper h3 {
   font-family: 'cerealRegular';
-  /* font-size: 16px; */
   color: var(--medium-gray);
 }
 
 .spot-detail.perk-wrapper p {
   font-family: 'cerealLight';
-  /* font-size: 14px; */
   color: var(--gray);
   margin-top: 2%;
 }
@@ -230,19 +228,6 @@
   margin-right: 25px;
 }
 
-/* .sparkling-clean-perk-wrapper .perk-wrapper h3 {
-  font-family: 'cerealRegular';
-  font-size: 16px;
-  color: var(--medium-gray);
-} */
-
-/* .sparkling-clean-perk-wrapper .perk-wrapper p {
-  font-family: 'cerealLight';
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 5px;
-} */
-
 .superhost-perk-wrapper {
   display: flex;
   flex-direction: row;
@@ -254,19 +239,6 @@
   width: 16px;
   margin-right: 24px;
 }
-
-/* .superhost-perk-wrapper .perk-wrapper h3 {
-  font-family: 'cerealRegular';
-  font-size: 16px;
-  color: var(--medium-gray);
-} */
-
-/* .superhost-perk-wrapper .perk-wrapper p {
-  font-family: 'cerealLight';
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 5px;
-} */
 
 .check-in-perk-wrapper {
   display: flex;
@@ -281,29 +253,15 @@
   margin-right: 18px;
 }
 
-/* .check-in-perk-wrapper .perk-wrapper h3 {
-  font-family: 'cerealRegular';
-  font-size: 16px;
-  color: var(--medium-gray);
-} */
-
-/* .check-in-perk-wrapper .perk-wrapper p {
-  font-family: 'cerealLight';
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 5px;
-} */
-
 /* Description styling */
 
 .spot-detail.description-wrapper {
   font-family: 'cerealRegular';
-  font-size: 15px;
-  margin-top: 30px;
   line-height: 1.75;
   border-bottom: 1px solid var(--underline-gray);
-  padding-bottom: 30px;
   color: var(--medium-gray);
+  box-sizing: border-box;
+  padding: 7% 0;
   width: 55%;
 }
 
@@ -493,7 +451,8 @@
     font-size: calc(16px + 16 * ((100vw - 320px) / 680));
   }
 
-  .spot-detail.user-price-wrapper p {
+  .spot-detail.user-price-wrapper p,
+  .spot-detail.description-wrapper {
     font-size: calc(10px + 5 * ((100vw - 320px) / 680));
   }
 
@@ -520,11 +479,12 @@
     font-size: 32px;
   }
 
-  .spot-detail.location-wrapper p {
+  .spot-detail.user-price-wrapper p,
+  .spot-detail.description-wrapper {
     font-size: 15px;
   }
 
-  .spot-detail.location-wrapper p span {
+  .spot-detail.user-price-wrapper p span {
     font-size: 24px;
   }
 
@@ -559,7 +519,8 @@
   }
 
   .spot-detail.gen-info-wrapper,
-  .spot-detail.perks-wrapper {
+  .spot-detail.perks-wrapper,
+  .spot-detail.description-wrapper {
     width: 100%;
   }
 }
