@@ -306,7 +306,6 @@
   box-sizing: border-box;
   padding: 3% 0;
   width: 55%;
-  height: 300px;
 }
 
 .spot-detail.amenities-wrapper h2 {
@@ -347,13 +346,12 @@
 
 .spot-detail.booking-wrapper {
   width: 100%;
+  /* background: orange; */
   border-top: 1px solid var(--underline-gray);
-  /* display: none;  */
 }
 
 .spot-detail.booking-wrapper h2 {
-  font-family: 'cerealMedium';
-  font-size: 20px;
+  font-family: 'cerealRegular';
   color: var(--dark-gray);
   margin-top: 5%;
 }
@@ -381,7 +379,8 @@
   .spot-detail.gen-info-wrapper p,
   .spot-detail.perk-wrapper h3,
   .spot-detail.sleeping-wrapper h2,
-  .spot-detail.amenities-wrapper h2 {
+  .spot-detail.amenities-wrapper h2,
+  .spot-detail.booking-wrapper h2 {
     font-size: calc(12px + 4 * ((100vw - 320px) / 680));
   }
 
@@ -412,7 +411,8 @@
 
   .spot-detail.user-price-wrapper p span,
   .spot-detail.sleeping-wrapper h2,
-  .spot-detail.amenities-wrapper h2 {
+  .spot-detail.amenities-wrapper h2,
+  .spot-detail.booking-wrapper h2 {
     font-size: 24px;
   }
 

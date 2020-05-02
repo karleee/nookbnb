@@ -233,17 +233,17 @@ class Datepicker extends React.Component {
     let guestsState = this.state.guestsState;
 
     return (
-      <div className="datepicker booking-form-wrapper">
+      <div className="datepicker form-wrapper"> 
         <div className="datepicker calendars-wrapper">
           <div className="datepicker prev-arrow-icon" onClick={this.previousMonth}>
             <img src="/images/spot_detail/previous_arrow_icon.png" alt="Previous arrow" /> 
           </div>
           
-          <div className="months-content-wrapper">
-            <div className="months-wrapper">
+          <div className="datepicker months-wrapper">
+            <div className="datepicker start-end-month-wrapper">
               <Month 
                 currentMonth={currentMonth}
-                nextMonth={nextMonth}
+                nextMonth={nextMonth} 
                 currentYr={currentYr} 
                 type="start" 
                 handleDateClick={this.handleDateClick} 
@@ -257,7 +257,7 @@ class Datepicker extends React.Component {
               />
             </div>
 
-            <div className="clear-dates-wrapper">
+            <div className="datepicker clear-dates-wrapper">
               <button onClick={this.reset}>Clear Dates</button>
             </div>
           </div>
@@ -267,7 +267,7 @@ class Datepicker extends React.Component {
           </div>
         </div>
 
-        <div className="datepicker form-wrapper">
+        <div className="datepicker user-input-wrapper">
           <div className="datepicker dates-input-wrapper">
             <input
               type="text"
@@ -292,74 +292,66 @@ class Datepicker extends React.Component {
           </div>
 
           { guestsState ? 
-            <div className="guests-dropdown-menu">
-              <div className="adult-guests-wrapper">
-                <div className="adult-guests-label-wrapper">
-                  <p>Adults</p>
-                </div> 
+            <div className="datepicker dropdown-menu-wrapper">
+              <div className="datepicker option-wrapper"> 
+                <p>Adults</p>
 
-                <div className="adult-guests-buttons-wrapper">
-                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
-                    {adultGuests > 1 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                <div className="datepicker buttons-wrapper">
+                  <div className="datepicker subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('adult')}>
+                    {adultGuests > 1 ? <img className="datepicker subtract-button" src="/images/spot_detail/subtract_icon.png" alt="Subtract button" /> : <img className="datepicker subtract-icon disabled" src="/images/spot_detail/subtract_disable_icon.png" alt="Disabled subtract button" />}
                   </div>
 
-                  <div className="button-text-wrapper">
-                    <p>{adultGuests}</p>
-                  </div>
+                  <p>{adultGuests}</p> 
 
-                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('adult')}>
-                    {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
+                  <div className="datepicker add-button-wrapper" onClick={() => this.handleGuestsAddingClick('adult')}>
+                    {totalGuests < 4 ? <img className="datepicker add-button" src="/images/spot_detail/add_icon.png" alt="Add button" /> : <img className="datepicker add-button disable" src="/images/spot_detail/add_disable_icon.png" alt="Disabled add button" />}
                   </div>
                 </div>
               </div>
 
-              <div className="children-guests-wrapper">
-                <div className="children-guests-label-wrapper">
+              <div className="datepicker option-wrapper">
+                <div className="datepicker label-wrapper">
                   <p>Children</p>
                   <p>Ages 2–12</p>
                 </div>
 
-                <div className="children-guests-buttons-wrapper">
-                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('children')}>
-                    {childrenGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                <div className="datepicker buttons-wrapper">
+                  <div className="datepicker subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('children')}>
+                    {childrenGuests > 0 ? <img className="datepicker subtract-button" src="/images/spot_detail/subtract_icon.png" alt="Subtract button" /> : <img className="datepicker subtract-icon disabled" src="/images/spot_detail/subtract_disable_icon.png" alt="Disabled subtract button" />}
                   </div>
 
-                  <div className="button-text-wrapper">
-                    <p>{childrenGuests}</p>
-                  </div>
+                  <p>{childrenGuests}</p>
 
-                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('children')}>
-                    {totalGuests < 4 ? <i className="add-icon"></i> : <i className="add-icon-disable"></i>}
+                  <div className="datepicker add-button-wrapper" onClick={() => this.handleGuestsAddingClick('children')}>
+                    {totalGuests < 4 ? <img className="datepicker add-button" src="/images/spot_detail/add_icon.png" alt="Add button" /> : <img className="datepicker add-button disable" src="/images/spot_detail/add_disable_icon.png" alt="Disabled add button" />}
                   </div>
                 </div>
               </div>
 
-              <div className="infant-guests-wrapper">
-                <div className="infant-guests-label-wrapper">
+              <div className="datepicker option-wrapper">
+                <div className="datepicker label-wrapper">
                   <p>Infants</p>
                   <p>Under 2</p>
                 </div> 
 
-                <div className="infant-guests-buttons-wrapper">
-                  <div className="subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
-                    {infantGuests > 0 ? <i className="subtract-icon"></i> : <i className="subtract-icon-disable"></i>}
+                <div className="datepicker buttons-wrapper">
+                  <div className="datepicker subtract-button-wrapper" onClick={() => this.handleGuestsSubtractingClick('infant')}>
+                    {infantGuests > 0 ? <img className="datepicker subtract-button" src="/images/spot_detail/subtract_icon.png" alt="Subtract button" /> : <img className="datepicker subtract-icon disabled" src="/images/spot_detail/subtract_disable_icon.png" alt="Disabled subtract button" />}
                   </div>
 
-                  <div className="button-text-wrapper">
-                    <p>{infantGuests}</p>
-                  </div>
+                  <p>{infantGuests}</p>
 
-                  <div className="add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
-                    <i className="add-icon"></i>
+                  <div className="datepicker add-button-wrapper" onClick={() => this.handleGuestsAddingClick('infant')}>
+                    <img className="datepicker add-button" src="/images/spot_detail/add_icon.png" alt="Add button" />
                   </div>
                 </div>
               </div>
 
-              <div className="maximum-guests-wrapper">
+              <div className="datepicker max-message-wrapper">
                 <p>4 guests maximum. Infants don’t count toward the number of guests.</p>
               </div>
 
-              <div className="close-wrapper">
+              <div className="datepicker close-wrapper">
                 <p onClick={this.toggleGuestsState}>Close</p>
               </div>
             </div> : '' }

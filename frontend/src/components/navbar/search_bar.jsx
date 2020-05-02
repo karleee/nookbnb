@@ -19,10 +19,15 @@ class SearchBar extends React.Component {
 	// Changes search input placeholder
 	togglePlaceholder() {
 		window.addEventListener('click', e => {
-			if (e.target.parentElement.className === 'search-bar') {
-				this.setState({ searchPlaceholder: 'Search by city or state' });
-			} else {
-				this.setState({ searchPlaceholder: 'Anywhere • Stays' });
+			if (e.target.parentElement) {
+			  if (e.target.parentElement.className === 'search-bar') {
+			  	this.setState({ searchPlaceholder: 'Search by city or state' });
+			  } else {
+			  	this.setState({ searchPlaceholder: 'Anywhere • Stays' });
+				}
+			}
+			else {
+				return;
 			}
 		});
 	}
