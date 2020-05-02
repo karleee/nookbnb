@@ -92,9 +92,7 @@ class SpotDetail extends React.Component {
 
             <div className="spot-detail perks-wrapper">
               <div className="spot-detail perk-wrapper">
-                <div className="spot-detail image-wrapper">
-                  {/* <i className="star-icon"><img src='/images/spot_detail/star_icon.png' /></i> */}
-                </div>
+                <img src='/images/spot_detail/star_icon.png' />
 
                 <div className="spot-detail text-wrapper">
                   <h3>Entire home</h3>
@@ -103,9 +101,7 @@ class SpotDetail extends React.Component {
               </div>
 
               <div className="spot-detail perk-wrapper">
-                <div className="spot-detail image-wrapper">
-                  {/* <i className="cleaner-icon"><img src='/images/spot_detail/bottle_icon.png' /></i> */}
-                </div>
+                <img src='/images/spot_detail/bottle_icon.png' />
 
                 <div className="spot-detail text-wrapper">
                   <h3>Sparkling clean</h3>
@@ -114,9 +110,7 @@ class SpotDetail extends React.Component {
               </div>
 
               <div className="spot-detail perk-wrapper"> 
-                <div className="spot-detail image-wrapper">
-                  {/* <i className="badge-icon"><img src='/images/spot_detail/badge_icon.png' /></i> */}
-                </div>
+                <img src='/images/spot_detail/badge_icon.png' />
 
                 <div className="spot-detail text-wrapper">
                   <h3>{usernameCapitalized} is a Superhost</h3>
@@ -125,9 +119,7 @@ class SpotDetail extends React.Component {
               </div>
 
               <div className="spot-detail perk-wrapper">
-                <div className="spot-detail image-wrapper">
-                  {/* <i className="house-icon"><img src='/images/spot_detail/check_in_icon.png' /></i> */}
-                </div>
+                <img src='/images/spot_detail/house_icon.png' />
 
                 <div className="spot-detail text-wrapper">
                   <h3>Great check-in experience</h3>

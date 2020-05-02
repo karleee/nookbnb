@@ -189,6 +189,9 @@
 /* Perks styling */
 
 .spot-detail.perks-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-bottom: 1px solid var(--underline-gray);
   box-sizing: border-box;
   padding: 3% 0;
@@ -203,7 +206,7 @@
 .spot-detail.perk-wrapper p {
   font-family: 'cerealLight';
   color: var(--gray);
-  margin-top: 2%;
+  margin-top: 0.5em;
 }
 
 .spot-detail.perk-wrapper {
@@ -211,8 +214,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  box-sizing: border-box;
-  padding: 1% 0;
+  margin: 1.5% 0;
 }
 
 .spot-detail.perk-wrapper:first-of-type {
@@ -223,11 +225,10 @@
   padding-bottom: 0;
 }
 
-.spot-detail.image-wrapper {
-  width: 30px;
-  padding-top: 30px;
-  background: green;
-  margin-right: 3%;
+.spot-detail.perk-wrapper img {
+  width: 1.6em;
+  height: 1.6em;
+  margin-right: 2%;
 }
 
 .spot-detail.text-wrapper {
@@ -235,54 +236,6 @@
   flex-direction: column;
   align-items: flex-start;
 }
-
-/* .entire-home-perk-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-} */
-
-/* .entire-home-perk-wrapper .image-wrapper .star-icon img {
-  width: 23px;
-  margin-right: 17px;
-} */
-
-/* .sparkling-clean-perk-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 20px;
-} */
-
-/* .sparkling-clean-perk-wrapper .image-wrapper .cleaner-icon img {
-  width: 15px;
-  margin-right: 25px;
-} */
-
-/* .superhost-perk-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 20px;
-} */
-
-/* .superhost-perk-wrapper .image-wrapper .badge-icon img {
-  width: 16px;
-  margin-right: 24px;
-} */
-
-/* .check-in-perk-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 20px;
-  padding-bottom: 30px;
-} */
-
-/* .check-in-perk-wrapper .image-wrapper .house-icon img {
-  width: 25px;
-  margin-right: 18px;
-} */
 
 /* Description styling */
 
@@ -292,7 +245,7 @@
   border-bottom: 1px solid var(--underline-gray);
   color: var(--medium-gray);
   box-sizing: border-box;
-  padding: 7% 0;
+  padding: 3% 0;
   width: 55%;
 }
 
@@ -462,6 +415,7 @@
 .spot-detail.booking-wrapper {
   width: 100%;
   border-top: 1px solid var(--underline-gray);
+  display: none;
 }
 
 .spot-detail.booking-wrapper h2 {
