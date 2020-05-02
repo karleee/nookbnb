@@ -97,7 +97,7 @@
   box-sizing: border-box;
   padding: 0.5% 1%;
   border-radius: 0.3em; 
-  display: none;
+  /* display: none; */
 }
 
 .view-images-wrapper button:hover {
@@ -148,10 +148,9 @@
 /* User and price styling */
 
 .spot-detail.user-price-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  border: 1px solid var(--outline-gray);
+  box-sizing: border-box;
+  padding: 0.5% 5%;
 }
 
 .spot-detail.user-price-wrapper p {
@@ -161,10 +160,6 @@
   align-items: center;
   font-family: 'cerealLight';
   color: var(--medium-gray);
-  border: 1px solid var(--outline-gray);
-  /* box-sizing: border-box; */
-  /* padding: 2% 10%; */
-  /* width: 40%; */
 }
 
 .spot-detail.user-price-wrapper p span {
@@ -180,7 +175,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
+  width: 55%;
   border-bottom: 1px solid var(--underline-gray);
 }
 
@@ -197,6 +192,7 @@
 .spot-detail.perks-wrapper {
   border-bottom: 1px solid var(--underline-gray);
   margin-top: 30px;
+  width: 55%;
 }
 
 .entire-home-perk-wrapper {
@@ -309,6 +305,7 @@
   border-bottom: 1px solid var(--underline-gray);
   padding-bottom: 30px;
   color: var(--medium-gray);
+  width: 55%;
 }
 
 /* Sleeping arrangements styling */
@@ -316,6 +313,7 @@
 .spot-detail.sleeping-wrapper {
   margin-top: 30px;
   border-bottom: 1px solid var(--underline-gray);
+  width: 55%;
 }
 
 .spot-detail.sleeping-wrapper h2 {
@@ -366,6 +364,7 @@
 .spot-detail.amenities-wrapper {
   display: grid;
   margin-top: 30px;
+  width: 55%;
 }
 
 .spot-detail.amenities-wrapper h2 {
@@ -472,17 +471,16 @@
 
 /* Datepicker styling */
 
-.spot-index-detail-booking-form {
+.spot-detail.booking-wrapper {
   width: 100%;
   border-top: 1px solid var(--underline-gray);
-  display: none;
 }
 
-.spot-index-detail-booking-form h2 {
+.spot-detail.booking-wrapper h2 {
   font-family: 'cerealMedium';
   font-size: 20px;
   color: var(--dark-gray);
-  margin-top: 50px;
+  margin-top: 5%;
 }
 
 /* Dynamic styling */
@@ -514,11 +512,11 @@
     font-size: 32px;
   }
 
-  .spot-detail.user-price-wrapper p {
+  .spot-detail.location-wrapper p {
     font-size: 15px;
   }
 
-  .spot-detail.user-price-wrapper p span {
+  .spot-detail.location-wrapper p span {
     font-size: 24px;
   }
 }
@@ -546,23 +544,4 @@
     align-items: center;
     margin-top: 3%;
   }
-
-  .spot-detail.user-price-wrapper img {
-    margin-right: 5%;
-  }
-
-  /* .spot-index-item-detail-header .header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  } */
-
-  /* .spot-index-item-detail-header .header .name-wrapper h1 {
-    font-size: 16px;
-  }
-
-  .spot-index-item-detail-header .header img {
-    width: 25%;
-    border-radius: 50%;
-  } */
 }

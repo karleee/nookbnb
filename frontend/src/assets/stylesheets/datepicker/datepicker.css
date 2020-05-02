@@ -8,8 +8,7 @@
   align-items: flex-start;
   width: 100%;
   background: transparent; 
-  margin-top: 50px;
-  margin-bottom: 7em;
+  margin: 5% 0 10% 0;
 }
 
 .datepicker-wrapper .calendar-wrapper {
@@ -122,7 +121,7 @@
 .start-month .days .number-days .weekday,
 .end-month .days .number-days .weekday {
   font-family: 'cerealLight';
-  font-size: 12px;
+  /* font-size: 12px; */
   color: var(--gray);
   margin-bottom: 5%;
 }
@@ -362,4 +361,20 @@
   font-family: 'cerealLight';
   font-size: 14px;
   width: 90%;
+}
+
+/* Dynamic styling */
+
+@media screen and (min-width: 320px) {
+  .start-month .days .number-days .weekday,
+  .end-month .days .number-days .weekday {
+    font-size: calc(6px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .start-month .days .number-days .weekday,
+  .end-month .days .number-days .weekday {
+    font-size: 12px;
+  }
 }
