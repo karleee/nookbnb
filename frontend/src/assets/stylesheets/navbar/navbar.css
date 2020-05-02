@@ -61,7 +61,7 @@
   width: 64%;
 }
 
-.navbar.links-wrapper button {
+.links-wrapper button {
   font-family: 'cerealBold';
   font-size: 1em;
   color: var(--gray);
@@ -72,12 +72,12 @@
   padding: 0 1em 30px 1em; 
 }
 
-.navbar.links-wrapper button:hover {
+.links-wrapper button:hover {
   cursor: pointer;
   border-bottom: 4px solid var(--gray);
 }
 
-button:first-of-type {
+.links-wrapper button:first-of-type {
   margin-right: 1em;
 }
 
@@ -108,9 +108,9 @@ button:first-of-type {
     box-sizing: border-box;
     padding: 4% 0;
     margin-left: 7%;
-  }
+  } 
 
-  button {
+  .links-wrapper button {
     color: white;
     padding: 0;
     border-bottom: none;
