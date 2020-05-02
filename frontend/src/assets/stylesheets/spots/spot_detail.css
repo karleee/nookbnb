@@ -125,6 +125,7 @@
 .spot-detail.location-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 55%;
 }
 
@@ -143,6 +144,7 @@
   width: 10%;
   height: 10%;
   border-radius: 50%;
+
 }
 
 /* User and price styling */
@@ -259,7 +261,6 @@
 
 .spot-detail.sleeping-wrapper h2 {
   font-family: 'cerealMedium';
-  font-size: 16px;
   color: var(--medium-gray);
 }
 
@@ -267,8 +268,8 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  padding-bottom: 40px;
-  margin-top: 20px;
+  padding-bottom: 7%;
+  margin-top: 5%;
 }
 
 .spot-detail.sleeping-wrapper ul li {
@@ -277,40 +278,38 @@
   justify-content: flex-start;
   border: 1px solid var(--underline-gray); 
   border-radius: 5px;
-  padding: 25px 90px 25px 25px;
-  margin-right: 20px;
+  box-sizing: border-box;
+  padding: 5% 13% 5% 5%;
+  margin-right: 3%;
 }
 
-.spot-detail.sleeping-wrapper ul li .bed-icon img {
-  width: 25px;
+.bed-icon img {
+  width: 30%;
 }
 
 .spot-detail.sleeping-wrapper ul li h3 {
   font-family: 'cerealRegular';
-  font-size: 16px;
   color: var(--medium-gray);
   letter-spacing: 0.5px;
-  margin-top: 15px;
+  margin-top: 10%;
 }
 
 .spot-detail.sleeping-wrapper ul li p {
   font-family: 'cerealLight';
-  font-size: 14px;
   color: var(--medium-gray);
-  margin-top: 10px;
+  margin-top: 10%;
 }
 
 /* Amenities styling */
 
 .spot-detail.amenities-wrapper {
   display: grid;
-  margin-top: 30px;
+  margin-top: 3%;
   width: 55%;
 }
 
 .spot-detail.amenities-wrapper h2 {
   font-family: 'cerealMedium';
-  font-size: 16px;
   color: var(--medium-gray);
 }
 
@@ -446,12 +445,19 @@
   }
 
   .spot-detail.gen-info-wrapper p,
-  .spot-detail.perk-wrapper h3  {
+  .spot-detail.perk-wrapper h3,
+  .spot-detail.sleeping-wrapper h2,
+  .spot-detail.amenities-wrapper h2 {
     font-size: calc(12px + 4 * ((100vw - 320px) / 680));
   }
 
-  .spot-detail.perk-wrapper p {
+  .spot-detail.perk-wrapper p,
+  .spot-detail.sleeping-wrapper ul li p  {
     font-size: calc(10px + 4 * ((100vw - 320px) / 680));
+  }
+
+  .spot-detail.sleeping-wrapper ul li h3 {
+    font-size: calc(8px + 8 * ((100vw - 320px) / 680));
   }
 }
 
@@ -474,11 +480,15 @@
   }
 
   .spot-detail.gen-info-wrapper p,
-  .spot-detail.perk-wrapper h3 {
+  .spot-detail.perk-wrapper h3,
+  .spot-detail.sleeping-wrapper h2,
+  .spot-detail.sleeping-wrapper ul li h3,
+  .spot-detail.amenities-wrapper h2 {
     font-size: 16px;
   }
 
-  .spot-detail.perk-wrapper p {
+  .spot-detail.perk-wrapper p,
+  .spot-detail.sleeping-wrapper ul li p  {
     font-size: 14px;
   }
 }
