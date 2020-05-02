@@ -79,7 +79,7 @@ class SpotDetail extends React.Component {
 
             <div className="spot-detail user-price-wrapper">
               <p><span>${spot.price}</span> per night</p>
-            </div>
+            </div> 
           </div>
 
           <div className="spot-detail body-wrapper">
@@ -96,7 +96,7 @@ class SpotDetail extends React.Component {
                   <i className="star-icon"><img src='/images/spot_detail/star_icon.png' /></i>
                 </div>
 
-                <div className="perk-wrapper">
+                <div className="spot-detail perk-wrapper">
                   <h3>Entire home</h3>
                   <p>You'll have the house to yourself.</p>
                 </div>
@@ -107,7 +107,7 @@ class SpotDetail extends React.Component {
                   <i className="cleaner-icon"><img src='/images/spot_detail/bottle_icon.png' /></i>
                 </div>
 
-                <div className="perk-wrapper">
+                <div className="spot-detail perk-wrapper">
                   <h3>Sparkling clean</h3>
                   <p>Recent guests said this place was sparkling clean.</p>
                 </div>
@@ -118,7 +118,7 @@ class SpotDetail extends React.Component {
                   <i className="badge-icon"><img src='/images/spot_detail/badge_icon.png' /></i>
                 </div>
 
-                <div className="perk-wrapper">
+                <div className="spot-detail perk-wrapper">
                   <h3>{usernameCapitalized} is a Superhost</h3>
                   <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
                 </div>
@@ -129,7 +129,7 @@ class SpotDetail extends React.Component {
                   <i className="house-icon"><img src='/images/spot_detail/check_in_icon.png' /></i>
                 </div>
 
-                <div className="perk-wrapper">
+                <div className="spot-detail perk-wrapper">
                   <h3>Great check-in experience</h3>
                   <p>Recent guests gave the check-in process a 5-star rating.</p>
                 </div>

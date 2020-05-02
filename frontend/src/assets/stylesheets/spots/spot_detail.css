@@ -181,10 +181,9 @@
 
 .spot-detail.gen-info-wrapper p {
   font-family: 'cerealLight';
-  font-size: 16px;
   color: var(--dark-gray);
-  margin: 20px 25px 0 0;
-  padding-bottom: 20px;
+  margin: 3% 5% 0 0;
+  padding-bottom: 3%;
 }
 
 /* Perks styling */
@@ -193,6 +192,19 @@
   border-bottom: 1px solid var(--underline-gray);
   margin-top: 30px;
   width: 55%;
+}
+
+.spot-detail.perk-wrapper h3 {
+  font-family: 'cerealRegular';
+  /* font-size: 16px; */
+  color: var(--medium-gray);
+}
+
+.spot-detail.perk-wrapper p {
+  font-family: 'cerealLight';
+  /* font-size: 14px; */
+  color: var(--gray);
+  margin-top: 2%;
 }
 
 .entire-home-perk-wrapper {
@@ -204,19 +216,6 @@
 .entire-home-perk-wrapper .image-wrapper .star-icon img {
   width: 23px;
   margin-right: 17px;
-}
-
-.entire-home-perk-wrapper .perk-wrapper h3 {
-  font-family: 'cerealRegular';
-  font-size: 16px;
-  color: var(--medium-gray);
-}
-
-.entire-home-perk-wrapper .perk-wrapper p {
-  font-family: 'cerealLight';
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 5px;
 }
 
 .sparkling-clean-perk-wrapper {
@@ -231,18 +230,18 @@
   margin-right: 25px;
 }
 
-.sparkling-clean-perk-wrapper .perk-wrapper h3 {
+/* .sparkling-clean-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
-}
+} */
 
-.sparkling-clean-perk-wrapper .perk-wrapper p {
+/* .sparkling-clean-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
-}
+} */
 
 .superhost-perk-wrapper {
   display: flex;
@@ -256,18 +255,18 @@
   margin-right: 24px;
 }
 
-.superhost-perk-wrapper .perk-wrapper h3 {
+/* .superhost-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
-}
+} */
 
-.superhost-perk-wrapper .perk-wrapper p {
+/* .superhost-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
-}
+} */
 
 .check-in-perk-wrapper {
   display: flex;
@@ -282,18 +281,18 @@
   margin-right: 18px;
 }
 
-.check-in-perk-wrapper .perk-wrapper h3 {
+/* .check-in-perk-wrapper .perk-wrapper h3 {
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--medium-gray);
-}
+} */
 
-.check-in-perk-wrapper .perk-wrapper p {
+/* .check-in-perk-wrapper .perk-wrapper p {
   font-family: 'cerealLight';
   font-size: 14px;
   color: var(--gray);
   margin-top: 5px;
-}
+} */
 
 /* Description styling */
 
@@ -501,6 +500,15 @@
   .spot-detail.user-price-wrapper p span {
     font-size: calc(12px + 12 * ((100vw - 320px) / 680));
   }
+
+  .spot-detail.gen-info-wrapper p,
+  .spot-detail.perk-wrapper h3  {
+    font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  }
+
+  .spot-detail.perk-wrapper p {
+    font-size: calc(10px + 4 * ((100vw - 320px) / 680));
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -518,6 +526,15 @@
 
   .spot-detail.location-wrapper p span {
     font-size: 24px;
+  }
+
+  .spot-detail.gen-info-wrapper p,
+  .spot-detail.perk-wrapper h3 {
+    font-size: 16px;
+  }
+
+  .spot-detail.perk-wrapper p {
+    font-size: 14px;
   }
 }
 
@@ -538,10 +555,11 @@
   }
 
   .spot-detail.user-price-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
     margin-top: 3%;
+  }
+
+  .spot-detail.gen-info-wrapper,
+  .spot-detail.perks-wrapper {
+    width: 100%;
   }
 }
