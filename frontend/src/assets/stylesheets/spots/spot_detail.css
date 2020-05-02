@@ -205,53 +205,75 @@
   margin-top: 2%;
 }
 
-.entire-home-perk-wrapper {
+.spot-detail.perk-wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1% 0;
+}
+
+.spot-detail.image-wrapper {
+  width: 30px;
+  padding-top: 30px;
+  background: green;
+  margin-right: 3%;
+}
+
+.spot-detail.text-wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 
-.entire-home-perk-wrapper .image-wrapper .star-icon img {
+/* .entire-home-perk-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+} */
+
+/* .entire-home-perk-wrapper .image-wrapper .star-icon img {
   width: 23px;
   margin-right: 17px;
-}
+} */
 
-.sparkling-clean-perk-wrapper {
+/* .sparkling-clean-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
-}
+} */
 
-.sparkling-clean-perk-wrapper .image-wrapper .cleaner-icon img {
+/* .sparkling-clean-perk-wrapper .image-wrapper .cleaner-icon img {
   width: 15px;
   margin-right: 25px;
-}
+} */
 
-.superhost-perk-wrapper {
+/* .superhost-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
-}
+} */
 
-.superhost-perk-wrapper .image-wrapper .badge-icon img {
+/* .superhost-perk-wrapper .image-wrapper .badge-icon img {
   width: 16px;
   margin-right: 24px;
-}
+} */
 
-.check-in-perk-wrapper {
+/* .check-in-perk-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
   padding-bottom: 30px;
-}
+} */
 
-.check-in-perk-wrapper .image-wrapper .house-icon img {
+/* .check-in-perk-wrapper .image-wrapper .house-icon img {
   width: 25px;
   margin-right: 18px;
-}
+} */
 
 /* Description styling */
 

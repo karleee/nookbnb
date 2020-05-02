@@ -91,45 +91,45 @@ class SpotDetail extends React.Component {
             </div>
 
             <div className="spot-detail perks-wrapper">
-              <div className="entire-home-perk-wrapper">
-                <div className="image-wrapper">
-                  <i className="star-icon"><img src='/images/spot_detail/star_icon.png' /></i>
+              <div className="spot-detail perk-wrapper">
+                <div className="spot-detail image-wrapper">
+                  {/* <i className="star-icon"><img src='/images/spot_detail/star_icon.png' /></i> */}
                 </div>
 
-                <div className="spot-detail perk-wrapper">
+                <div className="spot-detail text-wrapper">
                   <h3>Entire home</h3>
                   <p>You'll have the house to yourself.</p>
                 </div>
               </div>
 
-              <div className="sparkling-clean-perk-wrapper">
-                <div className="image-wrapper">
-                  <i className="cleaner-icon"><img src='/images/spot_detail/bottle_icon.png' /></i>
+              <div className="spot-detail perk-wrapper">
+                <div className="spot-detail image-wrapper">
+                  {/* <i className="cleaner-icon"><img src='/images/spot_detail/bottle_icon.png' /></i> */}
                 </div>
 
-                <div className="spot-detail perk-wrapper">
+                <div className="spot-detail text-wrapper">
                   <h3>Sparkling clean</h3>
                   <p>Recent guests said this place was sparkling clean.</p>
                 </div>
               </div>
 
-              <div className="superhost-perk-wrapper"> 
-                <div className="image-wrapper">
-                  <i className="badge-icon"><img src='/images/spot_detail/badge_icon.png' /></i>
+              <div className="spot-detail perk-wrapper"> 
+                <div className="spot-detail image-wrapper">
+                  {/* <i className="badge-icon"><img src='/images/spot_detail/badge_icon.png' /></i> */}
                 </div>
 
-                <div className="spot-detail perk-wrapper">
+                <div className="spot-detail text-wrapper">
                   <h3>{usernameCapitalized} is a Superhost</h3>
                   <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
                 </div>
               </div>
 
-              <div className="check-in-perk-wrapper">
-                <div className="image-wrapper">
-                  <i className="house-icon"><img src='/images/spot_detail/check_in_icon.png' /></i>
+              <div className="spot-detail perk-wrapper">
+                <div className="spot-detail image-wrapper">
+                  {/* <i className="house-icon"><img src='/images/spot_detail/check_in_icon.png' /></i> */}
                 </div>
 
-                <div className="spot-detail perk-wrapper">
+                <div className="spot-detail text-wrapper">
                   <h3>Great check-in experience</h3>
                   <p>Recent guests gave the check-in process a 5-star rating.</p>
                 </div>
