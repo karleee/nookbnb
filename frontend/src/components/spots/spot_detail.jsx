@@ -39,7 +39,7 @@ class SpotDetail extends React.Component {
 
   // Rendering component
   render() {
-    const { currentSpot } = this.props;
+    const {currentSpot} = this.props;
     let spot = currentSpot['spot'];
     let user = currentSpot['user'];
     let username = user.email.substr(0, user.email.indexOf('@')); 
@@ -140,76 +140,46 @@ class SpotDetail extends React.Component {
             <div className="spot-detail amenities-wrapper">
               <h2>Amenities</h2>
               
-              <div className="amenities-grid">
+              <div className="spot-detail amenities-list-wrapper">
                 {spot.amenities && spot.amenities[0].wifi ? 
-                  <div className="wifi-wrapper">
-                    <div className="image-wrapper">
-                      <i className="wifi-icon"><img src='/images/spot_detail/wifi_icon.png' /></i>
-                    </div>
-                    
-                    <div className="label-wrapper">
-                      <p>Wifi</p> 
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/wifi_icon.png' />
+                    <p>Wifi</p> 
                   </div> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].kitchen ?
-                  <div className="kitchen-wrapper">
-                    <div className="image-wrapper">
-                      <i className="kitchen-icon"><img src='/images/spot_detail/kitchen_icon.png' /></i>
-                    </div>
-
-                    <div className="label-wrapper">
-                      <p>Kitchen</p>
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/kitchen_icon.png' />
+                    <p>Kitchen</p>
                   </div> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].breakfast ?
-                  <div className="breakfast-wrapper">
-                    <div className="image-wrapper">
-                      <i className="breakfast-icon"><img src='/images/spot_detail/breakfast_icon.png' /></i>
-                    </div>
-
-                    <div className="label-wrapper">
-                      <p>Breakfast</p>
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/breakfast_icon.png' />
+                    <p>Breakfast</p>
                   </div> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].parking ?
-                  <div className="parking-wrapper">
-                    <div className="image-wrapper">
-                      <i className="parking-icon"><img src='/images/spot_detail/parking_icon.png' /></i>
-                    </div>
-
-                    <div className="label-wrapper">
-                      <p>Free parking on premises</p>
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/parking_icon.png' />
+                    <p>Free parking on premises</p>
                   </div> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].pool ?
-                  <div className="pool-wrapper">
-                    <div className="image-wrapper">
-                      <i className="pool-icon"><img src='/images/spot_detail/pool_icon.png' /></i>
-                    </div>
-
-                    <div className="label-wrapper">
-                      <p>Pool</p>
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/pool_icon.png' />
+                    <p>Pool</p>
                   </div> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].essentials ?
-                  <div className="essentials-wrapper">
-                    <div className="image-wrapper">
-                      <i className="essentials-icon"><img src='/images/spot_detail/essentials_icon.png' /></i>
-                    </div>
-
-                    <div className="label-wrapper">
-                      <p>Essentials</p>
-                    </div>
+                  <div className="spot-detail amenity-wrapper">
+                    <img src='/images/spot_detail/essentials_icon.png' />
+                    <p>Essentials</p>
                   </div> : ""
                 }
               </div>

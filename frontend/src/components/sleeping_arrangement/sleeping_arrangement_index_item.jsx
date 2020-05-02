@@ -5,7 +5,7 @@ const SleepingArrangementIndexItem = ({num}) => {
 
   return (
     <li>
-      <i className="bed-icon"><img src='/images/spot_detail/bed_icon.png' /></i>
+      <img src='/images/spot_detail/bed_icon.png' />
       <h3>Bedroom {num}</h3>
       <p>1 {bedSizes[Math.floor(Math.random() * bedSizes.length)]} bed</p> 
     </li>
