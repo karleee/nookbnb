@@ -140,49 +140,49 @@ class SpotDetail extends React.Component {
             <div className="spot-detail amenities-wrapper">
               <h2>Amenities</h2>
               
-              <div className="spot-detail amenities-list-wrapper">
+              <ul>
                 {spot.amenities && spot.amenities[0].wifi ? 
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/wifi_icon.png' />
                     <p>Wifi</p> 
-                  </div> : ""
+                  </li> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].kitchen ?
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/kitchen_icon.png' />
                     <p>Kitchen</p>
-                  </div> : ""
+                  </li> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].breakfast ?
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/breakfast_icon.png' />
                     <p>Breakfast</p>
-                  </div> : ""
+                  </li> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].parking ?
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/parking_icon.png' />
                     <p>Free parking on premises</p>
-                  </div> : ""
+                  </li> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].pool ?
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/pool_icon.png' />
                     <p>Pool</p>
-                  </div> : ""
+                  </li> : ""
                 }
 
                 {spot.amenities && spot.amenities[0].essentials ?
-                  <div className="spot-detail amenity-wrapper">
+                  <li>
                     <img src='/images/spot_detail/essentials_icon.png' />
                     <p>Essentials</p>
-                  </div> : ""
+                  </li> : ""
                 }
-              </div>
+              </ul>
             </div>
           </div> 
 

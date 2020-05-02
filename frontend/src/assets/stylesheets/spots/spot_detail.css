@@ -254,13 +254,14 @@
 /* Sleeping arrangements styling */
 
 .spot-detail.sleeping-wrapper {
-  margin-top: 30px;
   border-bottom: 1px solid var(--underline-gray);
+  box-sizing: border-box;
+  padding: 3% 0;
   width: 55%;
 }
 
 .spot-detail.sleeping-wrapper h2 {
-  font-family: 'cerealMedium';
+  font-family: 'cerealRegular';
   color: var(--medium-gray);
 }
 
@@ -268,7 +269,6 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  padding-bottom: 7%;
   margin-top: 5%;
 }
 
@@ -302,124 +302,46 @@
 
 /* Amenities styling */
 
-.spot-detail.amenities-wrapper {
-  display: grid;
-  margin-top: 3%;
+.amenities-wrapper {
+  box-sizing: border-box;
+  padding: 3% 0;
   width: 55%;
+  height: 300px;
 }
 
 .spot-detail.amenities-wrapper h2 {
-  font-family: 'cerealMedium';
+  font-family: 'cerealRegular';
   color: var(--medium-gray);
 }
 
-.amenities-list-wrapper {
+.amenities-wrapper ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  font-family: 'cerealLight';
-  font-size: 16px;
-  color: var(--dark-gray);
-  margin-top: 20px;
-  padding-bottom: 30px;
+  margin-top: 3%;
+  width: 100%;
+  height: 100%;
 }
 
-.amenity-wrapper {
+.amenities-wrapper ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 45%;
+  margin: 2% 0;
 }
 
-.amenity-wrapper img {
+.amenities-wrapper ul li img {
   width: 1.5em;
   height: 1.5em;
-  margin-right: 2%;
+  margin-right: 5%;
 }
 
-/* .spot-detail.amenities-wrapper .amenities-grid .wifi-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .wifi-wrapper .image-wrapper .wifi-icon img {
-  width: 22px;
-  margin-right: 20px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .kitchen-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .kitchen-wrapper .image-wrapper .kitchen-icon img {
-  width: 20px;
-  margin-right: 22px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .breakfast-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .breakfast-wrapper .image-wrapper .breakfast-icon img {
-  width: 23px;
-  margin-right: 19px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .parking-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .parking-wrapper .image-wrapper .parking-icon img {
-  width: 23px;
-  margin-right: 19px;
-}
-
-.spot-detail.amenities-wrapper .amenities-grid .pool-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15px;
-} */
-
-/* .spot-detail.amenities-wrapper .amenities-grid .pool-wrapper .image-wrapper .pool-icon img {
-  width: 19px;
-  margin-right: 23px;
-}
-
-.spot-detail.amenities-wrapper .amenities-grid .essentials-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.spot-detail.amenities-wrapper .amenities-grid .essentials-wrapper .image-wrapper .essentials-icon img {
-  width: 20px;
-  margin-right: 20px;
-} */
-
-/* .spot-index-item-detail-description .price .price-text-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  font-family: 'cerealLight';
+.amenities-wrapper ul li p {
+  font-family: 'cerealRegular';
+  font-size: 16px;
   color: var(--dark-gray);
 }
-
-.spot-index-item-detail-description .price .price-text-wrapper h2 {
-  font-family: 'cerealMedium';
-  color: var(--dark-gray);
-  margin-right: 5px;
-} */
 
 /* Datepicker styling */
 
@@ -487,15 +409,15 @@
     font-size: 15px;
   }
 
-  .spot-detail.user-price-wrapper p span {
+  .spot-detail.user-price-wrapper p span,
+  .spot-detail.sleeping-wrapper h2,
+  .spot-detail.amenities-wrapper h2 {
     font-size: 24px;
   }
 
   .spot-detail.gen-info-wrapper p,
   .spot-detail.perk-wrapper h3,
-  .spot-detail.sleeping-wrapper h2,
-  .spot-detail.sleeping-wrapper ul li h3,
-  .spot-detail.amenities-wrapper h2 {
+  .spot-detail.sleeping-wrapper ul li h3 {
     font-size: 16px;
   }
 
