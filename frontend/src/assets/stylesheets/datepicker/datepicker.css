@@ -34,6 +34,7 @@
 /* User input box styling */
 
 .datepicker.user-input-wrapper {
+  position: relative;
   width: 30%;
 }
 
@@ -91,12 +92,15 @@
 }
 
 .datepicker.dropdown-arrow-wrapper,
-.datepicker.dropdown-arrow-wrapper active {
+.datepicker.dropdown-arrow-wrapper .active {
   width: 5%;
   margin-right: 3%;
 }
 
 .datepicker.dropdown-menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,9 +109,11 @@
   border: 1px solid var(--outline-gray); 
   border-top: none;
   border-radius: 10px;
+  background: white;
   box-shadow: 0 0 7px 0.5px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   padding: 8% 5%;
+  z-index: 2;
 }
 
 .datepicker.option-wrapper {
@@ -194,7 +200,6 @@
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  /* background: pink; */
 }
 
 .datepicker.start-end-month-wrapper {
