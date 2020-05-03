@@ -46,7 +46,7 @@ class SpotDetail extends React.Component {
     let usernameCapitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
     return (
-      <div className="spot-detail main-content-wrapper">  
+      <div className="spot-detail main-content-wrapper">   
         <div className="spot-detail photo-thumbs-wrapper">
           <div className="spot-detail main-image-wrapper" onClick={() => this.props.openSpotModal('spot', 0)}>
             <img src={`${spot.thumbnail_image_urls ? spot.thumbnail_image_urls[0] : ''}`} alt="Main spot photo" />
@@ -192,7 +192,7 @@ class SpotDetail extends React.Component {
           </div>
         </div>
 
-        {/* <Footer /> */}
+        <Footer />
       </div> 
     );
   }

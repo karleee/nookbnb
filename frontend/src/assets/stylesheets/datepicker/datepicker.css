@@ -8,7 +8,6 @@
   align-items: flex-start;
   width: 100%;
   margin: 5% 0 10% 0;
-  /* background: yellow; */
 }
 
 .datepicker.calendars-wrapper {
@@ -324,5 +323,33 @@
 
   .datepicker.user-input-wrapper {
     width: 100%;
+    margin-top: 5%;
+  }
+
+  .datepicker.dates-input-wrapper input[type="text"] {
+    box-sizing: border-box;
+    padding: 2% 0 2% 3%;
+  }
+
+  .datepicker.dates-input-wrapper input[type="text"]:first-of-type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .datepicker.dates-input-wrapper input[type="text"]:last-of-type {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .datepicker.guests-input-wrapper {
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 2% 0 2% 3%;
+  }
+
+  .datepicker.dropdown-arrow-wrapper,
+  .datepicker.dropdown-arrow-wrapper active {
+    width: 3%;
+    margin-right: 3%;
   }
 }

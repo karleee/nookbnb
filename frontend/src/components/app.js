@@ -8,7 +8,6 @@ import SpotDetail from './spots/spot_detail_container';
 import SearchContainer from './search/search_container';
 
 import '../assets/stylesheets/reset.css';
-import '../assets/stylesheets/application.css';
 
 class App extends Component {
 	// Render a script tag for scriptUrl in head of the HTML page
@@ -29,7 +28,7 @@ class App extends Component {
 	
 	render() {
 		return (
-	    <div className='app app-container'>
+	    <div className='app-container'>
 	    	<Modal />
 	    	<NavBarContainer />
 	    	
