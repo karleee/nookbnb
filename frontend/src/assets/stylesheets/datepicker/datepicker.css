@@ -321,4 +321,8 @@
     display: flex;
     flex-direction: column;
   }
+
+  .datepicker.user-input-wrapper {
+    width: 100%;
+  }
 }
