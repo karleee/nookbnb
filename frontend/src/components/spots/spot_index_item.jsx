@@ -19,7 +19,7 @@ const SpotIndexItem = ({ spot }) => (
 
         <h4>{spot.name.length > 26 ? spot.name.substr(0, 25) + '...' : spot.name}</h4> 
         <p><span className="price-wrapper">${spot.price}</span> / night</p>
-      </div>
+      </div> 
     </Link>
   </li>
 );  

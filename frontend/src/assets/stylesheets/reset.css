@@ -1,6 +1,6 @@
 /* Reset CSS for browser compatability */
 
-html, body, div, ul, li, h1, h2, h3, li, a, img, p, button {
+html, body, div, ul, li, h1, h2, h3, h4, li, a, img, p, button {
 	margin: 0;
 	padding: 0;
 	border: none;

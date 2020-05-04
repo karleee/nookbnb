@@ -16,7 +16,8 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 50%;
+  height: 55vh;
+  background: green;
 }
 
 .spot-detail.main-image-wrapper {
@@ -24,12 +25,15 @@
   width: 50%;
   height: 100%;
   overflow: hidden;
-  margin-right: 0.2em;
+  margin-right: 0.25%;
 }
 
 .spot-detail.main-image-wrapper img {
-  transform: scale(1.2);
+  position: absolute; 
+  top: 0;
+  left: 0;
   width: 100%;
+  transform: scale(1.2);
 }
 
 .spot-detail.main-image-wrapper img:hover {
@@ -46,7 +50,6 @@
   align-content: space-between;
   flex-shrink: 2;
   width: 50%;
-  height: 100%;
 }
 
 .side-image-wrapper .image-wrapper {
@@ -57,6 +60,9 @@
 }
 
 .side-image-wrapper .image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
   transform: scale(1.5);
   width: 100%;
 }
@@ -79,7 +85,7 @@
   z-index: -1;
 } 
 
-.thumbnail-photos-wrapper:hover div:not(:hover) .overlay-wrapper {
+.spot-detail.photo-thumbs-wrapper:hover div:not(:hover) .overlay-wrapper {
   opacity: 1;
   z-index: 1;
   transition: opacity 0.5s;

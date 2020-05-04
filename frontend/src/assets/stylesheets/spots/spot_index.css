@@ -144,7 +144,7 @@
 }
 
 .top-rated-text-wrapper {
-  margin-top: 0.5em;
+  margin-top: 3%;
 }
 
 .superhost-wrapper {
@@ -179,14 +179,14 @@
   font-family: 'cerealRegular';
   font-size: 1em;
   color: var(--dark-gray);
-  margin-top: 0.357em;
+  margin-top: 3%;
 }
 
-.spot-index.top-wrapper ul li a p {
+.spot-index.top-wrapper ul li a p { 
   font-family: 'cerealLight';
   font-size: 1em;
   color: var(--dark-gray);
-  margin-top: 0.2em;
+  margin-top: 1%; 
 }
 
 .price-wrapper {
