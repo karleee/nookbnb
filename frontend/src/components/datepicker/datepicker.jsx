@@ -242,7 +242,7 @@ class Datepicker extends React.Component {
           <div className="datepicker months-wrapper">
             <div className="datepicker start-end-month-wrapper">
               <Month 
-                currentMonth={currentMonth}
+                currentMonth={currentMonth} 
                 nextMonth={nextMonth} 
                 currentYr={currentYr} 
                 type="start" 
