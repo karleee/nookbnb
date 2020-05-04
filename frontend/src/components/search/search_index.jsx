@@ -21,17 +21,15 @@ class SearchIndex extends React.Component {
 		let numResults = spots.length;
 		
 		return (
-			<div className="search-index-container">
+			<div className="search-index found-spots-wrapper">
 				<div className="search-index header-wrapper">
 					<p>{numResults} {numResults > 1 || numResults === 0 ? 'stays' : 'stay'}</p>
 					<h2>Stays in {find_loc}</h2>
 				</div>
 
-				<div className="search-index spots-wrapper">
-					<ul>
-						{spots.map(spot => (<SearchIndexItem key={spot._id} spot={spot} />))}
-					</ul>
-				</div>
+				<ul> 
+					{spots.map(spot => (<SearchIndexItem key={spot._id} spot={spot} />))}
+				</ul>
 			</div>
 		);
 	}

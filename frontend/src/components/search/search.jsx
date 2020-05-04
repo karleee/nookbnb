@@ -112,12 +112,12 @@ class Search extends React.Component {
 
 	// Renders Search component
 	render() {
-		const { spots } = this.props;
+		const {spots} = this.props;
 		const foundSpots = this.getSpots(spots);
 
 		return (
-			<div className="search-container">
-				<div className="search-results-wrapper">
+			<div className="search main-content-container">
+				<div className="search results-container">
 				  <SearchIndex spots={foundSpots} find_loc={this.state.find_loc} fetchSpots={this.props.fetchSpots} />
 					<Map spots={foundSpots} find_loc={this.state.find_loc} />  
 				</div>

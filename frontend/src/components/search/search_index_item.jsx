@@ -19,7 +19,7 @@ const SearchIndexItem = ({ spot }) => {
       <Link to={`/spots/${spot._id}`}>
         <div className="search-index-item image-wrapper">
           <img src={spot.thumbnail_image_urls[0]} alt="Main spot photo" />
-        </div>
+        </div> 
 
         <div className="search-index-item text-wrapper">
           <div className="search-index-item superhost-wrapper">
@@ -30,7 +30,7 @@ const SearchIndexItem = ({ spot }) => {
           <div className="search-index-item spot-text-wrapper">
             <h2>{spot.name}</h2> 
 
-            <div className="details-wrapper">
+            <div className="search-index-item highlights-wrapper">
               <p>{details}</p>
               <p>{joinedAmenities}</p>
               <div className="search-index-item separator-wrapper"></div>
@@ -41,7 +41,6 @@ const SearchIndexItem = ({ spot }) => {
           <div className="search-index-item price-wrapper">
             <p><span>${spot.price}</span> / night</p>
           </div>
-          
         </div>
       </Link>
     </li>
