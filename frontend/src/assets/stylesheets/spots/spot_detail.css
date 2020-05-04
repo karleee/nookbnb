@@ -16,16 +16,16 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 55vh;
-  background: green;
+  padding-top: 27%;
 }
 
 .spot-detail.main-image-wrapper {
-  position: relative;
-  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49.7%;
   height: 100%;
   overflow: hidden;
-  margin-right: 0.25%;
 }
 
 .spot-detail.main-image-wrapper img {
@@ -43,13 +43,16 @@
 }
 
 .side-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  flex-shrink: 2;
   width: 50%;
+  height: 100%;
 }
 
 .side-image-wrapper .image-wrapper {
