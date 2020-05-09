@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
 	togglePlaceholder() {
 		window.addEventListener('click', e => {
 			if (e.target.parentElement) {
-			  if (e.target.parentElement.className === 'search-bar') {
+				if (e.target.parentElement.className === 'navbar search-bar-wrapper') {
 			  	this.setState({ searchPlaceholder: 'Search by city or state' });
 			  } else {
 			  	this.setState({ searchPlaceholder: 'Anywhere • Stays' });

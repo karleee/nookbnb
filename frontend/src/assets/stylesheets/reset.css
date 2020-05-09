@@ -9,7 +9,7 @@ html, body, div, ul, li, h1, h2, h3, h4, li, a, img, p, button {
   outline: none;
 }
 
-button:focus {
+button:focus, input:focus {
   outline: none;
 }
 
