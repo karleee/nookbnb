@@ -173,17 +173,16 @@
 
 .session.no-account-wrapper {
   font-family: 'cerealRegular';
-  font-size: 14px;
   color: var(--gray);
-  padding-top: 30px;
+  margin-top: 7%;
 }
 
 .session.no-account-wrapper p span {
   font-family: 'cerealMedium';
-  font-size: 14px;
   color: var(--dark-gray);
   text-decoration: underline;
-  padding: 0 5px;
+  box-sizing: border-box;
+  padding-left: 1%;
 }
 
 .session.no-account-wrapper p span:hover {
@@ -202,6 +201,11 @@
   .session.input-wrapper button {
     font-size: calc(7px + 8 * ((100vw - 320px) / 680));
   }
+
+  .session.no-account-wrapper,
+  .session.no-account-wrapper p span {
+    font-size: calc(6px + 8 * ((100vw - 320px) / 680));
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -213,5 +217,10 @@
 
   .session.input-wrapper button {
     font-size: 15px;
+  }
+
+  .session.no-account-wrapper,
+  .session.no-account-wrapper p span {
+    font-size: 14px;
   }
 }
