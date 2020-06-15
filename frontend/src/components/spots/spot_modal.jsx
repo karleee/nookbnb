@@ -43,7 +43,7 @@ class SpotModal extends React.Component {
 
     return (
       <div className="spot modal-wrapper">
-        <div className="spot modal-main-image-wrapper">
+        <div className="spot modal-main-image-wrapper"> 
           <i className="spot prev-arrow-icon-wrapper" onClick={this.previous}></i> 
 
           <div className="modal selected-image-wrapper">
