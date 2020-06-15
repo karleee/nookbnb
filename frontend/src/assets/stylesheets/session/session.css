@@ -12,7 +12,7 @@
   height: 100%;
 }
 
-.session.modal-wrapper form { 
+.session.modal-wrapper form {  
   display: flex;
   flex-direction: column;
 }
@@ -58,35 +58,22 @@
 .session.header-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 25px 0 20px 0;
+  box-sizing: border-box;
+  padding: 4%;
   border-bottom: 1px solid var(--outline-gray);
 }
 
-.session.close-wrapper {
-  width: 17px;
-  height: 17px;
-}
-
-.session.close-button {
-  content: url('/images/modal/session_form_close.png');
-  width: 100%;
-}
-
-.session.close-button:hover {
-  content: url('/images/modal/session_form_close_hover.png');
-  width: 32.5px;
-  cursor: pointer;
-  margin: -8px 0 0 -7.5px;
+.session.header-wrapper img {
+  width: 3%;
 }
 
 .session.header-wrapper h1 {
   font-family: 'cerealMedium';
-  font-size: 16px;
   color: var(--dark-gray);
-  padding: 0 230px;
+  width: 97%;
 }
 
 /* Session Errors */
@@ -94,7 +81,7 @@
   font-family: 'cerealLight';
   font-size: 12px;
   color: var(--red);
-  margin: 10px 0 5px 0;
+  margin: 3% 0 2% 0;
 }
 
 .session-errors-wrapper ul {
@@ -110,8 +97,8 @@
 .session.input-wrapper {
   width: 100%;
   text-align: left;
-  padding: 20px 30px 30px 30px;
   box-sizing: border-box;
+  padding: 2% 5% 5% 5%;
 }
 
 .session.input-wrapper button {
@@ -120,12 +107,11 @@
   border: none;
   width: 100%;
   box-sizing: border-box;
-  padding: 12px 0;
+  padding: 3% 0;
   font-family: 'cerealRegular';
-  font-size: 15px;
   font-weight: 900;
   color: white;
-  margin-top: 10px;
+  margin-top: 2%;
 }
 
 .session.input-wrapper button:hover {
@@ -136,22 +122,23 @@
   font-family: 'cerealRegular';
   font-size: 16px;
   color: var(--dark-gray);
-  /* width: 100%; */
-  /* background: green; */
   padding: 15px 250px;
 }
 
-.session.input-wrapper input[type="text"] {
+.session.input-wrapper input[type="text"],
+.session.input-wrapper input[type="password"] {
   font-family: 'cerealLight';
-  font-size: 16px;
   color: var(--dark-gray);
   width: 100%;
   border: 1px solid var(--outline-gray);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 22px 10px;
-  -webkit-box-sizing: border-box;
+  border-radius: 5px;
   box-sizing: border-box;
+  padding: 4% 3%;
+}
+
+.session.input-wrapper input[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .session.input-wrapper input[type="text"].bad-input,
@@ -179,17 +166,9 @@
 }
 
 .session.input-wrapper input[type="password"] {
-  font-family: 'cerealLight';
-  font-size: 16px;
-  color: var(--dark-gray);
-  width: 100%;
-  border: none;
-  border: 1px solid var(--outline-gray);
   border-top: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 22px 10px;
-  box-sizing: border-box;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .session.no-account-wrapper {
@@ -209,4 +188,30 @@
 
 .session.no-account-wrapper p span:hover {
   cursor: pointer;
+}
+
+/* Dynamic styling */
+
+@media screen and (min-width: 320px) {
+  .session.header-wrapper h1,
+  .session.input-wrapper input[type="text"],
+  .session.input-wrapper input[type="password"] {
+    font-size: calc(8px + 8 * ((100vw - 320px) / 680));
+  }
+
+  .session.input-wrapper button {
+    font-size: calc(7px + 8 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .session.header-wrapper h1,
+  .session.input-wrapper input[type="text"],
+  .session.input-wrapper input[type="password"] {
+    font-size: 16px;
+  }
+
+  .session.input-wrapper button {
+    font-size: 15px;
+  }
 }

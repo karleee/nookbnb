@@ -82,10 +82,7 @@ class LoginForm extends Component {
 
 				<form onSubmit={this.handleSubmit} className={errors.email ? 'session errors-wrapper' : 'session form-wrapper'}>
 					<div className="session header-wrapper">
-					  <div className="session close-wrapper" onClick={this.props.closeModal}>
-					  	<i className="session close-button"></i>
-					  </div>
- 
+						<img src='/images/modal/session_form_close.png' alt='Close' />
 					  <h1>Log in</h1>
 					</div>
 

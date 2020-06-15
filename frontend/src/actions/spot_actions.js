@@ -2,7 +2,7 @@ import {
   getSpots,
   getSpot,
   getFilteredSpots
-} from '../util/spots_api_util';
+} from '../util/spots_api_util'; 
 
 // Action constants
 export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
