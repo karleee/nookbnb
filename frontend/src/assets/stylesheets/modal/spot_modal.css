@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: row;
   align-items: center; 
-  width: 65%;
+  width: 62%;
   height: 100%;
 }
 
@@ -66,42 +66,37 @@
   flex-direction: column;
   align-items: flex-end;
   margin-top: -3%;
-  width: 27%;
+  width: 27.01%;
   height: 100%;
 }
 
 .close-wrapper {
   width: 7%;
+  margin-right: 3%;
 }
 
 .close-wrapper:hover {
   cursor: pointer;
 }
 
-.close-wrapper img {
-  width: 100%;
-}
-
 .spot.thumbnails-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  align-content: flex-start;
   width: 100%;
   margin-top: 8%;
 }
 
 .spot.image-wrapper {
   position: relative;
-  width: 5em;
-  height: 5em;
+  width: 4.5em;
+  padding-bottom: 4.5em;
+  margin: 0 3% 4% 0;
   overflow: hidden;
   border-radius: 7px;
-  box-sizing: border-box;
   border: 2.5px solid transparent;
   opacity: 0.5;
-  margin-bottom: 1em;
 }
 
 .spot.image-wrapper:hover {

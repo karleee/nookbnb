@@ -54,9 +54,7 @@ class SpotModal extends React.Component {
         </div>
 
         <div className="spot side-images-wrapper">
-          <div className="spot close-wrapper" onClick={this.props.closeModal}>
-            <img src='/images/spot_modal/modal_close.png' />
-          </div>
+          <img src='/images/spot_modal/modal_close.png' className="spot close-wrapper" onClick={this.props.closeModal} />
 
           <div className="spot thumbnails-wrapper">
             {spot.thumbnail_image_urls ? spot.thumbnail_image_urls.map((url, indx) =>
