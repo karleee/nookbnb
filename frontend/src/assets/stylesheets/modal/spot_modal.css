@@ -54,9 +54,8 @@
   width: 1em;
 }
 
-.next-arrow-icon-wrapper {
-  content: url('/images/spot_detail/next_arrow_icon.png');
-  width: 1em;
+.next-arrow {
+  width: 2%;
 }
 
 .prev-arrow-icon-wrapper:hover,

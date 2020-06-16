@@ -50,7 +50,7 @@ class SpotModal extends React.Component {
             <img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[this.state.currentImage] : ''} alt="Spot photo" />
           </div> 
 
-          <i className="spot next-arrow-icon-wrapper" onClick={this.next}></i>
+          <img src='/images/spot_detail/next_arrow_icon.png' alt='Next arrow' className='spot next-arrow' onClick={this.next} />
         </div>
 
         <div className="spot side-images-wrapper">
