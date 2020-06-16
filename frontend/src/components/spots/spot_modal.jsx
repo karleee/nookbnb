@@ -44,7 +44,7 @@ class SpotModal extends React.Component {
     return (
       <div className="spot modal-wrapper">
         <div className="spot modal-main-image-wrapper"> 
-          <i className="spot prev-arrow-icon-wrapper" onClick={this.previous}></i> 
+          <img src='/images/spot_detail/previous_arrow_icon.png' alt='Previous arrow' className='spot prev-arrow' onClick={this.previous} />
 
           <div className="modal selected-image-wrapper">
             <img src={spot.thumbnail_image_urls ? spot.thumbnail_image_urls[this.state.currentImage] : ''} alt="Spot photo" />

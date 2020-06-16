@@ -49,11 +49,7 @@
 
 /* Modal nav arrows styling */
 
-.prev-arrow-icon-wrapper {
-  content: url('/images/spot_detail/previous_arrow_icon.png');
-  width: 1em;
-}
-
+.prev-arrow,
 .next-arrow {
   width: 2%;
 }
