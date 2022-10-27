@@ -15,10 +15,6 @@ Nookbnb is a single page MERN stack (MongoDB, Express, React, Node) application 
 <img src="https://github.com/karleee/nookbnb/blob/master/README_images/nookbnb_main2.png" alt="Homepage" width="900px" border="1">
 </kbd>
 
-
-## How It Works
-To see the most up to date version, please visit [the homepage](https://nookbnb.herokuapp.com/#/).
-
 ## Technologies Used
 * Routing – Express
 * Database – MongoDB
